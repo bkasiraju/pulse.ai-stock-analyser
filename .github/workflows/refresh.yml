@@ -1,0 +1,45 @@
+name: Hourly Stock Analysis Refresh
+
+on:
+  schedule:
+    # Every hour during Indian market hours: Mon-Fri, 9:00 AM - 4:00 PM IST
+    # IST = UTC+5:30, so 9AM IST = 3:30 UTC, 4PM IST = 10:30 UTC
+    - cron: '30 3-10 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run analysis pipeline
+        run: python -m src.pipeline
+
+      - name: Copy output to docs
+        run: cp output/analysis.json docs/analysis.json
+
+      - name: Commit and push updated analysis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/analysis.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-refresh: stock analysis update"
+            git push
+          fi

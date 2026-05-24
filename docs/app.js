@@ -37,7 +37,6 @@ function renderDashboard() {
 
     populateSectorFilter();
     renderTable(analysisData.top_picks);
-    renderProactivePicks();
 }
 
 function setText(parentId, selector, value) {
@@ -151,6 +150,13 @@ function renderTable(stocks) {
                 const strong = document.createElement('strong');
                 strong.textContent = val;
                 td.appendChild(strong);
+                if (s.breakout_signals && s.breakout_signals.length) {
+                    const bo = document.createElement('span');
+                    bo.className = 'badge badge-breakout';
+                    bo.textContent = 'BO';
+                    bo.title = s.breakout_signals[0];
+                    td.appendChild(bo);
+                }
             } else {
                 td.textContent = val;
             }
@@ -161,16 +167,19 @@ function renderTable(stocks) {
         const catBadge = document.createElement('span');
         catBadge.className = 'badge badge-' + (s.classification === 'penny' ? 'penny' : s.classification === 'small_cap' ? 'small' : 'mid');
         catBadge.textContent = s.classification;
+        catBadge.title = s.classification === 'penny' ? 'Price < ₹100' : s.classification === 'small_cap' ? 'MCap < ₹5,000Cr' : 'MCap < ₹20,000Cr';
         catTd.appendChild(catBadge);
         tr.appendChild(catTd);
 
         const scoreTd = document.createElement('td');
         scoreTd.textContent = s.score;
+        scoreTd.title = 'Raw score from fundamental + technical + momentum analysis';
         tr.appendChild(scoreTd);
 
         const adjTd = document.createElement('td');
         const adjStrong = document.createElement('strong');
         adjStrong.textContent = s.adjusted_score;
+        adjTd.title = 'Penalty: ' + (s.penalty || 0) + ' (Valuation + Debt + Promoter + Sector + Pump/Dump checks)';
         adjTd.appendChild(adjStrong);
         tr.appendChild(adjTd);
 
@@ -178,6 +187,7 @@ function renderTable(stocks) {
         const convBadge = document.createElement('span');
         convBadge.className = 'badge badge-' + convictionClass(s.conviction_level);
         convBadge.textContent = s.conviction_level;
+        convBadge.title = s.conviction_level === 'HIGH CONVICTION' ? 'Score ≥ 75 — strong multi-bagger candidate' : s.conviction_level === 'MODERATE CONVICTION' ? 'Score 60-74 — promising with some risks' : s.conviction_level === 'LOW CONVICTION' ? 'Score 45-59 — speculative, needs more research' : 'Score < 45 — failed challenge, avoid';
         convTd.appendChild(convBadge);
         tr.appendChild(convTd);
 
@@ -189,9 +199,11 @@ function renderTable(stocks) {
             criticVal.textContent = criticData.critic_score;
             criticVal.style.color = criticData.critic_score >= 60 ? 'var(--success)' : criticData.critic_score >= 40 ? 'var(--warning)' : 'var(--error)';
             criticTd.appendChild(criticVal);
+            criticTd.title = 'Independent 7-factor assessment: Precedent, CashFlow, Insider, Valuation, Liquidity, Macro, Survival';
         } else {
             criticTd.textContent = '—';
             criticTd.style.color = 'var(--text-secondary)';
+            criticTd.title = 'Critic agent has not evaluated this stock';
         }
         tr.appendChild(criticTd);
 
@@ -202,6 +214,7 @@ function renderTable(stocks) {
             const vClass = criticData.verdict === 'AGREE' ? 'agree' : (criticData.verdict === 'PARTIALLY_AGREE' ? 'partial' : 'disagree');
             verdictBadge.className = 'critic-verdict-badge ' + vClass;
             verdictBadge.textContent = criticData.verdict === 'PARTIALLY_AGREE' ? 'PARTIAL' : criticData.verdict;
+            verdictBadge.title = criticData.verdict === 'AGREE' ? 'Critic fully agrees with tool recommendation' : criticData.verdict === 'PARTIALLY_AGREE' ? 'Critic has reservations but sees some merit' : 'Critic disagrees — independent analysis shows different conclusion';
             verdictTd.appendChild(verdictBadge);
         } else {
             verdictTd.textContent = '—';
@@ -345,16 +358,32 @@ function showDetail(symbol) {
         el.appendChild(swotGrid);
     }));
 
-    // --- Section 4: Market Intelligence (Insider + Bulk Deals + Retail Interest) ---
+    // --- Section 4: Market Intelligence (Insider + Bulk Deals + Retail Interest + Breakout) ---
     const insider = stock.insider_activity || {};
     const institutional = stock.institutional_activity || {};
     const retail = stock.retail_interest || {};
+    const breakoutSignals = stock.breakout_signals || [];
     const mktSummary = [
+        breakoutSignals.length ? 'Breakout: ' + breakoutSignals.length + ' signal(s)' : '',
         insider.signal && insider.signal !== 'NO_DATA' ? 'Insider: ' + insider.signal : '',
         institutional.signal && institutional.signal !== 'NO_DEALS' ? 'Institutional: ' + institutional.signal : '',
         retail.signal && retail.signal !== 'NO_DATA' ? 'Retail: ' + retail.signal : '',
     ].filter(Boolean).join(' | ') || 'No market intelligence data';
     grid.appendChild(createCollapsible('Market Intelligence (NSE + Trends)', mktSummary, el => {
+        // Breakout signals
+        if (breakoutSignals.length) {
+            const h = document.createElement('p');
+            h.style.fontWeight = '600';
+            h.style.fontSize = '0.6875rem';
+            h.textContent = 'Breakout Signals (Independent Scanner):';
+            el.appendChild(h);
+            breakoutSignals.forEach(s => {
+                const chip = document.createElement('span');
+                chip.className = 'signal-chip';
+                chip.textContent = s;
+                el.appendChild(chip);
+            });
+        }
         // Insider trades
         if (insider.signal && insider.signal !== 'NO_DATA') {
             const h = document.createElement('p');
@@ -676,51 +705,5 @@ function renderPerfRow(stock) {
     });
 }
 
-function renderProactivePicks() {
-    const section = document.getElementById('proactive-section');
-    const container = document.getElementById('proactive-picks');
-    const picks = analysisData.proactive_breakouts || [];
-
-    if (!picks.length) {
-        section.style.display = 'none';
-        return;
-    }
-
-    section.style.display = 'block';
-    container.textContent = '';
-
-    picks.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'proactive-card';
-
-        const left = document.createElement('div');
-        const sym = document.createElement('div');
-        sym.className = 'proactive-symbol';
-        sym.textContent = p.symbol;
-        const name = document.createElement('div');
-        name.className = 'proactive-name';
-        name.textContent = p.name;
-        left.appendChild(sym);
-        left.appendChild(name);
-
-        const middle = document.createElement('div');
-        middle.className = 'proactive-signals';
-        (p.signals || []).forEach(s => {
-            const chip = document.createElement('span');
-            chip.className = 'signal-chip';
-            chip.textContent = s;
-            middle.appendChild(chip);
-        });
-
-        const right = document.createElement('div');
-        right.className = 'proactive-meta';
-        right.textContent = '₹' + p.price + ' | ₹' + p.market_cap_cr + 'Cr';
-
-        card.appendChild(left);
-        card.appendChild(middle);
-        card.appendChild(right);
-        container.appendChild(card);
-    });
-}
 
 loadAnalysis();

@@ -86,8 +86,8 @@ def run_pipeline(symbols=None):
     # Phase 6: Devil's Advocate challenges
     print("\nPHASE 6: Devil's Advocate challenging recommendations...")
     advocate = DevilsAdvocate()
-    challenged = advocate.challenge_all(ranked_stocks)
-    report = advocate.get_challenge_report(challenged)
+    ranked_stocks = advocate.challenge_all(ranked_stocks)
+    report = advocate.get_challenge_report(ranked_stocks)
 
     # Phase 7: Proactive breakout scanner
     print("\nPHASE 7: Proactive breakout scanner (independent signals)...")
@@ -103,8 +103,14 @@ def run_pipeline(symbols=None):
     critic_verdicts = critic.evaluate_all(ranked_stocks)
     critic_report = critic.get_report(critic_verdicts)
 
-    # Phase 10: Assemble final output
-    print("\nPHASE 10: Generating output...")
+    # Phase 10: Merge proactive breakout signals into main stock list
+    print("\nPHASE 10: Merging proactive breakout signals...")
+    breakout_map = {p["symbol"]: p["signals"] for p in proactive_picks}
+    for stock in ranked_stocks:
+        stock["breakout_signals"] = breakout_map.get(stock["symbol"], [])
+
+    # Phase 11: Assemble final output
+    print("\nPHASE 11: Generating output...")
     output = {
         "generated_at": datetime.now().isoformat(),
         "config": {
@@ -114,7 +120,7 @@ def run_pipeline(symbols=None):
         },
         "summary": {
             "total_analysed": len(ranked_stocks),
-            "survived_challenge": len(challenged),
+            "survived_challenge": len([s for s in ranked_stocks if s.get("survived_challenge")]),
             "high_conviction": len(report["high_conviction"]),
             "moderate_conviction": len(report["moderate_conviction"]),
             "low_conviction": len(report["low_conviction"]),

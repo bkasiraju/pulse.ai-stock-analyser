@@ -24,23 +24,23 @@
 
     <main>
         <section class="summary-cards" id="summary-section">
-            <div class="card summary-card" id="card-total">
+            <div class="card summary-card" id="card-total" title="Total number of stocks analysed by the tool across penny, small-cap, and mid-cap categories">
                 <div class="card-value">-</div>
                 <div class="card-label">Analysed</div>
             </div>
-            <div class="card summary-card" id="card-survived">
+            <div class="card summary-card" id="card-survived" title="Stocks that passed the Devil's Advocate challenge (adjusted score > 40) — bear-case tested">
                 <div class="card-value">-</div>
                 <div class="card-label">Survived Challenge</div>
             </div>
-            <div class="card summary-card high" id="card-high">
+            <div class="card summary-card high" id="card-high" title="Adjusted score ≥ 75 after Devil's Advocate penalties — strongest multi-bagger candidates">
                 <div class="card-value">-</div>
                 <div class="card-label">High Conviction</div>
             </div>
-            <div class="card summary-card moderate" id="card-moderate">
+            <div class="card summary-card moderate" id="card-moderate" title="Adjusted score 60–74 — promising but with some risk factors identified">
                 <div class="card-value">-</div>
                 <div class="card-label">Moderate Conviction</div>
             </div>
-            <div class="card summary-card rejected" id="card-rejected">
+            <div class="card summary-card rejected" id="card-rejected" title="Adjusted score < 45 — failed Devil's Advocate challenge, high risk or weak fundamentals">
                 <div class="card-value">-</div>
                 <div class="card-label">Rejected</div>
             </div>
@@ -48,10 +48,10 @@
 
         <!-- Category Tabs -->
         <section class="category-tabs">
-            <button class="tab-btn active" data-tab="all" onclick="switchTab('all')">All Stocks</button>
-            <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')">Penny Stocks (&lt;₹100)</button>
-            <button class="tab-btn" data-tab="small_cap" onclick="switchTab('small_cap')">Small Cap</button>
-            <button class="tab-btn" data-tab="mid_cap" onclick="switchTab('mid_cap')">Mid Cap</button>
+            <button class="tab-btn active" data-tab="all" onclick="switchTab('all')" title="Show all analysed stocks across all categories">All Stocks</button>
+            <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')" title="Stocks priced below ₹100 — highest growth potential but highest risk">Penny Stocks (&lt;₹100)</button>
+            <button class="tab-btn" data-tab="small_cap" onclick="switchTab('small_cap')" title="Market cap below ₹5,000Cr — emerging companies with growth runway">Small Cap</button>
+            <button class="tab-btn" data-tab="mid_cap" onclick="switchTab('mid_cap')" title="Market cap ₹5,000-20,000Cr — established companies with scaling potential">Mid Cap</button>
         </section>
 
         <section class="filters">
@@ -85,18 +85,18 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th onclick="sortTable('rank')">#</th>
-                        <th onclick="sortTable('symbol')">Symbol</th>
-                        <th onclick="sortTable('name')">Name</th>
-                        <th onclick="sortTable('price')">Price (₹)</th>
-                        <th onclick="sortTable('market_cap_cr')">MCap (Cr)</th>
-                        <th onclick="sortTable('classification')">Category</th>
-                        <th onclick="sortTable('score')">Tool Score</th>
-                        <th onclick="sortTable('adjusted_score')">Adj. Score</th>
-                        <th onclick="sortTable('conviction_level')">Conviction</th>
-                        <th onclick="sortTable('critic_score')">Critic Score</th>
-                        <th onclick="sortTable('critic_verdict')">Critic Verdict</th>
-                        <th>Action</th>
+                        <th onclick="sortTable('rank')" title="Rank by adjusted score (highest first)">#</th>
+                        <th onclick="sortTable('symbol')" title="NSE/BSE ticker symbol. 'BO' badge = breakout signal detected">Symbol</th>
+                        <th onclick="sortTable('name')" title="Company name">Name</th>
+                        <th onclick="sortTable('price')" title="Current market price in INR">Price (₹)</th>
+                        <th onclick="sortTable('market_cap_cr')" title="Market capitalisation in Crores INR">MCap (Cr)</th>
+                        <th onclick="sortTable('classification')" title="Penny (<₹100), Small Cap (<₹5000Cr), Mid Cap (<₹20000Cr)">Category</th>
+                        <th onclick="sortTable('score')" title="Raw tool score (0-100) based on fundamentals, growth, momentum, sector">Tool Score</th>
+                        <th onclick="sortTable('adjusted_score')" title="Score after Devil's Advocate penalties (valuation, debt, promoter, sector, pump/dump)">Adj. Score</th>
+                        <th onclick="sortTable('conviction_level')" title="HIGH (≥75) | MODERATE (60-74) | LOW (45-59) | REJECTED (<45)">Conviction</th>
+                        <th onclick="sortTable('critic_score')" title="Independent Critic Agent score (0-100) — uses completely separate methodology">Critic Score</th>
+                        <th onclick="sortTable('critic_verdict')" title="Critic's independent verdict: AGREE / PARTIAL / DISAGREE with the tool's recommendation">Critic Verdict</th>
+                        <th title="Click to see full analysis: thesis, metrics, SWOT, risks, references">Action</th>
                     </tr>
                 </thead>
                 <tbody id="stock-tbody">
@@ -141,16 +141,11 @@
             </div>
         </section>
 
-        <!-- Proactive Breakouts (kept as a useful standalone section) -->
-        <section class="proactive-section" id="proactive-section" style="display:none;">
-            <h2>Proactive Breakout Signals (Independent Scanner)</h2>
-            <p class="section-subtitle">Stocks showing technical breakout patterns — discovered independently, not from forums.</p>
-            <div id="proactive-picks"></div>
-        </section>
     </main>
 
     <footer>
-        <p>Data from Yahoo Finance, Reddit, ValuePickr, YouTube | Auto-updated daily at 8:30 AM IST</p>
+        <p>Data from Yahoo Finance, Reddit, ValuePickr, YouTube, NSE India | Auto-refreshed hourly during market hours (Mon-Fri 9AM–4PM IST)</p>
+        <p class="version-tag">v1.0.0-Beta-Live</p>
     </footer>
 
     <script src="app.js"></script>

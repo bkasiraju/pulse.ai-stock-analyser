@@ -37,21 +37,18 @@ class DevilsAdvocate:
         self.challenges_log = []
 
     def challenge_all(self, ranked_stocks):
-        """Run all challenges on the ranked stock list. Returns re-ranked list."""
+        """Run all challenges on the ranked stock list. Returns ALL stocks annotated."""
         challenged = []
 
         for stock in ranked_stocks:
             result = self._challenge_stock(stock)
             challenged.append(result)
 
-        # Re-sort by adjusted score
         challenged.sort(key=lambda x: x["adjusted_score"], reverse=True)
 
-        # Filter: only stocks that survive with score > 40
         survivors = [s for s in challenged if s["adjusted_score"] > 40]
-
         self._log_summary(len(ranked_stocks), len(survivors))
-        return survivors
+        return challenged
 
     def _challenge_stock(self, stock):
         """Apply all challenge tests to a single stock."""
