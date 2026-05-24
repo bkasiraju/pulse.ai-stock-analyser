@@ -1,0 +1,31 @@
+market:
+  penny_max_price: 20
+  small_cap_max_cr: 2000
+  mid_cap_max_cr: 10000
+  exchange: NSE
+
+schedule:
+  daily_run_time: "08:30"
+  timezone: "Asia/Kolkata"
+
+analysis:
+  top_n: 25
+  lookback_months: 6
+  min_volume_avg: 100000
+  min_delivery_pct: 30
+
+sources:
+  - screener_in
+  - moneycontrol
+  - trendlyne
+  - reddit_indianstocks
+  - valuepickr
+
+scoring:
+  revenue_growth_weight: 20
+  profit_growth_weight: 20
+  promoter_holding_weight: 15
+  debt_equity_weight: 15
+  roe_weight: 10
+  momentum_weight: 10
+  social_sentiment_weight: 10

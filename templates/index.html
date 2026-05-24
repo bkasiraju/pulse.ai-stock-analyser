@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Multibagger Analyser</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Stock Multibagger Analyser</h1>
+            <p class="subtitle">Small & Mid Cap | Penny Stocks | India NSE/BSE</p>
+            <div class="header-actions">
+                <button id="btn-quick-run" class="btn btn-primary" onclick="runAnalysis('quick')">Quick Run (10 stocks)</button>
+                <button id="btn-full-run" class="btn btn-secondary" onclick="runAnalysis('full')">Full Run (50 stocks)</button>
+                <span id="last-updated" class="meta-text"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Summary Cards -->
+        <section class="summary-cards" id="summary-section">
+            <div class="card summary-card" id="card-total">
+                <div class="card-value">-</div>
+                <div class="card-label">Analysed</div>
+            </div>
+            <div class="card summary-card" id="card-survived">
+                <div class="card-value">-</div>
+                <div class="card-label">Survived Challenge</div>
+            </div>
+            <div class="card summary-card high" id="card-high">
+                <div class="card-value">-</div>
+                <div class="card-label">High Conviction</div>
+            </div>
+            <div class="card summary-card moderate" id="card-moderate">
+                <div class="card-value">-</div>
+                <div class="card-label">Moderate Conviction</div>
+            </div>
+            <div class="card summary-card rejected" id="card-rejected">
+                <div class="card-value">-</div>
+                <div class="card-label">Rejected</div>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters">
+            <select id="filter-category" onchange="applyFilters()">
+                <option value="all">All Categories</option>
+                <option value="penny">Penny (< ₹20)</option>
+                <option value="small_cap">Small Cap (< ₹2000Cr)</option>
+                <option value="mid_cap">Mid Cap (< ₹10000Cr)</option>
+            </select>
+            <select id="filter-conviction" onchange="applyFilters()">
+                <option value="all">All Convictions</option>
+                <option value="HIGH CONVICTION">High Conviction</option>
+                <option value="MODERATE CONVICTION">Moderate Conviction</option>
+                <option value="LOW CONVICTION">Low Conviction</option>
+            </select>
+            <select id="filter-sector" onchange="applyFilters()">
+                <option value="all">All Sectors</option>
+            </select>
+            <input type="text" id="filter-search" placeholder="Search stock..." oninput="applyFilters()">
+        </section>
+
+        <!-- Stock Table -->
+        <section class="stock-table-container">
+            <table class="stock-table" id="stock-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('rank')">#</th>
+                        <th onclick="sortTable('symbol')">Symbol</th>
+                        <th onclick="sortTable('name')">Name</th>
+                        <th onclick="sortTable('price')">Price (₹)</th>
+                        <th onclick="sortTable('market_cap_cr')">MCap (Cr)</th>
+                        <th onclick="sortTable('classification')">Category</th>
+                        <th onclick="sortTable('score')">Score</th>
+                        <th onclick="sortTable('adjusted_score')">Adj. Score</th>
+                        <th onclick="sortTable('conviction_level')">Conviction</th>
+                        <th>Red Flags</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-tbody">
+                    <tr><td colspan="11" class="empty-state">Click "Quick Run" to start analysis</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Detail Panel (shows on stock click) -->
+        <section class="detail-panel" id="detail-panel" style="display:none;">
+            <div class="detail-header">
+                <h2 id="detail-name"></h2>
+                <button class="btn btn-close" onclick="closeDetail()">✕</button>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-section">
+                    <h3>Fundamentals</h3>
+                    <div id="detail-fundamentals"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>SWOT Analysis</h3>
+                    <div id="detail-swot"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Devil's Advocate — Bear Case</h3>
+                    <div id="detail-bear-case"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Challenge Penalties</h3>
+                    <div id="detail-penalties"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Score Reasons</h3>
+                    <div id="detail-reasons"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Risks</h3>
+                    <div id="detail-risks"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Sentiment -->
+        <section class="forum-section" id="forum-section" style="display:none;">
+            <h2>Community Sentiment (Reddit & ValuePickr)</h2>
+            <div id="forum-mentions"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data from Yahoo Finance, Screener.in, MoneyControl, Reddit, ValuePickr | Not financial advice | Updated: <span id="footer-time"></span></p>
+    </footer>
+
+    <div id="loading-overlay" style="display:none;">
+        <div class="spinner"></div>
+        <p id="loading-text">Running analysis...</p>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
