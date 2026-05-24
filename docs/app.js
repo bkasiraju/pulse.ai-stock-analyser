@@ -179,7 +179,7 @@ function renderTable(stocks) {
         const adjTd = document.createElement('td');
         const adjStrong = document.createElement('strong');
         adjStrong.textContent = s.adjusted_score;
-        adjTd.title = 'Penalty: ' + (s.penalty || 0) + ' (Valuation + Debt + Promoter + Sector + Pump/Dump checks)';
+        adjTd.title = 'Devil\'s Advocate Score = Pulse.AI Score ' + (s.penalty || 0) + ' penalty (Valuation: ' + ((s.challenge_detail || {}).valuation_penalty || 0) + ', Debt: ' + ((s.challenge_detail || {}).debt_penalty || 0) + ', Promoter: ' + ((s.challenge_detail || {}).promoter_penalty || 0) + ', Sector: ' + ((s.challenge_detail || {}).sector_penalty || 0) + ', P&D: ' + ((s.challenge_detail || {}).pump_dump_penalty || 0) + ')';
         adjTd.appendChild(adjStrong);
         tr.appendChild(adjTd);
 

@@ -24,23 +24,23 @@
 
     <main>
         <section class="summary-cards" id="summary-section">
-            <div class="card summary-card" id="card-total" title="Total number of stocks analysed by the tool across penny, small-cap, and mid-cap categories">
+            <div class="card summary-card" id="card-total" title="Total stocks analysed this cycle — includes penny, small-cap, and mid-cap stocks sourced from NSE/BSE screeners, forums (Reddit, ValuePickr), and seed lists">
                 <div class="card-value">-</div>
                 <div class="card-label">Analysed</div>
             </div>
-            <div class="card summary-card" id="card-survived" title="Stocks that passed the Devil's Advocate challenge (adjusted score > 40) — bear-case tested">
+            <div class="card summary-card" id="card-survived" title="Stocks that PASSED the Devil's Advocate challenge (DA Score > 40). The DA runs 5 independent bear-case tests to eliminate weak picks before they reach you">
                 <div class="card-value">-</div>
                 <div class="card-label">Survived Challenge</div>
             </div>
-            <div class="card summary-card high" id="card-high" title="Adjusted score ≥ 75 after Devil's Advocate penalties — strongest multi-bagger candidates">
+            <div class="card summary-card high" id="card-high" title="HIGH CONVICTION: DA Score ≥ 75. These stocks survived all 5 bear-case tests with minimal penalties — strongest multi-bagger candidates with robust fundamentals">
                 <div class="card-value">-</div>
                 <div class="card-label">High Conviction</div>
             </div>
-            <div class="card summary-card moderate" id="card-moderate" title="Adjusted score 60–74 — promising but with some risk factors identified">
+            <div class="card summary-card moderate" id="card-moderate" title="MODERATE CONVICTION: DA Score 60–74. Promising stocks with some risk factors identified — worth researching further before investing">
                 <div class="card-value">-</div>
                 <div class="card-label">Moderate Conviction</div>
             </div>
-            <div class="card summary-card rejected" id="card-rejected" title="Adjusted score < 45 — failed Devil's Advocate challenge, high risk or weak fundamentals">
+            <div class="card summary-card rejected" id="card-rejected" title="REJECTED: DA Score < 45. Failed the Devil's Advocate challenge — high debt, overvaluation, promoter red flags, or pump-and-dump patterns detected. Avoid these">
                 <div class="card-value">-</div>
                 <div class="card-label">Rejected</div>
             </div>
@@ -55,16 +55,16 @@
         </section>
 
         <section class="filters">
-            <select id="filter-conviction" onchange="applyFilters()">
+            <select id="filter-conviction" onchange="applyFilters()" title="Filter stocks by conviction level (based on Devil's Advocate adjusted score)">
                 <option value="all">All Convictions</option>
                 <option value="HIGH CONVICTION">High Conviction</option>
                 <option value="MODERATE CONVICTION">Moderate Conviction</option>
                 <option value="LOW CONVICTION">Low Conviction</option>
             </select>
-            <select id="filter-sector" onchange="applyFilters()">
+            <select id="filter-sector" onchange="applyFilters()" title="Filter by industry sector (Technology, Healthcare, Industrials, etc.)">
                 <option value="all">All Sectors</option>
             </select>
-            <input type="text" id="filter-search" placeholder="Search stock..." oninput="applyFilters()">
+            <input type="text" id="filter-search" placeholder="Search stock..." oninput="applyFilters()" title="Search by stock symbol or company name">
         </section>
 
         <section class="stock-table-container">
@@ -85,18 +85,18 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th onclick="sortTable('rank')" title="Rank by adjusted score (highest first)">#</th>
-                        <th onclick="sortTable('symbol')" title="NSE/BSE ticker symbol. 'BO' badge = breakout signal detected">Symbol</th>
-                        <th onclick="sortTable('name')" title="Company name">Name</th>
-                        <th onclick="sortTable('price')" title="Current market price in INR">Price (₹)</th>
-                        <th onclick="sortTable('market_cap_cr')" title="Market capitalisation in Crores INR">MCap (Cr)</th>
-                        <th onclick="sortTable('classification')" title="Penny (<₹100), Small Cap (<₹5000Cr), Mid Cap (<₹20000Cr)">Category</th>
-                        <th onclick="sortTable('score')" title="Pulse.AI composite score (0-100) based on fundamentals, growth, momentum, sector">Pulse.AI Score</th>
-                        <th onclick="sortTable('adjusted_score')" title="Score after Devil's Advocate penalties (valuation, debt, promoter, sector, pump/dump)">Adj. Score</th>
-                        <th onclick="sortTable('conviction_level')" title="HIGH (≥75) | MODERATE (60-74) | LOW (45-59) | REJECTED (<45)">Conviction</th>
-                        <th onclick="sortTable('critic_score')" title="Critic Agent Score (0-100) — independent 7-factor assessment using separate methodology">CA Score</th>
-                        <th onclick="sortTable('critic_verdict')" title="Critic Agent Verdict: AGREE / PARTIAL / DISAGREE with Pulse.AI's recommendation">CA Verdict</th>
-                        <th title="Click to see full analysis: thesis, metrics, SWOT, risks, references">Action</th>
+                        <th onclick="sortTable('rank')" title="Rank — stocks ordered by Devil's Advocate adjusted score (highest conviction first)">#</th>
+                        <th onclick="sortTable('symbol')" title="NSE/BSE ticker symbol. Yellow 'BO' badge means a technical breakout signal was independently detected for this stock">Symbol</th>
+                        <th onclick="sortTable('name')" title="Full registered company name as listed on NSE/BSE">Name</th>
+                        <th onclick="sortTable('price')" title="Current Market Price (CMP) in Indian Rupees, fetched from Yahoo Finance">Price (₹)</th>
+                        <th onclick="sortTable('market_cap_cr')" title="Market Capitalisation in Crores (₹). Penny < ₹100 price, Small Cap < ₹5,000Cr, Mid Cap < ₹20,000Cr">MCap (Cr)</th>
+                        <th onclick="sortTable('classification')" title="Stock category based on price and market cap: Penny (price < ₹100), Small Cap (MCap < ₹5,000Cr), Mid Cap (MCap ₹5,000–20,000Cr)">Category</th>
+                        <th onclick="sortTable('score')" title="Pulse.AI Score (0–100): Weighted composite of Fundamentals (40%) + Technicals (30%) + Momentum (20%) + Sector (10%). Higher = stronger multi-bagger potential">Pulse.AI Score</th>
+                        <th onclick="sortTable('adjusted_score')" title="Devil's Advocate Score: Pulse.AI Score MINUS penalties from 5 bear-case tests — Valuation Sanity, Debt Trap, Promoter Red Flags, Sector Headwind, Pump &amp; Dump Pattern. This is the risk-adjusted score">DA Score</th>
+                        <th onclick="sortTable('conviction_level')" title="Conviction Level based on DA Score: HIGH (≥75) = strong buy candidate | MODERATE (60–74) = promising with some risk | LOW (45–59) = speculative | REJECTED (<45) = failed challenge">Conviction</th>
+                        <th onclick="sortTable('critic_score')" title="Critic Agent Score (0–100): Completely independent assessment using 7 factors — Historical Precedent, Cash Flow Quality, Insider Patterns, Valuation Reasonableness, Liquidity Risk, Macro Alignment, Survival Probability. Uses its own data, zero dependency on Pulse.AI logic">CA Score</th>
+                        <th onclick="sortTable('critic_verdict')" title="Critic Agent Verdict: AGREE = critic confirms Pulse.AI recommendation | PARTIAL = sees merit but has reservations | DISAGREE = independent analysis reaches different conclusion. Red tip below shows the key concern">CA Verdict</th>
+                        <th title="Click 'Details' to open full analysis modal with 7 tabs: Thesis, Fundamentals, SWOT, Market Intelligence, Critic Agent, Risks, and References with trading links">Action</th>
                     </tr>
                 </thead>
                 <tbody id="stock-tbody">
