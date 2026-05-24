@@ -302,6 +302,7 @@ function showDetail(symbol) {
     const tabs = [
         { id: 'thesis', label: 'Thesis' },
         { id: 'fundamentals', label: 'Fundamentals' },
+        { id: 'compounder', label: 'Compounder' },
         { id: 'swot', label: 'SWOT' },
         { id: 'intelligence', label: 'Market Intel' },
         { id: 'critic', label: 'Critic Agent' },
@@ -343,6 +344,9 @@ function switchModalTab(tabId, stock) {
         case 'fundamentals':
             renderFundamentalsTab(body, stock, fund, m);
             break;
+        case 'compounder':
+            renderCompounderTab(body, stock);
+            break;
         case 'swot':
             renderSwotTab(body, stock);
             break;
@@ -362,7 +366,7 @@ function switchModalTab(tabId, stock) {
 }
 
 function getTabLabel(id) {
-    const map = { thesis: 'Thesis', fundamentals: 'Fundamentals', swot: 'SWOT', intelligence: 'Market Intel', critic: 'Critic Agent', risks: 'Risks', references: 'References' };
+    const map = { thesis: 'Thesis', fundamentals: 'Fundamentals', compounder: 'Compounder', swot: 'SWOT', intelligence: 'Market Intel', critic: 'Critic Agent', risks: 'Risks', references: 'References' };
     return map[id] || id;
 }
 
@@ -391,7 +395,8 @@ function getMetricColor(label, rawValue) {
     if (rawValue == null || rawValue === 'N/A') return 'neutral';
     const v = typeof rawValue === 'string' ? parseFloat(rawValue) : rawValue;
     if (isNaN(v)) return 'neutral';
-    switch (label) {
+    const l = label.split(' (')[0];
+    switch (l) {
         case 'PE Ratio': return v < 25 ? 'green' : v < 50 ? 'yellow' : 'red';
         case 'PB Ratio': return v < 3 ? 'green' : v < 6 ? 'yellow' : 'red';
         case 'ROE': return v > 15 ? 'green' : v > 8 ? 'yellow' : 'red';
@@ -399,11 +404,11 @@ function getMetricColor(label, rawValue) {
         case 'Revenue Growth': return v > 15 ? 'green' : v > 5 ? 'yellow' : 'red';
         case 'Earnings Growth': return v > 15 ? 'green' : v > 0 ? 'yellow' : 'red';
         case 'Promoter Holding': return v > 50 ? 'green' : v > 35 ? 'yellow' : 'red';
-        case 'RSI (14-day)': return v >= 30 && v <= 70 ? 'green' : (v < 30 ? 'yellow' : 'red');
+        case 'RSI': return v >= 30 && v <= 70 ? 'green' : (v < 30 ? 'yellow' : 'red');
         case 'Volume Surge': return v > 50 ? 'green' : v > 0 ? 'yellow' : 'neutral';
-        case 'Green Months (of 6)': return v >= 4 ? 'green' : v >= 2 ? 'yellow' : 'red';
-        case 'Max Drawdown (6M)': return v > -10 ? 'green' : v > -25 ? 'yellow' : 'red';
-        case 'Volatility (Ann.)': return v < 30 ? 'green' : v < 50 ? 'yellow' : 'red';
+        case 'Green Months': return v >= 4 ? 'green' : v >= 2 ? 'yellow' : 'red';
+        case 'Max Drawdown': return v > -10 ? 'green' : v > -25 ? 'yellow' : 'red';
+        case 'Volatility': return v < 30 ? 'green' : v < 50 ? 'yellow' : 'red';
         default: return 'neutral';
     }
 }
@@ -425,24 +430,24 @@ function renderFundamentalsTab(el, stock, fund, m) {
     el.appendChild(legend);
 
     const items = [
-        ['PE Ratio', fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A', fund.pe_ratio],
-        ['PB Ratio', fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A', fund.pb_ratio],
-        ['ROE', fund.roe != null ? (fund.roe * 100).toFixed(1) + '%' : 'N/A', fund.roe != null ? fund.roe * 100 : null],
-        ['Debt/Equity', fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A', fund.debt_to_equity],
-        ['Revenue Growth', fund.revenue_growth != null ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A', fund.revenue_growth != null ? fund.revenue_growth * 100 : null],
-        ['Earnings Growth', fund.earnings_growth != null ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A', fund.earnings_growth != null ? fund.earnings_growth * 100 : null],
-        ['Promoter Holding', fund.promoter_holding != null ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A', fund.promoter_holding != null ? fund.promoter_holding * 100 : null],
+        ['PE Ratio (< 25 ideal)', fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A', fund.pe_ratio],
+        ['PB Ratio (< 3 ideal)', fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A', fund.pb_ratio],
+        ['ROE (> 15% ideal)', fund.roe != null ? (fund.roe * 100).toFixed(1) + '%' : 'N/A', fund.roe != null ? fund.roe * 100 : null],
+        ['Debt/Equity (< 50 ideal)', fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A', fund.debt_to_equity],
+        ['Revenue Growth (> 15% ideal)', fund.revenue_growth != null ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A', fund.revenue_growth != null ? fund.revenue_growth * 100 : null],
+        ['Earnings Growth (> 15% ideal)', fund.earnings_growth != null ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A', fund.earnings_growth != null ? fund.earnings_growth * 100 : null],
+        ['Promoter Holding (> 50% ideal)', fund.promoter_holding != null ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A', fund.promoter_holding != null ? fund.promoter_holding * 100 : null],
         ['EPS', fund.eps != null ? '₹' + fund.eps.toFixed(2) : 'N/A', null],
         ['Book Value', fund.book_value != null ? '₹' + fund.book_value.toFixed(2) : 'N/A', null],
     ];
     if (m) {
-        items.push(['RSI (14-day)', m.rsi_14, m.rsi_14]);
-        items.push(['Volatility (Ann.)', m.volatility_annual_pct + '%', m.volatility_annual_pct]);
+        items.push(['RSI (30–70 ideal)', m.rsi_14, m.rsi_14]);
+        items.push(['Volatility (< 30% ideal)', m.volatility_annual_pct + '%', m.volatility_annual_pct]);
         items.push(['20-Day MA', '₹' + m.ma_20, null]);
         items.push(['50-Day MA', '₹' + m.ma_50, null]);
-        items.push(['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%', m.volume_surge_pct]);
-        items.push(['Green Months (of 6)', m.green_months_of_6 + '/6', m.green_months_of_6]);
-        items.push(['Max Drawdown (6M)', m.max_drawdown_pct + '%', m.max_drawdown_pct]);
+        items.push(['Volume Surge (> 50% ideal)', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%', m.volume_surge_pct]);
+        items.push(['Green Months (≥ 4/6 ideal)', m.green_months_of_6 + '/6', m.green_months_of_6]);
+        items.push(['Max Drawdown (> -10% ideal)', m.max_drawdown_pct + '%', m.max_drawdown_pct]);
     }
     const grid = document.createElement('div');
     grid.className = 'metrics-grid';
@@ -461,6 +466,80 @@ function renderFundamentalsTab(el, stock, fund, m) {
         grid.appendChild(item);
     });
     el.appendChild(grid);
+}
+
+function renderCompounderTab(el, stock) {
+    const c = stock.compounder;
+    if (!c) {
+        el.textContent = 'Compounder framework data not available. Run the latest pipeline.';
+        el.style.color = 'var(--text-secondary)';
+        return;
+    }
+
+    const header = document.createElement('div');
+    header.className = 'modal-highlight';
+    header.textContent = c.framework_tag.replace(/_/g, ' ') + ' (' + c.framework_score + '/' + c.framework_max + ' = ' + c.framework_pct + '%) — ' + c.framework_action;
+    el.appendChild(header);
+
+    const potentialChip = document.createElement('div');
+    potentialChip.style.margin = '0.5rem 0 1rem';
+    const potBadge = document.createElement('span');
+    const potClass = c.growth_potential === '5x-10x POSSIBLE' ? 'high' : c.growth_potential === '2x-4x BUSINESS' ? 'moderate' : 'rejected';
+    potBadge.className = 'badge badge-' + potClass;
+    potBadge.textContent = c.growth_potential + ' (Quick Filter: ' + c.five_x_filter_score + ')';
+    potentialChip.appendChild(potBadge);
+    el.appendChild(potentialChip);
+
+    const grid = document.createElement('div');
+    grid.className = 'metrics-grid';
+    const dims = c.dimensions || {};
+    const details = c.dimension_details || {};
+    const dimLabels = {
+        market_context: 'Market Context (MCap < 5000Cr)',
+        financial_perf: 'Financial Performance (Rev+Earn growing)',
+        growth_type: 'Growth Type (Structural > Cyclical)',
+        margins: 'Margins & ROE (> 18% ideal)',
+        balance_sheet: 'Balance Sheet (D/E < 30 ideal)',
+        cash_flows: 'Cash Flows (FCF positive)',
+        capital_efficiency: 'Capital Efficiency (ROCE > 20%)',
+        valuation: 'Valuation (PEG < 1 ideal)',
+        stress: 'Stress Resilience (survive 2 bad years)',
+        optionality: 'Optionality (funded from ops)',
+    };
+
+    Object.entries(dimLabels).forEach(([key, label]) => {
+        const score = dims[key];
+        const detail = details[key] || '';
+        const color = score === 2 ? 'green' : score === 1 ? 'yellow' : 'red';
+        const item = document.createElement('div');
+        item.className = 'metric-item metric-' + color;
+        const lbl = document.createElement('span');
+        lbl.className = 'metric-label';
+        lbl.textContent = label;
+        const val = document.createElement('span');
+        val.className = 'metric-value';
+        val.textContent = score === 2 ? 'GREEN' : score === 1 ? 'YELLOW' : 'RED';
+        item.title = detail;
+        item.appendChild(lbl);
+        item.appendChild(val);
+        grid.appendChild(item);
+    });
+    el.appendChild(grid);
+
+    const legend = document.createElement('div');
+    legend.className = 'metric-legend';
+    legend.style.marginTop = '1rem';
+    [
+        ['green', 'GREEN (2) — Strong structural advantage'],
+        ['yellow', 'YELLOW (1) — Acceptable but not best-in-class'],
+        ['red', 'RED (0) — Weak or concerning'],
+    ].forEach(([color, desc]) => {
+        const item = document.createElement('span');
+        item.className = 'metric-legend-item metric-legend-' + color;
+        item.textContent = desc;
+        legend.appendChild(item);
+    });
+    el.appendChild(legend);
 }
 
 function renderSwotTab(el, stock) {
