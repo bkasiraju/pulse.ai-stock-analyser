@@ -255,6 +255,13 @@ function showDetail(symbol) {
     const stock = analysisData.top_picks.find(s => s.symbol === symbol);
     if (!stock) return;
 
+    document.querySelectorAll('.stock-table tbody tr').forEach(tr => tr.classList.remove('row-selected'));
+    const rows = document.querySelectorAll('.stock-table tbody tr');
+    rows.forEach(tr => {
+        const sym = tr.querySelector('td:nth-child(2) strong');
+        if (sym && sym.textContent === symbol) tr.classList.add('row-selected');
+    });
+
     const panel = document.getElementById('detail-panel');
     panel.style.display = 'block';
 
@@ -658,6 +665,7 @@ function createCollapsible(title, summary, renderContent) {
 
 function closeDetail() {
     document.getElementById('detail-panel').style.display = 'none';
+    document.querySelectorAll('.stock-table tbody tr').forEach(tr => tr.classList.remove('row-selected'));
 }
 
 function renderPerfRow(stock) {

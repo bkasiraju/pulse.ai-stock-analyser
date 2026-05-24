@@ -143,6 +143,58 @@
 
     </main>
 
+    <section class="methodology-section">
+        <details>
+            <summary>Methodology & Metric Definitions</summary>
+            <div class="methodology-grid">
+                <div class="methodology-col">
+                    <h4>Scoring & Conviction</h4>
+                    <dl>
+                        <dt>Tool Score (0–100)</dt>
+                        <dd>Weighted composite: Fundamentals (PE, ROE, D/E, revenue/earnings growth) 40% + Technicals (RSI, MA crossover, volume surge) 30% + Momentum (3/6 month returns, trend) 20% + Sector tailwind 10%</dd>
+                        <dt>Adjusted Score</dt>
+                        <dd>Tool Score minus Devil's Advocate penalties. Penalties: Valuation (PEG &gt; 2 = -10 to -15), Debt Trap (D/E &gt; 100 = -12 to -20), Promoter Flags (&lt;25% holding = -15), Sector Headwind (0 to -10), Pump/Dump (micro-cap volatility = -5 to -20)</dd>
+                        <dt>Conviction Levels</dt>
+                        <dd>HIGH ≥ 75 | MODERATE 60–74 | LOW 45–59 | REJECTED &lt; 45</dd>
+                    </dl>
+                    <h4>Critic Agent (Independent)</h4>
+                    <dl>
+                        <dt>Critic Score (0–100)</dt>
+                        <dd>7-factor independent assessment using its own yfinance data: Precedent Analysis, Cash Flow Quality, Insider Activity Patterns, Valuation Reasonableness, Liquidity Risk, Macro Alignment, Business Survival Probability</dd>
+                        <dt>Critic Verdict</dt>
+                        <dd>AGREE = critic score ≥ 60 &amp; aligns with tool | PARTIAL = some merit but reservations | DISAGREE = fundamentally different conclusion</dd>
+                    </dl>
+                </div>
+                <div class="methodology-col">
+                    <h4>Fundamental Metrics</h4>
+                    <dl>
+                        <dt>PE Ratio</dt>
+                        <dd>Price / Earnings per Share — lower is cheaper, but growth stocks may justify higher PE</dd>
+                        <dt>PB Ratio</dt>
+                        <dd>Price / Book Value — below 1 may indicate undervaluation</dd>
+                        <dt>ROE</dt>
+                        <dd>Return on Equity — measures profitability relative to shareholder equity. &gt;15% is strong</dd>
+                        <dt>D/E Ratio</dt>
+                        <dd>Debt / Equity — measures leverage. &gt;100 is high risk, &lt;50 is comfortable</dd>
+                        <dt>Promoter Holding</dt>
+                        <dd>% of shares held by promoters/founders. &gt;50% = high skin in game, &lt;25% = red flag</dd>
+                    </dl>
+                    <h4>Technical Metrics</h4>
+                    <dl>
+                        <dt>RSI (14-day)</dt>
+                        <dd>Relative Strength Index — &lt;30 oversold (buy signal), &gt;70 overbought (caution)</dd>
+                        <dt>MA Crossover</dt>
+                        <dd>Price crossing above 50-day Moving Average — bullish breakout signal</dd>
+                        <dt>Volume Surge</dt>
+                        <dd>% increase in 20-day avg volume vs 50-day avg. &gt;100% = institutional interest</dd>
+                        <dt>Breakout (BO badge)</dt>
+                        <dd>Independent scanner detected: volume breakout, MA crossover, RSI recovery from oversold, or near 52-week high</dd>
+                    </dl>
+                </div>
+            </div>
+        </details>
+    </section>
+
     <footer>
         <p>Data from Yahoo Finance, Reddit, ValuePickr, YouTube, NSE India | Auto-refreshed hourly during market hours (Mon-Fri 9AM–4PM IST)</p>
         <p class="version-tag">v1.0.0-Beta-Live</p>
