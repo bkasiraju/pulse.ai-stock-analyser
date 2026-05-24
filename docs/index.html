@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- DISCLAIMER — top, subtle, red -->
+    <div class="disclaimer-top">
+        <strong>DISCLAIMER:</strong> Investments carry significant risk. Subject to market risk. Past performance does NOT guarantee future results. This is INFORMATION ONLY — NOT financial advice. Analyse and decide on your own. Consult a SEBI-registered advisor before investing.
+    </div>
+
     <header>
         <div class="header-content">
             <h1>Pulse.AI Stock Analyser</h1>
-            <p class="subtitle">Small & Mid Cap | Penny Stocks | India NSE/BSE | Devil's Advocate Validated</p>
+            <p class="subtitle">Small & Mid Cap | Penny Stocks | India NSE/BSE | Devil's Advocate + Critic Agent Validated</p>
             <div class="header-actions">
                 <span id="last-updated" class="meta-text"></span>
             </div>
@@ -44,7 +49,7 @@
         <!-- Category Tabs -->
         <section class="category-tabs">
             <button class="tab-btn active" data-tab="all" onclick="switchTab('all')">All Stocks</button>
-            <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')">Penny Stocks (&lt;₹20)</button>
+            <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')">Penny Stocks (&lt;₹100)</button>
             <button class="tab-btn" data-tab="small_cap" onclick="switchTab('small_cap')">Small Cap</button>
             <button class="tab-btn" data-tab="mid_cap" onclick="switchTab('mid_cap')">Mid Cap</button>
         </section>
@@ -74,7 +79,8 @@
                     <col class="col-score">
                     <col class="col-adj">
                     <col class="col-conv">
-                    <col class="col-flags">
+                    <col class="col-critic">
+                    <col class="col-verdict">
                     <col class="col-action">
                 </colgroup>
                 <thead>
@@ -85,19 +91,21 @@
                         <th onclick="sortTable('price')">Price (₹)</th>
                         <th onclick="sortTable('market_cap_cr')">MCap (Cr)</th>
                         <th onclick="sortTable('classification')">Category</th>
-                        <th onclick="sortTable('score')">Score</th>
+                        <th onclick="sortTable('score')">Tool Score</th>
                         <th onclick="sortTable('adjusted_score')">Adj. Score</th>
                         <th onclick="sortTable('conviction_level')">Conviction</th>
-                        <th>Red Flags</th>
+                        <th onclick="sortTable('critic_score')">Critic Score</th>
+                        <th onclick="sortTable('critic_verdict')">Critic Verdict</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="stock-tbody">
-                    <tr><td colspan="11" class="empty-state">Loading analysis data...</td></tr>
+                    <tr><td colspan="12" class="empty-state">Loading analysis data...</td></tr>
                 </tbody>
             </table>
         </section>
 
+        <!-- Detail Panel (shows on clicking a stock) -->
         <section class="detail-panel" id="detail-panel" style="display:none;">
             <div class="detail-header">
                 <h2 id="detail-name"></h2>
@@ -106,83 +114,43 @@
             <div class="detail-perf-row" id="detail-perf-row"></div>
             <div class="detail-grid">
                 <div class="detail-section">
-                    <h3>6-Month Metrics</h3>
-                    <div id="detail-metrics"></div>
-                </div>
-                <div class="detail-section">
                     <h3>Multi-Bagger Thesis</h3>
                     <div id="detail-thesis"></div>
                 </div>
                 <div class="detail-section">
-                    <h3>Fundamentals</h3>
+                    <h3>Fundamentals & Metrics</h3>
                     <div id="detail-fundamentals"></div>
+                    <div id="detail-metrics"></div>
                 </div>
                 <div class="detail-section">
                     <h3>SWOT Analysis</h3>
                     <div id="detail-swot"></div>
                 </div>
                 <div class="detail-section">
-                    <h3>Devil's Advocate — Bear Case</h3>
-                    <div id="detail-bear-case"></div>
-                </div>
-                <div class="detail-section">
-                    <h3>Challenge Penalties</h3>
-                    <div id="detail-penalties"></div>
-                </div>
-                <div class="detail-section">
-                    <h3>Score Reasons</h3>
-                    <div id="detail-reasons"></div>
-                </div>
-                <div class="detail-section">
-                    <h3>Risks</h3>
-                    <div id="detail-risks"></div>
-                </div>
-                <div class="detail-section">
-                    <h3>Critic Agent Verdict</h3>
+                    <h3>Critic Agent — Independent Verdict</h3>
                     <div id="detail-critic"></div>
                 </div>
                 <div class="detail-section">
-                    <h3>Expert Views (YouTube/Social)</h3>
-                    <div id="detail-expert"></div>
+                    <h3>Risks & Bear Case</h3>
+                    <div id="detail-risks"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>References & Expert Views</h3>
+                    <div id="detail-references"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Proactive Breakouts -->
+        <!-- Proactive Breakouts (kept as a useful standalone section) -->
         <section class="proactive-section" id="proactive-section" style="display:none;">
             <h2>Proactive Breakout Signals (Independent Scanner)</h2>
             <p class="section-subtitle">Stocks showing technical breakout patterns — discovered independently, not from forums.</p>
             <div id="proactive-picks"></div>
         </section>
-
-        <!-- Independent Critic Agent -->
-        <section class="critic-section" id="critic-section" style="display:none;">
-            <h2>Independent Critic Agent — Autonomous Validation</h2>
-            <p class="section-subtitle">Completely independent evaluation using its own data, methodology, and scoring. Zero dependency on main tool logic.</p>
-            <div class="critic-summary" id="critic-summary"></div>
-            <div class="critic-verdicts" id="critic-verdicts"></div>
-        </section>
-
-        <!-- Expert Analysis from YouTube/Social Media -->
-        <section class="expert-section" id="expert-section" style="display:none;">
-            <h2>Expert Analysis (YouTube & Social Media)</h2>
-            <p class="section-subtitle">What stock market experts and analysts are saying about these picks.</p>
-            <div id="expert-picks"></div>
-        </section>
-
-        <section class="forum-section" id="forum-section" style="display:none;">
-            <h2>Community Sentiment (Reddit & ValuePickr)</h2>
-            <div id="forum-mentions"></div>
-        </section>
     </main>
 
-    <!-- DISCLAIMER -->
-    <div class="disclaimer-banner">
-        <p><strong>DISCLAIMER:</strong> Investments in stocks based on these recommendations carry significant risk and are purely dependent on your own conscience and decision. All investments are subject to market risk. Past performance does NOT guarantee future results. This information is JUST INFORMATION — it does NOT constitute financial advice. You must analyse and decide to invest on your own. The creators of this tool accept NO responsibility for any financial losses. Consult a SEBI-registered financial advisor before making investment decisions.</p>
-    </div>
-
     <footer>
-        <p>Data from Yahoo Finance, Reddit, ValuePickr | Auto-updated daily at 8:30 AM IST</p>
+        <p>Data from Yahoo Finance, Reddit, ValuePickr, YouTube | Auto-updated daily at 8:30 AM IST</p>
     </footer>
 
     <script src="app.js"></script>

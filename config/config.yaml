@@ -1,7 +1,7 @@
 market:
-  penny_max_price: 20
-  small_cap_max_cr: 2000
-  mid_cap_max_cr: 10000
+  penny_max_price: 100
+  small_cap_max_cr: 5000
+  mid_cap_max_cr: 20000
   exchange: NSE
 
 schedule:

@@ -272,15 +272,16 @@ main {
 
 .stock-table col.col-rank    { width: 3%; }
 .stock-table col.col-symbol  { width: 9%; }
-.stock-table col.col-name    { width: 16%; }
+.stock-table col.col-name    { width: 15%; }
 .stock-table col.col-price   { width: 8%; }
-.stock-table col.col-mcap    { width: 10%; }
-.stock-table col.col-cat     { width: 8%; }
-.stock-table col.col-score   { width: 6%; }
+.stock-table col.col-mcap    { width: 9%; }
+.stock-table col.col-cat     { width: 7%; }
+.stock-table col.col-score   { width: 7%; }
 .stock-table col.col-adj     { width: 7%; }
-.stock-table col.col-conv    { width: 12%; }
-.stock-table col.col-flags   { width: 14%; }
-.stock-table col.col-action  { width: 7%; }
+.stock-table col.col-conv    { width: 11%; }
+.stock-table col.col-critic  { width: 8%; }
+.stock-table col.col-verdict { width: 10%; }
+.stock-table col.col-action  { width: 6%; }
 
 .stock-table th {
   background: var(--primary);
@@ -606,46 +607,78 @@ main {
 }
 
 .detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.detail-section {
-  padding: 1rem;
-  background: #fafbff;
-  border: 1px solid rgba(15,23,42,0.06);
-  border-radius: var(--radius-lg);
+/* Collapsible accordion sections */
+.detail-collapsible {
+  border: 1px solid var(--border);
+  border-bottom: none;
+  background: var(--card);
 }
+.detail-collapsible:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.detail-collapsible:last-child { border-bottom: 1px solid var(--border); border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.detail-collapsible.open { background: #fafbff; }
 
-.detail-section h3 {
-  position: relative;
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  gap: 0.75rem;
+}
+.collapsible-header:hover { background: #f8fafc; }
+
+.collapsible-title {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 0.625rem;
-  padding-left: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(15,23,42,0.06);
+  min-width: 180px;
 }
-.detail-section h3::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0.125rem; bottom: 0.625rem;
-  width: 3px;
-  background: linear-gradient(180deg, #6366f1 0%, #ec4899 100%);
-  border-radius: 2px;
+.collapsible-summary {
+  flex: 1;
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.collapsible-arrow {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  width: 1.25rem;
+  text-align: center;
 }
 
-.detail-section ul { list-style: none; padding: 0; margin: 0; }
-.detail-section li {
+.collapsible-content {
+  padding: 0 1rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* Keep old utility classes for content inside collapsibles */
+.detail-collapsible ul { list-style: none; padding: 0; margin: 0; }
+.detail-collapsible li {
   padding: 0.25rem 0;
   font-size: 0.75rem;
   color: var(--text-secondary);
   border-bottom: 1px solid #f0f0f0;
   line-height: 1.4;
 }
-.detail-section li:last-child { border: none; }
+.detail-collapsible li:last-child { border: none; }
+
+/* Reference links */
+.ref-link {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+.ref-link:hover { text-decoration: underline; }
 
 /* Thesis section styling */
 .thesis-point {
@@ -954,27 +987,21 @@ main {
 .expert-sentiment-mixed { background: #ede9fe; color: #5b21b6; }
 
 /* ═══════════════════════════════════════════════════════════════════
-   DISCLAIMER BANNER
+   DISCLAIMER — TOP SUBTLE NOTE
    ═══════════════════════════════════════════════════════════════════ */
-.disclaimer-banner {
+.disclaimer-top {
   max-width: 1600px;
-  margin: 1.5rem auto 0;
-  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  padding: 0.375rem 1.5rem;
+  font-size: 0.625rem;
+  color: #dc2626;
+  line-height: 1.5;
+  text-align: center;
   background: #fef2f2;
-  border: 2px solid #fca5a5;
-  border-left: 5px solid #dc2626;
-  border-radius: var(--radius);
+  border-bottom: 1px solid #fecaca;
 }
-.disclaimer-banner p {
-  font-size: 0.8125rem;
+.disclaimer-top strong {
   font-weight: 700;
-  color: #991b1b;
-  line-height: 1.6;
-  margin: 0;
-}
-.disclaimer-banner strong {
-  font-size: 0.875rem;
-  color: #7f1d1d;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-05-24T14:38:04.787396",
+  "generated_at": "2026-05-24T15:14:32.199409",
   "config": {
-    "penny_max_price": 20,
-    "small_cap_max_cr": 2000,
-    "mid_cap_max_cr": 10000
+    "penny_max_price": 100,
+    "small_cap_max_cr": 5000,
+    "mid_cap_max_cr": 20000
   },
   "summary": {
-    "total_analysed": 11,
-    "survived_challenge": 5,
+    "total_analysed": 19,
+    "survived_challenge": 7,
     "high_conviction": 0,
-    "moderate_conviction": 2,
-    "low_conviction": 2,
+    "moderate_conviction": 3,
+    "low_conviction": 3,
     "rejected": 1,
-    "proactive_breakouts": 5
+    "proactive_breakouts": 7
   },
   "top_picks": [
     {
@@ -20,7 +20,7 @@
       "name": "Zaggle Prepaid Ocean Services Limited",
       "price": 215.55,
       "market_cap_cr": 2903.97,
-      "classification": "mid_cap",
+      "classification": "small_cap",
       "sector": "Technology",
       "industry": "Software - Infrastructure",
       "score": 69.5,
@@ -67,7 +67,7 @@
         "52w_low": 186.05,
         "avg_volume": 2518078
       },
-      "analysed_at": "2026-05-24T14:35:52.249619",
+      "analysed_at": "2026-05-24T15:10:22.726831",
       "metrics": {
         "return_1d_pct": 0.96,
         "return_1w_pct": -1.5,
@@ -104,20 +104,91 @@
         ],
         "timeframe": "1-3 years",
         "target_multiple": "3-4x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "GPIL",
+      "name": "Godawari Power & Ispat Limited",
+      "price": 291.4,
+      "market_cap_cr": 18947.58,
+      "classification": "mid_cap",
+      "sector": "Basic Materials",
+      "industry": "Steel",
+      "score": 62.0,
+      "score_reasons": [
+        "Strong earnings growth: 23%",
+        "High promoter holding: 63%",
+        "Very low debt"
+      ],
+      "swot": {
+        "strengths": [
+          "Strong promoter confidence \u2014 63% holding",
+          "Low leverage \u2014 financial flexibility for growth"
+        ],
+        "weaknesses": [
+          "Insufficient data for weakness analysis"
+        ],
+        "opportunities": [
+          "Insufficient data for opportunity analysis"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
       },
-      "adjusted_score": 69.5,
-      "penalty": 0,
-      "bear_case": [],
-      "red_flags": [],
-      "challenge_detail": {
-        "valuation_penalty": 0,
-        "debt_penalty": 0,
-        "promoter_penalty": 0,
-        "sector_penalty": 0,
-        "pump_dump_penalty": 0
+      "fundamentals": {
+        "pe_ratio": 23.145353,
+        "pb_ratio": 3.4175003,
+        "roe": 0.14866,
+        "debt_to_equity": 7.582,
+        "revenue_growth": 0.114,
+        "earnings_growth": 0.231,
+        "promoter_holding": 0.63370997,
+        "eps": 12.59,
+        "book_value": 85.267,
+        "dividend_yield": 0.34,
+        "free_cashflow": -133517504
       },
-      "survived_challenge": true,
-      "conviction_level": "MODERATE CONVICTION"
+      "technicals": {
+        "52w_high": 320.0,
+        "52w_low": 175.37,
+        "avg_volume": 3697258
+      },
+      "analysed_at": "2026-05-24T15:10:29.638357",
+      "metrics": {
+        "return_1d_pct": -2.13,
+        "return_1w_pct": 2.86,
+        "return_1m_pct": 0.5,
+        "return_3m_pct": 8.0,
+        "return_6m_pct": 14.0,
+        "return_1y_pct": 46.9,
+        "return_ytd_pct": 9.3,
+        "volume_surge_pct": 290.0,
+        "avg_volume_20d": 5449045,
+        "volatility_annual_pct": 37.0,
+        "rsi_14": 40.5,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 296.15,
+        "ma_50": 284.3,
+        "green_months_of_6": 4,
+        "max_drawdown_pct": -20.0,
+        "monthly_returns": [
+          13.1,
+          -6.6,
+          7.1,
+          1.0,
+          10.2,
+          -1.7
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-2x in 1-3 years (estimated)"
+      }
     },
     {
       "symbol": "MASTEK",
@@ -167,7 +238,7 @@
         "52w_low": 1334.2,
         "avg_volume": 86435
       },
-      "analysed_at": "2026-05-24T14:35:54.673960",
+      "analysed_at": "2026-05-24T15:10:25.142293",
       "metrics": {
         "return_1d_pct": -0.41,
         "return_1w_pct": 5.36,
@@ -203,20 +274,93 @@
         ],
         "timeframe": "1-3 years",
         "target_multiple": "2-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "SUZLON",
+      "name": "Suzlon Energy Limited",
+      "price": 53.75,
+      "market_cap_cr": 73721.78,
+      "classification": "penny",
+      "sector": "Industrials",
+      "industry": "Specialty Industrial Machinery",
+      "score": 57.5,
+      "score_reasons": [
+        "Strong revenue growth: 42%",
+        "Very low debt",
+        "Good momentum position (mid-range)"
+      ],
+      "swot": {
+        "strengths": [
+          "Revenue growing at 42% \u2014 above industry average",
+          "Low leverage \u2014 financial flexibility for growth"
+        ],
+        "weaknesses": [
+          "Insufficient data for weakness analysis"
+        ],
+        "opportunities": [
+          "Rapid revenue growth could attract re-rating",
+          "Tailwind sector: Industrials \u2014 government/policy support likely"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
       },
-      "adjusted_score": 61.5,
-      "penalty": 0,
-      "bear_case": [],
-      "red_flags": [],
-      "challenge_detail": {
-        "valuation_penalty": 0,
-        "debt_penalty": 0,
-        "promoter_penalty": 0,
-        "sector_penalty": 0,
-        "pump_dump_penalty": 0
+      "fundamentals": {
+        "pe_ratio": 22.775425,
+        "pb_ratio": 9.408367,
+        "roe": null,
+        "debt_to_equity": 5.051,
+        "revenue_growth": 0.424,
+        "earnings_growth": 0.143,
+        "promoter_holding": 0.18701,
+        "eps": 2.36,
+        "book_value": 5.713,
+        "dividend_yield": null,
+        "free_cashflow": null
       },
-      "survived_challenge": true,
-      "conviction_level": "MODERATE CONVICTION"
+      "technicals": {
+        "52w_high": 74.3,
+        "52w_low": 38.19,
+        "avg_volume": 94112292
+      },
+      "analysed_at": "2026-05-24T15:10:20.946349",
+      "metrics": {
+        "return_1d_pct": 1.66,
+        "return_1w_pct": 0.94,
+        "return_1m_pct": -0.3,
+        "return_3m_pct": 16.6,
+        "return_6m_pct": -4.9,
+        "return_1y_pct": -11.9,
+        "return_ytd_pct": 2.4,
+        "volume_surge_pct": -34.2,
+        "avg_volume_20d": 85792589,
+        "volatility_annual_pct": 33.0,
+        "rsi_14": 44.4,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 54.38,
+        "ma_50": 48.61,
+        "green_months_of_6": 1,
+        "max_drawdown_pct": -44.7,
+        "monthly_returns": [
+          -2.5,
+          -9.5,
+          -10.5,
+          -7.3,
+          40.5,
+          -3.3
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Revenue growing at 42% \u2014 at this rate, revenue doubles in ~2.3 years. Market typically rewards sustained high-growth with PE expansion.",
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-3x in 1-3 years (estimated)"
+      }
     },
     {
       "symbol": "CAMPUS",
@@ -266,7 +410,7 @@
         "52w_low": 215.2,
         "avg_volume": 221816
       },
-      "analysed_at": "2026-05-24T14:35:55.491932",
+      "analysed_at": "2026-05-24T15:10:25.964528",
       "metrics": {
         "return_1d_pct": -0.11,
         "return_1w_pct": 2.5,
@@ -301,29 +445,188 @@
         ],
         "timeframe": "1-3 years",
         "target_multiple": "2-2x in 1-3 years (estimated)"
-      },
-      "adjusted_score": 50.5,
-      "penalty": -5,
-      "bear_case": [
-        "Sector headwind: Discretionary spending under pressure from inflation"
+      }
+    },
+    {
+      "symbol": "SAFARI",
+      "name": "Safari Industries (India) Limited",
+      "price": 1527.0,
+      "market_cap_cr": 7481.62,
+      "classification": "mid_cap",
+      "sector": "Consumer Cyclical",
+      "industry": "Footwear & Accessories",
+      "score": 55.5,
+      "score_reasons": [
+        "Good revenue growth: 16%",
+        "Very low debt",
+        "Near 52w low \u2014 possible turnaround"
       ],
-      "red_flags": [],
-      "challenge_detail": {
-        "valuation_penalty": 0,
-        "debt_penalty": 0,
-        "promoter_penalty": 0,
-        "sector_penalty": -5,
-        "pump_dump_penalty": 0
+      "swot": {
+        "strengths": [
+          "Revenue growing at 16% \u2014 above industry average",
+          "Strong promoter confidence \u2014 55% holding",
+          "Low leverage \u2014 financial flexibility for growth"
+        ],
+        "weaknesses": [
+          "Low liquidity \u2014 hard to exit large positions"
+        ],
+        "opportunities": [
+          "Trading near 52-week low \u2014 potential turnaround candidate"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
       },
-      "survived_challenge": true,
-      "conviction_level": "LOW CONVICTION"
+      "fundamentals": {
+        "pe_ratio": 44.64912,
+        "pb_ratio": 7.159804,
+        "roe": null,
+        "debt_to_equity": 10.828,
+        "revenue_growth": 0.157,
+        "earnings_growth": 0.053,
+        "promoter_holding": 0.54758,
+        "eps": 34.2,
+        "book_value": 213.274,
+        "dividend_yield": 0.28,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 2507.1,
+        "52w_low": 1363.1,
+        "avg_volume": 85439
+      },
+      "analysed_at": "2026-05-24T15:10:32.777628",
+      "metrics": {
+        "return_1d_pct": -1.13,
+        "return_1w_pct": 7.05,
+        "return_1m_pct": 2.0,
+        "return_3m_pct": -16.7,
+        "return_6m_pct": -33.6,
+        "return_1y_pct": -33.2,
+        "return_ytd_pct": -30.0,
+        "volume_surge_pct": 108.7,
+        "avg_volume_20d": 114400,
+        "volatility_annual_pct": 33.5,
+        "rsi_14": 60.7,
+        "above_20ma": "True",
+        "above_50ma": "True",
+        "ma_20": 1468.1,
+        "ma_50": 1514.23,
+        "green_months_of_6": 1,
+        "max_drawdown_pct": -45.1,
+        "monthly_returns": [
+          -10.5,
+          -6.6,
+          -11.6,
+          -20.4,
+          -1.3,
+          8.1
+        ],
+        "trend": "UPTREND"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden.",
+          "Technical momentum confirms fundamentals \u2014 uptrend with -34% return in 6 months. Smart money is already accumulating."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "SPML",
+      "name": "Speciality Medicines Limited",
+      "price": 208.95,
+      "market_cap_cr": 183.58,
+      "classification": "small_cap",
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - Specialty & Generic",
+      "score": 55,
+      "score_reasons": [
+        "High promoter holding: 62%",
+        "Very low debt",
+        "Excellent ROE: 30%",
+        "Good momentum position (mid-range)",
+        "Micro-cap: high risk-reward potential"
+      ],
+      "swot": {
+        "strengths": [
+          "High Return on Equity (30%) indicates efficient capital use",
+          "Strong promoter confidence \u2014 62% holding",
+          "Low leverage \u2014 financial flexibility for growth"
+        ],
+        "weaknesses": [
+          "Low liquidity \u2014 hard to exit large positions",
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery",
+          "Tailwind sector: Healthcare \u2014 government/policy support likely"
+        ],
+        "threats": [
+          "Micro-cap: susceptible to operator manipulation and pump-dump",
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": 21.321428,
+        "pb_ratio": 3.6870058,
+        "roe": 0.30426002,
+        "debt_to_equity": 13.154,
+        "revenue_growth": null,
+        "earnings_growth": null,
+        "promoter_holding": 0.61548,
+        "eps": 9.8,
+        "book_value": 56.672,
+        "dividend_yield": null,
+        "free_cashflow": -94601376
+      },
+      "technicals": {
+        "52w_high": 381.2,
+        "52w_low": 121.1,
+        "avg_volume": 62285
+      },
+      "analysed_at": "2026-05-24T15:10:20.109336",
+      "metrics": {
+        "return_1d_pct": -4.98,
+        "return_1w_pct": -18.51,
+        "return_1m_pct": -33.4,
+        "return_3m_pct": 65.8,
+        "return_6m_pct": 65.8,
+        "return_1y_pct": 65.8,
+        "return_ytd_pct": 65.8,
+        "volume_surge_pct": -67.5,
+        "avg_volume_20d": 28350,
+        "volatility_annual_pct": 107.2,
+        "rsi_14": 23.1,
+        "above_20ma": "False",
+        "above_50ma": "False",
+        "ma_20": 294.65,
+        "ma_50": 294.65,
+        "green_months_of_6": 0,
+        "max_drawdown_pct": -42.4,
+        "monthly_returns": [
+          -36.8
+        ],
+        "trend": "OVERSOLD"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Micro-cap (\u20b9184Cr) \u2014 even modest institutional buying can move price 2-3x. Under-researched by analysts, creating information asymmetry edge.",
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden.",
+          "ROE of 30% means every \u20b91 retained generates \u20b90.30 in returns. Sustained high ROE + reinvestment = compounding wealth creator.",
+          "Currently oversold (RSI < 30) \u2014 contrarian opportunity. If fundamentals are intact, this is the market handing you a discount on a quality business."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-4x in 1-3 years (estimated)"
+      }
     },
     {
       "symbol": "MOLDTKPAC",
       "name": "Mold-Tek Packaging Limited",
       "price": 679.35,
       "market_cap_cr": 2257.41,
-      "classification": "mid_cap",
+      "classification": "small_cap",
       "sector": "Consumer Cyclical",
       "industry": "Packaging & Containers",
       "score": 55.0,
@@ -366,7 +669,7 @@
         "52w_low": 464.9,
         "avg_volume": 165254
       },
-      "analysed_at": "2026-05-24T14:35:56.350406",
+      "analysed_at": "2026-05-24T15:10:26.808805",
       "metrics": {
         "return_1d_pct": -0.98,
         "return_1w_pct": -1.77,
@@ -402,29 +705,14 @@
         ],
         "timeframe": "1-3 years",
         "target_multiple": "2-4x in 1-3 years (estimated)"
-      },
-      "adjusted_score": 50.0,
-      "penalty": -5,
-      "bear_case": [
-        "Sector headwind: Discretionary spending under pressure from inflation"
-      ],
-      "red_flags": [],
-      "challenge_detail": {
-        "valuation_penalty": 0,
-        "debt_penalty": 0,
-        "promoter_penalty": 0,
-        "sector_penalty": -5,
-        "pump_dump_penalty": 0
-      },
-      "survived_challenge": true,
-      "conviction_level": "LOW CONVICTION"
+      }
     },
     {
       "symbol": "IDEAFORGE",
       "name": "ideaForge Technology Limited",
       "price": 775.95,
       "market_cap_cr": 3366.66,
-      "classification": "mid_cap",
+      "classification": "small_cap",
       "sector": "Technology",
       "industry": "Computer Hardware",
       "score": 45.5,
@@ -467,7 +755,7 @@
         "52w_low": 366.0,
         "avg_volume": 2171145
       },
-      "analysed_at": "2026-05-24T14:35:53.718612",
+      "analysed_at": "2026-05-24T15:10:24.287847",
       "metrics": {
         "return_1d_pct": 5.0,
         "return_1w_pct": -5.11,
@@ -505,24 +793,783 @@
         ],
         "timeframe": "1-3 years",
         "target_multiple": "2-4x in 1-3 years (estimated)"
-      },
-      "adjusted_score": 40.5,
-      "penalty": -5,
-      "bear_case": [
-        "No PE data \u2014 cannot verify valuation"
+      }
+    },
+    {
+      "symbol": "LXCHEM",
+      "name": "Laxmi Organic Industries Limited",
+      "price": 151.81,
+      "market_cap_cr": 4208.35,
+      "classification": "small_cap",
+      "sector": "Basic Materials",
+      "industry": "Specialty Chemicals",
+      "score": 40,
+      "score_reasons": [
+        "Negative revenue growth: -9%",
+        "High promoter holding: 69%",
+        "Very low debt",
+        "Good momentum position (mid-range)"
       ],
-      "red_flags": [
-        "Missing valuation data"
-      ],
-      "challenge_detail": {
-        "valuation_penalty": -5,
-        "debt_penalty": 0,
-        "promoter_penalty": 0,
-        "sector_penalty": 0,
-        "pump_dump_penalty": 0
+      "swot": {
+        "strengths": [
+          "Strong promoter confidence \u2014 69% holding",
+          "Low leverage \u2014 financial flexibility for growth"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Insufficient data for opportunity analysis"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
       },
-      "survived_challenge": true,
-      "conviction_level": "REJECTED"
+      "fundamentals": {
+        "pe_ratio": 52.895473,
+        "pb_ratio": 2.1146693,
+        "roe": null,
+        "debt_to_equity": 17.29,
+        "revenue_growth": -0.086,
+        "earnings_growth": -0.124,
+        "promoter_holding": 0.69336,
+        "eps": 2.87,
+        "book_value": 71.789,
+        "dividend_yield": 0.31,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 241.0,
+        "52w_low": 107.6,
+        "avg_volume": 999823
+      },
+      "analysed_at": "2026-05-24T15:10:27.606923",
+      "metrics": {
+        "return_1d_pct": -4.46,
+        "return_1w_pct": 0.48,
+        "return_1m_pct": 8.3,
+        "return_3m_pct": 8.9,
+        "return_6m_pct": -16.9,
+        "return_1y_pct": -20.8,
+        "return_ytd_pct": -9.6,
+        "volume_surge_pct": 10.6,
+        "avg_volume_20d": 1040757,
+        "volatility_annual_pct": 44.2,
+        "rsi_14": 55.9,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 153.52,
+        "ma_50": 136.54,
+        "green_months_of_6": 2,
+        "max_drawdown_pct": -53.3,
+        "monthly_returns": [
+          -6.8,
+          -16.2,
+          -11.2,
+          -14.2,
+          33.5,
+          5.2
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Mid-cap (\u20b94208Cr) \u2014 growth runway before hitting large-cap saturation. Potential for 2-3x if execution continues.",
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "JPPOWER",
+      "name": "Jaiprakash Power Ventures Limited",
+      "price": 18.76,
+      "market_cap_cr": 12857.09,
+      "classification": "penny",
+      "sector": "Utilities",
+      "industry": "Utilities - Independent Power Producers",
+      "score": 39.5,
+      "score_reasons": [
+        "Very low debt",
+        "Good momentum position (mid-range)"
+      ],
+      "swot": {
+        "strengths": [
+          "Low leverage \u2014 financial flexibility for growth",
+          "Positive free cash flow \u2014 self-funding growth"
+        ],
+        "weaknesses": [
+          "Low ROE \u2014 poor capital efficiency",
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Insufficient data for opportunity analysis"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": 38.285713,
+        "pb_ratio": 1.9115549,
+        "roe": 0.03603,
+        "debt_to_equity": 26.634,
+        "revenue_growth": 0.034,
+        "earnings_growth": null,
+        "promoter_holding": 0.31495002,
+        "eps": 0.49,
+        "book_value": 9.814,
+        "dividend_yield": null,
+        "free_cashflow": 15239825408
+      },
+      "technicals": {
+        "52w_high": 27.7,
+        "52w_low": 13.15,
+        "avg_volume": 129103624
+      },
+      "analysed_at": "2026-05-24T15:10:12.867456",
+      "metrics": {
+        "return_1d_pct": 1.08,
+        "return_1w_pct": -1.52,
+        "return_1m_pct": -2.7,
+        "return_3m_pct": 25.2,
+        "return_6m_pct": -7.4,
+        "return_1y_pct": 27.6,
+        "return_ytd_pct": 6.5,
+        "volume_surge_pct": 82.5,
+        "avg_volume_20d": 134985692,
+        "volatility_annual_pct": 53.8,
+        "rsi_14": 47.5,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 18.99,
+        "ma_50": 17.34,
+        "green_months_of_6": 2,
+        "max_drawdown_pct": -50.9,
+        "monthly_returns": [
+          -8.6,
+          -11.6,
+          0.4,
+          -7.9,
+          40.5,
+          -4.9
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "1-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "UNITECH",
+      "name": "Unitech Limited",
+      "price": 5.13,
+      "market_cap_cr": 1342.16,
+      "classification": "penny",
+      "sector": "Real Estate",
+      "industry": "Real Estate - Diversified",
+      "score": 35.5,
+      "score_reasons": [
+        "Strong revenue growth: 91%",
+        "Near 52w low \u2014 possible turnaround"
+      ],
+      "swot": {
+        "strengths": [
+          "Revenue growing at 91% \u2014 above industry average"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery",
+          "Rapid revenue growth could attract re-rating"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": -0.16745007,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": 0.912,
+        "earnings_growth": null,
+        "promoter_holding": 0.16193001,
+        "eps": -8.88,
+        "book_value": -30.636,
+        "dividend_yield": null,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 10.5,
+        "52w_low": 3.1,
+        "avg_volume": 7357683
+      },
+      "analysed_at": "2026-05-24T15:10:15.376116",
+      "metrics": {
+        "return_1d_pct": 9.85,
+        "return_1w_pct": 21.85,
+        "return_1m_pct": 7.8,
+        "return_3m_pct": 0.6,
+        "return_6m_pct": -20.5,
+        "return_1y_pct": -20.8,
+        "return_ytd_pct": -15.2,
+        "volume_surge_pct": -6.2,
+        "avg_volume_20d": 4746524,
+        "volatility_annual_pct": 56.5,
+        "rsi_14": 57.8,
+        "above_20ma": "True",
+        "above_50ma": "True",
+        "ma_20": 4.72,
+        "ma_50": 4.59,
+        "green_months_of_6": 3,
+        "max_drawdown_pct": -68.5,
+        "monthly_returns": [
+          -7.4,
+          -25.0,
+          19.3,
+          -38.3,
+          53.8,
+          5.6
+        ],
+        "trend": "UPTREND"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Small-cap (\u20b91342Cr) \u2014 large enough to be real, small enough to 3-5x. One quarter of strong results can trigger re-rating.",
+          "Revenue growing at 91% \u2014 at this rate, revenue doubles in ~2.3 years. Market typically rewards sustained high-growth with PE expansion.",
+          "Technical momentum confirms fundamentals \u2014 uptrend with -20% return in 6 months. Smart money is already accumulating."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "3-4x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "IDEA",
+      "name": "Vodafone Idea Limited",
+      "price": 13.73,
+      "market_cap_cr": 148754.98,
+      "classification": "penny",
+      "sector": "Communication Services",
+      "industry": "Telecom Services",
+      "score": 27.0,
+      "score_reasons": [
+        "High promoter holding: 75%"
+      ],
+      "swot": {
+        "strengths": [
+          "Strong promoter confidence \u2014 75% holding"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Insufficient data for opportunity analysis"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": 4.2772584,
+        "pb_ratio": -4.156827,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": 0.032,
+        "earnings_growth": null,
+        "promoter_holding": 0.74638003,
+        "eps": 3.21,
+        "book_value": -3.303,
+        "dividend_yield": null,
+        "free_cashflow": -14359000064
+      },
+      "technicals": {
+        "52w_high": 13.99,
+        "52w_low": 6.12,
+        "avg_volume": 518734547
+      },
+      "analysed_at": "2026-05-24T15:10:12.033521",
+      "metrics": {
+        "return_1d_pct": 0.81,
+        "return_1w_pct": 6.77,
+        "return_1m_pct": 44.2,
+        "return_3m_pct": 18.8,
+        "return_6m_pct": 28.4,
+        "return_1y_pct": 103.4,
+        "return_ytd_pct": 18.4,
+        "volume_surge_pct": 21.8,
+        "avg_volume_20d": 561007294,
+        "volatility_annual_pct": 49.8,
+        "rsi_14": 88.7,
+        "above_20ma": "True",
+        "above_50ma": "True",
+        "ma_20": 11.78,
+        "ma_50": 10.24,
+        "green_months_of_6": 4,
+        "max_drawdown_pct": -29.3,
+        "monthly_returns": [
+          8.0,
+          3.8,
+          -5.2,
+          -19.5,
+          19.8,
+          34.3
+        ],
+        "trend": "STRONG UPTREND"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Technical momentum confirms fundamentals \u2014 strong uptrend with 28% return in 6 months. Smart money is already accumulating."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "1-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "RPOWER",
+      "name": "Reliance Power Limited",
+      "price": 27.08,
+      "market_cap_cr": 11199.67,
+      "classification": "penny",
+      "sector": "Utilities",
+      "industry": "Utilities - Independent Power Producers",
+      "score": 25.0,
+      "score_reasons": [
+        "Near 52w low \u2014 possible turnaround"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Insufficient data for opportunity analysis"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 0.6785437,
+        "roe": null,
+        "debt_to_equity": 92.224,
+        "revenue_growth": 0.011,
+        "earnings_growth": -0.381,
+        "promoter_holding": 0.3005,
+        "eps": -0.82,
+        "book_value": 39.909,
+        "dividend_yield": null,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 76.49,
+        "52w_low": 20.17,
+        "avg_volume": 62138879
+      },
+      "analysed_at": "2026-05-24T15:10:13.703054",
+      "metrics": {
+        "return_1d_pct": -0.66,
+        "return_1w_pct": 1.42,
+        "return_1m_pct": -4.6,
+        "return_3m_pct": -1.3,
+        "return_6m_pct": -32.2,
+        "return_1y_pct": -39.3,
+        "return_ytd_pct": -22.0,
+        "volume_surge_pct": -83.2,
+        "avg_volume_20d": 38361811,
+        "volatility_annual_pct": 55.8,
+        "rsi_14": 35.0,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 28.11,
+        "ma_50": 25.92,
+        "green_months_of_6": 1,
+        "max_drawdown_pct": -71.4,
+        "monthly_returns": [
+          -12.8,
+          -18.9,
+          -15.2,
+          -15.1,
+          40.5,
+          -5.3
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Limited quantitative thesis \u2014 monitor for improving fundamentals."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "1-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "GTLINFRA",
+      "name": "GTL Infrastructure Limited",
+      "price": 1.31,
+      "market_cap_cr": 1677.99,
+      "classification": "penny",
+      "sector": "Technology",
+      "industry": "Communication Equipment",
+      "score": 23.5,
+      "score_reasons": [
+        "Near 52w low \u2014 possible turnaround"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery",
+          "Tailwind sector: Technology \u2014 government/policy support likely"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": 2.1833332,
+        "pb_ratio": -0.26453957,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": 0.036,
+        "earnings_growth": null,
+        "promoter_holding": 0.31245002,
+        "eps": 0.6,
+        "book_value": -4.952,
+        "dividend_yield": null,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 2.17,
+        "52w_low": 0.96,
+        "avg_volume": 62412672
+      },
+      "analysed_at": "2026-05-24T15:10:14.493139",
+      "metrics": {
+        "return_1d_pct": 0.77,
+        "return_1w_pct": 1.55,
+        "return_1m_pct": 9.2,
+        "return_3m_pct": 7.4,
+        "return_6m_pct": -5.1,
+        "return_1y_pct": -10.9,
+        "return_ytd_pct": 8.3,
+        "volume_surge_pct": -32.9,
+        "avg_volume_20d": 78359068,
+        "volatility_annual_pct": 52.8,
+        "rsi_14": 55.7,
+        "above_20ma": "True",
+        "above_50ma": "True",
+        "ma_20": 1.3,
+        "ma_50": 1.19,
+        "green_months_of_6": 3,
+        "max_drawdown_pct": -52.7,
+        "monthly_returns": [
+          -13.4,
+          -13.8,
+          10.0,
+          -11.8,
+          25.8,
+          7.4
+        ],
+        "trend": "UPTREND"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Small-cap (\u20b91678Cr) \u2014 large enough to be real, small enough to 3-5x. One quarter of strong results can trigger re-rating.",
+          "Technical momentum confirms fundamentals \u2014 uptrend with -5% return in 6 months. Smart money is already accumulating."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-3x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "JPASSOCIAT",
+      "name": "Jaiprakash Associates Limited",
+      "price": 2.42,
+      "market_cap_cr": 594.01,
+      "classification": "penny",
+      "sector": "Industrials",
+      "industry": "Conglomerates",
+      "score": 15.5,
+      "score_reasons": [
+        "Negative revenue growth: -50%",
+        "Near 52w low \u2014 possible turnaround"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery",
+          "Trading near 52-week low \u2014 potential turnaround candidate",
+          "Tailwind sector: Industrials \u2014 government/policy support likely"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": -0.11494253,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": -0.501,
+        "earnings_growth": null,
+        "promoter_holding": 0.29573,
+        "eps": -5.37,
+        "book_value": -21.054,
+        "dividend_yield": 23.73,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 4.23,
+        "52w_low": 2.28,
+        "avg_volume": 1317681
+      },
+      "analysed_at": "2026-05-24T15:10:18.423786",
+      "metrics": {
+        "return_1d_pct": 0.0,
+        "return_1w_pct": 0.0,
+        "return_1m_pct": 0.0,
+        "return_3m_pct": -25.8,
+        "return_6m_pct": -19.6,
+        "return_1y_pct": -15.1,
+        "return_ytd_pct": -33.0,
+        "volume_surge_pct": -100.0,
+        "avg_volume_20d": 0,
+        "volatility_annual_pct": 42.2,
+        "rsi_14": NaN,
+        "above_20ma": "False",
+        "above_50ma": "False",
+        "ma_20": 2.42,
+        "ma_50": 2.43,
+        "green_months_of_6": 1,
+        "max_drawdown_pct": -45.2,
+        "monthly_returns": [
+          14.6,
+          -18.3,
+          -2.7,
+          -15.7,
+          0.0,
+          0.0
+        ],
+        "trend": "DOWNTREND"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Small-cap (\u20b9594Cr) \u2014 large enough to be real, small enough to 3-5x. One quarter of strong results can trigger re-rating."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-3x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "name": "IDFC First Bank Limited",
+      "price": 68.88,
+      "market_cap_cr": 59294.08,
+      "classification": "penny",
+      "sector": "Financial Services",
+      "industry": "Banks - Regional",
+      "score": 14.5,
+      "score_reasons": [
+        "Negative revenue growth: -1%",
+        "Good momentum position (mid-range)"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Trading near 52-week low \u2014 potential turnaround candidate"
+        ],
+        "threats": [
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": 36.638298,
+        "pb_ratio": 1.2642939,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": -0.011,
+        "earnings_growth": -0.232,
+        "promoter_holding": 0.13962,
+        "eps": 1.88,
+        "book_value": 54.481,
+        "dividend_yield": 0.36,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": 87.0,
+        "52w_low": 58.08,
+        "avg_volume": 32650696
+      },
+      "analysed_at": "2026-05-24T15:10:21.755491",
+      "metrics": {
+        "return_1d_pct": 0.85,
+        "return_1w_pct": 1.91,
+        "return_1m_pct": 2.5,
+        "return_3m_pct": -18.6,
+        "return_6m_pct": -13.5,
+        "return_1y_pct": 3.3,
+        "return_ytd_pct": -19.5,
+        "volume_surge_pct": -30.5,
+        "avg_volume_20d": 21920275,
+        "volatility_annual_pct": 31.5,
+        "rsi_14": 46.5,
+        "above_20ma": "False",
+        "above_50ma": "True",
+        "ma_20": 69.01,
+        "ma_50": 66.23,
+        "green_months_of_6": 2,
+        "max_drawdown_pct": -31.6,
+        "monthly_returns": [
+          6.8,
+          -2.4,
+          -12.1,
+          -19.9,
+          18.3,
+          -1.1
+        ],
+        "trend": "SIDEWAYS"
+      },
+      "multibagger_thesis": {
+        "thesis": [
+          "Limited quantitative thesis \u2014 monitor for improving fundamentals."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "1-2x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "JAIPRAKASH",
+      "name": "JAIPRAKASH",
+      "price": 0,
+      "market_cap_cr": 0.0,
+      "classification": "penny",
+      "sector": "Unknown",
+      "industry": "Unknown",
+      "score": 5,
+      "score_reasons": [
+        "Micro-cap: high risk-reward potential"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery"
+        ],
+        "threats": [
+          "Micro-cap: susceptible to operator manipulation and pump-dump",
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": null,
+        "earnings_growth": null,
+        "promoter_holding": null,
+        "eps": null,
+        "book_value": null,
+        "dividend_yield": null,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": null,
+        "52w_low": null,
+        "avg_volume": null
+      },
+      "analysed_at": "2026-05-24T15:10:17.613936",
+      "metrics": null,
+      "multibagger_thesis": {
+        "thesis": [
+          "Micro-cap (\u20b90Cr) \u2014 even modest institutional buying can move price 2-3x. Under-researched by analysts, creating information asymmetry edge."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-4x in 1-3 years (estimated)"
+      }
+    },
+    {
+      "symbol": "HBLPOWER",
+      "name": "HBLPOWER",
+      "price": 0,
+      "market_cap_cr": 0.0,
+      "classification": "penny",
+      "sector": "Unknown",
+      "industry": "Unknown",
+      "score": 5,
+      "score_reasons": [
+        "Micro-cap: high risk-reward potential"
+      ],
+      "swot": {
+        "strengths": [
+          "Insufficient data for strength analysis"
+        ],
+        "weaknesses": [
+          "Declining or stagnant earnings"
+        ],
+        "opportunities": [
+          "Small-cap with room for institutional discovery"
+        ],
+        "threats": [
+          "Micro-cap: susceptible to operator manipulation and pump-dump",
+          "Market-wide correction risk in overheated small/mid-cap space"
+        ]
+      },
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "roe": null,
+        "debt_to_equity": null,
+        "revenue_growth": null,
+        "earnings_growth": null,
+        "promoter_holding": null,
+        "eps": null,
+        "book_value": null,
+        "dividend_yield": null,
+        "free_cashflow": null
+      },
+      "technicals": {
+        "52w_high": null,
+        "52w_low": null,
+        "avg_volume": null
+      },
+      "analysed_at": "2026-05-24T15:10:28.811198",
+      "metrics": null,
+      "multibagger_thesis": {
+        "thesis": [
+          "Micro-cap (\u20b90Cr) \u2014 even modest institutional buying can move price 2-3x. Under-researched by analysts, creating information asymmetry edge."
+        ],
+        "timeframe": "1-3 years",
+        "target_multiple": "2-4x in 1-3 years (estimated)"
+      }
     }
   ],
   "proactive_breakouts": [
@@ -557,12 +1604,32 @@
       "signal_count": 1
     },
     {
+      "symbol": "IIFL",
+      "name": "IIFL Finance Limited",
+      "price": 462.7,
+      "market_cap_cr": 19675.0,
+      "signals": [
+        "Bullish MA crossover: price just broke above 50-day MA"
+      ],
+      "signal_count": 1
+    },
+    {
       "symbol": "AURIONPRO",
       "name": "Aurionpro Solutions Limited",
       "price": 819.0,
       "market_cap_cr": 4522.0,
       "signals": [
         "RSI recovery from oversold: 22 \u2192 44"
+      ],
+      "signal_count": 1
+    },
+    {
+      "symbol": "CANFINHOME",
+      "name": "Can Fin Homes Limited",
+      "price": 852.65,
+      "market_cap_cr": 11353.0,
+      "signals": [
+        "Bullish MA crossover: price just broke above 50-day MA"
       ],
       "signal_count": 1
     },
@@ -584,7 +1651,7 @@
       "source": "YouTube + Social Media",
       "insights": [
         {
-          "title": "Why Strong Profits Aren't Saving Zaggle's Stock Price",
+          "title": "Zaggle Prepaid Ocean Services Stock Analysis 2026 | Buy, Hold or Sell? | Latest News FY26",
           "channel": "Peaceful Weekend Investing",
           "url": "https://www.youtube.com/watch?v=xg4LboozPX0",
           "views": "98",
@@ -605,7 +1672,36 @@
           "published": "6 months ago"
         }
       ],
-      "sentiment": "Bullish"
+      "sentiment": "Mixed"
+    },
+    {
+      "symbol": "GPIL",
+      "name": "Godawari Power & Ispat Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Godawari Power & Ispat Outlook | Growth, Margins & FY27 Guidance Decoded | Business News | ET Now",
+          "channel": "ET Now",
+          "url": "https://www.youtube.com/watch?v=KBCeSOFOIY4",
+          "views": "2,963",
+          "published": "1 month ago"
+        },
+        {
+          "title": "godawari power. godawari power share latest news. gpil share latest news",
+          "channel": "SSA stock market",
+          "url": "https://www.youtube.com/watch?v=eAQ227GEnEA",
+          "views": "202",
+          "published": "4 days ago"
+        },
+        {
+          "title": "Godawari power Share Latest News | GPIL Share Q4 Results Today | GPIL share Why rising?",
+          "channel": "Technova Hub",
+          "url": "https://www.youtube.com/watch?v=wUZtiShxfaU",
+          "views": "35",
+          "published": "3 days ago"
+        }
+      ],
+      "sentiment": "Neutral"
     },
     {
       "symbol": "MASTEK",
@@ -627,14 +1723,43 @@
           "published": "1 month ago"
         },
         {
-          "title": "Mastek share latest news | mastek share q3 results | mastek share dividend | midcap it sector stocks",
-          "channel": " Trade Flexicap",
-          "url": "https://www.youtube.com/watch?v=kEbUzJcOZHE",
-          "views": "833",
-          "published": "4 months ago"
+          "title": "Stocks To Buy Now | Mastek Ltd | 25th June 2025",
+          "channel": "Mehta Stock & Shares P ltd - Sharekhan Jammu",
+          "url": "https://www.youtube.com/watch?v=nv48MrjgVzI",
+          "views": "3",
+          "published": "10 months ago"
         }
       ],
-      "sentiment": "Neutral"
+      "sentiment": "Bullish"
+    },
+    {
+      "symbol": "SUZLON",
+      "name": "Suzlon Energy Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Suzlon Energy stock Future,kab badega ? Result Date ?Analysis,suzlon energy latest news,target 2026",
+          "channel": "Stock Market Live",
+          "url": "https://www.youtube.com/watch?v=mPna__1SvpE",
+          "views": "1,426",
+          "published": "19 hours ago"
+        },
+        {
+          "title": "Suzlon Energy stock Future,Analysis Prakas GAba,Buy or not?suzlon energy share longterm target 2030",
+          "channel": "Stock Market Live",
+          "url": "https://www.youtube.com/watch?v=e5k9GUCCeSw",
+          "views": "4,071",
+          "published": "3 days ago"
+        },
+        {
+          "title": "Suzlon Energy stock Analysis Prakas GAba,Buy ? Future kya h,suzlon energy share longterm target 2030",
+          "channel": "Stock Market Live",
+          "url": "https://www.youtube.com/watch?v=phMbZkaqGlA",
+          "views": "4,562",
+          "published": "6 days ago"
+        }
+      ],
+      "sentiment": "Bullish"
     },
     {
       "symbol": "CAMPUS",
@@ -645,7 +1770,7 @@
           "title": "14 Hyper Growth Evergreen Stocks to invest & forget in 2026 | India\u2019s hidden compounders",
           "channel": "Grow With Abhii",
           "url": "https://www.youtube.com/watch?v=Bg3DAX6mMGc",
-          "views": "14,569",
+          "views": "14,667",
           "published": "2 days ago"
         },
         {
@@ -664,6 +1789,64 @@
         }
       ],
       "sentiment": "Bullish"
+    },
+    {
+      "symbol": "SAFARI",
+      "name": "Safari Industries (India) Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Safari Industries Detailed Analysis",
+          "channel": "Yadnya Investment Academy",
+          "url": "https://www.youtube.com/watch?v=iubhUHl9RNE",
+          "views": "5,527",
+          "published": "2 years ago"
+        },
+        {
+          "title": "Safari Industries Q4 Results 2026 \ud83d\udd34 Safari Industries Result Today \ud83d\udd34 Safari Share Latest News",
+          "channel": "Share Market with Vini",
+          "url": "https://www.youtube.com/watch?v=_6KkWtyVIik",
+          "views": "339",
+          "published": "5 days ago"
+        },
+        {
+          "title": "Top 10 Semiconductor Stocks in India (2026) \ud83d\udcc8 CRASHED 50% - Best Stocks to Buy Now ?",
+          "channel": "Finance Files by CA",
+          "url": "https://www.youtube.com/watch?v=MnXi1W4uKYY",
+          "views": "1,500",
+          "published": "2 hours ago"
+        }
+      ],
+      "sentiment": "Neutral"
+    },
+    {
+      "symbol": "SPML",
+      "name": "Speciality Medicines Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Speciality Medicines Share Analysis \ud83d\ude80",
+          "channel": "Batra's trader",
+          "url": "https://www.youtube.com/watch?v=Ft2Idgm2sVU",
+          "views": "3",
+          "published": "3 days ago"
+        },
+        {
+          "title": "Speciality Medicines IPO Review",
+          "channel": "CA Pradeep Rajput",
+          "url": "https://www.youtube.com/watch?v=lCXoghExs_s",
+          "views": "783",
+          "published": "2 months ago"
+        },
+        {
+          "title": "14 Hyper Growth Evergreen Stocks to invest & forget in 2026 | India\u2019s hidden compounders",
+          "channel": "Grow With Abhii",
+          "url": "https://www.youtube.com/watch?v=Bg3DAX6mMGc",
+          "views": "14,667",
+          "published": "2 days ago"
+        }
+      ],
+      "sentiment": "Neutral"
     },
     {
       "symbol": "MOLDTKPAC",
@@ -685,10 +1868,10 @@
           "published": "3 days ago"
         },
         {
-          "title": "Mold-Tek Packaging Q4 FY26 Concall: PAT Up 14% as Food & FMCG Segment Leads Growth",
-          "channel": "Invest in Shares",
-          "url": "https://www.youtube.com/watch?v=0QD3x4yMvd4",
-          "views": "102",
+          "title": "Mold-Tek Packaging 2026 |Mold-Tek Packaging  Lates update |Mold-Tek Packaging Q4 result news ",
+          "channel": "Investing Shala ",
+          "url": "https://www.youtube.com/watch?v=mNoGaZnGZtU",
+          "views": "43",
           "published": "12 days ago"
         }
       ],
@@ -704,7 +1887,7 @@
           "channel": "Stock Market Live",
           "url": "https://www.youtube.com/watch?v=HwChRNwkynQ",
           "views": "236",
-          "published": "2 weeks ago"
+          "published": "2 wk ago"
         },
         {
           "title": "IDEAFORGE TECHNOLOGY TARGET ANALYSIS \ud83d\udfe2 IDEAFORGE TECHNOLOGY NEWS | IDEAFORGE ANALYSIS 05-26-14",
@@ -714,11 +1897,40 @@
           "published": "9 days ago"
         },
         {
-          "title": "IdeaForge Company Analysis | \u20b92 Trillion Defence Deal Incoming? | Defence Stocks 2025 Update",
-          "channel": "StockLIV TV",
-          "url": "https://www.youtube.com/watch?v=LdBeb0V_Wl0",
-          "views": "486",
-          "published": "11 months ago"
+          "title": "IdeaForge Tech Share Latest News, IdeaForge Tech Share Analysis, IdeaForge Tech Share Target",
+          "channel": "Market News",
+          "url": "https://www.youtube.com/watch?v=079dmq89cjI",
+          "views": "956",
+          "published": "2 wk ago"
+        }
+      ],
+      "sentiment": "Neutral"
+    },
+    {
+      "symbol": "LXCHEM",
+      "name": "Laxmi Organic Industries Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Laxmi Organics Q4 Results 2026 | Laxmi Organics Results Today | Laxmi Organics Share Latest News ",
+          "channel": "NSE BSE Official",
+          "url": "https://www.youtube.com/watch?v=PFu9RsFgynU",
+          "views": "3,519",
+          "published": "2 days ago"
+        },
+        {
+          "title": "Laxmi organics share price | Laxmi organics share latest news| Laxmi organics share analysis",
+          "channel": "Vikesh K Videos",
+          "url": "https://www.youtube.com/watch?v=T3UBB9DuZrA",
+          "views": "535",
+          "published": "1 month ago"
+        },
+        {
+          "title": "laxmi organics Q4 results 2026 | laxmi organics latest news | laxmi organics share latest news",
+          "channel": "Market Update ",
+          "url": "https://www.youtube.com/watch?v=BVHZAphBKRU",
+          "views": "52",
+          "published": "2 days ago"
         }
       ],
       "sentiment": "Neutral"
@@ -729,11 +1941,11 @@
       "source": "YouTube + Social Media",
       "insights": [
         {
-          "title": "jp power share latest news, jaiprakash power ventures ltd latest news,adani power share news",
+          "title": "JP Power share latest news, Jaiprakash Power Ventures Ltd latest news, Adani Power share news",
           "channel": "Bhagat Business Bazar",
           "url": "https://www.youtube.com/watch?v=C2N0497lQyY",
-          "views": "57",
-          "published": "18 minutes ago"
+          "views": "197",
+          "published": "54 minutes ago"
         },
         {
           "title": "JP POWER share latest news,Adani Buy 24% Stake/jaiprakash power ventures Future analysis,target 2030",
@@ -746,7 +1958,7 @@
           "title": "JP POWER share latest news,Buy ?Adani Takeover\ud83d\ude80jaiprakash power ventures Future analysis,target 2030",
           "channel": "Stock Market Live",
           "url": "https://www.youtube.com/watch?v=M8fOmLbyjhE",
-          "views": "2,622",
+          "views": "2,634",
           "published": "6 days ago"
         }
       ],
@@ -765,18 +1977,18 @@
           "published": "7 days ago"
         },
         {
-          "title": "Unitech Q2 results 2026 | Unitech results today | Unitech Share News | Unitech Share latest news",
-          "channel": "Investofy",
-          "url": "https://www.youtube.com/watch?v=Lox7QHkagUM",
-          "views": "1,538",
-          "published": "6 months ago"
-        },
-        {
           "title": "UNITECH share \ud83d\udd25\u2705 | UNITECH share latest news today | UNITECH share news | UNITECH",
           "channel": "GR8 ChartStudies",
           "url": "https://www.youtube.com/watch?v=rMafKDzrgDs",
-          "views": "286",
+          "views": "293",
           "published": "3 days ago"
+        },
+        {
+          "title": "Unitech share latest news , unitech , unitech share latest news today, unitech stock latets news",
+          "channel": "EQUITY TRADER ",
+          "url": "https://www.youtube.com/watch?v=_CI0okgL1NU",
+          "views": "41",
+          "published": "1 day ago"
         }
       ],
       "sentiment": "Neutral"
@@ -790,25 +2002,54 @@
           "title": "Vodafone idea share latest news,buy ?Future Analysis Anil Singhvi/Vi fund Raise News,VI target 2030",
           "channel": "Stock Market Live",
           "url": "https://www.youtube.com/watch?v=mxSpFSj_CZs",
-          "views": "12,234",
+          "views": "12,261",
           "published": "4 days ago"
         },
         {
-          "title": "Vodafone Idea Share Price | Investor Buying in VI, Earned Bumper Profits, How Much More Will It Y...",
-          "channel": "ET Now Swadesh",
-          "url": "https://www.youtube.com/watch?v=e1u2iQyCeJ8",
-          "views": "6,554",
-          "published": "1 day ago"
+          "title": "Vodafone Idea lena chahiye ya nahi ? why falling,vi share latest news,vi future analysis,Target 2026",
+          "channel": "Stock Market Live",
+          "url": "https://www.youtube.com/watch?v=r1ZJgO7P_is",
+          "views": "2,239",
+          "published": "2 months ago"
         },
         {
           "title": "Vodafone Idea Big News Today | Vi Share Latest News l Last Chance for Buyback! \ud83d\udea8 Wipro Buyback ",
           "channel": "Sarthak Bazar Se",
           "url": "https://www.youtube.com/watch?v=I6ZQgJn6N84",
-          "views": "2,442",
+          "views": "2,494",
           "published": "18 hours ago"
         }
       ],
       "sentiment": "Bullish"
+    },
+    {
+      "symbol": "RPOWER",
+      "name": "Reliance Power Limited",
+      "source": "YouTube + Social Media",
+      "insights": [
+        {
+          "title": "Market Expert Suggests 'Not To Average' Despite Reliance Power Slipping To \u20b932 | Find Out Why",
+          "channel": "NDTV Profit",
+          "url": "https://www.youtube.com/watch?v=sFHz00OeFfs",
+          "views": "10,680",
+          "published": "4 months ago"
+        },
+        {
+          "title": "Reliance Power Share Price : R Power \u0915\u0947 \u0936\u0947\u092f\u0930 \u092e\u0947\u0902 \u0939\u094b \u0930\u0939\u093e Profit! Experts \u0938\u0947 \u091c\u093e\u0928\u093f\u090f \u0915\u094d\u092f\u093e \u0915\u0930\u0947\u0902? | ETNS",
+          "channel": "ET Now Swadesh",
+          "url": "https://www.youtube.com/watch?v=Mnuq6nib-Uo",
+          "views": "11,967",
+          "published": "6 months ago"
+        },
+        {
+          "title": "Reliance Power Q4 Results 2026 | Reliance Power Results Today | Reliance Power Share Latest News ",
+          "channel": "The Engineer's Trade",
+          "url": "https://www.youtube.com/watch?v=t1m747B0oQM",
+          "views": "6,654",
+          "published": "2 days ago"
+        }
+      ],
+      "sentiment": "Neutral"
     },
     {
       "symbol": "GTLINFRA",
@@ -838,76 +2079,18 @@
         }
       ],
       "sentiment": "Neutral"
-    },
-    {
-      "symbol": "JPASSOCIAT",
-      "name": "Jaiprakash Associates Limited",
-      "source": "YouTube + Social Media",
-      "insights": [
-        {
-          "title": "ADANI JAYPRAKASH ASSOCIATES DEAL | OLA ELECTRIC Q4 RESULTS | GOLD-SILVER PRICES - MAY 21, 2026",
-          "channel": "Aism India",
-          "url": "https://www.youtube.com/watch?v=lugrgvW4NkQ",
-          "views": "83,694",
-          "published": "2 days ago"
-        },
-        {
-          "title": "JP Associates has target of Rs 320: Betadpur",
-          "channel": "moneycontrol",
-          "url": "https://www.youtube.com/watch?v=ObfAruMrMpw",
-          "views": "112",
-          "published": "16 years ago"
-        },
-        {
-          "title": "JP Associates has target of Rs 140: Rajesh Jain",
-          "channel": "moneycontrol",
-          "url": "https://www.youtube.com/watch?v=4ChcDDD_T4A",
-          "views": "648",
-          "published": "15 years ago"
-        }
-      ],
-      "sentiment": "Neutral"
-    },
-    {
-      "symbol": "JAIPRAKASH",
-      "name": "JAIPRAKASH",
-      "source": "YouTube + Social Media",
-      "insights": [
-        {
-          "title": "JP POWER share latest news,Buy ?Adani Takeover\ud83d\ude80jaiprakash power ventures Future analysis,target 2030",
-          "channel": "Stock Market Live",
-          "url": "https://www.youtube.com/watch?v=M8fOmLbyjhE",
-          "views": "2,622",
-          "published": "6 days ago"
-        },
-        {
-          "title": "JP POWER share latest news,Adani Buy 24% Stake/jaiprakash power ventures Future analysis,target 2030",
-          "channel": "Stock Market Live",
-          "url": "https://www.youtube.com/watch?v=6y7iI411ie8",
-          "views": "761",
-          "published": "2 days ago"
-        },
-        {
-          "title": "JP POWER Share Future,\u0915\u0939\u093e\u0901 \u0924\u0915 \u091c\u093e\u092f\u0947\u0917\u093e ?Analysis,jp power share latest news,Longterm Target 2030",
-          "channel": "Stock Market Live",
-          "url": "https://www.youtube.com/watch?v=pLkRtjw6Dz8",
-          "views": "25,310",
-          "published": "10 months ago"
-        }
-      ],
-      "sentiment": "Bullish"
     }
   ],
   "critic_report": {
-    "evaluated_at": "2026-05-24T14:38:04.787363",
+    "evaluated_at": "2026-05-24T15:14:32.199322",
     "methodology": "7-Factor Independent Assessment (Precedent, CashFlow, Insider, Valuation, Liquidity, Macro, Survival)",
     "summary": {
-      "total_evaluated": 11,
-      "agree": 3,
-      "partially_agree": 6,
+      "total_evaluated": 19,
+      "agree": 4,
+      "partially_agree": 11,
       "disagree": 1,
-      "avg_critic_score": 32.7,
-      "avg_confidence": 0.42
+      "avg_critic_score": 31.5,
+      "avg_confidence": 0.37
     },
     "verdicts": [
       {
@@ -934,6 +2117,34 @@
           "Negative 1Y return (-51%) and 2Y return (-31%) \u2014 consistent wealth destroyer",
           "CRITICAL: Cash conversion only -0.4x \u2014 profits may be paper gains",
           "Stock down -46% in 6 months despite macro tailwind \u2014 stock-specific issues?"
+        ],
+        "risk_flags": [],
+        "data_quality": "GOOD"
+      },
+      {
+        "symbol": "GPIL",
+        "name": "Godawari Power & Ispat Limited",
+        "tool_score": 62.0,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 58,
+        "verdict": "AGREE",
+        "confidence": 0.68,
+        "challenges": [
+          "TIMING: Stock is within 9% of 52-week high. Why is this a multi-bagger entry point and not a momentum trap?"
+        ],
+        "evidence_for": [
+          "Modest 48% gain \u2014 potential base building phase",
+          "Volume accumulation: recent 20d avg is 2.9x the 60-day-ago level",
+          "Excellent cash conversion: 1.4x \u2014 earns MORE cash than reported profit",
+          "Solid promoter holding (63.4%) \u2014 management is committed",
+          "Forward PE (12) is 49% below trailing (23) \u2014 analysts see strong earnings growth ahead",
+          "High liquidity (\u20b9108Cr daily) \u2014 easy to enter and exit",
+          "Sector tailwind (Basic Materials): China+1 + domestic manufacturing push",
+          "Very low debt (D/E=8) \u2014 no bankruptcy risk",
+          "Profitable (14.6% margin) \u2014 self-sustaining"
+        ],
+        "evidence_against": [
+          "Negative FCF margin: -0.2% \u2014 spending more than earning"
         ],
         "risk_flags": [],
         "data_quality": "GOOD"
@@ -967,6 +2178,35 @@
         "data_quality": "GOOD"
       },
       {
+        "symbol": "SUZLON",
+        "name": "Suzlon Energy Limited",
+        "tool_score": 57.5,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 44,
+        "verdict": "PARTIALLY_AGREE",
+        "confidence": 0.44,
+        "challenges": [
+          "EARNINGS QUALITY: Cash flow doesn't support reported profits. Are we seeing real growth or creative accounting that will unravel?",
+          "ALIGNMENT: Promoters only own 18.7%. If they don't believe enough to hold more, why should retail investors bet their savings?"
+        ],
+        "evidence_for": [
+          "Recovering from dip \u2014 possible turnaround play",
+          "Some institutional interest (22.9%)",
+          "PEG ratio 0.35 \u2014 growth is SIGNIFICANTLY underpriced. Classic multi-bagger signal.",
+          "High liquidity (\u20b9506Cr daily) \u2014 easy to enter and exit",
+          "Sector tailwind (Industrials): Infrastructure capex cycle + PLI schemes",
+          "Very low debt (D/E=5) \u2014 no bankruptcy risk",
+          "Profitable (21.6% margin) \u2014 self-sustaining"
+        ],
+        "evidence_against": [
+          "Very low promoter holding (18.7%) \u2014 RED FLAG: who is steering the ship?"
+        ],
+        "risk_flags": [
+          "CASH BURN: Not generating operating cash flow"
+        ],
+        "data_quality": "LIMITED"
+      },
+      {
         "symbol": "CAMPUS",
         "name": "Campus Activewear Limited",
         "tool_score": 55.5,
@@ -993,6 +2233,52 @@
           "CASH BURN: Not generating operating cash flow"
         ],
         "data_quality": "LIMITED"
+      },
+      {
+        "symbol": "SAFARI",
+        "name": "Safari Industries (India) Limited",
+        "tool_score": 55.5,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 39,
+        "verdict": "PARTIALLY_AGREE",
+        "confidence": 0.39,
+        "challenges": [
+          "VALUATION: At 45x PE, the market expects exceptional growth. What prevents competitors from eroding margins? Where is the MOAT?",
+          "EARNINGS QUALITY: Cash flow doesn't support reported profits. Are we seeing real growth or creative accounting that will unravel?"
+        ],
+        "evidence_for": [
+          "Volume accumulation: recent 20d avg is 1.6x the 60-day-ago level",
+          "Solid promoter holding (54.8%) \u2014 management is committed",
+          "Strong institutional backing (31.4%) \u2014 professional money validates thesis",
+          "Forward PE (29) is 34% below trailing (45) \u2014 analysts see strong earnings growth ahead",
+          "Adequate liquidity (\u20b913Cr daily)",
+          "Sector tailwind (Consumer Cyclical): Rising middle class consumption",
+          "Very low debt (D/E=11) \u2014 no bankruptcy risk"
+        ],
+        "evidence_against": [
+          "Negative 1Y return (-33%) and 2Y return (-26%) \u2014 consistent wealth destroyer",
+          "Stock down -34% in 6 months despite macro tailwind \u2014 stock-specific issues?"
+        ],
+        "risk_flags": [
+          "CASH BURN: Not generating operating cash flow"
+        ],
+        "data_quality": "LIMITED"
+      },
+      {
+        "symbol": "SPML",
+        "name": "Speciality Medicines Limited",
+        "tool_score": 55,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 0,
+        "verdict": "INSUFFICIENT_DATA",
+        "confidence": 0.0,
+        "challenges": [
+          "Cannot independently verify \u2014 no data available"
+        ],
+        "evidence_for": [],
+        "evidence_against": [],
+        "risk_flags": [],
+        "data_quality": "POOR"
       },
       {
         "symbol": "MOLDTKPAC",
@@ -1048,6 +2334,37 @@
           "CASH BURN: Not generating operating cash flow"
         ],
         "data_quality": "GOOD"
+      },
+      {
+        "symbol": "LXCHEM",
+        "name": "Laxmi Organic Industries Limited",
+        "tool_score": 40,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 31,
+        "verdict": "PARTIALLY_AGREE",
+        "confidence": 0.31,
+        "challenges": [
+          "VALUATION: At 53x PE, the market expects exceptional growth. What prevents competitors from eroding margins? Where is the MOAT?",
+          "EARNINGS QUALITY: Cash flow doesn't support reported profits. Are we seeing real growth or creative accounting that will unravel?"
+        ],
+        "evidence_for": [
+          "High promoter holding (69.3%) \u2014 skin in the game, aligned interests",
+          "Forward PE (24) is 56% below trailing (53) \u2014 analysts see strong earnings growth ahead",
+          "Adequate liquidity (\u20b915Cr daily)",
+          "Sector tailwind (Basic Materials): China+1 + domestic manufacturing push",
+          "Market cap \u20b94208Cr \u2014 established enough to survive",
+          "Very low debt (D/E=17) \u2014 no bankruptcy risk"
+        ],
+        "evidence_against": [
+          "Negative 1Y return (-22%) and 2Y return (-41%) \u2014 consistent wealth destroyer",
+          "Near-zero institutional holding (3.4%) \u2014 professionals are avoiding this stock",
+          "PE of 53x \u2014 expensive. Growth must be exceptional to justify.",
+          "Stock down -17% in 6 months despite macro tailwind \u2014 stock-specific issues?"
+        ],
+        "risk_flags": [
+          "CASH BURN: Not generating operating cash flow"
+        ],
+        "data_quality": "LIMITED"
       },
       {
         "symbol": "JPPOWER",
@@ -1130,6 +2447,34 @@
         "data_quality": "GOOD"
       },
       {
+        "symbol": "RPOWER",
+        "name": "Reliance Power Limited",
+        "tool_score": 25.0,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 31,
+        "verdict": "PARTIALLY_AGREE",
+        "confidence": 0.31,
+        "challenges": [
+          "FALLING KNIFE: Down 65% from 52-week high. What evidence shows this is a temporary dip vs structural decline?",
+          "EARNINGS QUALITY: Cash flow doesn't support reported profits. Are we seeing real growth or creative accounting that will unravel?"
+        ],
+        "evidence_for": [
+          "Recovering from dip \u2014 possible turnaround play",
+          "Trading below book value (PB=0.68) \u2014 margin of safety",
+          "High liquidity (\u20b9168Cr daily) \u2014 easy to enter and exit",
+          "Low volatility with good liquidity \u2014 institutional quality",
+          "Sector tailwind (Utilities): Power demand surge from data centers + EV"
+        ],
+        "evidence_against": [
+          "Low promoter holding (30.0%) \u2014 management may not be fully committed",
+          "Stock down -32% in 6 months despite macro tailwind \u2014 stock-specific issues?"
+        ],
+        "risk_flags": [
+          "CASH BURN: Not generating operating cash flow"
+        ],
+        "data_quality": "LIMITED"
+      },
+      {
         "symbol": "GTLINFRA",
         "name": "GTL Infrastructure Limited",
         "tool_score": 23.5,
@@ -1192,8 +2537,55 @@
         "data_quality": "LIMITED"
       },
       {
+        "symbol": "IDFCFIRSTB",
+        "name": "IDFC First Bank Limited",
+        "tool_score": 14.5,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 35,
+        "verdict": "PARTIALLY_AGREE",
+        "confidence": 0.35,
+        "challenges": [
+          "EARNINGS QUALITY: Cash flow doesn't support reported profits. Are we seeing real growth or creative accounting that will unravel?",
+          "ALIGNMENT: Promoters only own 14.0%. If they don't believe enough to hold more, why should retail investors bet their savings?"
+        ],
+        "evidence_for": [
+          "Modest 3% gain \u2014 potential base building phase",
+          "Strong institutional backing (42.4%) \u2014 professional money validates thesis",
+          "Forward PE (11) is 71% below trailing (37) \u2014 analysts see strong earnings growth ahead",
+          "High liquidity (\u20b9225Cr daily) \u2014 easy to enter and exit",
+          "Low volatility with good liquidity \u2014 institutional quality",
+          "Sector tailwind (Financial Services): Credit growth + financial inclusion",
+          "Profitable (32.8% margin) \u2014 self-sustaining"
+        ],
+        "evidence_against": [
+          "Volume declining \u2014 institutional interest may be fading",
+          "Very low promoter holding (14.0%) \u2014 RED FLAG: who is steering the ship?",
+          "Stock down -13% in 6 months despite macro tailwind \u2014 stock-specific issues?"
+        ],
+        "risk_flags": [
+          "CASH BURN: Not generating operating cash flow"
+        ],
+        "data_quality": "LIMITED"
+      },
+      {
         "symbol": "JAIPRAKASH",
         "name": "JAIPRAKASH",
+        "tool_score": 5,
+        "tool_conviction": "UNKNOWN",
+        "critic_score": 0,
+        "verdict": "INSUFFICIENT_DATA",
+        "confidence": 0.0,
+        "challenges": [
+          "Cannot independently verify \u2014 no data available"
+        ],
+        "evidence_for": [],
+        "evidence_against": [],
+        "risk_flags": [],
+        "data_quality": "POOR"
+      },
+      {
+        "symbol": "HBLPOWER",
+        "name": "HBLPOWER",
         "tool_score": 5,
         "tool_conviction": "UNKNOWN",
         "critic_score": 0,
@@ -1229,49 +2621,49 @@
       "title": "Rupee Losing its value",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlyfq3/rupee_losing_its_value/",
-      "score": 1261
+      "score": 1311
     },
     {
       "source": "reddit_isb",
       "title": "Jefferies calling \u201cRetailers a Shutiya\u201d wasn\u2019t in my Sunday bucket list. FUCK BEBI !!",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm3qq0/jefferies_calling_retailers_a_shutiya_wasnt_in_my/",
-      "score": 447
+      "score": 512
     },
     {
       "source": "reddit_isb",
       "title": "Well well",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlsj23/well_well/",
-      "score": 433
+      "score": 445
     },
     {
       "source": "reddit_isb",
       "title": "JUST IN: \ud83c\uddfa\ud83c\uddf8\ud83c\uddee\ud83c\uddf7 President Trump says final details of Iran deal will be announced shortly.",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlrkbf/just_in_president_trump_says_final_details_of/",
-      "score": 177
+      "score": 179
     },
     {
       "source": "reddit_isb",
       "title": "He needs time to evaluate his positons whether he is net long or net short",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlkemj/he_needs_time_to_evaluate_his_positons_whether_he/",
-      "score": 110
+      "score": 111
     },
     {
       "source": "reddit_isb",
       "title": "New Day, New Deals. Good morning folks",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm01yo/new_day_new_deals_good_morning_folks/",
-      "score": 13
+      "score": 12
     },
     {
       "source": "reddit_isb",
       "title": "Suggested my gf a few stocks and her portfolio is up by almost 20% in 40 days",
       "text": "So I work in finance just for some context and I suggested my gf to buy a few stocks - The first four stocks that you see in the second image and she's already up almost 20%, you can make good returns if you invest in companies, industries that are facing tailwinds. ",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlarxp/suggested_my_gf_a_few_stocks_and_her_portfolio_is/",
-      "score": 354
+      "score": 352
     },
     {
       "source": "reddit_isb",
@@ -1285,14 +2677,14 @@
       "title": "BEST INTRADAY, BTST AND SWING STOCK RECOMMENDATION FOR MONDAY MORE DETAILS IN THE LAST IMAGE \ud83c\udfaf\ud83d\udc47\ud83c\udffb",
       "text": "Disclaimer: This content is only for educational and informational purposes. Stocks discussed are based on personal analysis and are not investment advice or buy/sell recommendations. Trading and investing in the stock market involve financial risk. Please do your own research or consult a financial advisor before investing.",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm2v5p/best_intraday_btst_and_swing_stock_recommendation/",
-      "score": 3
+      "score": 2
     },
     {
       "source": "reddit_isb",
       "title": "REITs and InvITs are underrated in India",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlbtcb/reits_and_invits_are_underrated_in_india/",
-      "score": 99
+      "score": 102
     },
     {
       "source": "reddit_isb",
@@ -1306,7 +2698,7 @@
       "title": "Fuelprice hike 3rd time",
       "text": "FUEL PRICES HIKED AGAIN; PETROL UP 87 PAISE/LITRE\n\nDIESEL UP 91 PAISE/LITRE\n\nTHIRD INCREASE IN 10 DAYS\n\nAbki baar $ 100\u20b9 k paar. \n\nAche din toh naa aane wale mitro. ",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tl6416/fuelprice_hike_3rd_time/",
-      "score": 157
+      "score": 156
     },
     {
       "source": "reddit_isb",
@@ -1334,31 +2726,31 @@
       "title": "India was transformed after 2014 \u2014 but trade numbers tell a more uncomfortable story",
       "text": "For years we\u2019ve heard that pre-2014 India was stagnant and post-2014 India was transformed. But if we look at export/import numbers, especially merchandise trade, the story is not that simple.\n\n# 1. India\u2019s merchandise trade: 2005\u20132015 vs 2015\u20132025\n\n|Period|Exports|Imports|Export Growth|Import Growth|\n|:-|:-|:-|:-|:-|\n|2005|$100B|$141B|||\n|2015|$264B|$391B|**+163%**|**+177%**|\n|2025|$437B|$720B|**+65%**|**+84%**|\n\n**Chart: Export growth by decade**\n\n2005\u20132015: \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 +163%  \n",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tl084x/india_was_transformed_after_2014_but_trade/",
-      "score": 163
+      "score": 160
     },
     {
       "source": "reddit_isb",
       "title": "India\u2019s investment appeal dims as firms and funds pivot to the U.S.",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tl2qcq/indias_investment_appeal_dims_as_firms_and_funds/",
-      "score": 105
+      "score": 108
     },
     {
       "source": "reddit_isb",
       "title": "The \u20b920 crore tweet - Inside the social media stock cartel busted by SEBI",
       "text": "SEBI issued a massive ex parte interim order, and it's about a family running a sophisticated pump and dump scheme using Twitter and WhatsApp. The mastermind is a guy named Hemant Gupta, working closely with his two sons, Rohan and Aniket. \n\nThey roped in the whole family, wives, ex-wives, and daughters to execute this massive 82-stock manipulation operation that netted them over \u20b920 Crores in just a couple of years.\n\nRohan ran a Twitter account called`WealthSolitaire`, branding it as Knowledge ",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tl651c/the_20_crore_tweet_inside_the_social_media_stock/",
-      "score": 61
+      "score": 66
     }
   ],
   "full_challenge_report": {
-    "generated_at": "2026-05-24T14:36:04.264638",
+    "generated_at": "2026-05-24T15:10:44.018493",
     "summary": {
-      "timestamp": "2026-05-24T14:36:04.264613",
-      "stocks_challenged": 11,
-      "survivors": 5,
-      "eliminated": 6,
-      "kill_rate": "55%"
+      "timestamp": "2026-05-24T15:10:44.018450",
+      "stocks_challenged": 19,
+      "survivors": 7,
+      "eliminated": 12,
+      "kill_rate": "63%"
     },
     "high_conviction": [],
     "moderate_conviction": [
@@ -1367,7 +2759,7 @@
         "name": "Zaggle Prepaid Ocean Services Limited",
         "price": 215.55,
         "market_cap_cr": 2903.97,
-        "classification": "mid_cap",
+        "classification": "small_cap",
         "sector": "Technology",
         "industry": "Software - Infrastructure",
         "score": 69.5,
@@ -1414,7 +2806,7 @@
           "52w_low": 186.05,
           "avg_volume": 2518078
         },
-        "analysed_at": "2026-05-24T14:35:52.249619",
+        "analysed_at": "2026-05-24T15:10:22.726831",
         "metrics": {
           "return_1d_pct": 0.96,
           "return_1w_pct": -1.5,
@@ -1453,6 +2845,103 @@
           "target_multiple": "3-4x in 1-3 years (estimated)"
         },
         "adjusted_score": 69.5,
+        "penalty": 0,
+        "bear_case": [],
+        "red_flags": [],
+        "challenge_detail": {
+          "valuation_penalty": 0,
+          "debt_penalty": 0,
+          "promoter_penalty": 0,
+          "sector_penalty": 0,
+          "pump_dump_penalty": 0
+        },
+        "survived_challenge": true,
+        "conviction_level": "MODERATE CONVICTION"
+      },
+      {
+        "symbol": "GPIL",
+        "name": "Godawari Power & Ispat Limited",
+        "price": 291.4,
+        "market_cap_cr": 18947.58,
+        "classification": "mid_cap",
+        "sector": "Basic Materials",
+        "industry": "Steel",
+        "score": 62.0,
+        "score_reasons": [
+          "Strong earnings growth: 23%",
+          "High promoter holding: 63%",
+          "Very low debt"
+        ],
+        "swot": {
+          "strengths": [
+            "Strong promoter confidence \u2014 63% holding",
+            "Low leverage \u2014 financial flexibility for growth"
+          ],
+          "weaknesses": [
+            "Insufficient data for weakness analysis"
+          ],
+          "opportunities": [
+            "Insufficient data for opportunity analysis"
+          ],
+          "threats": [
+            "Market-wide correction risk in overheated small/mid-cap space"
+          ]
+        },
+        "fundamentals": {
+          "pe_ratio": 23.145353,
+          "pb_ratio": 3.4175003,
+          "roe": 0.14866,
+          "debt_to_equity": 7.582,
+          "revenue_growth": 0.114,
+          "earnings_growth": 0.231,
+          "promoter_holding": 0.63370997,
+          "eps": 12.59,
+          "book_value": 85.267,
+          "dividend_yield": 0.34,
+          "free_cashflow": -133517504
+        },
+        "technicals": {
+          "52w_high": 320.0,
+          "52w_low": 175.37,
+          "avg_volume": 3697258
+        },
+        "analysed_at": "2026-05-24T15:10:29.638357",
+        "metrics": {
+          "return_1d_pct": -2.13,
+          "return_1w_pct": 2.86,
+          "return_1m_pct": 0.5,
+          "return_3m_pct": 8.0,
+          "return_6m_pct": 14.0,
+          "return_1y_pct": 46.9,
+          "return_ytd_pct": 9.3,
+          "volume_surge_pct": 290.0,
+          "avg_volume_20d": 5449045,
+          "volatility_annual_pct": 37.0,
+          "rsi_14": 40.5,
+          "above_20ma": "False",
+          "above_50ma": "True",
+          "ma_20": 296.15,
+          "ma_50": 284.3,
+          "green_months_of_6": 4,
+          "max_drawdown_pct": -20.0,
+          "monthly_returns": [
+            13.1,
+            -6.6,
+            7.1,
+            1.0,
+            10.2,
+            -1.7
+          ],
+          "trend": "SIDEWAYS"
+        },
+        "multibagger_thesis": {
+          "thesis": [
+            "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden."
+          ],
+          "timeframe": "1-3 years",
+          "target_multiple": "2-2x in 1-3 years (estimated)"
+        },
+        "adjusted_score": 62.0,
         "penalty": 0,
         "bear_case": [],
         "red_flags": [],
@@ -1514,7 +3003,7 @@
           "52w_low": 1334.2,
           "avg_volume": 86435
         },
-        "analysed_at": "2026-05-24T14:35:54.673960",
+        "analysed_at": "2026-05-24T15:10:25.142293",
         "metrics": {
           "return_1d_pct": -0.41,
           "return_1w_pct": 5.36,
@@ -1615,7 +3104,7 @@
           "52w_low": 215.2,
           "avg_volume": 221816
         },
-        "analysed_at": "2026-05-24T14:35:55.491932",
+        "analysed_at": "2026-05-24T15:10:25.964528",
         "metrics": {
           "return_1d_pct": -0.11,
           "return_1w_pct": 2.5,
@@ -1672,7 +3161,7 @@
         "name": "Mold-Tek Packaging Limited",
         "price": 679.35,
         "market_cap_cr": 2257.41,
-        "classification": "mid_cap",
+        "classification": "small_cap",
         "sector": "Consumer Cyclical",
         "industry": "Packaging & Containers",
         "score": 55.0,
@@ -1715,7 +3204,7 @@
           "52w_low": 464.9,
           "avg_volume": 165254
         },
-        "analysed_at": "2026-05-24T14:35:56.350406",
+        "analysed_at": "2026-05-24T15:10:26.808805",
         "metrics": {
           "return_1d_pct": -0.98,
           "return_1w_pct": -1.77,
@@ -1767,6 +3256,109 @@
         },
         "survived_challenge": true,
         "conviction_level": "LOW CONVICTION"
+      },
+      {
+        "symbol": "SPML",
+        "name": "Speciality Medicines Limited",
+        "price": 208.95,
+        "market_cap_cr": 183.58,
+        "classification": "small_cap",
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - Specialty & Generic",
+        "score": 55,
+        "score_reasons": [
+          "High promoter holding: 62%",
+          "Very low debt",
+          "Excellent ROE: 30%",
+          "Good momentum position (mid-range)",
+          "Micro-cap: high risk-reward potential"
+        ],
+        "swot": {
+          "strengths": [
+            "High Return on Equity (30%) indicates efficient capital use",
+            "Strong promoter confidence \u2014 62% holding",
+            "Low leverage \u2014 financial flexibility for growth"
+          ],
+          "weaknesses": [
+            "Low liquidity \u2014 hard to exit large positions",
+            "Declining or stagnant earnings"
+          ],
+          "opportunities": [
+            "Small-cap with room for institutional discovery",
+            "Tailwind sector: Healthcare \u2014 government/policy support likely"
+          ],
+          "threats": [
+            "Micro-cap: susceptible to operator manipulation and pump-dump",
+            "Market-wide correction risk in overheated small/mid-cap space"
+          ]
+        },
+        "fundamentals": {
+          "pe_ratio": 21.321428,
+          "pb_ratio": 3.6870058,
+          "roe": 0.30426002,
+          "debt_to_equity": 13.154,
+          "revenue_growth": null,
+          "earnings_growth": null,
+          "promoter_holding": 0.61548,
+          "eps": 9.8,
+          "book_value": 56.672,
+          "dividend_yield": null,
+          "free_cashflow": -94601376
+        },
+        "technicals": {
+          "52w_high": 381.2,
+          "52w_low": 121.1,
+          "avg_volume": 62285
+        },
+        "analysed_at": "2026-05-24T15:10:20.109336",
+        "metrics": {
+          "return_1d_pct": -4.98,
+          "return_1w_pct": -18.51,
+          "return_1m_pct": -33.4,
+          "return_3m_pct": 65.8,
+          "return_6m_pct": 65.8,
+          "return_1y_pct": 65.8,
+          "return_ytd_pct": 65.8,
+          "volume_surge_pct": -67.5,
+          "avg_volume_20d": 28350,
+          "volatility_annual_pct": 107.2,
+          "rsi_14": 23.1,
+          "above_20ma": "False",
+          "above_50ma": "False",
+          "ma_20": 294.65,
+          "ma_50": 294.65,
+          "green_months_of_6": 0,
+          "max_drawdown_pct": -42.4,
+          "monthly_returns": [
+            -36.8
+          ],
+          "trend": "OVERSOLD"
+        },
+        "multibagger_thesis": {
+          "thesis": [
+            "Micro-cap (\u20b9184Cr) \u2014 even modest institutional buying can move price 2-3x. Under-researched by analysts, creating information asymmetry edge.",
+            "Near-zero debt gives management optionality \u2014 can invest in growth, acquire competitors, or return capital without interest burden.",
+            "ROE of 30% means every \u20b91 retained generates \u20b90.30 in returns. Sustained high ROE + reinvestment = compounding wealth creator.",
+            "Currently oversold (RSI < 30) \u2014 contrarian opportunity. If fundamentals are intact, this is the market handing you a discount on a quality business."
+          ],
+          "timeframe": "1-3 years",
+          "target_multiple": "2-4x in 1-3 years (estimated)"
+        },
+        "adjusted_score": 47,
+        "penalty": -8,
+        "bear_case": [
+          "Wide 52w range (3.1x) for micro-cap \u2014 volatility risk"
+        ],
+        "red_flags": [],
+        "challenge_detail": {
+          "valuation_penalty": 0,
+          "debt_penalty": 0,
+          "promoter_penalty": 0,
+          "sector_penalty": 0,
+          "pump_dump_penalty": -8
+        },
+        "survived_challenge": true,
+        "conviction_level": "LOW CONVICTION"
       }
     ],
     "rejected": [
@@ -1775,7 +3367,7 @@
         "name": "ideaForge Technology Limited",
         "price": 775.95,
         "market_cap_cr": 3366.66,
-        "classification": "mid_cap",
+        "classification": "small_cap",
         "sector": "Technology",
         "industry": "Computer Hardware",
         "score": 45.5,
@@ -1818,7 +3410,7 @@
           "52w_low": 366.0,
           "avg_volume": 2171145
         },
-        "analysed_at": "2026-05-24T14:35:53.718612",
+        "analysed_at": "2026-05-24T15:10:24.287847",
         "metrics": {
           "return_1d_pct": 5.0,
           "return_1w_pct": -5.11,

@@ -228,31 +228,34 @@ def build_candidate_list(config):
 
 # Curated stocks organized by category
 PENNY_STOCKS = [
-    # Price < ₹20 — high risk/reward
+    # Price < ₹100 — high risk/reward penny & micro stocks
     "IDEA", "JPPOWER", "RPOWER", "GTLINFRA", "UNITECH",
-    "JAIPRAKASH", "JPASSOCIAT", "ORIENTBELL", "SPML",
-    "DBCORP", "NRBBEARING", "JKTYRE", "SOUTHBANK",
+    "JAIPRAKASH", "JPASSOCIAT", "SPML", "SUZLON",
     "IDFCFIRSTB", "CENTRALBK", "UCOBANK", "IOB",
     "MAHABANK", "INDIANB", "BANKINDIA", "CANBK",
+    "NHPC", "IRFC", "RVNL", "HFCL", "YESBANK",
+    "INOXGREEN", "HUDCO", "JSWENERGY", "NATIONALUM",
 ]
 
 SMALL_CAP_STOCKS = [
-    # MCap < ₹2000Cr — small but growing
+    # Price ₹100-500, MCap < ₹5000Cr — small but growing
     "ZAGGLE", "NETWEB", "SYRMA", "IDEAFORGE", "MASTEK",
-    "CAMPUS", "MOLDTKPAC", "LXCHEM", "PRIVISCL", "HBLPOWER",
+    "CAMPUS", "MOLDTKPAC", "LXCHEM", "HBLPOWER",
     "GPIL", "TITAGARH", "RAILTEL", "IRCON", "RATNAMANI",
-    "TANLA", "HAPPSTMNDS", "ROUTE", "CLEAN", "AFFLE",
-    "KFINTECH", "CAMS", "MAPMYINDIA", "LATENTVIEW", "SENCO",
+    "TANLA", "HAPPSTMNDS", "ROUTE", "CLEAN", "SENCO",
+    "KFINTECH", "CAMS", "LATENTVIEW", "NRBBEARING",
+    "JKTYRE", "DBCORP", "ORIENTBELL", "SOUTHBANK",
+    "PNCINFRA", "GRAVITA", "ELECON",
 ]
 
 MID_CAP_STOCKS = [
-    # MCap ₹2000-10000Cr — potential multi-baggers
+    # MCap ₹5000-20000Cr — potential multi-baggers
     "KAYNES", "GRSE", "COCHINSHIP", "BDL",
     "FLUOROCHEM", "APLAPOLLO", "ASTRAL", "SAFARI", "DEEPAKNTR",
-    "RVNL", "IRFC", "NHPC", "TATAELXSI", "POLYCAB",
+    "TATAELXSI", "POLYCAB", "PERSISTENT", "COFORGE",
     "CELLO", "TBOTEK", "JSWINFRA", "DOMS",
-    "INOXGREEN", "KIRLPNU", "GRAVITA", "ELECON", "PNCINFRA",
-    "GPPL", "PERSISTENT", "COFORGE",
+    "KIRLPNU", "GPPL", "AFFLE", "MAPMYINDIA",
+    "KAYNES", "TRENT", "MANKIND", "RADICO",
 ]
 
 # Combined list for full run

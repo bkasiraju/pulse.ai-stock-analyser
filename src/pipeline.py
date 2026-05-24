@@ -93,7 +93,7 @@ def run_pipeline(symbols=None):
             "rejected": len(report["rejected"]),
             "proactive_breakouts": len(proactive_picks),
         },
-        "top_picks": challenged[:25],
+        "top_picks": ranked_stocks,
         "proactive_breakouts": proactive_picks[:15],
         "expert_analysis": expert_analysis[:15],
         "critic_report": critic_report,
