@@ -173,7 +173,7 @@ function renderTable(stocks) {
 
         const scoreTd = document.createElement('td');
         scoreTd.textContent = s.score;
-        scoreTd.title = 'Raw score from fundamental + technical + momentum analysis';
+        scoreTd.title = 'Pulse.AI composite score from fundamental + technical + momentum analysis';
         tr.appendChild(scoreTd);
 
         const adjTd = document.createElement('td');
