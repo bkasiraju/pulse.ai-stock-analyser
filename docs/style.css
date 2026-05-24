@@ -231,9 +231,20 @@ main {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.8125rem;
-  table-layout: fixed;
   font-family: var(--font-family);
 }
+
+.stock-table col.col-rank    { width: 3%; }
+.stock-table col.col-symbol  { width: 9%; }
+.stock-table col.col-name    { width: 16%; }
+.stock-table col.col-price   { width: 8%; }
+.stock-table col.col-mcap    { width: 10%; }
+.stock-table col.col-cat     { width: 8%; }
+.stock-table col.col-score   { width: 6%; }
+.stock-table col.col-adj     { width: 7%; }
+.stock-table col.col-conv    { width: 12%; }
+.stock-table col.col-flags   { width: 14%; }
+.stock-table col.col-action  { width: 7%; }
 
 .stock-table th {
   background: var(--primary);
@@ -259,6 +270,8 @@ main {
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.8125rem;
   font-family: var(--font-family);
 }
