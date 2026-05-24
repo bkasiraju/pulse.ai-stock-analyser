@@ -134,16 +134,43 @@ def generate_swot(stock_data):
         strengths.append("Positive free cash flow — self-funding growth")
 
     # Weaknesses
-    if stock_data.get("debt_to_equity") and stock_data["debt_to_equity"] > 100:
-        weaknesses.append(f"High debt/equity ({stock_data['debt_to_equity']:.0f}) — interest burden risk")
-    if stock_data.get("roe") and stock_data["roe"] < 0.08:
-        weaknesses.append("Low ROE — poor capital efficiency")
-    if stock_data.get("pe_ratio") and stock_data["pe_ratio"] > 60:
-        weaknesses.append(f"Expensive valuation (PE: {stock_data['pe_ratio']:.1f})")
-    if stock_data.get("avg_volume") and stock_data["avg_volume"] < 100000:
-        weaknesses.append("Low liquidity — hard to exit large positions")
-    if not stock_data.get("earnings_growth") or stock_data.get("earnings_growth", 0) < 0:
-        weaknesses.append("Declining or stagnant earnings")
+    de = stock_data.get("debt_to_equity")
+    pe = stock_data.get("pe_ratio")
+    roe = stock_data.get("roe")
+    eg = stock_data.get("earnings_growth")
+    rg = stock_data.get("revenue_growth")
+    ph = stock_data.get("promoter_holding")
+    vol = stock_data.get("avg_volume")
+    fcf = stock_data.get("free_cashflow")
+
+    if de and de > 100:
+        weaknesses.append(f"High debt/equity ({de:.0f}) — interest burden risk")
+    elif de and de > 50:
+        weaknesses.append(f"Moderate leverage (D/E: {de:.0f}) — limits financial flexibility")
+    if roe is not None and roe < 0.08:
+        weaknesses.append(f"Low ROE ({roe*100:.1f}%) — poor capital efficiency")
+    elif roe is not None and roe < 0.12:
+        weaknesses.append(f"Below-average ROE ({roe*100:.1f}%) — room for improvement")
+    if pe and pe > 60:
+        weaknesses.append(f"Expensive valuation (PE: {pe:.1f}) — priced for perfection")
+    elif pe and pe > 35:
+        weaknesses.append(f"Rich valuation (PE: {pe:.1f}) — growth must sustain to justify")
+    if vol and vol < 100000:
+        weaknesses.append(f"Low trading volume ({vol:,.0f}/day) — hard to exit large positions")
+    elif vol and vol < 500000:
+        weaknesses.append(f"Moderate liquidity ({vol:,.0f}/day) — large orders may impact price")
+    if eg is not None and eg < 0:
+        weaknesses.append(f"Declining earnings ({eg*100:.1f}%) — growth thesis at risk")
+    elif eg is None or eg == 0:
+        weaknesses.append("No visible earnings growth — unclear profitability trajectory")
+    if rg is not None and rg < 0.05:
+        weaknesses.append(f"Slow revenue growth ({rg*100:.1f}%) — limited top-line momentum")
+    if ph is not None and ph < 0.40:
+        weaknesses.append(f"Promoter holding only {ph*100:.0f}% — low skin in the game")
+    if fcf is not None and fcf < 0:
+        weaknesses.append("Negative free cash flow — burning cash, dependent on external funding")
+    if not pe and not roe:
+        weaknesses.append("Limited financial data available — transparency concern")
 
     # Opportunities
     mc = stock_data.get("market_cap_cr", 0)

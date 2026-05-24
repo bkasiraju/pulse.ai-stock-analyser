@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T19:47:34.757919",
+  "generated_at": "2026-05-24T21:42:10.889232",
   "config": {
     "penny_max_price": 100,
     "small_cap_max_cr": 5000,
@@ -38,7 +38,7 @@
           "Positive free cash flow \u2014 self-funding growth"
         ],
         "weaknesses": [
-          "Insufficient data for weakness analysis"
+          "Below-average ROE (10.4%) \u2014 room for improvement"
         ],
         "opportunities": [
           "Rapid revenue growth could attract re-rating",
@@ -67,7 +67,7 @@
         "52w_low": 186.05,
         "avg_volume": 2518078
       },
-      "analysed_at": "2026-05-24T19:45:45.576354",
+      "analysed_at": "2026-05-24T21:40:21.181472",
       "metrics": {
         "return_1d_pct": 0.96,
         "return_1w_pct": -1.5,
@@ -164,7 +164,9 @@
           "Strong promoter confidence \u2014 68% holding"
         ],
         "weaknesses": [
-          "High debt/equity (113) \u2014 interest burden risk"
+          "High debt/equity (113) \u2014 interest burden risk",
+          "Below-average ROE (9.0%) \u2014 room for improvement",
+          "Negative free cash flow \u2014 burning cash, dependent on external funding"
         ],
         "opportunities": [
           "Trading near 52-week low \u2014 potential turnaround candidate"
@@ -191,7 +193,7 @@
         "52w_low": 71.62,
         "avg_volume": 16866212
       },
-      "analysed_at": "2026-05-24T19:45:42.861424",
+      "analysed_at": "2026-05-24T21:40:18.757539",
       "metrics": {
         "return_1d_pct": -0.81,
         "return_1w_pct": 0.84,
@@ -244,7 +246,7 @@
       "retail_interest": {
         "signal": "UNDER_RADAR",
         "score_boost": 2,
-        "summary": "Interest: 1/100 | Spike: -11% | Peak: 19/100",
+        "summary": "Interest: 1/100 | Spike: -8% | Peak: 19/100",
         "details": [
           "Normal search interest (1/100, avg: 9.5)",
           "Very low retail attention \u2014 this is UNDER THE RADAR. If fundamentals are strong, this is exactly where multi-baggers hide."
@@ -290,7 +292,7 @@
           "Low leverage \u2014 financial flexibility for growth"
         ],
         "weaknesses": [
-          "Insufficient data for weakness analysis"
+          "Promoter holding only 19% \u2014 low skin in the game"
         ],
         "opportunities": [
           "Rapid revenue growth could attract re-rating",
@@ -318,7 +320,7 @@
         "52w_low": 38.19,
         "avg_volume": 94112292
       },
-      "analysed_at": "2026-05-24T19:45:42.043188",
+      "analysed_at": "2026-05-24T21:40:17.953615",
       "metrics": {
         "return_1d_pct": 1.66,
         "return_1w_pct": 0.94,
@@ -372,7 +374,7 @@
       "retail_interest": {
         "signal": "NORMAL",
         "score_boost": 0,
-        "summary": "Interest: 7/100 | Spike: -19% | Peak: 100/100",
+        "summary": "Interest: 7/100 | Spike: -20% | Peak: 100/100",
         "details": [
           "Normal search interest (7/100, avg: 46.9)"
         ]
@@ -417,7 +419,8 @@
         ],
         "weaknesses": [
           "High debt/equity (773) \u2014 interest burden risk",
-          "Declining or stagnant earnings"
+          "No visible earnings growth \u2014 unclear profitability trajectory",
+          "Slow revenue growth (0.5%) \u2014 limited top-line momentum"
         ],
         "opportunities": [
           "Trading near 52-week low \u2014 potential turnaround candidate"
@@ -445,7 +448,7 @@
         "52w_low": 87.0,
         "avg_volume": 17241792
       },
-      "analysed_at": "2026-05-24T19:45:43.577491",
+      "analysed_at": "2026-05-24T21:40:19.576608",
       "metrics": {
         "return_1d_pct": 0.02,
         "return_1w_pct": 0.54,
@@ -510,9 +513,9 @@
       "retail_interest": {
         "signal": "UNDER_RADAR",
         "score_boost": 2,
-        "summary": "Interest: 3/100 | Spike: -41% | Peak: 66/100",
+        "summary": "Interest: 2/100 | Spike: -43% | Peak: 66/100",
         "details": [
-          "Retail interest declining (-41%). Attention moving away \u2014 momentum may slow.",
+          "Retail interest declining (-43%). Attention moving away \u2014 momentum may slow.",
           "Very low retail attention \u2014 this is UNDER THE RADAR. If fundamentals are strong, this is exactly where multi-baggers hide."
         ]
       },
@@ -553,7 +556,8 @@
           "Insufficient data for strength analysis"
         ],
         "weaknesses": [
-          "Declining or stagnant earnings"
+          "No visible earnings growth \u2014 unclear profitability trajectory",
+          "Limited financial data available \u2014 transparency concern"
         ],
         "opportunities": [
           "Small-cap with room for institutional discovery"
@@ -581,7 +585,7 @@
         "52w_low": null,
         "avg_volume": null
       },
-      "analysed_at": "2026-05-24T19:45:46.870489",
+      "analysed_at": "2026-05-24T21:40:22.423652",
       "metrics": null,
       "multibagger_thesis": {
         "thesis": [
@@ -715,10 +719,10 @@
       "source": "YouTube + Social Media",
       "insights": [
         {
-          "title": "Honest Review of Zaggle Prepaid I Complete Stock Breakdown (Beginners to Advanced)",
-          "channel": "Pranay Phulkar",
-          "url": "https://www.youtube.com/watch?v=VMYVUxT-89k",
-          "views": "3,240",
+          "title": "Zaggle Q2: CEO Explains What Led The Big Margin Jump & 5 Year Growth Plan | Zaggle Q2 Review",
+          "channel": "NDTV Profit",
+          "url": "https://www.youtube.com/watch?v=0cwLdSyvcSg",
+          "views": "2,857",
           "published": "6 months ago"
         },
         {
@@ -729,11 +733,11 @@
           "published": "5 days ago"
         },
         {
-          "title": "Before Buying Zaggle, You Need to See This Marriage Chart",
-          "channel": "Peaceful Weekend Investing",
-          "url": "https://www.youtube.com/watch?v=xg4LboozPX0",
-          "views": "98",
-          "published": "8 days ago"
+          "title": "Honest Review of Zaggle Prepaid I Complete Stock Breakdown (Beginners to Advanced)",
+          "channel": "Pranay Phulkar",
+          "url": "https://www.youtube.com/watch?v=VMYVUxT-89k",
+          "views": "3,240",
+          "published": "6 months ago"
         }
       ],
       "sentiment": "Neutral"
@@ -747,15 +751,8 @@
           "title": "NHPC Q4 Results 2026 | NHPC Results Today | NHPC Share News Today | NHPC Dividend 2026",
           "channel": "The Engineer's Trade",
           "url": "https://www.youtube.com/watch?v=SMccabUQeLM",
-          "views": "14,336",
-          "published": "8 days ago"
-        },
-        {
-          "title": "NHPC q3 results 2026 | NHPC results today | NHPC Share News | NHPC Share latest news | NHPC Dividend",
-          "channel": "Investofy",
-          "url": "https://www.youtube.com/watch?v=XZAbxIQhIHM",
-          "views": "1,439",
-          "published": "3 months ago"
+          "views": "14,334",
+          "published": "9 days ago"
         },
         {
           "title": "NHPC Q2 Results 2026 | NHPC Results Today | NHPC Share News Today | NHPC Share News ",
@@ -763,6 +760,13 @@
           "url": "https://www.youtube.com/watch?v=-IUUC0GDCnE",
           "views": "19,115",
           "published": "6 months ago"
+        },
+        {
+          "title": "NHPC q3 results 2026 | NHPC results today | NHPC Share News | NHPC Share latest news | NHPC Dividend",
+          "channel": "Investofy",
+          "url": "https://www.youtube.com/watch?v=XZAbxIQhIHM",
+          "views": "1,439",
+          "published": "3 months ago"
         }
       ],
       "sentiment": "Neutral"
@@ -773,25 +777,25 @@
       "source": "YouTube + Social Media",
       "insights": [
         {
+          "title": "Suzlon Energy stock Future,Buy ? Result Analysis,jp power,suzlon energy latest news,target 2026",
+          "channel": "Stock Market Live",
+          "url": "https://www.youtube.com/watch?v=tflV7nL5PEs",
+          "views": "93",
+          "published": "40 minutes ago"
+        },
+        {
           "title": "Suzlon Energy latest news/Future ? Suzlon nergy Stock analysis,Q4 results date ?,Target tomarrow",
           "channel": "Stock Market Live",
           "url": "https://www.youtube.com/watch?v=7ebVJApNoEY",
-          "views": "132",
-          "published": "1 hour ago"
+          "views": "295",
+          "published": "3 hours ago"
         },
         {
-          "title": "suzlon energy Result. Q4 \u092c\u094d\u0930\u094b\u0915\u0930\u0947\u091c \u0905\u0928\u0941\u092e\u093e\u0928? suzlon energy latest news. suzlon share latest news",
-          "channel": "SSA stock market",
-          "url": "https://www.youtube.com/watch?v=3VrJgcYcJfQ",
-          "views": "133",
-          "published": "46 minutes ago"
-        },
-        {
-          "title": "Suzlon Energy stock Future,kab badega ? Result Date ?Analysis,suzlon energy latest news,target 2026",
+          "title": "IREDA,INOX Wind share latest news/Buy or not ? inox wnd,Suzlon Enegy Future analysis,Target 2026",
           "channel": "Stock Market Live",
-          "url": "https://www.youtube.com/watch?v=mPna__1SvpE",
-          "views": "1,825",
-          "published": "1 day ago"
+          "url": "https://www.youtube.com/watch?v=561sETb77z4",
+          "views": "139",
+          "published": "2 hours ago"
         }
       ],
       "sentiment": "Mixed"
@@ -809,18 +813,18 @@
           "published": "4 months ago"
         },
         {
-          "title": "IRFC Stock Explained in Telugu | PSU Railway Stock | IRFC Future Growth & Risks",
-          "channel": "Invest Cheddam",
-          "url": "https://www.youtube.com/watch?v=btHcDPv0sRg",
-          "views": "898",
-          "published": "5 months ago"
-        },
-        {
           "title": "IRFC Limited is down more than 50% | IRFC Limited Review | IRFC Limited Analysis",
           "channel": "CA Shitij Gupta",
-          "url": "https://www.youtube.com/watch?v=-YTcK66h-pc",
-          "views": "22,112",
-          "published": "5 months ago"
+          "url": "https://www.youtube.com/watch?v=CbCmqTDmCv4",
+          "views": "1,348",
+          "published": "3 days ago"
+        },
+        {
+          "title": "IRFC share news | IRFC share latest news | IRFC share today | IRFC share news today | IRFC news",
+          "channel": "Market Gyan",
+          "url": "https://www.youtube.com/watch?v=eCk5s8ILLE4",
+          "views": "977",
+          "published": "5 hours ago"
         }
       ],
       "sentiment": "Mixed"
@@ -831,6 +835,13 @@
       "source": "YouTube + Social Media",
       "insights": [
         {
+          "title": "Zomato Share Price Target 2024,2025,2026,2030\u0964 Zomato Share Latest News\u0964 Zomato Share News Update",
+          "channel": "Equity News",
+          "url": "https://www.youtube.com/watch?v=o5sGPNpgeDw",
+          "views": "985",
+          "published": "2 years ago"
+        },
+        {
           "title": "Is Eternal Extremely Overvalued? Brokerages Believe Otherwise | Zomato Stock Analysis",
           "channel": "NDTV Profit",
           "url": "https://www.youtube.com/watch?v=zk2DShWKYTo",
@@ -838,25 +849,18 @@
           "published": "6 months ago"
         },
         {
-          "title": "Zomato Share news today,Expert Analysis,Buy or Sell ?,/Eternal share news,Long term target 2030",
-          "channel": "Stock Market Live",
-          "url": "https://www.youtube.com/watch?v=shzPEND01e0",
-          "views": "4,266",
-          "published": "5 months ago"
-        },
-        {
-          "title": "Zomato Share Fundamental Analysis 2025 | eternal Dividend History & Future Price Target Explained\u201d",
-          "channel": "Shif sir finance",
-          "url": "https://www.youtube.com/watch?v=-Q9acqMGkPM",
-          "views": "10",
-          "published": "9 months ago"
+          "title": "Zomato Share Price Target 2025,2026,2030 With Details In Hindi\u0964 Zomato Share Latest News\u0964Equity News",
+          "channel": "Equity News",
+          "url": "https://www.youtube.com/watch?v=q0VpPRyk6JQ",
+          "views": "128",
+          "published": "1 year ago"
         }
       ],
       "sentiment": "Mixed"
     }
   ],
   "critic_report": {
-    "evaluated_at": "2026-05-24T19:47:33.147997",
+    "evaluated_at": "2026-05-24T21:42:09.152209",
     "methodology": "7-Factor Independent Assessment (Precedent, CashFlow, Insider, Valuation, Liquidity, Macro, Survival)",
     "summary": {
       "total_evaluated": 5,
@@ -1021,55 +1025,76 @@
       "title": "Just for laughs",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tmbc5m/just_for_laughs/",
-      "score": 415
+      "score": 1146
     },
     {
       "source": "reddit_isb",
       "title": "Jefferies calling \u201cRetailers a Shutiya\u201d wasn\u2019t in my Sunday bucket list. FUCK BEBI !!",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm3qq0/jefferies_calling_retailers_a_shutiya_wasnt_in_my/",
-      "score": 794
+      "score": 852
     },
     {
       "source": "reddit_isb",
       "title": "Rupee Losing its value",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlyfq3/rupee_losing_its_value/",
-      "score": 1594
+      "score": 1664
+    },
+    {
+      "source": "reddit_isb",
+      "title": "Bro said adios to my profits :(",
+      "text": "",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmdc3v/bro_said_adios_to_my_profits/",
+      "score": 85
     },
     {
       "source": "reddit_isb",
       "title": "Well well",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlsj23/well_well/",
-      "score": 552
+      "score": 569
     },
     {
       "source": "reddit_isb",
       "title": "JUST IN: \ud83c\uddfa\ud83c\uddf8\ud83c\uddee\ud83c\uddf7 President Trump says final details of Iran deal will be announced shortly.",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlrkbf/just_in_president_trump_says_final_details_of/",
-      "score": 201
+      "score": 204
     },
     {
       "source": "reddit_isb",
-      "title": "He needs time to evaluate his positons whether he is net long or net short",
+      "title": "Added this. Riding me momentum related to the turnaround of the company.",
       "text": "",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tlkemj/he_needs_time_to_evaluate_his_positons_whether_he/",
-      "score": 114
-    },
-    {
-      "source": "reddit_isb",
-      "title": "New Day, New Deals. Good morning folks",
-      "text": "",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tm01yo/new_day_new_deals_good_morning_folks/",
-      "score": 13
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmedlq/added_this_riding_me_momentum_related_to_the/",
+      "score": 3
     },
     {
       "source": "reddit_isb",
       "title": "May month is hard or moderate or easy for Options traders",
       "text": "Dear options traders ( both buyers and sellers)\n\nHow is the Ongoing May , 2026 so far for you?\n\nFor me , I am playing in Options buying for Intraday, it is moderate for me and somewhat I am following a new system of rules recently and if it works or not  I will release the entire May month P&amp;L and my doings in market on May 30th. \n\nHow about you fellow traders? Is it hard or moderate or easy so far?\n\n15 trading days passed in May month, I hope many  played all these days and what's your outc",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm7mh3/may_month_is_hard_or_moderate_or_easy_for_options/",
+      "score": 7
+    },
+    {
+      "source": "reddit_isb",
+      "title": "He needs time to evaluate his positons whether he is net long or net short",
+      "text": "",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tlkemj/he_needs_time_to_evaluate_his_positons_whether_he/",
+      "score": 116
+    },
+    {
+      "source": "reddit_isb",
+      "title": "New Day, New Deals. Good morning folks",
+      "text": "",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tm01yo/new_day_new_deals_good_morning_folks/",
+      "score": 14
+    },
+    {
+      "source": "reddit_isb",
+      "title": "Taxes are scam and Government don't need them",
+      "text": "Since childhood, we have been told that the govt needs taxes to provide services to people, build roads, and infrastructure. But, that's a COMPLETE LIE. Most of the projects that you see are financed by issuing bonds, be it NHAI, railways, or defense.  \n  \nThe Government of India (as does every other country) can issue a sovereign guarantee on its repayment because, through the RBI only, it has the power to print as much money as it wants. If you and I tried to print even a 10 Rs. note, we would",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmbpfu/taxes_are_scam_and_government_dont_need_them/",
       "score": 3
     },
     {
@@ -1077,7 +1102,28 @@
       "title": "Suggested my gf a few stocks and her portfolio is up by almost 20% in 40 days",
       "text": "So I work in finance just for some context and I suggested my gf to buy a few stocks - The first four stocks that you see in the second image and she's already up almost 20%, you can make good returns if you invest in companies, industries that are facing tailwinds. ",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlarxp/suggested_my_gf_a_few_stocks_and_her_portfolio_is/",
-      "score": 369
+      "score": 376
+    },
+    {
+      "source": "reddit_isb",
+      "title": "How do I invest in clean energy stocks/mutual funds?",
+      "text": "SBI energy opportunity fund or others barely have any exposure to pure clean energy. Investing in individual stocks like Adani green only exposes to energy generators and not the underlying supply chain.\n\nDSP has a global green energy MF but unsure how to go about it.\n\nI believe green/nuclear/clean energy will rise multi fold over a deacde and want to fund projects and make some cash out of it.\n\nWhat's my best bet? Solar fractionals are out of question due to liquidity crunch.\n\nTicket size: \u20b95L.",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmfzn9/how_do_i_invest_in_clean_energy_stocksmutual_funds/",
+      "score": 1
+    },
+    {
+      "source": "reddit_isb",
+      "title": "Everyone exposing each other now?",
+      "text": "So adigitalblogger made a video about powerofstocks regarding the platform he promotes i.e. sharkexchange. Now powerofstocks has made a video on adigitalblogger and sharkexchange as well. \n\nWonder what will happen next.",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmfsdp/everyone_exposing_each_other_now/",
+      "score": 1
+    },
+    {
+      "source": "reddit_isb",
+      "title": "Weekly Market Recap: Real Tape, Macro Levels, AI, India, And Crypto",
+      "text": "Market recap for last week. Covers the sentiment in us markets , crypto , India market and ai macro trends \n\nMuch appreciate possible feedback   \nThanks ",
+      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmfps4/weekly_market_recap_real_tape_macro_levels_ai/",
+      "score": 1
     },
     {
       "source": "reddit_isb",
@@ -1088,65 +1134,23 @@
     },
     {
       "source": "reddit_isb",
-      "title": "Bro said adios to my profits :(",
-      "text": "",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmdc3v/bro_said_adios_to_my_profits/",
-      "score": 1
-    },
-    {
-      "source": "reddit_isb",
-      "title": "Taxes are scam and Government don't need them",
-      "text": "Since childhood, we have been told that the govt needs taxes to provide services to people, build roads, and infrastructure. But, that's a COMPLETE LIE. Most of the projects that you see are financed by issuing bonds, be it NHAI, railways, or defense.  \n  \nThe Government of India (as does every other country) can issue a sovereign guarantee on its repayment because, through the RBI only, it has the power to print as much money as it wants. If you and I tried to print even a 10 Rs. note, we would",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tmbpfu/taxes_are_scam_and_government_dont_need_them/",
-      "score": 0
-    },
-    {
-      "source": "reddit_isb",
       "title": "REITs and InvITs are underrated in India",
       "text": "",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tlbtcb/reits_and_invits_are_underrated_in_india/",
-      "score": 104
+      "score": 103
     },
     {
       "source": "reddit_isb",
       "title": "BEST INTRADAY, BTST AND SWING STOCK RECOMMENDATION FOR MONDAY MORE DETAILS IN THE LAST IMAGE \ud83c\udfaf\ud83d\udc47\ud83c\udffb",
       "text": "Disclaimer: This content is only for educational and informational purposes. Stocks discussed are based on personal analysis and are not investment advice or buy/sell recommendations. Trading and investing in the stock market involve financial risk. Please do your own research or consult a financial advisor before investing.",
       "url": "https://reddit.com/r/IndianStreetBets/comments/1tm2v5p/best_intraday_btst_and_swing_stock_recommendation/",
-      "score": 3
-    },
-    {
-      "source": "reddit_isb",
-      "title": "Airtel postpaid priority 5G impact on Urban population. What's your thoughts?",
-      "text": "I know it's difficult to predict what's gonna happen with prices and policies. But over time it's proven time and time that the big corporates end up in profits and the public are forced to be at peace with it. My doubt is, will the urban population switch to postpaid as easily as airtel is thinking. For me 5G is almost a necessity as I care about FnO trade entry and exits and the office area is very crowded and I'm seeing the difference in speeds over the last 2 weeks. I'm not questioning the c",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tm2he6/airtel_postpaid_priority_5g_impact_on_urban/",
-      "score": 4
-    },
-    {
-      "source": "reddit_isb",
-      "title": "Fuelprice hike 3rd time",
-      "text": "FUEL PRICES HIKED AGAIN; PETROL UP 87 PAISE/LITRE\n\nDIESEL UP 91 PAISE/LITRE\n\nTHIRD INCREASE IN 10 DAYS\n\nAbki baar $ 100\u20b9 k paar. \n\nAche din toh naa aane wale mitro. ",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tl6416/fuelprice_hike_3rd_time/",
-      "score": 161
-    },
-    {
-      "source": "reddit_isb",
-      "title": "Investment Advice",
-      "text": "My uncle has lump sump money of approximately 20L. In the current market scenario, what would be the best way to invest this and in which asset class? Risk appetite-medium and time horizon- 3-5 years.",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tm5o1z/investment_advice/",
-      "score": 1
-    },
-    {
-      "source": "reddit_isb",
-      "title": "Q4 Results Next Week: ONGC, Asian Paints, Suzlon Energy, Ashok Leyland among key companies to announce earnings - DETAILS",
-      "text": "Suzlon Energy, Asian Paints, and ONGC are among major companies revealing their Q4 earnings next week. The lineup spans diverse sectors like energy, auto, and paints, with key announcements scheduled for May 25, including Rail Vikas Nigam Ltd and Hitachi Energy India.",
-      "url": "https://reddit.com/r/IndianStreetBets/comments/1tm3cwr/q4_results_next_week_ongc_asian_paints_suzlon/",
       "score": 1
     }
   ],
   "full_challenge_report": {
-    "generated_at": "2026-05-24T19:45:57.421089",
+    "generated_at": "2026-05-24T21:40:32.755816",
     "summary": {
-      "timestamp": "2026-05-24T19:45:57.421050",
+      "timestamp": "2026-05-24T21:40:32.755787",
       "stocks_challenged": 5,
       "survivors": 2,
       "eliminated": 3,
@@ -1177,7 +1181,7 @@
             "Positive free cash flow \u2014 self-funding growth"
           ],
           "weaknesses": [
-            "Insufficient data for weakness analysis"
+            "Below-average ROE (10.4%) \u2014 room for improvement"
           ],
           "opportunities": [
             "Rapid revenue growth could attract re-rating",
@@ -1206,7 +1210,7 @@
           "52w_low": 186.05,
           "avg_volume": 2518078
         },
-        "analysed_at": "2026-05-24T19:45:45.576354",
+        "analysed_at": "2026-05-24T21:40:21.181472",
         "metrics": {
           "return_1d_pct": 0.96,
           "return_1w_pct": -1.5,
@@ -1305,7 +1309,9 @@
             "Strong promoter confidence \u2014 68% holding"
           ],
           "weaknesses": [
-            "High debt/equity (113) \u2014 interest burden risk"
+            "High debt/equity (113) \u2014 interest burden risk",
+            "Below-average ROE (9.0%) \u2014 room for improvement",
+            "Negative free cash flow \u2014 burning cash, dependent on external funding"
           ],
           "opportunities": [
             "Trading near 52-week low \u2014 potential turnaround candidate"
@@ -1332,7 +1338,7 @@
           "52w_low": 71.62,
           "avg_volume": 16866212
         },
-        "analysed_at": "2026-05-24T19:45:42.861424",
+        "analysed_at": "2026-05-24T21:40:18.757539",
         "metrics": {
           "return_1d_pct": -0.81,
           "return_1w_pct": 0.84,
@@ -1385,7 +1391,7 @@
         "retail_interest": {
           "signal": "UNDER_RADAR",
           "score_boost": 2,
-          "summary": "Interest: 1/100 | Spike: -11% | Peak: 19/100",
+          "summary": "Interest: 1/100 | Spike: -8% | Peak: 19/100",
           "details": [
             "Normal search interest (1/100, avg: 9.5)",
             "Very low retail attention \u2014 this is UNDER THE RADAR. If fundamentals are strong, this is exactly where multi-baggers hide."
@@ -1433,7 +1439,7 @@
             "Low leverage \u2014 financial flexibility for growth"
           ],
           "weaknesses": [
-            "Insufficient data for weakness analysis"
+            "Promoter holding only 19% \u2014 low skin in the game"
           ],
           "opportunities": [
             "Rapid revenue growth could attract re-rating",
@@ -1461,7 +1467,7 @@
           "52w_low": 38.19,
           "avg_volume": 94112292
         },
-        "analysed_at": "2026-05-24T19:45:42.043188",
+        "analysed_at": "2026-05-24T21:40:17.953615",
         "metrics": {
           "return_1d_pct": 1.66,
           "return_1w_pct": 0.94,
@@ -1515,7 +1521,7 @@
         "retail_interest": {
           "signal": "NORMAL",
           "score_boost": 0,
-          "summary": "Interest: 7/100 | Spike: -19% | Peak: 100/100",
+          "summary": "Interest: 7/100 | Spike: -20% | Peak: 100/100",
           "details": [
             "Normal search interest (7/100, avg: 46.9)"
           ]
@@ -1560,7 +1566,8 @@
           ],
           "weaknesses": [
             "High debt/equity (773) \u2014 interest burden risk",
-            "Declining or stagnant earnings"
+            "No visible earnings growth \u2014 unclear profitability trajectory",
+            "Slow revenue growth (0.5%) \u2014 limited top-line momentum"
           ],
           "opportunities": [
             "Trading near 52-week low \u2014 potential turnaround candidate"
@@ -1588,7 +1595,7 @@
           "52w_low": 87.0,
           "avg_volume": 17241792
         },
-        "analysed_at": "2026-05-24T19:45:43.577491",
+        "analysed_at": "2026-05-24T21:40:19.576608",
         "metrics": {
           "return_1d_pct": 0.02,
           "return_1w_pct": 0.54,
@@ -1653,9 +1660,9 @@
         "retail_interest": {
           "signal": "UNDER_RADAR",
           "score_boost": 2,
-          "summary": "Interest: 3/100 | Spike: -41% | Peak: 66/100",
+          "summary": "Interest: 2/100 | Spike: -43% | Peak: 66/100",
           "details": [
-            "Retail interest declining (-41%). Attention moving away \u2014 momentum may slow.",
+            "Retail interest declining (-43%). Attention moving away \u2014 momentum may slow.",
             "Very low retail attention \u2014 this is UNDER THE RADAR. If fundamentals are strong, this is exactly where multi-baggers hide."
           ]
         },
@@ -1696,7 +1703,8 @@
             "Insufficient data for strength analysis"
           ],
           "weaknesses": [
-            "Declining or stagnant earnings"
+            "No visible earnings growth \u2014 unclear profitability trajectory",
+            "Limited financial data available \u2014 transparency concern"
           ],
           "opportunities": [
             "Small-cap with room for institutional discovery"
@@ -1724,7 +1732,7 @@
           "52w_low": null,
           "avg_volume": null
         },
-        "analysed_at": "2026-05-24T19:45:46.870489",
+        "analysed_at": "2026-05-24T21:40:22.423652",
         "metrics": null,
         "multibagger_thesis": {
           "thesis": [
