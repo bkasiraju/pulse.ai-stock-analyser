@@ -256,23 +256,50 @@ function showDetail(symbol) {
     if (!stock) return;
 
     document.querySelectorAll('.stock-table tbody tr').forEach(tr => tr.classList.remove('row-selected'));
-    const rows = document.querySelectorAll('.stock-table tbody tr');
-    rows.forEach(tr => {
+    document.querySelectorAll('.stock-table tbody tr').forEach(tr => {
         const sym = tr.querySelector('td:nth-child(2) strong');
         if (sym && sym.textContent === symbol) tr.classList.add('row-selected');
     });
 
-    const panel = document.getElementById('detail-panel');
-    panel.style.display = 'block';
+    const overlay = document.getElementById('modal-overlay');
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
     document.getElementById('detail-name').textContent =
-        stock.symbol + ' — ' + stock.name + ' (₹' + (stock.price || 0).toFixed(2) + ' | ' + stock.conviction_level + ')';
+        stock.symbol + ' — ' + stock.name + ' (₹' + (stock.price || 0).toFixed(2) + ' | ' + (stock.conviction_level || 'N/A') + ')';
 
-    // Performance pills (period returns)
     renderPerfRow(stock);
 
-    const grid = document.querySelector('.detail-grid');
-    grid.textContent = '';
+    const tabs = [
+        { id: 'thesis', label: 'Thesis' },
+        { id: 'fundamentals', label: 'Fundamentals' },
+        { id: 'swot', label: 'SWOT' },
+        { id: 'intelligence', label: 'Market Intel' },
+        { id: 'critic', label: 'Critic Agent' },
+        { id: 'risks', label: 'Risks' },
+        { id: 'references', label: 'References' },
+    ];
+
+    const tabsContainer = document.getElementById('modal-tabs');
+    tabsContainer.textContent = '';
+    tabs.forEach((t, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'modal-tab' + (i === 0 ? ' active' : '');
+        btn.textContent = t.label;
+        btn.addEventListener('click', () => switchModalTab(t.id, stock));
+        tabsContainer.appendChild(btn);
+    });
+
+    switchModalTab('thesis', stock);
+}
+
+function switchModalTab(tabId, stock) {
+    document.querySelectorAll('.modal-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === getTabLabel(tabId));
+    });
+
+    const body = document.getElementById('modal-body');
+    body.textContent = '';
 
     const fund = stock.fundamentals || {};
     const m = stock.metrics;
@@ -280,403 +307,421 @@ function showDetail(symbol) {
     const criticVerdict = criticReport ? (criticReport.verdicts || []).find(v => v.symbol === stock.symbol) : null;
     const expertData = (analysisData.expert_analysis || []).find(e => e.symbol === stock.symbol);
 
-    // --- Section 1: Multi-Bagger Thesis ---
-    const thesisSummary = stock.multibagger_thesis && stock.multibagger_thesis.target_multiple ? stock.multibagger_thesis.target_multiple : 'See details';
-    grid.appendChild(createCollapsible('Multi-Bagger Thesis', thesisSummary, el => {
-        const thesis = stock.multibagger_thesis;
-        if (thesis && thesis.thesis && thesis.thesis.length) {
-            thesis.thesis.forEach(point => {
-                const div = document.createElement('div');
-                div.className = 'thesis-point';
-                div.textContent = point;
-                el.appendChild(div);
-            });
-        } else {
-            el.textContent = 'Insufficient data for multi-bagger thesis.';
-        }
-    }));
+    switch (tabId) {
+        case 'thesis':
+            renderThesisTab(body, stock);
+            break;
+        case 'fundamentals':
+            renderFundamentalsTab(body, stock, fund, m);
+            break;
+        case 'swot':
+            renderSwotTab(body, stock);
+            break;
+        case 'intelligence':
+            renderIntelTab(body, stock);
+            break;
+        case 'critic':
+            renderCriticTab(body, stock, criticVerdict);
+            break;
+        case 'risks':
+            renderRisksTab(body, stock);
+            break;
+        case 'references':
+            renderReferencesTab(body, stock, expertData);
+            break;
+    }
+}
 
-    // --- Section 2: Fundamentals & Metrics ---
-    const fundSummary = 'PE: ' + (fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A') +
-        ' | ROE: ' + (fund.roe != null ? (fund.roe * 100).toFixed(0) + '%' : 'N/A') +
-        ' | D/E: ' + (fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A') +
-        (m ? ' | RSI: ' + m.rsi_14 + ' | Trend: ' + m.trend : '');
-    grid.appendChild(createCollapsible('Fundamentals & Metrics', fundSummary, el => {
-        const items = [
-            ['PE Ratio', fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A'],
-            ['PB Ratio', fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A'],
-            ['ROE', fund.roe != null ? (fund.roe * 100).toFixed(1) + '%' : 'N/A'],
-            ['Debt/Equity', fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A'],
-            ['Revenue Growth', fund.revenue_growth != null ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A'],
-            ['Earnings Growth', fund.earnings_growth != null ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A'],
-            ['Promoter Holding', fund.promoter_holding != null ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A'],
-            ['EPS', fund.eps != null ? '₹' + fund.eps.toFixed(2) : 'N/A'],
-            ['Book Value', fund.book_value != null ? '₹' + fund.book_value.toFixed(2) : 'N/A'],
-        ];
-        if (m) {
-            items.push(['RSI (14-day)', m.rsi_14]);
-            items.push(['Volatility (Ann.)', m.volatility_annual_pct + '%']);
-            items.push(['20-Day MA', '₹' + m.ma_20]);
-            items.push(['50-Day MA', '₹' + m.ma_50]);
-            items.push(['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%']);
-            items.push(['Green Months (of 6)', m.green_months_of_6 + '/6']);
-            items.push(['Max Drawdown (6M)', m.max_drawdown_pct + '%']);
-        }
-        const metricsGrid = document.createElement('div');
-        metricsGrid.className = 'metrics-grid';
-        items.forEach(([label, value]) => {
-            const item = document.createElement('div');
-            item.className = 'metric-item';
-            const lbl = document.createElement('span');
-            lbl.className = 'metric-label';
-            lbl.textContent = label;
-            const val = document.createElement('span');
-            val.className = 'metric-value';
-            val.textContent = value;
-            item.appendChild(lbl);
-            item.appendChild(val);
-            metricsGrid.appendChild(item);
+function getTabLabel(id) {
+    const map = { thesis: 'Thesis', fundamentals: 'Fundamentals', swot: 'SWOT', intelligence: 'Market Intel', critic: 'Critic Agent', risks: 'Risks', references: 'References' };
+    return map[id] || id;
+}
+
+function renderThesisTab(el, stock) {
+    const thesis = stock.multibagger_thesis;
+    if (thesis && thesis.target_multiple) {
+        const target = document.createElement('div');
+        target.className = 'modal-highlight';
+        target.textContent = 'Target: ' + thesis.target_multiple;
+        el.appendChild(target);
+    }
+    if (thesis && thesis.thesis && thesis.thesis.length) {
+        thesis.thesis.forEach(point => {
+            const div = document.createElement('div');
+            div.className = 'thesis-point';
+            div.textContent = point;
+            el.appendChild(div);
         });
-        el.appendChild(metricsGrid);
-    }));
+    } else {
+        el.textContent = 'Insufficient data for multi-bagger thesis.';
+        el.style.color = 'var(--text-secondary)';
+    }
+}
 
-    // --- Section 3: SWOT ---
+function getMetricColor(label, rawValue) {
+    if (rawValue == null || rawValue === 'N/A') return 'neutral';
+    const v = typeof rawValue === 'string' ? parseFloat(rawValue) : rawValue;
+    if (isNaN(v)) return 'neutral';
+    switch (label) {
+        case 'PE Ratio': return v < 25 ? 'green' : v < 50 ? 'yellow' : 'red';
+        case 'PB Ratio': return v < 3 ? 'green' : v < 6 ? 'yellow' : 'red';
+        case 'ROE': return v > 15 ? 'green' : v > 8 ? 'yellow' : 'red';
+        case 'Debt/Equity': return v < 50 ? 'green' : v < 100 ? 'yellow' : 'red';
+        case 'Revenue Growth': return v > 15 ? 'green' : v > 5 ? 'yellow' : 'red';
+        case 'Earnings Growth': return v > 15 ? 'green' : v > 0 ? 'yellow' : 'red';
+        case 'Promoter Holding': return v > 50 ? 'green' : v > 35 ? 'yellow' : 'red';
+        case 'RSI (14-day)': return v >= 30 && v <= 70 ? 'green' : (v < 30 ? 'yellow' : 'red');
+        case 'Volume Surge': return v > 50 ? 'green' : v > 0 ? 'yellow' : 'neutral';
+        case 'Green Months (of 6)': return v >= 4 ? 'green' : v >= 2 ? 'yellow' : 'red';
+        case 'Max Drawdown (6M)': return v > -10 ? 'green' : v > -25 ? 'yellow' : 'red';
+        case 'Volatility (Ann.)': return v < 30 ? 'green' : v < 50 ? 'yellow' : 'red';
+        default: return 'neutral';
+    }
+}
+
+function renderFundamentalsTab(el, stock, fund, m) {
+    const items = [
+        ['PE Ratio', fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A', fund.pe_ratio],
+        ['PB Ratio', fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A', fund.pb_ratio],
+        ['ROE', fund.roe != null ? (fund.roe * 100).toFixed(1) + '%' : 'N/A', fund.roe != null ? fund.roe * 100 : null],
+        ['Debt/Equity', fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A', fund.debt_to_equity],
+        ['Revenue Growth', fund.revenue_growth != null ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A', fund.revenue_growth != null ? fund.revenue_growth * 100 : null],
+        ['Earnings Growth', fund.earnings_growth != null ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A', fund.earnings_growth != null ? fund.earnings_growth * 100 : null],
+        ['Promoter Holding', fund.promoter_holding != null ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A', fund.promoter_holding != null ? fund.promoter_holding * 100 : null],
+        ['EPS', fund.eps != null ? '₹' + fund.eps.toFixed(2) : 'N/A', null],
+        ['Book Value', fund.book_value != null ? '₹' + fund.book_value.toFixed(2) : 'N/A', null],
+    ];
+    if (m) {
+        items.push(['RSI (14-day)', m.rsi_14, m.rsi_14]);
+        items.push(['Volatility (Ann.)', m.volatility_annual_pct + '%', m.volatility_annual_pct]);
+        items.push(['20-Day MA', '₹' + m.ma_20, null]);
+        items.push(['50-Day MA', '₹' + m.ma_50, null]);
+        items.push(['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%', m.volume_surge_pct]);
+        items.push(['Green Months (of 6)', m.green_months_of_6 + '/6', m.green_months_of_6]);
+        items.push(['Max Drawdown (6M)', m.max_drawdown_pct + '%', m.max_drawdown_pct]);
+    }
+    const grid = document.createElement('div');
+    grid.className = 'metrics-grid';
+    items.forEach(([label, display, raw]) => {
+        const item = document.createElement('div');
+        const color = getMetricColor(label, raw);
+        item.className = 'metric-item metric-' + color;
+        const lbl = document.createElement('span');
+        lbl.className = 'metric-label';
+        lbl.textContent = label;
+        const val = document.createElement('span');
+        val.className = 'metric-value';
+        val.textContent = display;
+        item.appendChild(lbl);
+        item.appendChild(val);
+        grid.appendChild(item);
+    });
+    el.appendChild(grid);
+}
+
+function renderSwotTab(el, stock) {
     const swot = stock.swot || {};
-    const swotSummary = (swot.strengths ? swot.strengths.length : 0) + 'S / ' +
-        (swot.weaknesses ? swot.weaknesses.length : 0) + 'W / ' +
-        (swot.opportunities ? swot.opportunities.length : 0) + 'O / ' +
-        (swot.threats ? swot.threats.length : 0) + 'T';
-    grid.appendChild(createCollapsible('SWOT Analysis', swotSummary, el => {
-        const swotGrid = document.createElement('div');
-        swotGrid.className = 'swot-grid';
-        ['strengths', 'weaknesses', 'opportunities', 'threats'].forEach(key => {
-            const box = document.createElement('div');
-            box.className = 'swot-box swot-' + key;
-            const h4 = document.createElement('h4');
-            h4.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-            box.appendChild(h4);
-            (swot[key] || []).forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
-                box.appendChild(p);
-            });
-            swotGrid.appendChild(box);
+    const swotGrid = document.createElement('div');
+    swotGrid.className = 'swot-grid';
+    ['strengths', 'weaknesses', 'opportunities', 'threats'].forEach(key => {
+        const box = document.createElement('div');
+        box.className = 'swot-box swot-' + key;
+        const h4 = document.createElement('h4');
+        h4.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        box.appendChild(h4);
+        (swot[key] || []).forEach(item => {
+            const p = document.createElement('p');
+            p.textContent = item;
+            box.appendChild(p);
         });
-        el.appendChild(swotGrid);
-    }));
+        swotGrid.appendChild(box);
+    });
+    el.appendChild(swotGrid);
+}
 
-    // --- Section 4: Market Intelligence (Insider + Bulk Deals + Retail Interest + Breakout) ---
+function renderIntelTab(el, stock) {
     const insider = stock.insider_activity || {};
     const institutional = stock.institutional_activity || {};
     const retail = stock.retail_interest || {};
     const breakoutSignals = stock.breakout_signals || [];
-    const mktSummary = [
-        breakoutSignals.length ? 'Breakout: ' + breakoutSignals.length + ' signal(s)' : '',
-        insider.signal && insider.signal !== 'NO_DATA' ? 'Insider: ' + insider.signal : '',
-        institutional.signal && institutional.signal !== 'NO_DEALS' ? 'Institutional: ' + institutional.signal : '',
-        retail.signal && retail.signal !== 'NO_DATA' ? 'Retail: ' + retail.signal : '',
-    ].filter(Boolean).join(' | ') || 'No market intelligence data';
-    grid.appendChild(createCollapsible('Market Intelligence (NSE + Trends)', mktSummary, el => {
-        // Breakout signals
-        if (breakoutSignals.length) {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.textContent = 'Breakout Signals (Independent Scanner):';
-            el.appendChild(h);
-            breakoutSignals.forEach(s => {
-                const chip = document.createElement('span');
-                chip.className = 'signal-chip';
-                chip.textContent = s;
-                el.appendChild(chip);
-            });
-        }
-        // Insider trades
-        if (insider.signal && insider.signal !== 'NO_DATA') {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.textContent = 'Insider Trading (SEBI PIT Disclosures):';
-            el.appendChild(h);
-            const sig = document.createElement('span');
-            sig.className = 'badge badge-' + (insider.signal === 'STRONG_BUY' || insider.signal === 'BUY' ? 'high' : insider.signal === 'SELL_WARNING' || insider.signal === 'SELL' ? 'rejected' : 'low');
-            sig.textContent = insider.signal;
-            el.appendChild(sig);
+
+    if (breakoutSignals.length) {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Breakout Signals (Independent Scanner)';
+        el.appendChild(h);
+        breakoutSignals.forEach(s => {
+            const chip = document.createElement('span');
+            chip.className = 'signal-chip';
+            chip.textContent = s;
+            el.appendChild(chip);
+        });
+    }
+
+    if (insider.signal && insider.signal !== 'NO_DATA') {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Insider Trading (SEBI PIT Disclosures)';
+        el.appendChild(h);
+        const sig = document.createElement('span');
+        sig.className = 'badge badge-' + (insider.signal === 'STRONG_BUY' || insider.signal === 'BUY' ? 'high' : insider.signal === 'SELL_WARNING' || insider.signal === 'SELL' ? 'rejected' : 'low');
+        sig.textContent = insider.signal;
+        el.appendChild(sig);
+        if (insider.summary) {
             const sum = document.createElement('p');
-            sum.style.fontSize = '0.625rem';
-            sum.style.color = 'var(--text-secondary)';
-            sum.textContent = insider.summary || '';
-            el.appendChild(sum);
-            (insider.details || []).forEach(d => {
-                const p = document.createElement('p');
-                p.style.fontSize = '0.625rem';
-                p.textContent = d;
-                el.appendChild(p);
-            });
-        }
-        // Institutional
-        if (institutional.signal && institutional.signal !== 'NO_DEALS') {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.style.marginTop = '0.5rem';
-            h.textContent = 'Bulk/Block Deals (NSE):';
-            el.appendChild(h);
-            const sig = document.createElement('span');
-            sig.className = 'badge badge-' + (institutional.signal === 'ACCUMULATION' || institutional.signal === 'NET_BUY' ? 'high' : institutional.signal === 'DISTRIBUTION' || institutional.signal === 'NET_SELL' ? 'rejected' : 'low');
-            sig.textContent = institutional.signal;
-            el.appendChild(sig);
-            const sum = document.createElement('p');
-            sum.style.fontSize = '0.625rem';
-            sum.style.color = 'var(--text-secondary)';
-            sum.textContent = institutional.summary || '';
+            sum.className = 'intel-detail';
+            sum.textContent = insider.summary;
             el.appendChild(sum);
         }
-        // Retail interest
-        if (retail.signal && retail.signal !== 'NO_DATA') {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.style.marginTop = '0.5rem';
-            h.textContent = 'Google Trends (Retail Interest):';
-            el.appendChild(h);
-            const sum = document.createElement('p');
-            sum.style.fontSize = '0.625rem';
-            sum.style.color = 'var(--text-secondary)';
-            sum.textContent = retail.summary || '';
-            el.appendChild(sum);
-            (retail.details || []).forEach(d => {
-                const p = document.createElement('p');
-                p.style.fontSize = '0.625rem';
-                p.textContent = d;
-                el.appendChild(p);
-            });
-        }
-        if ((!insider.signal || insider.signal === 'NO_DATA') && (!institutional.signal || institutional.signal === 'NO_DEALS') && (!retail.signal || retail.signal === 'NO_DATA')) {
-            el.textContent = 'No market intelligence data available for this stock.';
-            el.style.color = 'var(--text-secondary)';
-        }
-    }));
-
-    // --- Section 5: Critic Agent ---
-    const criticSummary = criticVerdict
-        ? criticVerdict.verdict.replace('_', ' ') + ' (Score: ' + criticVerdict.critic_score + '/100, Confidence: ' + (criticVerdict.confidence * 100).toFixed(0) + '%)'
-        : 'Not evaluated';
-    grid.appendChild(createCollapsible('Critic Agent — Independent Verdict', criticSummary, el => {
-        if (!criticVerdict) {
-            el.textContent = 'Critic agent has not evaluated this stock yet.';
-            return;
-        }
-        const vClass = criticVerdict.verdict === 'AGREE' ? 'agree' : (criticVerdict.verdict === 'PARTIALLY_AGREE' ? 'partial' : 'disagree');
-        const badge = document.createElement('span');
-        badge.className = 'critic-verdict-badge ' + vClass;
-        badge.textContent = criticVerdict.verdict.replace('_', ' ');
-        el.appendChild(badge);
-
-        if (criticVerdict.risk_flags && criticVerdict.risk_flags.length) {
-            const flags = document.createElement('div');
-            flags.style.marginTop = '0.5rem';
-            criticVerdict.risk_flags.forEach(f => {
-                const chip = document.createElement('span');
-                chip.className = 'critic-risk-flag';
-                chip.textContent = f;
-                flags.appendChild(chip);
-            });
-            el.appendChild(flags);
-        }
-
-        if (criticVerdict.challenges && criticVerdict.challenges.length) {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.style.margin = '0.5rem 0 0.25rem';
-            h.textContent = 'Challenges:';
-            el.appendChild(h);
-            criticVerdict.challenges.forEach(c => {
-                const p = document.createElement('p');
-                p.style.fontSize = '0.6875rem';
-                p.style.color = 'var(--warning)';
-                p.style.marginBottom = '0.25rem';
-                p.textContent = c;
-                el.appendChild(p);
-            });
-        }
-        if (criticVerdict.evidence_for && criticVerdict.evidence_for.length) {
-            criticVerdict.evidence_for.forEach(e => {
-                const p = document.createElement('p');
-                p.style.fontSize = '0.625rem';
-                p.style.color = 'var(--success)';
-                p.textContent = '+ ' + e;
-                el.appendChild(p);
-            });
-        }
-        if (criticVerdict.evidence_against && criticVerdict.evidence_against.length) {
-            criticVerdict.evidence_against.forEach(e => {
-                const p = document.createElement('p');
-                p.style.fontSize = '0.625rem';
-                p.style.color = 'var(--error)';
-                p.textContent = '- ' + e;
-                el.appendChild(p);
-            });
-        }
-    }));
-
-    // --- Section 6: Risks & Bear Case ---
-    const risks = [...(stock.red_flags || []), ...(stock.bear_case || []), ...(swot.threats || [])];
-    const riskSummary = risks.length ? risks.length + ' risk factors identified' : 'Low risk profile';
-    grid.appendChild(createCollapsible('Risks & Bear Case', riskSummary, el => {
-        if (!risks.length) {
-            el.textContent = 'Low risk profile — no major flags.';
-            el.style.color = 'var(--success)';
-            return;
-        }
-        risks.forEach(r => {
+        (insider.details || []).forEach(d => {
             const p = document.createElement('p');
-            p.style.fontSize = '0.6875rem';
-            p.style.color = 'var(--error)';
-            p.style.marginBottom = '0.25rem';
-            p.textContent = '• ' + r;
+            p.className = 'intel-detail';
+            p.textContent = d;
             el.appendChild(p);
         });
-        // Penalties
-        const ch = stock.challenge_detail || {};
-        if (stock.penalty) {
-            const pen = document.createElement('p');
-            pen.style.fontSize = '0.625rem';
-            pen.style.marginTop = '0.5rem';
-            pen.style.color = 'var(--text-secondary)';
-            pen.textContent = 'Penalties — Valuation: ' + (ch.valuation_penalty || 0) + ', Debt: ' + (ch.debt_penalty || 0) + ', Promoter: ' + (ch.promoter_penalty || 0) + ', Sector: ' + (ch.sector_penalty || 0) + ', Total: ' + (stock.penalty || 0);
-            el.appendChild(pen);
+    }
+
+    if (institutional.signal && institutional.signal !== 'NO_DEALS') {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Bulk/Block Deals (NSE)';
+        el.appendChild(h);
+        const sig = document.createElement('span');
+        sig.className = 'badge badge-' + (institutional.signal === 'ACCUMULATION' || institutional.signal === 'NET_BUY' ? 'high' : institutional.signal === 'DISTRIBUTION' || institutional.signal === 'NET_SELL' ? 'rejected' : 'low');
+        sig.textContent = institutional.signal;
+        el.appendChild(sig);
+        if (institutional.summary) {
+            const sum = document.createElement('p');
+            sum.className = 'intel-detail';
+            sum.textContent = institutional.summary;
+            el.appendChild(sum);
         }
-    }));
+    }
 
-    // --- Section 7: References & Expert Views (all links) ---
-    const refCount = (expertData ? expertData.insights.length : 0);
-    const refSummary = refCount ? refCount + ' expert references' + (expertData.sentiment ? ' | Sentiment: ' + expertData.sentiment : '') : 'No references yet';
-    grid.appendChild(createCollapsible('References & Expert Views', refSummary, el => {
-        // Yahoo Finance link
-        const yahooLink = document.createElement('a');
-        yahooLink.href = 'https://finance.yahoo.com/quote/' + stock.symbol + '.NS/';
-        yahooLink.target = '_blank';
-        yahooLink.rel = 'noopener noreferrer';
-        yahooLink.textContent = 'Yahoo Finance — ' + stock.symbol;
-        yahooLink.className = 'ref-link';
-        el.appendChild(yahooLink);
-
-        // Screener.in link
-        const screenerLink = document.createElement('a');
-        screenerLink.href = 'https://www.screener.in/company/' + stock.symbol + '/';
-        screenerLink.target = '_blank';
-        screenerLink.rel = 'noopener noreferrer';
-        screenerLink.textContent = 'Screener.in — ' + stock.symbol;
-        screenerLink.className = 'ref-link';
-        el.appendChild(screenerLink);
-
-        // MoneyControl link
-        const mcLink = document.createElement('a');
-        mcLink.href = 'https://www.moneycontrol.com/india/stockpricequote/' + stock.symbol.toLowerCase();
-        mcLink.target = '_blank';
-        mcLink.rel = 'noopener noreferrer';
-        mcLink.textContent = 'MoneyControl — ' + stock.symbol;
-        mcLink.className = 'ref-link';
-        el.appendChild(mcLink);
-
-        // Expert YouTube videos
-        if (expertData && expertData.insights && expertData.insights.length) {
-            const h = document.createElement('p');
-            h.style.fontWeight = '600';
-            h.style.fontSize = '0.6875rem';
-            h.style.margin = '0.75rem 0 0.25rem';
-            h.textContent = 'Expert Analysis (YouTube & Social):';
-            el.appendChild(h);
-            if (expertData.sentiment) {
-                const badge = document.createElement('span');
-                badge.className = 'expert-sentiment expert-sentiment-' + expertData.sentiment.toLowerCase();
-                badge.textContent = 'Sentiment: ' + expertData.sentiment;
-                el.appendChild(badge);
-            }
-            expertData.insights.forEach(ins => {
-                const row = document.createElement('div');
-                row.style.marginTop = '0.375rem';
-                const a = document.createElement('a');
-                a.href = ins.url;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                a.textContent = ins.title;
-                a.className = 'ref-link';
-                row.appendChild(a);
-                if (ins.channel || ins.views) {
-                    const meta = document.createElement('span');
-                    meta.style.fontSize = '0.5625rem';
-                    meta.style.color = 'var(--text-secondary)';
-                    meta.style.marginLeft = '0.5rem';
-                    meta.textContent = (ins.channel || '') + (ins.views ? ' • ' + ins.views + ' views' : '') + (ins.published ? ' • ' + ins.published : '');
-                    row.appendChild(meta);
-                }
-                el.appendChild(row);
-            });
+    if (retail.signal && retail.signal !== 'NO_DATA') {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Google Trends (Retail Interest)';
+        el.appendChild(h);
+        if (retail.summary) {
+            const sum = document.createElement('p');
+            sum.className = 'intel-detail';
+            sum.textContent = retail.summary;
+            el.appendChild(sum);
         }
-    }));
+        (retail.details || []).forEach(d => {
+            const p = document.createElement('p');
+            p.className = 'intel-detail';
+            p.textContent = d;
+            el.appendChild(p);
+        });
+    }
 
-    panel.scrollIntoView({ behavior: 'smooth' });
+    if (!breakoutSignals.length && (!insider.signal || insider.signal === 'NO_DATA') && (!institutional.signal || institutional.signal === 'NO_DEALS') && (!retail.signal || retail.signal === 'NO_DATA')) {
+        el.textContent = 'No market intelligence data available for this stock.';
+        el.style.color = 'var(--text-secondary)';
+    }
 }
 
-function createCollapsible(title, summary, renderContent) {
-    const section = document.createElement('div');
-    section.className = 'detail-collapsible';
+function renderCriticTab(el, stock, criticVerdict) {
+    if (!criticVerdict) {
+        el.textContent = 'Critic agent has not evaluated this stock yet.';
+        el.style.color = 'var(--text-secondary)';
+        return;
+    }
 
-    const header = document.createElement('div');
-    header.className = 'collapsible-header';
+    const scoreRow = document.createElement('div');
+    scoreRow.className = 'modal-highlight';
+    scoreRow.textContent = 'Critic Score: ' + criticVerdict.critic_score + '/100 | Confidence: ' + (criticVerdict.confidence * 100).toFixed(0) + '%';
+    el.appendChild(scoreRow);
 
-    const titleEl = document.createElement('span');
-    titleEl.className = 'collapsible-title';
-    titleEl.textContent = title;
-    header.appendChild(titleEl);
+    const vClass = criticVerdict.verdict === 'AGREE' ? 'agree' : (criticVerdict.verdict === 'PARTIALLY_AGREE' ? 'partial' : 'disagree');
+    const badge = document.createElement('span');
+    badge.className = 'critic-verdict-badge ' + vClass;
+    badge.textContent = criticVerdict.verdict.replace('_', ' ');
+    badge.style.marginBottom = '0.75rem';
+    badge.style.display = 'inline-block';
+    el.appendChild(badge);
 
-    const summaryEl = document.createElement('span');
-    summaryEl.className = 'collapsible-summary';
-    summaryEl.textContent = summary;
-    header.appendChild(summaryEl);
+    if (criticVerdict.risk_flags && criticVerdict.risk_flags.length) {
+        const flags = document.createElement('div');
+        flags.style.marginBottom = '0.75rem';
+        criticVerdict.risk_flags.forEach(f => {
+            const chip = document.createElement('span');
+            chip.className = 'critic-risk-flag';
+            chip.textContent = f;
+            flags.appendChild(chip);
+        });
+        el.appendChild(flags);
+    }
 
-    const arrow = document.createElement('span');
-    arrow.className = 'collapsible-arrow';
-    arrow.textContent = '+';
-    header.appendChild(arrow);
+    if (criticVerdict.challenges && criticVerdict.challenges.length) {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Challenges';
+        el.appendChild(h);
+        criticVerdict.challenges.forEach(c => {
+            const p = document.createElement('p');
+            p.style.fontSize = '0.75rem';
+            p.style.color = 'var(--warning)';
+            p.style.marginBottom = '0.25rem';
+            p.textContent = c;
+            el.appendChild(p);
+        });
+    }
+    if (criticVerdict.evidence_for && criticVerdict.evidence_for.length) {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Evidence For';
+        el.appendChild(h);
+        criticVerdict.evidence_for.forEach(e => {
+            const p = document.createElement('p');
+            p.style.fontSize = '0.75rem';
+            p.style.color = 'var(--success)';
+            p.textContent = '+ ' + e;
+            el.appendChild(p);
+        });
+    }
+    if (criticVerdict.evidence_against && criticVerdict.evidence_against.length) {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Evidence Against';
+        el.appendChild(h);
+        criticVerdict.evidence_against.forEach(e => {
+            const p = document.createElement('p');
+            p.style.fontSize = '0.75rem';
+            p.style.color = 'var(--error)';
+            p.textContent = '- ' + e;
+            el.appendChild(p);
+        });
+    }
+}
 
-    const content = document.createElement('div');
-    content.className = 'collapsible-content';
-    content.style.display = 'none';
+function renderRisksTab(el, stock) {
+    const swot = stock.swot || {};
+    const risks = [...(stock.red_flags || []), ...(stock.bear_case || []), ...(swot.threats || [])];
 
-    header.addEventListener('click', () => {
-        const isOpen = content.style.display !== 'none';
-        content.style.display = isOpen ? 'none' : 'block';
-        arrow.textContent = isOpen ? '+' : '−';
-        section.classList.toggle('open', !isOpen);
-        if (!isOpen && !content.dataset.rendered) {
-            renderContent(content);
-            content.dataset.rendered = 'true';
-        }
+    if (!risks.length) {
+        el.textContent = 'Low risk profile — no major flags identified.';
+        el.style.color = 'var(--success)';
+        return;
+    }
+
+    risks.forEach(r => {
+        const p = document.createElement('p');
+        p.style.fontSize = '0.75rem';
+        p.style.color = 'var(--error)';
+        p.style.marginBottom = '0.375rem';
+        p.textContent = '• ' + r;
+        el.appendChild(p);
     });
 
-    section.appendChild(header);
-    section.appendChild(content);
-    return section;
+    const ch = stock.challenge_detail || {};
+    if (stock.penalty) {
+        const pen = document.createElement('div');
+        pen.className = 'modal-highlight';
+        pen.style.marginTop = '0.75rem';
+        pen.textContent = 'Penalty Breakdown — Valuation: ' + (ch.valuation_penalty || 0) + ' | Debt: ' + (ch.debt_penalty || 0) + ' | Promoter: ' + (ch.promoter_penalty || 0) + ' | Sector: ' + (ch.sector_penalty || 0) + ' | Pump/Dump: ' + (ch.pump_dump_penalty || 0) + ' | Total: ' + stock.penalty;
+        el.appendChild(pen);
+    }
+}
+
+function renderReferencesTab(el, stock, expertData) {
+    const linksDiv = document.createElement('div');
+    linksDiv.className = 'ref-links-grid';
+
+    const yahooLink = document.createElement('a');
+    yahooLink.href = 'https://finance.yahoo.com/quote/' + stock.symbol + '.NS/';
+    yahooLink.target = '_blank';
+    yahooLink.rel = 'noopener noreferrer';
+    yahooLink.textContent = 'Yahoo Finance';
+    yahooLink.className = 'ref-link-card';
+    linksDiv.appendChild(yahooLink);
+
+    const screenerLink = document.createElement('a');
+    screenerLink.href = 'https://www.screener.in/company/' + stock.symbol + '/';
+    screenerLink.target = '_blank';
+    screenerLink.rel = 'noopener noreferrer';
+    screenerLink.textContent = 'Screener.in';
+    screenerLink.className = 'ref-link-card';
+    linksDiv.appendChild(screenerLink);
+
+    const mcLink = document.createElement('a');
+    mcLink.href = 'https://www.moneycontrol.com/india/stockpricequote/' + stock.symbol.toLowerCase();
+    mcLink.target = '_blank';
+    mcLink.rel = 'noopener noreferrer';
+    mcLink.textContent = 'MoneyControl';
+    mcLink.className = 'ref-link-card';
+    linksDiv.appendChild(mcLink);
+
+    const trendLink = document.createElement('a');
+    trendLink.href = 'https://www.google.com/finance/quote/' + stock.symbol + ':NSE';
+    trendLink.target = '_blank';
+    trendLink.rel = 'noopener noreferrer';
+    trendLink.textContent = 'Google Finance';
+    trendLink.className = 'ref-link-card';
+    linksDiv.appendChild(trendLink);
+
+    const growwLink = document.createElement('a');
+    growwLink.href = 'https://groww.in/stocks/' + stock.symbol.toLowerCase();
+    growwLink.target = '_blank';
+    growwLink.rel = 'noopener noreferrer';
+    growwLink.textContent = 'Groww (Trade)';
+    growwLink.className = 'ref-link-card ref-link-trade';
+    linksDiv.appendChild(growwLink);
+
+    const zerodhaLink = document.createElement('a');
+    zerodhaLink.href = 'https://kite.zerodha.com/chart/web/ciq/NSE/' + stock.symbol;
+    zerodhaLink.target = '_blank';
+    zerodhaLink.rel = 'noopener noreferrer';
+    zerodhaLink.textContent = 'Zerodha (Chart)';
+    zerodhaLink.className = 'ref-link-card ref-link-trade';
+    linksDiv.appendChild(zerodhaLink);
+
+    el.appendChild(linksDiv);
+
+    if (expertData && expertData.insights && expertData.insights.length) {
+        const h = document.createElement('h4');
+        h.className = 'intel-heading';
+        h.textContent = 'Expert Analysis (YouTube & Social)';
+        el.appendChild(h);
+        if (expertData.sentiment) {
+            const badge = document.createElement('span');
+            badge.className = 'expert-sentiment expert-sentiment-' + expertData.sentiment.toLowerCase();
+            badge.textContent = 'Sentiment: ' + expertData.sentiment;
+            el.appendChild(badge);
+        }
+        expertData.insights.forEach(ins => {
+            const row = document.createElement('div');
+            row.style.marginTop = '0.5rem';
+            const a = document.createElement('a');
+            a.href = ins.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = ins.title;
+            a.className = 'ref-link';
+            row.appendChild(a);
+            if (ins.channel || ins.views) {
+                const meta = document.createElement('span');
+                meta.style.fontSize = '0.625rem';
+                meta.style.color = 'var(--text-secondary)';
+                meta.style.marginLeft = '0.5rem';
+                meta.textContent = (ins.channel || '') + (ins.views ? ' • ' + ins.views + ' views' : '') + (ins.published ? ' • ' + ins.published : '');
+                row.appendChild(meta);
+            }
+            el.appendChild(row);
+        });
+    }
 }
 
 function closeDetail() {
-    document.getElementById('detail-panel').style.display = 'none';
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.body.style.overflow = '';
     document.querySelectorAll('.stock-table tbody tr').forEach(tr => tr.classList.remove('row-selected'));
 }
 
 function renderPerfRow(stock) {
-    let perfRow = document.getElementById('detail-perf-row');
-    if (!perfRow) {
-        perfRow = document.createElement('div');
-        perfRow.id = 'detail-perf-row';
-        perfRow.className = 'detail-perf-row';
-        const grid = document.querySelector('.detail-grid');
-        grid.parentNode.insertBefore(perfRow, grid);
-    }
+    const perfRow = document.getElementById('detail-perf-row');
     perfRow.textContent = '';
 
     const m = stock.metrics;
@@ -713,5 +758,9 @@ function renderPerfRow(stock) {
     });
 }
 
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDetail();
+});
 
 loadAnalysis();
