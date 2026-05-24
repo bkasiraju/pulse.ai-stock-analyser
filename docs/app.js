@@ -216,6 +216,16 @@ function renderTable(stocks) {
             verdictBadge.textContent = criticData.verdict === 'PARTIALLY_AGREE' ? 'PARTIAL' : criticData.verdict;
             verdictBadge.title = criticData.verdict === 'AGREE' ? 'Critic fully agrees with tool recommendation' : criticData.verdict === 'PARTIALLY_AGREE' ? 'Critic has reservations but sees some merit' : 'Critic disagrees — independent analysis shows different conclusion';
             verdictTd.appendChild(verdictBadge);
+            if (criticData.verdict !== 'AGREE') {
+                const tip = (criticData.challenges && criticData.challenges[0]) || (criticData.evidence_against && criticData.evidence_against[0]) || '';
+                if (tip) {
+                    const tipEl = document.createElement('div');
+                    tipEl.className = 'critic-tip';
+                    tipEl.textContent = tip.length > 80 ? tip.slice(0, 77) + '...' : tip;
+                    tipEl.title = tip;
+                    verdictTd.appendChild(tipEl);
+                }
+            }
         } else {
             verdictTd.textContent = '—';
             verdictTd.style.color = 'var(--text-secondary)';
