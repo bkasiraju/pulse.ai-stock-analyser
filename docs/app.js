@@ -351,13 +351,13 @@ function renderPerfRow(stock) {
 
     const m = stock.metrics;
     const periods = [
-        { label: '3M Return', value: m ? m.return_3m_pct : null, suffix: '%' },
-        { label: '6M Return', value: m ? m.return_6m_pct : null, suffix: '%' },
-        { label: 'RSI (14)', value: m ? m.rsi_14 : null, suffix: '' },
-        { label: 'Volatility', value: m ? m.volatility_annual_pct : null, suffix: '%' },
-        { label: 'Max Drawdown', value: m ? m.max_drawdown_pct : null, suffix: '%' },
-        { label: 'Green Months', value: m ? m.green_months_of_6 + '/6' : null, suffix: '' },
-        { label: 'Vol Surge', value: m ? m.volume_surge_pct : null, suffix: '%' },
+        { label: '1 Day', value: m ? m.return_1d_pct : null, suffix: '%' },
+        { label: '1 Week', value: m ? m.return_1w_pct : null, suffix: '%' },
+        { label: '1 Month', value: m ? m.return_1m_pct : null, suffix: '%' },
+        { label: '3 Months', value: m ? m.return_3m_pct : null, suffix: '%' },
+        { label: '6 Months', value: m ? m.return_6m_pct : null, suffix: '%' },
+        { label: 'YTD', value: m ? m.return_ytd_pct : null, suffix: '%' },
+        { label: '1 Year', value: m ? m.return_1y_pct : null, suffix: '%' },
         { label: 'Trend', value: m ? m.trend : 'N/A', suffix: '' },
     ];
 
@@ -401,18 +401,16 @@ function renderMetrics(stock) {
     grid.className = 'metrics-grid';
 
     const items = [
-        ['3M Return', (m.return_3m_pct > 0 ? '+' : '') + m.return_3m_pct + '%'],
-        ['6M Return', (m.return_6m_pct > 0 ? '+' : '') + m.return_6m_pct + '%'],
         ['RSI (14-day)', m.rsi_14],
         ['Volatility (Ann.)', m.volatility_annual_pct + '%'],
         ['20-Day MA', '₹' + m.ma_20],
         ['50-Day MA', '₹' + m.ma_50],
         ['Above 20MA', m.above_20ma ? 'Yes' : 'No'],
         ['Above 50MA', m.above_50ma ? 'Yes' : 'No'],
-        ['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%'],
-        ['Avg Vol (20d)', m.avg_volume_20d.toLocaleString('en-IN')],
-        ['Green Months', m.green_months_of_6 + ' of 6'],
-        ['Max Drawdown', m.max_drawdown_pct + '%'],
+        ['Volume Surge (20d vs 50d)', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%'],
+        ['Avg Volume (20d)', (m.avg_volume_20d || 0).toLocaleString('en-IN')],
+        ['Green Months (of 6)', m.green_months_of_6 + ' / 6'],
+        ['Max Drawdown (6M)', m.max_drawdown_pct + '%'],
     ];
 
     items.forEach(([label, value]) => {

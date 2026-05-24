@@ -9,21 +9,21 @@ from datetime import datetime, timedelta
 
 
 def fetch_historical_metrics(symbol):
-    """Fetch 6-month historical data and compute key metrics."""
+    """Fetch 1-year historical data and compute key metrics."""
     try:
         ticker = yf.Ticker(f"{symbol}.NS")
-        hist = ticker.history(period="6mo")
+        hist = ticker.history(period="1y")
 
         if hist.empty:
             ticker = yf.Ticker(f"{symbol}.BO")
-            hist = ticker.history(period="6mo")
+            hist = ticker.history(period="1y")
 
         if hist.empty or len(hist) < 20:
             return None
 
         current_price = hist['Close'].iloc[-1]
-        price_3m_ago = hist['Close'].iloc[len(hist)//2] if len(hist) > 60 else hist['Close'].iloc[0]
-        price_6m_ago = hist['Close'].iloc[0]
+        price_3m_ago = hist['Close'].iloc[-min(63, len(hist))]
+        price_6m_ago = hist['Close'].iloc[-min(126, len(hist))]
 
         return_3m = ((current_price - price_3m_ago) / price_3m_ago) * 100
         return_6m = ((current_price - price_6m_ago) / price_6m_ago) * 100
@@ -60,14 +60,35 @@ def fetch_historical_metrics(symbol):
         # Consecutive green months
         green_months = sum(1 for r in monthly_returns.tail(6) if r > 0)
 
-        # Max drawdown in 6 months
+        # Max drawdown in period
         peak = hist['Close'].expanding(min_periods=1).max()
         drawdown = ((hist['Close'] - peak) / peak) * 100
         max_drawdown = drawdown.min()
 
+        # Period returns: 1D, 1W, 1M, 3M, 6M, YTD, 1Y
+        price_1d_ago = hist['Close'].iloc[-2] if len(hist) >= 2 else current_price
+        price_1w_ago = hist['Close'].iloc[-min(5, len(hist))]
+        price_1m_ago = hist['Close'].iloc[-min(21, len(hist))]
+        price_1y_ago = hist['Close'].iloc[0]
+
+        # YTD: from Jan 1 of current year
+        ytd_start = hist[hist.index >= str(datetime.now().year) + '-01-01']
+        price_ytd = ytd_start['Close'].iloc[0] if not ytd_start.empty else price_1y_ago
+
+        return_1d = ((current_price - price_1d_ago) / price_1d_ago) * 100
+        return_1w = ((current_price - price_1w_ago) / price_1w_ago) * 100
+        return_1m = ((current_price - price_1m_ago) / price_1m_ago) * 100
+        return_1y = ((current_price - price_1y_ago) / price_1y_ago) * 100
+        return_ytd = ((current_price - price_ytd) / price_ytd) * 100
+
         return {
+            "return_1d_pct": round(return_1d, 2),
+            "return_1w_pct": round(return_1w, 2),
+            "return_1m_pct": round(return_1m, 1),
             "return_3m_pct": round(return_3m, 1),
             "return_6m_pct": round(return_6m, 1),
+            "return_1y_pct": round(return_1y, 1),
+            "return_ytd_pct": round(return_ytd, 1),
             "volume_surge_pct": round(volume_surge, 1),
             "avg_volume_20d": int(avg_vol_recent),
             "volatility_annual_pct": round(volatility, 1),
