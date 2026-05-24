@@ -38,6 +38,7 @@ function renderDashboard() {
     populateSectorFilter();
     renderTable(analysisData.top_picks);
     renderProactivePicks();
+    renderCriticReport();
     renderForumSentiment();
     renderExpertAnalysis();
 }
@@ -342,6 +343,69 @@ function showDetail(symbol) {
         riskEl.appendChild(p);
     }
 
+    // Critic Agent verdict for this stock
+    const criticEl = document.getElementById('detail-critic');
+    criticEl.textContent = '';
+    const criticReport = analysisData.critic_report;
+    const criticVerdict = criticReport ? (criticReport.verdicts || []).find(v => v.symbol === stock.symbol) : null;
+    if (criticVerdict) {
+        const verdictClass = criticVerdict.verdict === 'AGREE' ? 'agree' : (criticVerdict.verdict === 'PARTIALLY_AGREE' ? 'partial' : 'disagree');
+        const badge = document.createElement('span');
+        badge.className = 'critic-verdict-badge ' + verdictClass;
+        badge.textContent = criticVerdict.verdict.replace('_', ' ') + ' (Score: ' + criticVerdict.critic_score + '/100)';
+        criticEl.appendChild(badge);
+
+        if (criticVerdict.challenges && criticVerdict.challenges.length) {
+            const title = document.createElement('p');
+            title.style.fontWeight = '600';
+            title.style.fontSize = '0.6875rem';
+            title.style.marginTop = '0.5rem';
+            title.textContent = 'Challenges:';
+            criticEl.appendChild(title);
+            const ul = document.createElement('ul');
+            ul.style.fontSize = '0.6875rem';
+            criticVerdict.challenges.forEach(c => {
+                const li = document.createElement('li');
+                li.textContent = c;
+                li.style.color = 'var(--warning)';
+                li.style.marginBottom = '0.25rem';
+                ul.appendChild(li);
+            });
+            criticEl.appendChild(ul);
+        }
+
+        if (criticVerdict.evidence_for && criticVerdict.evidence_for.length) {
+            const forDiv = document.createElement('div');
+            forDiv.style.marginTop = '0.375rem';
+            forDiv.style.fontSize = '0.625rem';
+            forDiv.style.color = 'var(--success)';
+            criticVerdict.evidence_for.slice(0, 3).forEach(e => {
+                const p = document.createElement('p');
+                p.textContent = '+ ' + e;
+                forDiv.appendChild(p);
+            });
+            criticEl.appendChild(forDiv);
+        }
+        if (criticVerdict.evidence_against && criticVerdict.evidence_against.length) {
+            const againstDiv = document.createElement('div');
+            againstDiv.style.marginTop = '0.25rem';
+            againstDiv.style.fontSize = '0.625rem';
+            againstDiv.style.color = 'var(--error)';
+            criticVerdict.evidence_against.slice(0, 3).forEach(e => {
+                const p = document.createElement('p');
+                p.textContent = '- ' + e;
+                againstDiv.appendChild(p);
+            });
+            criticEl.appendChild(againstDiv);
+        }
+    } else {
+        const p = document.createElement('p');
+        p.textContent = 'Critic agent has not evaluated this stock yet.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        criticEl.appendChild(p);
+    }
+
     // Expert views for this stock
     const expertEl = document.getElementById('detail-expert');
     expertEl.textContent = '';
@@ -591,6 +655,118 @@ function renderForumSentiment() {
         title.style.marginTop = '0.25rem';
         div.appendChild(title);
         container.appendChild(div);
+    });
+}
+
+function renderCriticReport() {
+    const section = document.getElementById('critic-section');
+    const summaryEl = document.getElementById('critic-summary');
+    const verdictsEl = document.getElementById('critic-verdicts');
+    const report = analysisData.critic_report;
+
+    if (!report || !report.verdicts || !report.verdicts.length) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+    summaryEl.textContent = '';
+    verdictsEl.textContent = '';
+
+    // Summary stats
+    const stats = [
+        { label: 'Evaluated', value: report.summary.total_evaluated, cls: '' },
+        { label: 'Agree', value: report.summary.agree, cls: 'agree' },
+        { label: 'Partial', value: report.summary.partially_agree, cls: 'partial' },
+        { label: 'Disagree', value: report.summary.disagree, cls: 'disagree' },
+        { label: 'Avg Critic Score', value: report.summary.avg_critic_score + '/100', cls: '' },
+        { label: 'Confidence', value: (report.summary.avg_confidence * 100).toFixed(0) + '%', cls: '' },
+    ];
+
+    stats.forEach(s => {
+        const stat = document.createElement('div');
+        stat.className = 'critic-stat';
+        const val = document.createElement('div');
+        val.className = 'critic-stat-value' + (s.cls ? ' ' + s.cls : '');
+        val.textContent = s.value;
+        const lbl = document.createElement('div');
+        lbl.className = 'critic-stat-label';
+        lbl.textContent = s.label;
+        stat.appendChild(val);
+        stat.appendChild(lbl);
+        summaryEl.appendChild(stat);
+    });
+
+    // Individual verdicts
+    report.verdicts.forEach(v => {
+        const card = document.createElement('div');
+        const verdictClass = v.verdict === 'AGREE' ? 'agree' : (v.verdict === 'PARTIALLY_AGREE' ? 'partial' : 'disagree');
+        card.className = 'critic-verdict-card verdict-' + verdictClass;
+
+        // Header
+        const header = document.createElement('div');
+        header.className = 'critic-verdict-header';
+
+        const sym = document.createElement('span');
+        sym.className = 'critic-verdict-symbol';
+        sym.textContent = v.symbol + ' — ' + v.name;
+        header.appendChild(sym);
+
+        const scores = document.createElement('div');
+        scores.className = 'critic-verdict-scores';
+        scores.textContent = 'Tool: ' + v.tool_score + ' | Critic: ' + v.critic_score + ' | Confidence: ' + (v.confidence * 100).toFixed(0) + '%';
+        header.appendChild(scores);
+
+        const badge = document.createElement('span');
+        badge.className = 'critic-verdict-badge ' + verdictClass;
+        badge.textContent = v.verdict.replace('_', ' ');
+        header.appendChild(badge);
+
+        card.appendChild(header);
+
+        // Risk flags
+        if (v.risk_flags && v.risk_flags.length) {
+            const flagsRow = document.createElement('div');
+            v.risk_flags.forEach(f => {
+                const flag = document.createElement('span');
+                flag.className = 'critic-risk-flag';
+                flag.textContent = f;
+                flagsRow.appendChild(flag);
+            });
+            card.appendChild(flagsRow);
+        }
+
+        // Challenges (collapsible)
+        if (v.challenges && v.challenges.length) {
+            const challengesDiv = document.createElement('div');
+            challengesDiv.className = 'critic-challenges';
+            v.challenges.slice(0, 3).forEach(c => {
+                const p = document.createElement('div');
+                p.className = 'critic-challenge';
+                p.textContent = c;
+                challengesDiv.appendChild(p);
+            });
+            card.appendChild(challengesDiv);
+        }
+
+        // Evidence summary
+        const evidenceDiv = document.createElement('div');
+        evidenceDiv.className = 'critic-evidence';
+        if (v.evidence_for && v.evidence_for.length) {
+            const forEl = document.createElement('div');
+            forEl.className = 'critic-evidence-for';
+            forEl.textContent = '+ ' + v.evidence_for[0];
+            evidenceDiv.appendChild(forEl);
+        }
+        if (v.evidence_against && v.evidence_against.length) {
+            const againstEl = document.createElement('div');
+            againstEl.className = 'critic-evidence-against';
+            againstEl.textContent = '- ' + v.evidence_against[0];
+            evidenceDiv.appendChild(againstEl);
+        }
+        card.appendChild(evidenceDiv);
+
+        verdictsEl.appendChild(card);
     });
 }
 
