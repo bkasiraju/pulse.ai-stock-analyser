@@ -113,6 +113,39 @@
             <div class="insights-header">
                 <h2>Pulse.AI Insights — Performance Validation</h2>
                 <p class="insights-subtitle" title="Tracks daily performance of recommended stocks to validate whether Pulse.AI's multi-bagger suggestions are actually delivering returns">Are these stocks really multi-baggers? Let the data speak.</p>
+                <details class="insights-guide">
+                    <summary>How to read this</summary>
+                    <div class="insights-guide-content">
+                        <div class="guide-section">
+                            <h4>Metrics (top chips)</h4>
+                            <dl>
+                                <dt>Verdict</dt><dd>Overall trajectory — STRONG MULTIBAGGER (100%+ annualized) | ON TRACK (50%+) | MODERATE GROWTH (20%+) | FLAT (0-20%) | UNDERPERFORMING (negative)</dd>
+                                <dt>Total Return</dt><dd>% gain/loss from the first data point to today. Green = profit, Red = loss</dd>
+                                <dt>Annualized</dt><dd>Total return projected to a full year. A multi-bagger needs 100%+ annualized (2x in 1 year)</dd>
+                                <dt>Drawdown</dt><dd>% drop from the highest peak — shows how much pain you'd endure. Below -25% is a red flag</dd>
+                                <dt>DA Score</dt><dd>Devil's Advocate risk-adjusted score (same as the main table)</dd>
+                                <dt>Conviction</dt><dd>Pulse.AI's conviction level for this stock</dd>
+                            </dl>
+                        </div>
+                        <div class="guide-section">
+                            <h4>Chart (two lines)</h4>
+                            <dl>
+                                <dt>Blue line (left axis)</dt><dd>Daily closing price in ₹ — shows the actual stock price movement</dd>
+                                <dt>Red dashed line (right axis)</dt><dd>Cumulative return % from the start of the period — if this stays above 0%, you're in profit. Below 0% = loss zone</dd>
+                            </dl>
+                        </div>
+                        <div class="guide-section">
+                            <h4>Period filters</h4>
+                            <dl>
+                                <dt>1W / 1M / 3M / 6M / YTD</dt><dd>Changes the time window. Use 1M for short-term momentum, 3M-6M for trend confirmation, YTD for full-year validation</dd>
+                            </dl>
+                        </div>
+                        <div class="guide-section">
+                            <h4>Bottom cards</h4>
+                            <dd>Quick comparison of all tracked stocks. Click any card to view its chart. Green badge = on track, Red = underperforming</dd>
+                        </div>
+                    </div>
+                </details>
             </div>
             <div class="insights-controls">
                 <select id="insights-stock" onchange="renderInsightsChart()" title="Select a recommended stock to view its performance trend">
