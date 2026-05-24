@@ -11,6 +11,7 @@ from .screener import build_candidate_list, fetch_nse_stock_data, SEED_STOCKS, g
 from .analyser import analyse_stocks, classify_stock, score_stock, generate_swot
 from .devils_advocate import DevilsAdvocate
 from .metrics import fetch_historical_metrics, generate_multibagger_thesis, proactive_scan
+from .social_media import fetch_expert_analysis_for_stocks
 
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "config.yaml"
@@ -63,8 +64,12 @@ def run_pipeline(symbols=None):
     print("\nPHASE 5: Proactive breakout scanner (independent signals)...")
     proactive_picks = proactive_scan(config)
 
-    # Phase 6: Assemble final output
-    print("\nPHASE 6: Generating output...")
+    # Phase 6: Expert analysis from YouTube/Social Media
+    print("\nPHASE 6: Fetching expert analysis from YouTube & Social Media...")
+    expert_analysis = fetch_expert_analysis_for_stocks(ranked_stocks)
+
+    # Phase 7: Assemble final output
+    print("\nPHASE 7: Generating output...")
     output = {
         "generated_at": datetime.now().isoformat(),
         "config": {
@@ -83,6 +88,7 @@ def run_pipeline(symbols=None):
         },
         "top_picks": challenged[:25],
         "proactive_breakouts": proactive_picks[:15],
+        "expert_analysis": expert_analysis[:15],
         "forum_sentiment": web_candidates.get("forum_mentions", [])[:20],
         "full_challenge_report": report,
         "disclaimer": (

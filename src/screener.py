@@ -226,22 +226,34 @@ def build_candidate_list(config):
     }
 
 
-# Curated small/mid/penny cap stocks (MCap under ₹10000Cr focus)
-SEED_STOCKS = [
-    # Penny stocks (price < ₹20)
-    "IDEA", "JPPOWER", "RPOWER", "RELINFRA", "JAIPRAKASH",
-    "GTLINFRA", "UNITECH", "SUZLON",
-    # Small cap (MCap < ₹2000Cr)
+# Curated stocks organized by category
+PENNY_STOCKS = [
+    # Price < ₹20 — high risk/reward
+    "IDEA", "JPPOWER", "RPOWER", "GTLINFRA", "UNITECH",
+    "JAIPRAKASH", "JPASSOCIAT", "ORIENTBELL", "SPML",
+    "DBCORP", "NRBBEARING", "JKTYRE", "SOUTHBANK",
+    "IDFCFIRSTB", "CENTRALBK", "UCOBANK", "IOB",
+    "MAHABANK", "INDIANB", "BANKINDIA", "CANBK",
+]
+
+SMALL_CAP_STOCKS = [
+    # MCap < ₹2000Cr — small but growing
     "ZAGGLE", "NETWEB", "SYRMA", "IDEAFORGE", "MASTEK",
     "CAMPUS", "MOLDTKPAC", "LXCHEM", "PRIVISCL", "HBLPOWER",
     "GPIL", "TITAGARH", "RAILTEL", "IRCON", "RATNAMANI",
     "TANLA", "HAPPSTMNDS", "ROUTE", "CLEAN", "AFFLE",
-    # Mid cap (MCap < ₹10000Cr) - potential multi-baggers
-    "KAYNES", "GRSE", "COCHINSHIP", "MAZAGON", "BDL",
+    "KFINTECH", "CAMS", "MAPMYINDIA", "LATENTVIEW", "SENCO",
+]
+
+MID_CAP_STOCKS = [
+    # MCap ₹2000-10000Cr — potential multi-baggers
+    "KAYNES", "GRSE", "COCHINSHIP", "BDL",
     "FLUOROCHEM", "APLAPOLLO", "ASTRAL", "SAFARI", "DEEPAKNTR",
     "RVNL", "IRFC", "NHPC", "TATAELXSI", "POLYCAB",
-    # Recent IPOs / growth stories
-    "SENCO", "CELLO", "TBOTEK", "JSWINFRA", "DOMS",
+    "CELLO", "TBOTEK", "JSWINFRA", "DOMS",
     "INOXGREEN", "KIRLPNU", "GRAVITA", "ELECON", "PNCINFRA",
-    "GPPL", "KFINTECH", "CAMS", "MAPMYINDIA", "LATENTVIEW",
+    "GPPL", "PERSISTENT", "COFORGE",
 ]
+
+# Combined list for full run
+SEED_STOCKS = PENNY_STOCKS + SMALL_CAP_STOCKS + MID_CAP_STOCKS

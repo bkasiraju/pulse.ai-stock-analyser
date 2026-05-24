@@ -39,6 +39,7 @@ function renderDashboard() {
     renderTable(analysisData.top_picks);
     renderProactivePicks();
     renderForumSentiment();
+    renderExpertAnalysis();
 }
 
 function setText(parentId, selector, value) {
@@ -61,16 +62,26 @@ function populateSectorFilter() {
     });
 }
 
+let activeTab = 'all';
+
+function switchTab(tab) {
+    activeTab = tab;
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+    });
+    applyFilters();
+}
+
 function applyFilters() {
     if (!analysisData) return;
     let stocks = analysisData.top_picks;
 
-    const cat = document.getElementById('filter-category').value;
+    if (activeTab !== 'all') stocks = stocks.filter(s => s.classification === activeTab);
+
     const conv = document.getElementById('filter-conviction').value;
     const sector = document.getElementById('filter-sector').value;
     const search = document.getElementById('filter-search').value.toLowerCase();
 
-    if (cat !== 'all') stocks = stocks.filter(s => s.classification === cat);
     if (conv !== 'all') stocks = stocks.filter(s => s.conviction_level === conv);
     if (sector !== 'all') stocks = stocks.filter(s => s.sector === sector);
     if (search) stocks = stocks.filter(s =>
@@ -331,6 +342,49 @@ function showDetail(symbol) {
         riskEl.appendChild(p);
     }
 
+    // Expert views for this stock
+    const expertEl = document.getElementById('detail-expert');
+    expertEl.textContent = '';
+    const expertData = (analysisData.expert_analysis || []).find(e => e.symbol === stock.symbol);
+    if (expertData && expertData.insights && expertData.insights.length) {
+        if (expertData.sentiment) {
+            const badge = document.createElement('span');
+            badge.className = 'expert-sentiment expert-sentiment-' + expertData.sentiment.toLowerCase();
+            badge.textContent = 'Sentiment: ' + expertData.sentiment;
+            expertEl.appendChild(badge);
+        }
+        const ul = document.createElement('ul');
+        ul.style.marginTop = '0.5rem';
+        expertData.insights.forEach(ins => {
+            const li = document.createElement('li');
+            li.style.marginBottom = '0.25rem';
+            const a = document.createElement('a');
+            a.href = ins.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = ins.title;
+            a.style.color = 'var(--primary)';
+            a.style.fontSize = '0.75rem';
+            li.appendChild(a);
+            if (ins.channel) {
+                const meta = document.createElement('span');
+                meta.style.fontSize = '0.625rem';
+                meta.style.color = 'var(--text-secondary)';
+                meta.style.marginLeft = '0.5rem';
+                meta.textContent = ins.channel + (ins.views ? ' • ' + ins.views + ' views' : '');
+                li.appendChild(meta);
+            }
+            ul.appendChild(li);
+        });
+        expertEl.appendChild(ul);
+    } else {
+        const p = document.createElement('p');
+        p.textContent = 'No expert analysis available for this stock yet.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        expertEl.appendChild(p);
+    }
+
     panel.scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -537,6 +591,69 @@ function renderForumSentiment() {
         title.style.marginTop = '0.25rem';
         div.appendChild(title);
         container.appendChild(div);
+    });
+}
+
+function renderExpertAnalysis() {
+    const section = document.getElementById('expert-section');
+    const container = document.getElementById('expert-picks');
+    const experts = analysisData.expert_analysis || [];
+
+    if (!experts.length) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+    container.textContent = '';
+
+    experts.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'expert-card';
+
+        const header = document.createElement('div');
+        header.className = 'expert-header';
+
+        const sym = document.createElement('span');
+        sym.className = 'expert-symbol';
+        sym.textContent = item.symbol;
+        header.appendChild(sym);
+
+        const source = document.createElement('span');
+        source.className = 'expert-source';
+        source.textContent = item.source;
+        header.appendChild(source);
+
+        card.appendChild(header);
+
+        (item.insights || []).forEach(insight => {
+            const row = document.createElement('div');
+            row.className = 'expert-insight';
+
+            const title = document.createElement('a');
+            title.href = insight.url;
+            title.target = '_blank';
+            title.rel = 'noopener noreferrer';
+            title.className = 'expert-title';
+            title.textContent = insight.title;
+            row.appendChild(title);
+
+            const meta = document.createElement('div');
+            meta.className = 'expert-meta';
+            meta.textContent = insight.channel + (insight.views ? ' • ' + insight.views + ' views' : '') + (insight.published ? ' • ' + insight.published : '');
+            row.appendChild(meta);
+
+            card.appendChild(row);
+        });
+
+        if (item.sentiment) {
+            const sentiment = document.createElement('div');
+            sentiment.className = 'expert-sentiment expert-sentiment-' + item.sentiment.toLowerCase();
+            sentiment.textContent = 'Expert Sentiment: ' + item.sentiment;
+            card.appendChild(sentiment);
+        }
+
+        container.appendChild(card);
     });
 }
 

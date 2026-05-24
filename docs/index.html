@@ -41,13 +41,15 @@
             </div>
         </section>
 
+        <!-- Category Tabs -->
+        <section class="category-tabs">
+            <button class="tab-btn active" data-tab="all" onclick="switchTab('all')">All Stocks</button>
+            <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')">Penny Stocks (&lt;₹20)</button>
+            <button class="tab-btn" data-tab="small_cap" onclick="switchTab('small_cap')">Small Cap</button>
+            <button class="tab-btn" data-tab="mid_cap" onclick="switchTab('mid_cap')">Mid Cap</button>
+        </section>
+
         <section class="filters">
-            <select id="filter-category" onchange="applyFilters()">
-                <option value="all">All Categories</option>
-                <option value="penny">Penny (&lt; ₹20)</option>
-                <option value="small_cap">Small Cap (&lt; ₹2000Cr)</option>
-                <option value="mid_cap">Mid Cap (&lt; ₹10000Cr)</option>
-            </select>
             <select id="filter-conviction" onchange="applyFilters()">
                 <option value="all">All Convictions</option>
                 <option value="HIGH CONVICTION">High Conviction</option>
@@ -135,6 +137,10 @@
                     <h3>Risks</h3>
                     <div id="detail-risks"></div>
                 </div>
+                <div class="detail-section">
+                    <h3>Expert Views (YouTube/Social)</h3>
+                    <div id="detail-expert"></div>
+                </div>
             </div>
         </section>
 
@@ -143,6 +149,13 @@
             <h2>Proactive Breakout Signals (Independent Scanner)</h2>
             <p class="section-subtitle">Stocks showing technical breakout patterns — discovered independently, not from forums.</p>
             <div id="proactive-picks"></div>
+        </section>
+
+        <!-- Expert Analysis from YouTube/Social Media -->
+        <section class="expert-section" id="expert-section" style="display:none;">
+            <h2>Expert Analysis (YouTube & Social Media)</h2>
+            <p class="section-subtitle">What stock market experts and analysts are saying about these picks.</p>
+            <div id="expert-picks"></div>
         </section>
 
         <section class="forum-section" id="forum-section" style="display:none;">
