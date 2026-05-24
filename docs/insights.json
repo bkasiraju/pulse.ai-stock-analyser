@@ -1,0 +1,5107 @@
+{
+  "generated_at": "2026-05-24T19:47:33.148042",
+  "stocks": [
+    {
+      "symbol": "ZAGGLE",
+      "name": "Zaggle Prepaid Ocean Services Limited",
+      "classification": "small_cap",
+      "conviction_level": "MODERATE CONVICTION",
+      "pulse_score": 69.5,
+      "da_score": 69.5,
+      "timeseries": [
+        {
+          "date": "2025-09-01",
+          "close": 401.4,
+          "volume": 621806,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 0.0
+        },
+        {
+          "date": "2025-09-02",
+          "close": 403.3,
+          "volume": 506750,
+          "daily_return_pct": 0.47,
+          "cumulative_return_pct": 0.47
+        },
+        {
+          "date": "2025-09-03",
+          "close": 400.15,
+          "volume": 464797,
+          "daily_return_pct": -0.78,
+          "cumulative_return_pct": -0.31
+        },
+        {
+          "date": "2025-09-04",
+          "close": 391.25,
+          "volume": 225729,
+          "daily_return_pct": -2.22,
+          "cumulative_return_pct": -2.53
+        },
+        {
+          "date": "2025-09-05",
+          "close": 380.35,
+          "volume": 679118,
+          "daily_return_pct": -2.79,
+          "cumulative_return_pct": -5.24
+        },
+        {
+          "date": "2025-09-08",
+          "close": 375.05,
+          "volume": 776173,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -6.56
+        },
+        {
+          "date": "2025-09-09",
+          "close": 372.45,
+          "volume": 293091,
+          "daily_return_pct": -0.69,
+          "cumulative_return_pct": -7.21
+        },
+        {
+          "date": "2025-09-10",
+          "close": 375.3,
+          "volume": 2007698,
+          "daily_return_pct": 0.77,
+          "cumulative_return_pct": -6.5
+        },
+        {
+          "date": "2025-09-11",
+          "close": 369.0,
+          "volume": 999773,
+          "daily_return_pct": -1.68,
+          "cumulative_return_pct": -8.07
+        },
+        {
+          "date": "2025-09-12",
+          "close": 360.25,
+          "volume": 1377300,
+          "daily_return_pct": -2.37,
+          "cumulative_return_pct": -10.25
+        },
+        {
+          "date": "2025-09-15",
+          "close": 355.5,
+          "volume": 822707,
+          "daily_return_pct": -1.32,
+          "cumulative_return_pct": -11.43
+        },
+        {
+          "date": "2025-09-16",
+          "close": 350.05,
+          "volume": 1357131,
+          "daily_return_pct": -1.53,
+          "cumulative_return_pct": -12.79
+        },
+        {
+          "date": "2025-09-17",
+          "close": 364.1,
+          "volume": 1965815,
+          "daily_return_pct": 4.01,
+          "cumulative_return_pct": -9.29
+        },
+        {
+          "date": "2025-09-18",
+          "close": 356.75,
+          "volume": 663133,
+          "daily_return_pct": -2.02,
+          "cumulative_return_pct": -11.12
+        },
+        {
+          "date": "2025-09-19",
+          "close": 353.9,
+          "volume": 855141,
+          "daily_return_pct": -0.8,
+          "cumulative_return_pct": -11.83
+        },
+        {
+          "date": "2025-09-22",
+          "close": 355.35,
+          "volume": 860331,
+          "daily_return_pct": 0.41,
+          "cumulative_return_pct": -11.47
+        },
+        {
+          "date": "2025-09-23",
+          "close": 360.7,
+          "volume": 1552692,
+          "daily_return_pct": 1.51,
+          "cumulative_return_pct": -10.14
+        },
+        {
+          "date": "2025-09-24",
+          "close": 353.0,
+          "volume": 607614,
+          "daily_return_pct": -2.13,
+          "cumulative_return_pct": -12.06
+        },
+        {
+          "date": "2025-09-25",
+          "close": 359.05,
+          "volume": 712220,
+          "daily_return_pct": 1.71,
+          "cumulative_return_pct": -10.55
+        },
+        {
+          "date": "2025-09-26",
+          "close": 348.85,
+          "volume": 637888,
+          "daily_return_pct": -2.84,
+          "cumulative_return_pct": -13.09
+        },
+        {
+          "date": "2025-09-29",
+          "close": 350.05,
+          "volume": 484466,
+          "daily_return_pct": 0.34,
+          "cumulative_return_pct": -12.79
+        },
+        {
+          "date": "2025-09-30",
+          "close": 346.1,
+          "volume": 1523877,
+          "daily_return_pct": -1.13,
+          "cumulative_return_pct": -13.78
+        },
+        {
+          "date": "2025-10-01",
+          "close": 340.15,
+          "volume": 792115,
+          "daily_return_pct": -1.72,
+          "cumulative_return_pct": -15.26
+        },
+        {
+          "date": "2025-10-03",
+          "close": 347.3,
+          "volume": 1226053,
+          "daily_return_pct": 2.1,
+          "cumulative_return_pct": -13.48
+        },
+        {
+          "date": "2025-10-06",
+          "close": 355.55,
+          "volume": 907143,
+          "daily_return_pct": 2.38,
+          "cumulative_return_pct": -11.42
+        },
+        {
+          "date": "2025-10-07",
+          "close": 350.1,
+          "volume": 575574,
+          "daily_return_pct": -1.53,
+          "cumulative_return_pct": -12.78
+        },
+        {
+          "date": "2025-10-08",
+          "close": 345.6,
+          "volume": 529833,
+          "daily_return_pct": -1.29,
+          "cumulative_return_pct": -13.9
+        },
+        {
+          "date": "2025-10-09",
+          "close": 339.8,
+          "volume": 708107,
+          "daily_return_pct": -1.68,
+          "cumulative_return_pct": -15.35
+        },
+        {
+          "date": "2025-10-10",
+          "close": 360.3,
+          "volume": 1935327,
+          "daily_return_pct": 6.03,
+          "cumulative_return_pct": -10.24
+        },
+        {
+          "date": "2025-10-13",
+          "close": 352.6,
+          "volume": 685682,
+          "daily_return_pct": -2.14,
+          "cumulative_return_pct": -12.16
+        },
+        {
+          "date": "2025-10-14",
+          "close": 344.7,
+          "volume": 612492,
+          "daily_return_pct": -2.24,
+          "cumulative_return_pct": -14.13
+        },
+        {
+          "date": "2025-10-15",
+          "close": 352.1,
+          "volume": 874314,
+          "daily_return_pct": 2.15,
+          "cumulative_return_pct": -12.28
+        },
+        {
+          "date": "2025-10-16",
+          "close": 354.15,
+          "volume": 581873,
+          "daily_return_pct": 0.58,
+          "cumulative_return_pct": -11.77
+        },
+        {
+          "date": "2025-10-17",
+          "close": 348.95,
+          "volume": 593752,
+          "daily_return_pct": -1.47,
+          "cumulative_return_pct": -13.07
+        },
+        {
+          "date": "2025-10-20",
+          "close": 348.15,
+          "volume": 674801,
+          "daily_return_pct": -0.23,
+          "cumulative_return_pct": -13.27
+        },
+        {
+          "date": "2025-10-21",
+          "close": 356.9,
+          "volume": 408257,
+          "daily_return_pct": 2.51,
+          "cumulative_return_pct": -11.09
+        },
+        {
+          "date": "2025-10-23",
+          "close": 353.1,
+          "volume": 546584,
+          "daily_return_pct": -1.06,
+          "cumulative_return_pct": -12.03
+        },
+        {
+          "date": "2025-10-24",
+          "close": 362.75,
+          "volume": 1724051,
+          "daily_return_pct": 2.73,
+          "cumulative_return_pct": -9.63
+        },
+        {
+          "date": "2025-10-27",
+          "close": 364.55,
+          "volume": 818385,
+          "daily_return_pct": 0.5,
+          "cumulative_return_pct": -9.18
+        },
+        {
+          "date": "2025-10-28",
+          "close": 364.6,
+          "volume": 592199,
+          "daily_return_pct": 0.01,
+          "cumulative_return_pct": -9.17
+        },
+        {
+          "date": "2025-10-29",
+          "close": 362.45,
+          "volume": 566345,
+          "daily_return_pct": -0.59,
+          "cumulative_return_pct": -9.7
+        },
+        {
+          "date": "2025-10-30",
+          "close": 371.1,
+          "volume": 1398927,
+          "daily_return_pct": 2.39,
+          "cumulative_return_pct": -7.55
+        },
+        {
+          "date": "2025-10-31",
+          "close": 372.65,
+          "volume": 1359007,
+          "daily_return_pct": 0.42,
+          "cumulative_return_pct": -7.16
+        },
+        {
+          "date": "2025-11-03",
+          "close": 372.4,
+          "volume": 505363,
+          "daily_return_pct": -0.07,
+          "cumulative_return_pct": -7.22
+        },
+        {
+          "date": "2025-11-04",
+          "close": 362.5,
+          "volume": 587448,
+          "daily_return_pct": -2.66,
+          "cumulative_return_pct": -9.69
+        },
+        {
+          "date": "2025-11-06",
+          "close": 353.1,
+          "volume": 411640,
+          "daily_return_pct": -2.59,
+          "cumulative_return_pct": -12.03
+        },
+        {
+          "date": "2025-11-07",
+          "close": 364.0,
+          "volume": 682461,
+          "daily_return_pct": 3.09,
+          "cumulative_return_pct": -9.32
+        },
+        {
+          "date": "2025-11-10",
+          "close": 359.6,
+          "volume": 427821,
+          "daily_return_pct": -1.21,
+          "cumulative_return_pct": -10.41
+        },
+        {
+          "date": "2025-11-11",
+          "close": 374.85,
+          "volume": 1506126,
+          "daily_return_pct": 4.24,
+          "cumulative_return_pct": -6.61
+        },
+        {
+          "date": "2025-11-12",
+          "close": 389.55,
+          "volume": 6534957,
+          "daily_return_pct": 3.92,
+          "cumulative_return_pct": -2.95
+        },
+        {
+          "date": "2025-11-13",
+          "close": 384.6,
+          "volume": 1546957,
+          "daily_return_pct": -1.27,
+          "cumulative_return_pct": -4.19
+        },
+        {
+          "date": "2025-11-14",
+          "close": 392.35,
+          "volume": 859306,
+          "daily_return_pct": 2.02,
+          "cumulative_return_pct": -2.25
+        },
+        {
+          "date": "2025-11-17",
+          "close": 401.35,
+          "volume": 1622864,
+          "daily_return_pct": 2.29,
+          "cumulative_return_pct": -0.01
+        },
+        {
+          "date": "2025-11-18",
+          "close": 398.0,
+          "volume": 984477,
+          "daily_return_pct": -0.83,
+          "cumulative_return_pct": -0.85
+        },
+        {
+          "date": "2025-11-19",
+          "close": 384.2,
+          "volume": 747147,
+          "daily_return_pct": -3.47,
+          "cumulative_return_pct": -4.29
+        },
+        {
+          "date": "2025-11-20",
+          "close": 385.0,
+          "volume": 531707,
+          "daily_return_pct": 0.21,
+          "cumulative_return_pct": -4.09
+        },
+        {
+          "date": "2025-11-21",
+          "close": 379.9,
+          "volume": 662321,
+          "daily_return_pct": -1.32,
+          "cumulative_return_pct": -5.36
+        },
+        {
+          "date": "2025-11-24",
+          "close": 368.15,
+          "volume": 773534,
+          "daily_return_pct": -3.09,
+          "cumulative_return_pct": -8.28
+        },
+        {
+          "date": "2025-11-25",
+          "close": 379.5,
+          "volume": 564448,
+          "daily_return_pct": 3.08,
+          "cumulative_return_pct": -5.46
+        },
+        {
+          "date": "2025-11-26",
+          "close": 385.85,
+          "volume": 606349,
+          "daily_return_pct": 1.67,
+          "cumulative_return_pct": -3.87
+        },
+        {
+          "date": "2025-11-27",
+          "close": 383.3,
+          "volume": 358135,
+          "daily_return_pct": -0.66,
+          "cumulative_return_pct": -4.51
+        },
+        {
+          "date": "2025-11-28",
+          "close": 392.25,
+          "volume": 768733,
+          "daily_return_pct": 2.33,
+          "cumulative_return_pct": -2.28
+        },
+        {
+          "date": "2025-12-01",
+          "close": 385.5,
+          "volume": 391912,
+          "daily_return_pct": -1.72,
+          "cumulative_return_pct": -3.96
+        },
+        {
+          "date": "2025-12-02",
+          "close": 379.6,
+          "volume": 474639,
+          "daily_return_pct": -1.53,
+          "cumulative_return_pct": -5.43
+        },
+        {
+          "date": "2025-12-03",
+          "close": 365.35,
+          "volume": 597303,
+          "daily_return_pct": -3.75,
+          "cumulative_return_pct": -8.98
+        },
+        {
+          "date": "2025-12-04",
+          "close": 366.1,
+          "volume": 644568,
+          "daily_return_pct": 0.21,
+          "cumulative_return_pct": -8.79
+        },
+        {
+          "date": "2025-12-05",
+          "close": 351.85,
+          "volume": 800219,
+          "daily_return_pct": -3.89,
+          "cumulative_return_pct": -12.34
+        },
+        {
+          "date": "2025-12-08",
+          "close": 339.3,
+          "volume": 695127,
+          "daily_return_pct": -3.57,
+          "cumulative_return_pct": -15.47
+        },
+        {
+          "date": "2025-12-09",
+          "close": 345.55,
+          "volume": 602587,
+          "daily_return_pct": 1.84,
+          "cumulative_return_pct": -13.91
+        },
+        {
+          "date": "2025-12-10",
+          "close": 345.3,
+          "volume": 424410,
+          "daily_return_pct": -0.07,
+          "cumulative_return_pct": -13.98
+        },
+        {
+          "date": "2025-12-11",
+          "close": 350.15,
+          "volume": 368237,
+          "daily_return_pct": 1.4,
+          "cumulative_return_pct": -12.77
+        },
+        {
+          "date": "2025-12-12",
+          "close": 348.2,
+          "volume": 249318,
+          "daily_return_pct": -0.56,
+          "cumulative_return_pct": -13.25
+        },
+        {
+          "date": "2025-12-15",
+          "close": 346.3,
+          "volume": 379388,
+          "daily_return_pct": -0.55,
+          "cumulative_return_pct": -13.73
+        },
+        {
+          "date": "2025-12-16",
+          "close": 362.4,
+          "volume": 1181337,
+          "daily_return_pct": 4.65,
+          "cumulative_return_pct": -9.72
+        },
+        {
+          "date": "2025-12-17",
+          "close": 354.8,
+          "volume": 274027,
+          "daily_return_pct": -2.1,
+          "cumulative_return_pct": -11.61
+        },
+        {
+          "date": "2025-12-18",
+          "close": 347.75,
+          "volume": 309917,
+          "daily_return_pct": -1.99,
+          "cumulative_return_pct": -13.37
+        },
+        {
+          "date": "2025-12-19",
+          "close": 354.45,
+          "volume": 809245,
+          "daily_return_pct": 1.93,
+          "cumulative_return_pct": -11.7
+        },
+        {
+          "date": "2025-12-22",
+          "close": 364.9,
+          "volume": 893480,
+          "daily_return_pct": 2.95,
+          "cumulative_return_pct": -9.09
+        },
+        {
+          "date": "2025-12-23",
+          "close": 358.6,
+          "volume": 319344,
+          "daily_return_pct": -1.73,
+          "cumulative_return_pct": -10.66
+        },
+        {
+          "date": "2025-12-24",
+          "close": 352.55,
+          "volume": 458692,
+          "daily_return_pct": -1.69,
+          "cumulative_return_pct": -12.17
+        },
+        {
+          "date": "2025-12-26",
+          "close": 350.75,
+          "volume": 513820,
+          "daily_return_pct": -0.51,
+          "cumulative_return_pct": -12.62
+        },
+        {
+          "date": "2025-12-29",
+          "close": 359.9,
+          "volume": 773667,
+          "daily_return_pct": 2.61,
+          "cumulative_return_pct": -10.34
+        },
+        {
+          "date": "2025-12-30",
+          "close": 352.3,
+          "volume": 358887,
+          "daily_return_pct": -2.11,
+          "cumulative_return_pct": -12.23
+        },
+        {
+          "date": "2025-12-31",
+          "close": 347.8,
+          "volume": 386026,
+          "daily_return_pct": -1.28,
+          "cumulative_return_pct": -13.35
+        },
+        {
+          "date": "2026-01-01",
+          "close": 347.35,
+          "volume": 601075,
+          "daily_return_pct": -0.13,
+          "cumulative_return_pct": -13.47
+        },
+        {
+          "date": "2026-01-02",
+          "close": 349.95,
+          "volume": 526741,
+          "daily_return_pct": 0.75,
+          "cumulative_return_pct": -12.82
+        },
+        {
+          "date": "2026-01-05",
+          "close": 345.1,
+          "volume": 574385,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -14.03
+        },
+        {
+          "date": "2026-01-06",
+          "close": 338.05,
+          "volume": 535734,
+          "daily_return_pct": -2.04,
+          "cumulative_return_pct": -15.78
+        },
+        {
+          "date": "2026-01-07",
+          "close": 337.05,
+          "volume": 816544,
+          "daily_return_pct": -0.3,
+          "cumulative_return_pct": -16.03
+        },
+        {
+          "date": "2026-01-08",
+          "close": 320.6,
+          "volume": 1178161,
+          "daily_return_pct": -4.88,
+          "cumulative_return_pct": -20.13
+        },
+        {
+          "date": "2026-01-09",
+          "close": 305.55,
+          "volume": 1565149,
+          "daily_return_pct": -4.69,
+          "cumulative_return_pct": -23.88
+        },
+        {
+          "date": "2026-01-12",
+          "close": 309.6,
+          "volume": 868591,
+          "daily_return_pct": 1.33,
+          "cumulative_return_pct": -22.87
+        },
+        {
+          "date": "2026-01-13",
+          "close": 306.05,
+          "volume": 442153,
+          "daily_return_pct": -1.15,
+          "cumulative_return_pct": -23.75
+        },
+        {
+          "date": "2026-01-14",
+          "close": 302.4,
+          "volume": 340895,
+          "daily_return_pct": -1.19,
+          "cumulative_return_pct": -24.66
+        },
+        {
+          "date": "2026-01-16",
+          "close": 311.55,
+          "volume": 602315,
+          "daily_return_pct": 3.03,
+          "cumulative_return_pct": -22.38
+        },
+        {
+          "date": "2026-01-19",
+          "close": 303.85,
+          "volume": 329266,
+          "daily_return_pct": -2.47,
+          "cumulative_return_pct": -24.3
+        },
+        {
+          "date": "2026-01-20",
+          "close": 287.1,
+          "volume": 1169809,
+          "daily_return_pct": -5.51,
+          "cumulative_return_pct": -28.48
+        },
+        {
+          "date": "2026-01-21",
+          "close": 278.9,
+          "volume": 1073394,
+          "daily_return_pct": -2.86,
+          "cumulative_return_pct": -30.52
+        },
+        {
+          "date": "2026-01-22",
+          "close": 284.9,
+          "volume": 865976,
+          "daily_return_pct": 2.15,
+          "cumulative_return_pct": -29.02
+        },
+        {
+          "date": "2026-01-23",
+          "close": 273.1,
+          "volume": 767447,
+          "daily_return_pct": -4.14,
+          "cumulative_return_pct": -31.96
+        },
+        {
+          "date": "2026-01-27",
+          "close": 275.55,
+          "volume": 758436,
+          "daily_return_pct": 0.9,
+          "cumulative_return_pct": -31.35
+        },
+        {
+          "date": "2026-01-28",
+          "close": 292.15,
+          "volume": 602288,
+          "daily_return_pct": 6.02,
+          "cumulative_return_pct": -27.22
+        },
+        {
+          "date": "2026-01-29",
+          "close": 281.8,
+          "volume": 641639,
+          "daily_return_pct": -3.54,
+          "cumulative_return_pct": -29.8
+        },
+        {
+          "date": "2026-01-30",
+          "close": 283.4,
+          "volume": 437460,
+          "daily_return_pct": 0.57,
+          "cumulative_return_pct": -29.4
+        },
+        {
+          "date": "2026-02-02",
+          "close": 282.45,
+          "volume": 464113,
+          "daily_return_pct": -0.34,
+          "cumulative_return_pct": -29.63
+        },
+        {
+          "date": "2026-02-03",
+          "close": 301.35,
+          "volume": 1041007,
+          "daily_return_pct": 6.69,
+          "cumulative_return_pct": -24.93
+        },
+        {
+          "date": "2026-02-04",
+          "close": 300.2,
+          "volume": 678694,
+          "daily_return_pct": -0.38,
+          "cumulative_return_pct": -25.21
+        },
+        {
+          "date": "2026-02-05",
+          "close": 287.2,
+          "volume": 649513,
+          "daily_return_pct": -4.33,
+          "cumulative_return_pct": -28.45
+        },
+        {
+          "date": "2026-02-06",
+          "close": 279.9,
+          "volume": 694206,
+          "daily_return_pct": -2.54,
+          "cumulative_return_pct": -30.27
+        },
+        {
+          "date": "2026-02-09",
+          "close": 285.1,
+          "volume": 1112207,
+          "daily_return_pct": 1.86,
+          "cumulative_return_pct": -28.97
+        },
+        {
+          "date": "2026-02-10",
+          "close": 300.2,
+          "volume": 2102227,
+          "daily_return_pct": 5.3,
+          "cumulative_return_pct": -25.21
+        },
+        {
+          "date": "2026-02-11",
+          "close": 297.0,
+          "volume": 1104125,
+          "daily_return_pct": -1.07,
+          "cumulative_return_pct": -26.01
+        },
+        {
+          "date": "2026-02-12",
+          "close": 304.2,
+          "volume": 1512084,
+          "daily_return_pct": 2.42,
+          "cumulative_return_pct": -24.22
+        },
+        {
+          "date": "2026-02-13",
+          "close": 285.95,
+          "volume": 3059047,
+          "daily_return_pct": -6.0,
+          "cumulative_return_pct": -28.76
+        },
+        {
+          "date": "2026-02-16",
+          "close": 271.0,
+          "volume": 1497952,
+          "daily_return_pct": -5.23,
+          "cumulative_return_pct": -32.49
+        },
+        {
+          "date": "2026-02-17",
+          "close": 260.5,
+          "volume": 3065416,
+          "daily_return_pct": -3.87,
+          "cumulative_return_pct": -35.1
+        },
+        {
+          "date": "2026-02-18",
+          "close": 256.15,
+          "volume": 2040493,
+          "daily_return_pct": -1.67,
+          "cumulative_return_pct": -36.19
+        },
+        {
+          "date": "2026-02-19",
+          "close": 241.55,
+          "volume": 2277749,
+          "daily_return_pct": -5.7,
+          "cumulative_return_pct": -39.82
+        },
+        {
+          "date": "2026-02-20",
+          "close": 234.55,
+          "volume": 3206249,
+          "daily_return_pct": -2.9,
+          "cumulative_return_pct": -41.57
+        },
+        {
+          "date": "2026-02-23",
+          "close": 235.55,
+          "volume": 1496570,
+          "daily_return_pct": 0.43,
+          "cumulative_return_pct": -41.32
+        },
+        {
+          "date": "2026-02-24",
+          "close": 224.15,
+          "volume": 2231718,
+          "daily_return_pct": -4.84,
+          "cumulative_return_pct": -44.16
+        },
+        {
+          "date": "2026-02-25",
+          "close": 216.9,
+          "volume": 1785507,
+          "daily_return_pct": -3.23,
+          "cumulative_return_pct": -45.96
+        },
+        {
+          "date": "2026-02-26",
+          "close": 232.7,
+          "volume": 3227782,
+          "daily_return_pct": 7.28,
+          "cumulative_return_pct": -42.03
+        },
+        {
+          "date": "2026-02-27",
+          "close": 227.55,
+          "volume": 2988981,
+          "daily_return_pct": -2.21,
+          "cumulative_return_pct": -43.31
+        },
+        {
+          "date": "2026-03-02",
+          "close": 222.83,
+          "volume": 1331203,
+          "daily_return_pct": -2.07,
+          "cumulative_return_pct": -44.49
+        },
+        {
+          "date": "2026-03-04",
+          "close": 215.63,
+          "volume": 1230327,
+          "daily_return_pct": -3.23,
+          "cumulative_return_pct": -46.28
+        },
+        {
+          "date": "2026-03-05",
+          "close": 217.58,
+          "volume": 1344169,
+          "daily_return_pct": 0.9,
+          "cumulative_return_pct": -45.79
+        },
+        {
+          "date": "2026-03-06",
+          "close": 226.87,
+          "volume": 2950869,
+          "daily_return_pct": 4.27,
+          "cumulative_return_pct": -43.48
+        },
+        {
+          "date": "2026-03-09",
+          "close": 216.33,
+          "volume": 1097171,
+          "daily_return_pct": -4.65,
+          "cumulative_return_pct": -46.11
+        },
+        {
+          "date": "2026-03-10",
+          "close": 224.36,
+          "volume": 1159894,
+          "daily_return_pct": 3.71,
+          "cumulative_return_pct": -44.11
+        },
+        {
+          "date": "2026-03-11",
+          "close": 227.88,
+          "volume": 1419150,
+          "daily_return_pct": 1.57,
+          "cumulative_return_pct": -43.23
+        },
+        {
+          "date": "2026-03-12",
+          "close": 224.61,
+          "volume": 1261249,
+          "daily_return_pct": -1.43,
+          "cumulative_return_pct": -44.04
+        },
+        {
+          "date": "2026-03-13",
+          "close": 216.54,
+          "volume": 1003152,
+          "daily_return_pct": -3.59,
+          "cumulative_return_pct": -46.05
+        },
+        {
+          "date": "2026-03-16",
+          "close": 216.08,
+          "volume": 1058262,
+          "daily_return_pct": -0.21,
+          "cumulative_return_pct": -46.17
+        },
+        {
+          "date": "2026-03-17",
+          "close": 213.48,
+          "volume": 1271296,
+          "daily_return_pct": -1.2,
+          "cumulative_return_pct": -46.82
+        },
+        {
+          "date": "2026-03-18",
+          "close": 220.1,
+          "volume": 1505051,
+          "daily_return_pct": 3.1,
+          "cumulative_return_pct": -45.17
+        },
+        {
+          "date": "2026-03-19",
+          "close": 207.2,
+          "volume": 1667060,
+          "daily_return_pct": -5.86,
+          "cumulative_return_pct": -48.38
+        },
+        {
+          "date": "2026-03-20",
+          "close": 207.81,
+          "volume": 1690108,
+          "daily_return_pct": 0.29,
+          "cumulative_return_pct": -48.23
+        },
+        {
+          "date": "2026-03-23",
+          "close": 194.46,
+          "volume": 1806397,
+          "daily_return_pct": -6.42,
+          "cumulative_return_pct": -51.55
+        },
+        {
+          "date": "2026-03-24",
+          "close": 205.98,
+          "volume": 1906093,
+          "daily_return_pct": 5.92,
+          "cumulative_return_pct": -48.68
+        },
+        {
+          "date": "2026-03-25",
+          "close": 210.05,
+          "volume": 1655285,
+          "daily_return_pct": 1.98,
+          "cumulative_return_pct": -47.67
+        },
+        {
+          "date": "2026-03-27",
+          "close": 201.47,
+          "volume": 2771909,
+          "daily_return_pct": -4.08,
+          "cumulative_return_pct": -49.81
+        },
+        {
+          "date": "2026-03-30",
+          "close": 187.47,
+          "volume": 2932812,
+          "daily_return_pct": -6.95,
+          "cumulative_return_pct": -53.3
+        },
+        {
+          "date": "2026-04-01",
+          "close": 217.49,
+          "volume": 12937130,
+          "daily_return_pct": 16.01,
+          "cumulative_return_pct": -45.82
+        },
+        {
+          "date": "2026-04-02",
+          "close": 234.92,
+          "volume": 17731570,
+          "daily_return_pct": 8.01,
+          "cumulative_return_pct": -41.47
+        },
+        {
+          "date": "2026-04-06",
+          "close": 225.25,
+          "volume": 3457290,
+          "daily_return_pct": -4.12,
+          "cumulative_return_pct": -43.88
+        },
+        {
+          "date": "2026-04-07",
+          "close": 230.35,
+          "volume": 2716114,
+          "daily_return_pct": 2.26,
+          "cumulative_return_pct": -42.61
+        },
+        {
+          "date": "2026-04-08",
+          "close": 250.94,
+          "volume": 4300872,
+          "daily_return_pct": 8.94,
+          "cumulative_return_pct": -37.48
+        },
+        {
+          "date": "2026-04-09",
+          "close": 252.21,
+          "volume": 2833248,
+          "daily_return_pct": 0.51,
+          "cumulative_return_pct": -37.17
+        },
+        {
+          "date": "2026-04-10",
+          "close": 251.47,
+          "volume": 1633416,
+          "daily_return_pct": -0.29,
+          "cumulative_return_pct": -37.35
+        },
+        {
+          "date": "2026-04-13",
+          "close": 250.07,
+          "volume": 1138232,
+          "daily_return_pct": -0.56,
+          "cumulative_return_pct": -37.7
+        },
+        {
+          "date": "2026-04-15",
+          "close": 261.53,
+          "volume": 1703388,
+          "daily_return_pct": 4.58,
+          "cumulative_return_pct": -34.85
+        },
+        {
+          "date": "2026-04-16",
+          "close": 264.13,
+          "volume": 1018920,
+          "daily_return_pct": 0.99,
+          "cumulative_return_pct": -34.2
+        },
+        {
+          "date": "2026-04-17",
+          "close": 260.88,
+          "volume": 980930,
+          "daily_return_pct": -1.23,
+          "cumulative_return_pct": -35.01
+        },
+        {
+          "date": "2026-04-20",
+          "close": 253.83,
+          "volume": 829886,
+          "daily_return_pct": -2.7,
+          "cumulative_return_pct": -36.76
+        },
+        {
+          "date": "2026-04-21",
+          "close": 261.61,
+          "volume": 1286424,
+          "daily_return_pct": 3.07,
+          "cumulative_return_pct": -34.83
+        },
+        {
+          "date": "2026-04-22",
+          "close": 260.46,
+          "volume": 602995,
+          "daily_return_pct": -0.44,
+          "cumulative_return_pct": -35.11
+        },
+        {
+          "date": "2026-04-23",
+          "close": 261.67,
+          "volume": 1204241,
+          "daily_return_pct": 0.46,
+          "cumulative_return_pct": -34.81
+        },
+        {
+          "date": "2026-04-24",
+          "close": 256.26,
+          "volume": 614878,
+          "daily_return_pct": -2.07,
+          "cumulative_return_pct": -36.16
+        },
+        {
+          "date": "2026-04-27",
+          "close": 260.47,
+          "volume": 889473,
+          "daily_return_pct": 1.64,
+          "cumulative_return_pct": -35.11
+        },
+        {
+          "date": "2026-04-28",
+          "close": 254.89,
+          "volume": 644708,
+          "daily_return_pct": -2.14,
+          "cumulative_return_pct": -36.5
+        },
+        {
+          "date": "2026-04-29",
+          "close": 243.68,
+          "volume": 1226704,
+          "daily_return_pct": -4.4,
+          "cumulative_return_pct": -39.29
+        },
+        {
+          "date": "2026-04-30",
+          "close": 240.76,
+          "volume": 707561,
+          "daily_return_pct": -1.2,
+          "cumulative_return_pct": -40.02
+        },
+        {
+          "date": "2026-05-04",
+          "close": 245.76,
+          "volume": 773330,
+          "daily_return_pct": 2.08,
+          "cumulative_return_pct": -38.77
+        },
+        {
+          "date": "2026-05-05",
+          "close": 241.02,
+          "volume": 835913,
+          "daily_return_pct": -1.93,
+          "cumulative_return_pct": -39.96
+        },
+        {
+          "date": "2026-05-06",
+          "close": 254.94,
+          "volume": 1251286,
+          "daily_return_pct": 5.78,
+          "cumulative_return_pct": -36.49
+        },
+        {
+          "date": "2026-05-07",
+          "close": 255.66,
+          "volume": 832407,
+          "daily_return_pct": 0.28,
+          "cumulative_return_pct": -36.31
+        },
+        {
+          "date": "2026-05-08",
+          "close": 259.11,
+          "volume": 937618,
+          "daily_return_pct": 1.35,
+          "cumulative_return_pct": -35.45
+        },
+        {
+          "date": "2026-05-11",
+          "close": 252.09,
+          "volume": 623847,
+          "daily_return_pct": -2.71,
+          "cumulative_return_pct": -37.2
+        },
+        {
+          "date": "2026-05-12",
+          "close": 282.48,
+          "volume": 5621533,
+          "daily_return_pct": 12.06,
+          "cumulative_return_pct": -29.63
+        },
+        {
+          "date": "2026-05-13",
+          "close": 283.85,
+          "volume": 3304111,
+          "daily_return_pct": 0.48,
+          "cumulative_return_pct": -29.29
+        },
+        {
+          "date": "2026-05-14",
+          "close": 227.08,
+          "volume": 12546710,
+          "daily_return_pct": -20.0,
+          "cumulative_return_pct": -43.43
+        },
+        {
+          "date": "2026-05-15",
+          "close": 210.62,
+          "volume": 9123436,
+          "daily_return_pct": -7.25,
+          "cumulative_return_pct": -47.53
+        },
+        {
+          "date": "2026-05-18",
+          "close": 218.83,
+          "volume": 3867369,
+          "daily_return_pct": 3.9,
+          "cumulative_return_pct": -45.48
+        },
+        {
+          "date": "2026-05-19",
+          "close": 220.19,
+          "volume": 2034685,
+          "daily_return_pct": 0.62,
+          "cumulative_return_pct": -45.14
+        },
+        {
+          "date": "2026-05-20",
+          "close": 213.48,
+          "volume": 2097052,
+          "daily_return_pct": -3.05,
+          "cumulative_return_pct": -46.82
+        },
+        {
+          "date": "2026-05-21",
+          "close": 213.49,
+          "volume": 1162344,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -46.81
+        },
+        {
+          "date": "2026-05-22",
+          "close": 215.55,
+          "volume": 997132,
+          "daily_return_pct": 0.96,
+          "cumulative_return_pct": -46.3
+        }
+      ],
+      "assessment": {
+        "verdict": "UNDERPERFORMING",
+        "total_return_pct": -46.3,
+        "annualized_return_pct": -65.5,
+        "drawdown_from_peak_pct": -46.55,
+        "trading_days": 178,
+        "base_price": 401.4,
+        "current_price": 215.55
+      }
+    },
+    {
+      "symbol": "NHPC",
+      "name": "NHPC Limited",
+      "classification": "penny",
+      "conviction_level": "LOW CONVICTION",
+      "pulse_score": 65.5,
+      "da_score": 48.5,
+      "timeseries": [
+        {
+          "date": "2025-09-01",
+          "close": 77.17,
+          "volume": 7403198,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 0.0
+        },
+        {
+          "date": "2025-09-02",
+          "close": 78.15,
+          "volume": 7462301,
+          "daily_return_pct": 1.27,
+          "cumulative_return_pct": 1.27
+        },
+        {
+          "date": "2025-09-03",
+          "close": 77.97,
+          "volume": 4900025,
+          "daily_return_pct": -0.23,
+          "cumulative_return_pct": 1.04
+        },
+        {
+          "date": "2025-09-04",
+          "close": 76.7,
+          "volume": 7037191,
+          "daily_return_pct": -1.63,
+          "cumulative_return_pct": -0.61
+        },
+        {
+          "date": "2025-09-05",
+          "close": 76.44,
+          "volume": 7033772,
+          "daily_return_pct": -0.34,
+          "cumulative_return_pct": -0.95
+        },
+        {
+          "date": "2025-09-08",
+          "close": 77.24,
+          "volume": 5612373,
+          "daily_return_pct": 1.05,
+          "cumulative_return_pct": 0.09
+        },
+        {
+          "date": "2025-09-09",
+          "close": 77.18,
+          "volume": 9734849,
+          "daily_return_pct": -0.08,
+          "cumulative_return_pct": 0.01
+        },
+        {
+          "date": "2025-09-10",
+          "close": 78.15,
+          "volume": 10937354,
+          "daily_return_pct": 1.26,
+          "cumulative_return_pct": 1.27
+        },
+        {
+          "date": "2025-09-11",
+          "close": 80.82,
+          "volume": 30015271,
+          "daily_return_pct": 3.42,
+          "cumulative_return_pct": 4.73
+        },
+        {
+          "date": "2025-09-12",
+          "close": 82.02,
+          "volume": 16380844,
+          "daily_return_pct": 1.48,
+          "cumulative_return_pct": 6.28
+        },
+        {
+          "date": "2025-09-15",
+          "close": 85.07,
+          "volume": 26197108,
+          "daily_return_pct": 3.72,
+          "cumulative_return_pct": 10.24
+        },
+        {
+          "date": "2025-09-16",
+          "close": 87.04,
+          "volume": 26870203,
+          "daily_return_pct": 2.32,
+          "cumulative_return_pct": 12.79
+        },
+        {
+          "date": "2025-09-17",
+          "close": 85.66,
+          "volume": 15170233,
+          "daily_return_pct": -1.59,
+          "cumulative_return_pct": 11.0
+        },
+        {
+          "date": "2025-09-18",
+          "close": 85.54,
+          "volume": 16436138,
+          "daily_return_pct": -0.14,
+          "cumulative_return_pct": 10.85
+        },
+        {
+          "date": "2025-09-19",
+          "close": 86.26,
+          "volume": 25192808,
+          "daily_return_pct": 0.84,
+          "cumulative_return_pct": 11.78
+        },
+        {
+          "date": "2025-09-22",
+          "close": 86.17,
+          "volume": 10256621,
+          "daily_return_pct": -0.1,
+          "cumulative_return_pct": 11.66
+        },
+        {
+          "date": "2025-09-23",
+          "close": 85.09,
+          "volume": 11788276,
+          "daily_return_pct": -1.25,
+          "cumulative_return_pct": 10.26
+        },
+        {
+          "date": "2025-09-24",
+          "close": 84.76,
+          "volume": 11315951,
+          "daily_return_pct": -0.39,
+          "cumulative_return_pct": 9.84
+        },
+        {
+          "date": "2025-09-25",
+          "close": 84.9,
+          "volume": 15155848,
+          "daily_return_pct": 0.17,
+          "cumulative_return_pct": 10.02
+        },
+        {
+          "date": "2025-09-26",
+          "close": 82.16,
+          "volume": 8128101,
+          "daily_return_pct": -3.23,
+          "cumulative_return_pct": 6.47
+        },
+        {
+          "date": "2025-09-29",
+          "close": 84.35,
+          "volume": 20054016,
+          "daily_return_pct": 2.67,
+          "cumulative_return_pct": 9.3
+        },
+        {
+          "date": "2025-09-30",
+          "close": 84.79,
+          "volume": 10452346,
+          "daily_return_pct": 0.52,
+          "cumulative_return_pct": 9.87
+        },
+        {
+          "date": "2025-10-01",
+          "close": 84.84,
+          "volume": 7396034,
+          "daily_return_pct": 0.06,
+          "cumulative_return_pct": 9.94
+        },
+        {
+          "date": "2025-10-03",
+          "close": 85.39,
+          "volume": 8662889,
+          "daily_return_pct": 0.65,
+          "cumulative_return_pct": 10.65
+        },
+        {
+          "date": "2025-10-06",
+          "close": 85.07,
+          "volume": 6459027,
+          "daily_return_pct": -0.37,
+          "cumulative_return_pct": 10.24
+        },
+        {
+          "date": "2025-10-07",
+          "close": 84.93,
+          "volume": 10528798,
+          "daily_return_pct": -0.16,
+          "cumulative_return_pct": 10.06
+        },
+        {
+          "date": "2025-10-08",
+          "close": 83.92,
+          "volume": 8000224,
+          "daily_return_pct": -1.19,
+          "cumulative_return_pct": 8.75
+        },
+        {
+          "date": "2025-10-09",
+          "close": 85.13,
+          "volume": 13086247,
+          "daily_return_pct": 1.44,
+          "cumulative_return_pct": 10.31
+        },
+        {
+          "date": "2025-10-10",
+          "close": 85.4,
+          "volume": 7177243,
+          "daily_return_pct": 0.32,
+          "cumulative_return_pct": 10.66
+        },
+        {
+          "date": "2025-10-13",
+          "close": 84.92,
+          "volume": 15292737,
+          "daily_return_pct": -0.56,
+          "cumulative_return_pct": 10.04
+        },
+        {
+          "date": "2025-10-14",
+          "close": 83.85,
+          "volume": 20520263,
+          "daily_return_pct": -1.26,
+          "cumulative_return_pct": 8.66
+        },
+        {
+          "date": "2025-10-15",
+          "close": 85.5,
+          "volume": 12347959,
+          "daily_return_pct": 1.97,
+          "cumulative_return_pct": 10.79
+        },
+        {
+          "date": "2025-10-16",
+          "close": 85.41,
+          "volume": 10552727,
+          "daily_return_pct": -0.11,
+          "cumulative_return_pct": 10.68
+        },
+        {
+          "date": "2025-10-17",
+          "close": 85.2,
+          "volume": 30386236,
+          "daily_return_pct": -0.25,
+          "cumulative_return_pct": 10.41
+        },
+        {
+          "date": "2025-10-20",
+          "close": 85.02,
+          "volume": 13301204,
+          "daily_return_pct": -0.21,
+          "cumulative_return_pct": 10.17
+        },
+        {
+          "date": "2025-10-21",
+          "close": 84.82,
+          "volume": 1480658,
+          "daily_return_pct": -0.24,
+          "cumulative_return_pct": 9.91
+        },
+        {
+          "date": "2025-10-23",
+          "close": 84.3,
+          "volume": 17396942,
+          "daily_return_pct": -0.61,
+          "cumulative_return_pct": 9.24
+        },
+        {
+          "date": "2025-10-24",
+          "close": 83.29,
+          "volume": 16912048,
+          "daily_return_pct": -1.2,
+          "cumulative_return_pct": 7.93
+        },
+        {
+          "date": "2025-10-27",
+          "close": 83.51,
+          "volume": 6939884,
+          "daily_return_pct": 0.26,
+          "cumulative_return_pct": 8.22
+        },
+        {
+          "date": "2025-10-28",
+          "close": 83.13,
+          "volume": 9528901,
+          "daily_return_pct": -0.46,
+          "cumulative_return_pct": 7.72
+        },
+        {
+          "date": "2025-10-29",
+          "close": 85.41,
+          "volume": 17056980,
+          "daily_return_pct": 2.74,
+          "cumulative_return_pct": 10.68
+        },
+        {
+          "date": "2025-10-30",
+          "close": 84.62,
+          "volume": 7400279,
+          "daily_return_pct": -0.92,
+          "cumulative_return_pct": 9.65
+        },
+        {
+          "date": "2025-10-31",
+          "close": 83.33,
+          "volume": 9447129,
+          "daily_return_pct": -1.52,
+          "cumulative_return_pct": 7.98
+        },
+        {
+          "date": "2025-11-03",
+          "close": 83.82,
+          "volume": 6039661,
+          "daily_return_pct": 0.59,
+          "cumulative_return_pct": 8.62
+        },
+        {
+          "date": "2025-11-04",
+          "close": 82.67,
+          "volume": 8226185,
+          "daily_return_pct": -1.37,
+          "cumulative_return_pct": 7.13
+        },
+        {
+          "date": "2025-11-06",
+          "close": 81.38,
+          "volume": 15881779,
+          "daily_return_pct": -1.56,
+          "cumulative_return_pct": 5.46
+        },
+        {
+          "date": "2025-11-07",
+          "close": 80.03,
+          "volume": 21856711,
+          "daily_return_pct": -1.66,
+          "cumulative_return_pct": 3.71
+        },
+        {
+          "date": "2025-11-10",
+          "close": 80.85,
+          "volume": 10235432,
+          "daily_return_pct": 1.02,
+          "cumulative_return_pct": 4.77
+        },
+        {
+          "date": "2025-11-11",
+          "close": 80.44,
+          "volume": 8771807,
+          "daily_return_pct": -0.51,
+          "cumulative_return_pct": 4.24
+        },
+        {
+          "date": "2025-11-12",
+          "close": 80.53,
+          "volume": 9269353,
+          "daily_return_pct": 0.11,
+          "cumulative_return_pct": 4.35
+        },
+        {
+          "date": "2025-11-13",
+          "close": 80.01,
+          "volume": 6504616,
+          "daily_return_pct": -0.65,
+          "cumulative_return_pct": 3.68
+        },
+        {
+          "date": "2025-11-14",
+          "close": 78.88,
+          "volume": 14292619,
+          "daily_return_pct": -1.41,
+          "cumulative_return_pct": 2.22
+        },
+        {
+          "date": "2025-11-17",
+          "close": 79.81,
+          "volume": 7827088,
+          "daily_return_pct": 1.18,
+          "cumulative_return_pct": 3.42
+        },
+        {
+          "date": "2025-11-18",
+          "close": 79.1,
+          "volume": 9471269,
+          "daily_return_pct": -0.89,
+          "cumulative_return_pct": 2.5
+        },
+        {
+          "date": "2025-11-19",
+          "close": 78.63,
+          "volume": 11017010,
+          "daily_return_pct": -0.59,
+          "cumulative_return_pct": 1.89
+        },
+        {
+          "date": "2025-11-20",
+          "close": 78.7,
+          "volume": 6838932,
+          "daily_return_pct": 0.09,
+          "cumulative_return_pct": 1.98
+        },
+        {
+          "date": "2025-11-21",
+          "close": 77.42,
+          "volume": 7146540,
+          "daily_return_pct": -1.63,
+          "cumulative_return_pct": 0.32
+        },
+        {
+          "date": "2025-11-24",
+          "close": 75.59,
+          "volume": 26744638,
+          "daily_return_pct": -2.36,
+          "cumulative_return_pct": -2.05
+        },
+        {
+          "date": "2025-11-25",
+          "close": 75.86,
+          "volume": 13344341,
+          "daily_return_pct": 0.36,
+          "cumulative_return_pct": -1.7
+        },
+        {
+          "date": "2025-11-26",
+          "close": 76.06,
+          "volume": 12028891,
+          "daily_return_pct": 0.26,
+          "cumulative_return_pct": -1.44
+        },
+        {
+          "date": "2025-11-27",
+          "close": 75.58,
+          "volume": 8611413,
+          "daily_return_pct": -0.63,
+          "cumulative_return_pct": -2.06
+        },
+        {
+          "date": "2025-11-28",
+          "close": 75.38,
+          "volume": 5085508,
+          "daily_return_pct": -0.26,
+          "cumulative_return_pct": -2.32
+        },
+        {
+          "date": "2025-12-01",
+          "close": 75.93,
+          "volume": 10203101,
+          "daily_return_pct": 0.73,
+          "cumulative_return_pct": -1.61
+        },
+        {
+          "date": "2025-12-02",
+          "close": 75.91,
+          "volume": 8538683,
+          "daily_return_pct": -0.03,
+          "cumulative_return_pct": -1.63
+        },
+        {
+          "date": "2025-12-03",
+          "close": 75.47,
+          "volume": 6591641,
+          "daily_return_pct": -0.58,
+          "cumulative_return_pct": -2.2
+        },
+        {
+          "date": "2025-12-04",
+          "close": 75.53,
+          "volume": 5539974,
+          "daily_return_pct": 0.08,
+          "cumulative_return_pct": -2.13
+        },
+        {
+          "date": "2025-12-05",
+          "close": 75.7,
+          "volume": 4704567,
+          "daily_return_pct": 0.23,
+          "cumulative_return_pct": -1.9
+        },
+        {
+          "date": "2025-12-08",
+          "close": 75.07,
+          "volume": 9179338,
+          "daily_return_pct": -0.83,
+          "cumulative_return_pct": -2.72
+        },
+        {
+          "date": "2025-12-09",
+          "close": 75.11,
+          "volume": 8071171,
+          "daily_return_pct": 0.05,
+          "cumulative_return_pct": -2.67
+        },
+        {
+          "date": "2025-12-10",
+          "close": 75.51,
+          "volume": 11484756,
+          "daily_return_pct": 0.53,
+          "cumulative_return_pct": -2.15
+        },
+        {
+          "date": "2025-12-11",
+          "close": 75.33,
+          "volume": 8175564,
+          "daily_return_pct": -0.24,
+          "cumulative_return_pct": -2.38
+        },
+        {
+          "date": "2025-12-12",
+          "close": 75.76,
+          "volume": 5170567,
+          "daily_return_pct": 0.57,
+          "cumulative_return_pct": -1.83
+        },
+        {
+          "date": "2025-12-15",
+          "close": 75.84,
+          "volume": 3577380,
+          "daily_return_pct": 0.11,
+          "cumulative_return_pct": -1.72
+        },
+        {
+          "date": "2025-12-16",
+          "close": 74.66,
+          "volume": 5982508,
+          "daily_return_pct": -1.56,
+          "cumulative_return_pct": -3.25
+        },
+        {
+          "date": "2025-12-17",
+          "close": 74.05,
+          "volume": 5716621,
+          "daily_return_pct": -0.82,
+          "cumulative_return_pct": -4.04
+        },
+        {
+          "date": "2025-12-18",
+          "close": 73.71,
+          "volume": 6166849,
+          "daily_return_pct": -0.46,
+          "cumulative_return_pct": -4.48
+        },
+        {
+          "date": "2025-12-19",
+          "close": 75.25,
+          "volume": 8352760,
+          "daily_return_pct": 2.09,
+          "cumulative_return_pct": -2.49
+        },
+        {
+          "date": "2025-12-22",
+          "close": 76.29,
+          "volume": 8760062,
+          "daily_return_pct": 1.38,
+          "cumulative_return_pct": -1.14
+        },
+        {
+          "date": "2025-12-23",
+          "close": 76.84,
+          "volume": 5923487,
+          "daily_return_pct": 0.72,
+          "cumulative_return_pct": -0.43
+        },
+        {
+          "date": "2025-12-24",
+          "close": 76.43,
+          "volume": 5716970,
+          "daily_return_pct": -0.53,
+          "cumulative_return_pct": -0.96
+        },
+        {
+          "date": "2025-12-26",
+          "close": 76.97,
+          "volume": 9063484,
+          "daily_return_pct": 0.71,
+          "cumulative_return_pct": -0.26
+        },
+        {
+          "date": "2025-12-29",
+          "close": 75.43,
+          "volume": 7882505,
+          "daily_return_pct": -2.0,
+          "cumulative_return_pct": -2.25
+        },
+        {
+          "date": "2025-12-30",
+          "close": 77.19,
+          "volume": 17154730,
+          "daily_return_pct": 2.33,
+          "cumulative_return_pct": 0.03
+        },
+        {
+          "date": "2025-12-31",
+          "close": 77.81,
+          "volume": 11502750,
+          "daily_return_pct": 0.8,
+          "cumulative_return_pct": 0.83
+        },
+        {
+          "date": "2026-01-01",
+          "close": 78.15,
+          "volume": 6861848,
+          "daily_return_pct": 0.44,
+          "cumulative_return_pct": 1.27
+        },
+        {
+          "date": "2026-01-02",
+          "close": 82.14,
+          "volume": 32430153,
+          "daily_return_pct": 5.11,
+          "cumulative_return_pct": 6.44
+        },
+        {
+          "date": "2026-01-05",
+          "close": 82.18,
+          "volume": 19831880,
+          "daily_return_pct": 0.05,
+          "cumulative_return_pct": 6.49
+        },
+        {
+          "date": "2026-01-06",
+          "close": 82.05,
+          "volume": 11599812,
+          "daily_return_pct": -0.16,
+          "cumulative_return_pct": 6.32
+        },
+        {
+          "date": "2026-01-07",
+          "close": 82.18,
+          "volume": 12484291,
+          "daily_return_pct": 0.16,
+          "cumulative_return_pct": 6.49
+        },
+        {
+          "date": "2026-01-08",
+          "close": 80.71,
+          "volume": 11540338,
+          "daily_return_pct": -1.79,
+          "cumulative_return_pct": 4.59
+        },
+        {
+          "date": "2026-01-09",
+          "close": 80.97,
+          "volume": 21164552,
+          "daily_return_pct": 0.32,
+          "cumulative_return_pct": 4.92
+        },
+        {
+          "date": "2026-01-12",
+          "close": 81.33,
+          "volume": 15097408,
+          "daily_return_pct": 0.44,
+          "cumulative_return_pct": 5.39
+        },
+        {
+          "date": "2026-01-13",
+          "close": 79.98,
+          "volume": 11938744,
+          "daily_return_pct": -1.66,
+          "cumulative_return_pct": 3.64
+        },
+        {
+          "date": "2026-01-14",
+          "close": 79.85,
+          "volume": 9338673,
+          "daily_return_pct": -0.16,
+          "cumulative_return_pct": 3.47
+        },
+        {
+          "date": "2026-01-15",
+          "close": 79.85,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 3.47
+        },
+        {
+          "date": "2026-01-16",
+          "close": 78.8,
+          "volume": 62986811,
+          "daily_return_pct": -1.31,
+          "cumulative_return_pct": 2.11
+        },
+        {
+          "date": "2026-01-19",
+          "close": 78.01,
+          "volume": 9016570,
+          "daily_return_pct": -1.0,
+          "cumulative_return_pct": 1.09
+        },
+        {
+          "date": "2026-01-20",
+          "close": 76.19,
+          "volume": 11440113,
+          "daily_return_pct": -2.33,
+          "cumulative_return_pct": -1.27
+        },
+        {
+          "date": "2026-01-21",
+          "close": 74.77,
+          "volume": 17091171,
+          "daily_return_pct": -1.86,
+          "cumulative_return_pct": -3.11
+        },
+        {
+          "date": "2026-01-22",
+          "close": 76.08,
+          "volume": 10030169,
+          "daily_return_pct": 1.75,
+          "cumulative_return_pct": -1.41
+        },
+        {
+          "date": "2026-01-23",
+          "close": 73.91,
+          "volume": 11193218,
+          "daily_return_pct": -2.85,
+          "cumulative_return_pct": -4.22
+        },
+        {
+          "date": "2026-01-27",
+          "close": 73.81,
+          "volume": 40379909,
+          "daily_return_pct": -0.14,
+          "cumulative_return_pct": -4.35
+        },
+        {
+          "date": "2026-01-28",
+          "close": 77.49,
+          "volume": 10992004,
+          "daily_return_pct": 4.99,
+          "cumulative_return_pct": 0.41
+        },
+        {
+          "date": "2026-01-29",
+          "close": 77.78,
+          "volume": 11912349,
+          "daily_return_pct": 0.37,
+          "cumulative_return_pct": 0.79
+        },
+        {
+          "date": "2026-01-30",
+          "close": 76.81,
+          "volume": 14584257,
+          "daily_return_pct": -1.25,
+          "cumulative_return_pct": -0.47
+        },
+        {
+          "date": "2026-02-02",
+          "close": 76.41,
+          "volume": 12293921,
+          "daily_return_pct": -0.52,
+          "cumulative_return_pct": -0.98
+        },
+        {
+          "date": "2026-02-03",
+          "close": 77.1,
+          "volume": 18077960,
+          "daily_return_pct": 0.9,
+          "cumulative_return_pct": -0.09
+        },
+        {
+          "date": "2026-02-04",
+          "close": 77.09,
+          "volume": 17623704,
+          "daily_return_pct": -0.01,
+          "cumulative_return_pct": -0.1
+        },
+        {
+          "date": "2026-02-05",
+          "close": 78.58,
+          "volume": 26499178,
+          "daily_return_pct": 1.93,
+          "cumulative_return_pct": 1.83
+        },
+        {
+          "date": "2026-02-06",
+          "close": 78.02,
+          "volume": 9048503,
+          "daily_return_pct": -0.71,
+          "cumulative_return_pct": 1.1
+        },
+        {
+          "date": "2026-02-09",
+          "close": 77.5,
+          "volume": 15308838,
+          "daily_return_pct": -0.67,
+          "cumulative_return_pct": 0.43
+        },
+        {
+          "date": "2026-02-10",
+          "close": 76.95,
+          "volume": 25051448,
+          "daily_return_pct": -0.71,
+          "cumulative_return_pct": -0.29
+        },
+        {
+          "date": "2026-02-11",
+          "close": 77.58,
+          "volume": 13906623,
+          "daily_return_pct": 0.82,
+          "cumulative_return_pct": 0.53
+        },
+        {
+          "date": "2026-02-12",
+          "close": 76.5,
+          "volume": 13309440,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -0.87
+        },
+        {
+          "date": "2026-02-13",
+          "close": 75.47,
+          "volume": 10066742,
+          "daily_return_pct": -1.35,
+          "cumulative_return_pct": -2.2
+        },
+        {
+          "date": "2026-02-16",
+          "close": 77.04,
+          "volume": 10917667,
+          "daily_return_pct": 2.08,
+          "cumulative_return_pct": -0.17
+        },
+        {
+          "date": "2026-02-17",
+          "close": 76.71,
+          "volume": 10226000,
+          "daily_return_pct": -0.43,
+          "cumulative_return_pct": -0.6
+        },
+        {
+          "date": "2026-02-18",
+          "close": 76.34,
+          "volume": 10755577,
+          "daily_return_pct": -0.48,
+          "cumulative_return_pct": -1.08
+        },
+        {
+          "date": "2026-02-19",
+          "close": 74.36,
+          "volume": 12521749,
+          "daily_return_pct": -2.59,
+          "cumulative_return_pct": -3.64
+        },
+        {
+          "date": "2026-02-20",
+          "close": 74.47,
+          "volume": 13669825,
+          "daily_return_pct": 0.15,
+          "cumulative_return_pct": -3.5
+        },
+        {
+          "date": "2026-02-23",
+          "close": 74.08,
+          "volume": 11122387,
+          "daily_return_pct": -0.52,
+          "cumulative_return_pct": -4.0
+        },
+        {
+          "date": "2026-02-24",
+          "close": 75.77,
+          "volume": 13924500,
+          "daily_return_pct": 2.28,
+          "cumulative_return_pct": -1.81
+        },
+        {
+          "date": "2026-02-25",
+          "close": 75.67,
+          "volume": 8286035,
+          "daily_return_pct": -0.13,
+          "cumulative_return_pct": -1.94
+        },
+        {
+          "date": "2026-02-26",
+          "close": 75.73,
+          "volume": 22634338,
+          "daily_return_pct": 0.08,
+          "cumulative_return_pct": -1.87
+        },
+        {
+          "date": "2026-02-27",
+          "close": 75.33,
+          "volume": 21574575,
+          "daily_return_pct": -0.53,
+          "cumulative_return_pct": -2.38
+        },
+        {
+          "date": "2026-03-02",
+          "close": 73.14,
+          "volume": 25723090,
+          "daily_return_pct": -2.91,
+          "cumulative_return_pct": -5.22
+        },
+        {
+          "date": "2026-03-04",
+          "close": 72.23,
+          "volume": 19057575,
+          "daily_return_pct": -1.24,
+          "cumulative_return_pct": -6.4
+        },
+        {
+          "date": "2026-03-05",
+          "close": 74.15,
+          "volume": 15870110,
+          "daily_return_pct": 2.66,
+          "cumulative_return_pct": -3.91
+        },
+        {
+          "date": "2026-03-06",
+          "close": 74.18,
+          "volume": 14268041,
+          "daily_return_pct": 0.04,
+          "cumulative_return_pct": -3.87
+        },
+        {
+          "date": "2026-03-09",
+          "close": 73.04,
+          "volume": 22232154,
+          "daily_return_pct": -1.54,
+          "cumulative_return_pct": -5.35
+        },
+        {
+          "date": "2026-03-10",
+          "close": 73.04,
+          "volume": 11915288,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -5.35
+        },
+        {
+          "date": "2026-03-11",
+          "close": 73.46,
+          "volume": 12028018,
+          "daily_return_pct": 0.58,
+          "cumulative_return_pct": -4.81
+        },
+        {
+          "date": "2026-03-12",
+          "close": 74.78,
+          "volume": 16804967,
+          "daily_return_pct": 1.8,
+          "cumulative_return_pct": -3.1
+        },
+        {
+          "date": "2026-03-13",
+          "close": 74.98,
+          "volume": 26761513,
+          "daily_return_pct": 0.27,
+          "cumulative_return_pct": -2.84
+        },
+        {
+          "date": "2026-03-16",
+          "close": 75.27,
+          "volume": 26396878,
+          "daily_return_pct": 0.39,
+          "cumulative_return_pct": -2.46
+        },
+        {
+          "date": "2026-03-17",
+          "close": 76.89,
+          "volume": 22958619,
+          "daily_return_pct": 2.15,
+          "cumulative_return_pct": -0.36
+        },
+        {
+          "date": "2026-03-18",
+          "close": 77.36,
+          "volume": 28693906,
+          "daily_return_pct": 0.61,
+          "cumulative_return_pct": 0.25
+        },
+        {
+          "date": "2026-03-19",
+          "close": 76.24,
+          "volume": 17620849,
+          "daily_return_pct": -1.45,
+          "cumulative_return_pct": -1.21
+        },
+        {
+          "date": "2026-03-20",
+          "close": 76.8,
+          "volume": 19824270,
+          "daily_return_pct": 0.73,
+          "cumulative_return_pct": -0.48
+        },
+        {
+          "date": "2026-03-23",
+          "close": 75.28,
+          "volume": 11883610,
+          "daily_return_pct": -1.98,
+          "cumulative_return_pct": -2.45
+        },
+        {
+          "date": "2026-03-24",
+          "close": 76.54,
+          "volume": 9600102,
+          "daily_return_pct": 1.67,
+          "cumulative_return_pct": -0.82
+        },
+        {
+          "date": "2026-03-25",
+          "close": 77.2,
+          "volume": 13196383,
+          "daily_return_pct": 0.86,
+          "cumulative_return_pct": 0.04
+        },
+        {
+          "date": "2026-03-27",
+          "close": 76.59,
+          "volume": 15856853,
+          "daily_return_pct": -0.79,
+          "cumulative_return_pct": -0.75
+        },
+        {
+          "date": "2026-03-30",
+          "close": 73.72,
+          "volume": 21394338,
+          "daily_return_pct": -3.75,
+          "cumulative_return_pct": -4.47
+        },
+        {
+          "date": "2026-04-01",
+          "close": 75.39,
+          "volume": 14922443,
+          "daily_return_pct": 2.27,
+          "cumulative_return_pct": -2.31
+        },
+        {
+          "date": "2026-04-02",
+          "close": 75.33,
+          "volume": 9127053,
+          "daily_return_pct": -0.08,
+          "cumulative_return_pct": -2.38
+        },
+        {
+          "date": "2026-04-06",
+          "close": 76.16,
+          "volume": 8019672,
+          "daily_return_pct": 1.1,
+          "cumulative_return_pct": -1.31
+        },
+        {
+          "date": "2026-04-07",
+          "close": 75.67,
+          "volume": 5064467,
+          "daily_return_pct": -0.64,
+          "cumulative_return_pct": -1.94
+        },
+        {
+          "date": "2026-04-08",
+          "close": 76.7,
+          "volume": 12486689,
+          "daily_return_pct": 1.36,
+          "cumulative_return_pct": -0.61
+        },
+        {
+          "date": "2026-04-09",
+          "close": 77.11,
+          "volume": 31334772,
+          "daily_return_pct": 0.53,
+          "cumulative_return_pct": -0.08
+        },
+        {
+          "date": "2026-04-10",
+          "close": 77.09,
+          "volume": 17950797,
+          "daily_return_pct": -0.03,
+          "cumulative_return_pct": -0.1
+        },
+        {
+          "date": "2026-04-13",
+          "close": 77.66,
+          "volume": 14493079,
+          "daily_return_pct": 0.74,
+          "cumulative_return_pct": 0.63
+        },
+        {
+          "date": "2026-04-15",
+          "close": 80.58,
+          "volume": 24133878,
+          "daily_return_pct": 3.76,
+          "cumulative_return_pct": 4.42
+        },
+        {
+          "date": "2026-04-16",
+          "close": 81.38,
+          "volume": 19779326,
+          "daily_return_pct": 0.99,
+          "cumulative_return_pct": 5.46
+        },
+        {
+          "date": "2026-04-17",
+          "close": 83.56,
+          "volume": 50026609,
+          "daily_return_pct": 2.68,
+          "cumulative_return_pct": 8.28
+        },
+        {
+          "date": "2026-04-20",
+          "close": 83.1,
+          "volume": 16988597,
+          "daily_return_pct": -0.55,
+          "cumulative_return_pct": 7.68
+        },
+        {
+          "date": "2026-04-21",
+          "close": 82.63,
+          "volume": 12629708,
+          "daily_return_pct": -0.57,
+          "cumulative_return_pct": 7.08
+        },
+        {
+          "date": "2026-04-22",
+          "close": 82.63,
+          "volume": 14953779,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 7.08
+        },
+        {
+          "date": "2026-04-23",
+          "close": 81.46,
+          "volume": 9025789,
+          "daily_return_pct": -1.42,
+          "cumulative_return_pct": 5.56
+        },
+        {
+          "date": "2026-04-24",
+          "close": 80.66,
+          "volume": 14088780,
+          "daily_return_pct": -0.98,
+          "cumulative_return_pct": 4.52
+        },
+        {
+          "date": "2026-04-27",
+          "close": 83.23,
+          "volume": 16998016,
+          "daily_return_pct": 3.19,
+          "cumulative_return_pct": 7.85
+        },
+        {
+          "date": "2026-04-28",
+          "close": 85.38,
+          "volume": 29008047,
+          "daily_return_pct": 2.58,
+          "cumulative_return_pct": 10.64
+        },
+        {
+          "date": "2026-04-29",
+          "close": 84.09,
+          "volume": 28377211,
+          "daily_return_pct": -1.51,
+          "cumulative_return_pct": 8.97
+        },
+        {
+          "date": "2026-04-30",
+          "close": 83.2,
+          "volume": 15377210,
+          "daily_return_pct": -1.06,
+          "cumulative_return_pct": 7.81
+        },
+        {
+          "date": "2026-05-01",
+          "close": 83.2,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 7.81
+        },
+        {
+          "date": "2026-05-04",
+          "close": 83.28,
+          "volume": 9422329,
+          "daily_return_pct": 0.1,
+          "cumulative_return_pct": 7.92
+        },
+        {
+          "date": "2026-05-05",
+          "close": 83.17,
+          "volume": 8265293,
+          "daily_return_pct": -0.13,
+          "cumulative_return_pct": 7.78
+        },
+        {
+          "date": "2026-05-06",
+          "close": 83.66,
+          "volume": 9589691,
+          "daily_return_pct": 0.59,
+          "cumulative_return_pct": 8.41
+        },
+        {
+          "date": "2026-05-07",
+          "close": 81.58,
+          "volume": 17298641,
+          "daily_return_pct": -2.49,
+          "cumulative_return_pct": 5.71
+        },
+        {
+          "date": "2026-05-08",
+          "close": 80.77,
+          "volume": 15750498,
+          "daily_return_pct": -0.99,
+          "cumulative_return_pct": 4.67
+        },
+        {
+          "date": "2026-05-11",
+          "close": 79.19,
+          "volume": 15575030,
+          "daily_return_pct": -1.96,
+          "cumulative_return_pct": 2.62
+        },
+        {
+          "date": "2026-05-12",
+          "close": 76.77,
+          "volume": 11491788,
+          "daily_return_pct": -3.06,
+          "cumulative_return_pct": -0.52
+        },
+        {
+          "date": "2026-05-13",
+          "close": 78.14,
+          "volume": 11438834,
+          "daily_return_pct": 1.78,
+          "cumulative_return_pct": 1.26
+        },
+        {
+          "date": "2026-05-14",
+          "close": 78.45,
+          "volume": 9871296,
+          "daily_return_pct": 0.4,
+          "cumulative_return_pct": 1.66
+        },
+        {
+          "date": "2026-05-15",
+          "close": 76.79,
+          "volume": 8674290,
+          "daily_return_pct": -2.12,
+          "cumulative_return_pct": -0.49
+        },
+        {
+          "date": "2026-05-18",
+          "close": 77.71,
+          "volume": 22907678,
+          "daily_return_pct": 1.2,
+          "cumulative_return_pct": 0.7
+        },
+        {
+          "date": "2026-05-19",
+          "close": 79.06,
+          "volume": 15077061,
+          "daily_return_pct": 1.74,
+          "cumulative_return_pct": 2.45
+        },
+        {
+          "date": "2026-05-20",
+          "close": 79.5,
+          "volume": 15924979,
+          "daily_return_pct": 0.56,
+          "cumulative_return_pct": 3.02
+        },
+        {
+          "date": "2026-05-21",
+          "close": 79.0,
+          "volume": 10434287,
+          "daily_return_pct": -0.63,
+          "cumulative_return_pct": 2.37
+        },
+        {
+          "date": "2026-05-22",
+          "close": 78.36,
+          "volume": 10284991,
+          "daily_return_pct": -0.81,
+          "cumulative_return_pct": 1.54
+        }
+      ],
+      "assessment": {
+        "verdict": "FLAT",
+        "total_return_pct": 1.54,
+        "annualized_return_pct": 2.2,
+        "drawdown_from_peak_pct": -9.97,
+        "trading_days": 180,
+        "base_price": 77.17,
+        "current_price": 78.36
+      }
+    },
+    {
+      "symbol": "SUZLON",
+      "name": "Suzlon Energy Limited",
+      "classification": "penny",
+      "conviction_level": "REJECTED",
+      "pulse_score": 57.5,
+      "da_score": 37.5,
+      "timeseries": [
+        {
+          "date": "2025-09-01",
+          "close": 57.86,
+          "volume": 62787374,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 0.0
+        },
+        {
+          "date": "2025-09-02",
+          "close": 58.25,
+          "volume": 72989341,
+          "daily_return_pct": 0.67,
+          "cumulative_return_pct": 0.67
+        },
+        {
+          "date": "2025-09-03",
+          "close": 57.99,
+          "volume": 44161578,
+          "daily_return_pct": -0.45,
+          "cumulative_return_pct": 0.22
+        },
+        {
+          "date": "2025-09-04",
+          "close": 57.42,
+          "volume": 45523685,
+          "daily_return_pct": -0.98,
+          "cumulative_return_pct": -0.76
+        },
+        {
+          "date": "2025-09-05",
+          "close": 57.87,
+          "volume": 36924536,
+          "daily_return_pct": 0.78,
+          "cumulative_return_pct": 0.02
+        },
+        {
+          "date": "2025-09-08",
+          "close": 57.45,
+          "volume": 31288449,
+          "daily_return_pct": -0.73,
+          "cumulative_return_pct": -0.71
+        },
+        {
+          "date": "2025-09-09",
+          "close": 57.06,
+          "volume": 28437335,
+          "daily_return_pct": -0.68,
+          "cumulative_return_pct": -1.38
+        },
+        {
+          "date": "2025-09-10",
+          "close": 57.57,
+          "volume": 37061910,
+          "daily_return_pct": 0.89,
+          "cumulative_return_pct": -0.5
+        },
+        {
+          "date": "2025-09-11",
+          "close": 56.94,
+          "volume": 35651527,
+          "daily_return_pct": -1.09,
+          "cumulative_return_pct": -1.59
+        },
+        {
+          "date": "2025-09-12",
+          "close": 57.11,
+          "volume": 30872715,
+          "daily_return_pct": 0.3,
+          "cumulative_return_pct": -1.3
+        },
+        {
+          "date": "2025-09-15",
+          "close": 58.07,
+          "volume": 47861584,
+          "daily_return_pct": 1.68,
+          "cumulative_return_pct": 0.36
+        },
+        {
+          "date": "2025-09-16",
+          "close": 58.98,
+          "volume": 83962341,
+          "daily_return_pct": 1.57,
+          "cumulative_return_pct": 1.94
+        },
+        {
+          "date": "2025-09-17",
+          "close": 59.29,
+          "volume": 63663995,
+          "daily_return_pct": 0.53,
+          "cumulative_return_pct": 2.47
+        },
+        {
+          "date": "2025-09-18",
+          "close": 59.08,
+          "volume": 34615017,
+          "daily_return_pct": -0.35,
+          "cumulative_return_pct": 2.11
+        },
+        {
+          "date": "2025-09-19",
+          "close": 60.4,
+          "volume": 84643232,
+          "daily_return_pct": 2.23,
+          "cumulative_return_pct": 4.39
+        },
+        {
+          "date": "2025-09-22",
+          "close": 59.93,
+          "volume": 62077740,
+          "daily_return_pct": -0.78,
+          "cumulative_return_pct": 3.58
+        },
+        {
+          "date": "2025-09-23",
+          "close": 58.75,
+          "volume": 43152416,
+          "daily_return_pct": -1.97,
+          "cumulative_return_pct": 1.54
+        },
+        {
+          "date": "2025-09-24",
+          "close": 57.5,
+          "volume": 36883372,
+          "daily_return_pct": -2.13,
+          "cumulative_return_pct": -0.62
+        },
+        {
+          "date": "2025-09-25",
+          "close": 56.64,
+          "volume": 38206699,
+          "daily_return_pct": -1.5,
+          "cumulative_return_pct": -2.11
+        },
+        {
+          "date": "2025-09-26",
+          "close": 55.28,
+          "volume": 54393034,
+          "daily_return_pct": -2.4,
+          "cumulative_return_pct": -4.46
+        },
+        {
+          "date": "2025-09-29",
+          "close": 55.28,
+          "volume": 49687799,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -4.46
+        },
+        {
+          "date": "2025-09-30",
+          "close": 55.05,
+          "volume": 57639009,
+          "daily_return_pct": -0.42,
+          "cumulative_return_pct": -4.86
+        },
+        {
+          "date": "2025-10-01",
+          "close": 55.18,
+          "volume": 46144026,
+          "daily_return_pct": 0.24,
+          "cumulative_return_pct": -4.63
+        },
+        {
+          "date": "2025-10-03",
+          "close": 54.46,
+          "volume": 69042422,
+          "daily_return_pct": -1.3,
+          "cumulative_return_pct": -5.88
+        },
+        {
+          "date": "2025-10-06",
+          "close": 54.11,
+          "volume": 45009790,
+          "daily_return_pct": -0.64,
+          "cumulative_return_pct": -6.48
+        },
+        {
+          "date": "2025-10-07",
+          "close": 54.01,
+          "volume": 50646458,
+          "daily_return_pct": -0.18,
+          "cumulative_return_pct": -6.65
+        },
+        {
+          "date": "2025-10-08",
+          "close": 52.77,
+          "volume": 60453406,
+          "daily_return_pct": -2.3,
+          "cumulative_return_pct": -8.8
+        },
+        {
+          "date": "2025-10-09",
+          "close": 53.17,
+          "volume": 63749358,
+          "daily_return_pct": 0.76,
+          "cumulative_return_pct": -8.11
+        },
+        {
+          "date": "2025-10-10",
+          "close": 54.31,
+          "volume": 58987213,
+          "daily_return_pct": 2.14,
+          "cumulative_return_pct": -6.14
+        },
+        {
+          "date": "2025-10-13",
+          "close": 54.35,
+          "volume": 44487704,
+          "daily_return_pct": 0.07,
+          "cumulative_return_pct": -6.07
+        },
+        {
+          "date": "2025-10-14",
+          "close": 53.95,
+          "volume": 40526897,
+          "daily_return_pct": -0.74,
+          "cumulative_return_pct": -6.76
+        },
+        {
+          "date": "2025-10-15",
+          "close": 53.73,
+          "volume": 56703266,
+          "daily_return_pct": -0.41,
+          "cumulative_return_pct": -7.14
+        },
+        {
+          "date": "2025-10-16",
+          "close": 53.61,
+          "volume": 48868416,
+          "daily_return_pct": -0.22,
+          "cumulative_return_pct": -7.35
+        },
+        {
+          "date": "2025-10-17",
+          "close": 52.92,
+          "volume": 173663310,
+          "daily_return_pct": -1.29,
+          "cumulative_return_pct": -8.54
+        },
+        {
+          "date": "2025-10-20",
+          "close": 53.09,
+          "volume": 34409429,
+          "daily_return_pct": 0.32,
+          "cumulative_return_pct": -8.24
+        },
+        {
+          "date": "2025-10-21",
+          "close": 54.18,
+          "volume": 22821584,
+          "daily_return_pct": 2.05,
+          "cumulative_return_pct": -6.36
+        },
+        {
+          "date": "2025-10-23",
+          "close": 54.53,
+          "volume": 76480331,
+          "daily_return_pct": 0.65,
+          "cumulative_return_pct": -5.76
+        },
+        {
+          "date": "2025-10-24",
+          "close": 53.82,
+          "volume": 44370005,
+          "daily_return_pct": -1.3,
+          "cumulative_return_pct": -6.98
+        },
+        {
+          "date": "2025-10-27",
+          "close": 53.71,
+          "volume": 24719719,
+          "daily_return_pct": -0.2,
+          "cumulative_return_pct": -7.17
+        },
+        {
+          "date": "2025-10-28",
+          "close": 56.22,
+          "volume": 134473878,
+          "daily_return_pct": 4.67,
+          "cumulative_return_pct": -2.83
+        },
+        {
+          "date": "2025-10-29",
+          "close": 58.19,
+          "volume": 154967971,
+          "daily_return_pct": 3.5,
+          "cumulative_return_pct": 0.57
+        },
+        {
+          "date": "2025-10-30",
+          "close": 58.51,
+          "volume": 83463327,
+          "daily_return_pct": 0.55,
+          "cumulative_return_pct": 1.12
+        },
+        {
+          "date": "2025-10-31",
+          "close": 59.3,
+          "volume": 108026021,
+          "daily_return_pct": 1.35,
+          "cumulative_return_pct": 2.49
+        },
+        {
+          "date": "2025-11-03",
+          "close": 59.24,
+          "volume": 75149800,
+          "daily_return_pct": -0.1,
+          "cumulative_return_pct": 2.39
+        },
+        {
+          "date": "2025-11-04",
+          "close": 59.99,
+          "volume": 317089760,
+          "daily_return_pct": 1.27,
+          "cumulative_return_pct": 3.68
+        },
+        {
+          "date": "2025-11-06",
+          "close": 59.61,
+          "volume": 147235071,
+          "daily_return_pct": -0.63,
+          "cumulative_return_pct": 3.02
+        },
+        {
+          "date": "2025-11-07",
+          "close": 57.38,
+          "volume": 122840652,
+          "daily_return_pct": -3.74,
+          "cumulative_return_pct": -0.83
+        },
+        {
+          "date": "2025-11-10",
+          "close": 57.43,
+          "volume": 63054794,
+          "daily_return_pct": 0.09,
+          "cumulative_return_pct": -0.74
+        },
+        {
+          "date": "2025-11-11",
+          "close": 57.82,
+          "volume": 50483890,
+          "daily_return_pct": 0.68,
+          "cumulative_return_pct": -0.07
+        },
+        {
+          "date": "2025-11-12",
+          "close": 58.48,
+          "volume": 53042828,
+          "daily_return_pct": 1.14,
+          "cumulative_return_pct": 1.07
+        },
+        {
+          "date": "2025-11-13",
+          "close": 57.58,
+          "volume": 40221624,
+          "daily_return_pct": -1.54,
+          "cumulative_return_pct": -0.48
+        },
+        {
+          "date": "2025-11-14",
+          "close": 57.68,
+          "volume": 41214942,
+          "daily_return_pct": 0.17,
+          "cumulative_return_pct": -0.31
+        },
+        {
+          "date": "2025-11-17",
+          "close": 57.7,
+          "volume": 36049802,
+          "daily_return_pct": 0.03,
+          "cumulative_return_pct": -0.28
+        },
+        {
+          "date": "2025-11-18",
+          "close": 56.9,
+          "volume": 29797672,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -1.66
+        },
+        {
+          "date": "2025-11-19",
+          "close": 56.53,
+          "volume": 35976206,
+          "daily_return_pct": -0.65,
+          "cumulative_return_pct": -2.3
+        },
+        {
+          "date": "2025-11-20",
+          "close": 56.7,
+          "volume": 37658777,
+          "daily_return_pct": 0.3,
+          "cumulative_return_pct": -2.0
+        },
+        {
+          "date": "2025-11-21",
+          "close": 55.1,
+          "volume": 42894379,
+          "daily_return_pct": -2.82,
+          "cumulative_return_pct": -4.77
+        },
+        {
+          "date": "2025-11-24",
+          "close": 54.61,
+          "volume": 96347031,
+          "daily_return_pct": -0.89,
+          "cumulative_return_pct": -5.62
+        },
+        {
+          "date": "2025-11-25",
+          "close": 54.19,
+          "volume": 36680917,
+          "daily_return_pct": -0.77,
+          "cumulative_return_pct": -6.34
+        },
+        {
+          "date": "2025-11-26",
+          "close": 55.58,
+          "volume": 43866679,
+          "daily_return_pct": 2.57,
+          "cumulative_return_pct": -3.94
+        },
+        {
+          "date": "2025-11-27",
+          "close": 54.93,
+          "volume": 28645872,
+          "daily_return_pct": -1.17,
+          "cumulative_return_pct": -5.06
+        },
+        {
+          "date": "2025-11-28",
+          "close": 54.01,
+          "volume": 52551047,
+          "daily_return_pct": -1.67,
+          "cumulative_return_pct": -6.65
+        },
+        {
+          "date": "2025-12-01",
+          "close": 53.72,
+          "volume": 33170385,
+          "daily_return_pct": -0.54,
+          "cumulative_return_pct": -7.16
+        },
+        {
+          "date": "2025-12-02",
+          "close": 53.42,
+          "volume": 41115861,
+          "daily_return_pct": -0.56,
+          "cumulative_return_pct": -7.67
+        },
+        {
+          "date": "2025-12-03",
+          "close": 52.59,
+          "volume": 42825048,
+          "daily_return_pct": -1.55,
+          "cumulative_return_pct": -9.11
+        },
+        {
+          "date": "2025-12-04",
+          "close": 50.85,
+          "volume": 76794810,
+          "daily_return_pct": -3.31,
+          "cumulative_return_pct": -12.12
+        },
+        {
+          "date": "2025-12-05",
+          "close": 51.74,
+          "volume": 61141969,
+          "daily_return_pct": 1.75,
+          "cumulative_return_pct": -10.58
+        },
+        {
+          "date": "2025-12-08",
+          "close": 51.78,
+          "volume": 97482417,
+          "daily_return_pct": 0.08,
+          "cumulative_return_pct": -10.51
+        },
+        {
+          "date": "2025-12-09",
+          "close": 52.55,
+          "volume": 64804664,
+          "daily_return_pct": 1.49,
+          "cumulative_return_pct": -9.18
+        },
+        {
+          "date": "2025-12-10",
+          "close": 51.54,
+          "volume": 59123651,
+          "daily_return_pct": -1.92,
+          "cumulative_return_pct": -10.92
+        },
+        {
+          "date": "2025-12-11",
+          "close": 52.04,
+          "volume": 52982896,
+          "daily_return_pct": 0.97,
+          "cumulative_return_pct": -10.06
+        },
+        {
+          "date": "2025-12-12",
+          "close": 53.02,
+          "volume": 42524157,
+          "daily_return_pct": 1.88,
+          "cumulative_return_pct": -8.37
+        },
+        {
+          "date": "2025-12-15",
+          "close": 53.14,
+          "volume": 30122901,
+          "daily_return_pct": 0.23,
+          "cumulative_return_pct": -8.16
+        },
+        {
+          "date": "2025-12-16",
+          "close": 52.67,
+          "volume": 33821093,
+          "daily_return_pct": -0.88,
+          "cumulative_return_pct": -8.97
+        },
+        {
+          "date": "2025-12-17",
+          "close": 51.94,
+          "volume": 30348315,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -10.23
+        },
+        {
+          "date": "2025-12-18",
+          "close": 51.78,
+          "volume": 30872497,
+          "daily_return_pct": -0.31,
+          "cumulative_return_pct": -10.51
+        },
+        {
+          "date": "2025-12-19",
+          "close": 52.59,
+          "volume": 37121138,
+          "daily_return_pct": 1.56,
+          "cumulative_return_pct": -9.11
+        },
+        {
+          "date": "2025-12-22",
+          "close": 53.51,
+          "volume": 38903607,
+          "daily_return_pct": 1.75,
+          "cumulative_return_pct": -7.52
+        },
+        {
+          "date": "2025-12-23",
+          "close": 53.62,
+          "volume": 30259539,
+          "daily_return_pct": 0.21,
+          "cumulative_return_pct": -7.33
+        },
+        {
+          "date": "2025-12-24",
+          "close": 53.3,
+          "volume": 44076962,
+          "daily_return_pct": -0.6,
+          "cumulative_return_pct": -7.88
+        },
+        {
+          "date": "2025-12-26",
+          "close": 53.2,
+          "volume": 41885960,
+          "daily_return_pct": -0.19,
+          "cumulative_return_pct": -8.05
+        },
+        {
+          "date": "2025-12-29",
+          "close": 52.73,
+          "volume": 35515877,
+          "daily_return_pct": -0.88,
+          "cumulative_return_pct": -8.87
+        },
+        {
+          "date": "2025-12-30",
+          "close": 52.0,
+          "volume": 101385408,
+          "daily_return_pct": -1.38,
+          "cumulative_return_pct": -10.13
+        },
+        {
+          "date": "2025-12-31",
+          "close": 52.67,
+          "volume": 38744091,
+          "daily_return_pct": 1.29,
+          "cumulative_return_pct": -8.97
+        },
+        {
+          "date": "2026-01-01",
+          "close": 52.47,
+          "volume": 26749342,
+          "daily_return_pct": -0.38,
+          "cumulative_return_pct": -9.32
+        },
+        {
+          "date": "2026-01-02",
+          "close": 54.28,
+          "volume": 59517999,
+          "daily_return_pct": 3.45,
+          "cumulative_return_pct": -6.19
+        },
+        {
+          "date": "2026-01-05",
+          "close": 53.67,
+          "volume": 40693570,
+          "daily_return_pct": -1.12,
+          "cumulative_return_pct": -7.24
+        },
+        {
+          "date": "2026-01-06",
+          "close": 53.45,
+          "volume": 31119731,
+          "daily_return_pct": -0.41,
+          "cumulative_return_pct": -7.62
+        },
+        {
+          "date": "2026-01-07",
+          "close": 52.9,
+          "volume": 48744390,
+          "daily_return_pct": -1.03,
+          "cumulative_return_pct": -8.57
+        },
+        {
+          "date": "2026-01-08",
+          "close": 50.93,
+          "volume": 59316617,
+          "daily_return_pct": -3.72,
+          "cumulative_return_pct": -11.98
+        },
+        {
+          "date": "2026-01-09",
+          "close": 49.2,
+          "volume": 89917429,
+          "daily_return_pct": -3.4,
+          "cumulative_return_pct": -14.97
+        },
+        {
+          "date": "2026-01-12",
+          "close": 49.2,
+          "volume": 66498246,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -14.97
+        },
+        {
+          "date": "2026-01-13",
+          "close": 48.69,
+          "volume": 75354673,
+          "daily_return_pct": -1.04,
+          "cumulative_return_pct": -15.85
+        },
+        {
+          "date": "2026-01-14",
+          "close": 49.01,
+          "volume": 55863563,
+          "daily_return_pct": 0.66,
+          "cumulative_return_pct": -15.3
+        },
+        {
+          "date": "2026-01-15",
+          "close": 49.01,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -15.3
+        },
+        {
+          "date": "2026-01-16",
+          "close": 48.45,
+          "volume": 105047207,
+          "daily_return_pct": -1.14,
+          "cumulative_return_pct": -16.26
+        },
+        {
+          "date": "2026-01-19",
+          "close": 47.98,
+          "volume": 52924798,
+          "daily_return_pct": -0.97,
+          "cumulative_return_pct": -17.08
+        },
+        {
+          "date": "2026-01-20",
+          "close": 46.34,
+          "volume": 60935304,
+          "daily_return_pct": -3.42,
+          "cumulative_return_pct": -19.91
+        },
+        {
+          "date": "2026-01-21",
+          "close": 45.53,
+          "volume": 78076574,
+          "daily_return_pct": -1.75,
+          "cumulative_return_pct": -21.31
+        },
+        {
+          "date": "2026-01-22",
+          "close": 46.99,
+          "volume": 56239464,
+          "daily_return_pct": 3.21,
+          "cumulative_return_pct": -18.79
+        },
+        {
+          "date": "2026-01-23",
+          "close": 45.7,
+          "volume": 49252985,
+          "daily_return_pct": -2.75,
+          "cumulative_return_pct": -21.02
+        },
+        {
+          "date": "2026-01-27",
+          "close": 45.79,
+          "volume": 62941841,
+          "daily_return_pct": 0.2,
+          "cumulative_return_pct": -20.86
+        },
+        {
+          "date": "2026-01-28",
+          "close": 47.8,
+          "volume": 59993734,
+          "daily_return_pct": 4.39,
+          "cumulative_return_pct": -17.39
+        },
+        {
+          "date": "2026-01-29",
+          "close": 47.44,
+          "volume": 55397230,
+          "daily_return_pct": -0.75,
+          "cumulative_return_pct": -18.01
+        },
+        {
+          "date": "2026-01-30",
+          "close": 47.67,
+          "volume": 60762661,
+          "daily_return_pct": 0.48,
+          "cumulative_return_pct": -17.61
+        },
+        {
+          "date": "2026-02-02",
+          "close": 46.99,
+          "volume": 45471127,
+          "daily_return_pct": -1.43,
+          "cumulative_return_pct": -18.79
+        },
+        {
+          "date": "2026-02-03",
+          "close": 49.16,
+          "volume": 78516505,
+          "daily_return_pct": 4.62,
+          "cumulative_return_pct": -15.04
+        },
+        {
+          "date": "2026-02-04",
+          "close": 49.77,
+          "volume": 55580192,
+          "daily_return_pct": 1.24,
+          "cumulative_return_pct": -13.98
+        },
+        {
+          "date": "2026-02-05",
+          "close": 47.85,
+          "volume": 121302173,
+          "daily_return_pct": -3.86,
+          "cumulative_return_pct": -17.3
+        },
+        {
+          "date": "2026-02-06",
+          "close": 48.04,
+          "volume": 57960744,
+          "daily_return_pct": 0.4,
+          "cumulative_return_pct": -16.97
+        },
+        {
+          "date": "2026-02-09",
+          "close": 48.19,
+          "volume": 51743958,
+          "daily_return_pct": 0.31,
+          "cumulative_return_pct": -16.71
+        },
+        {
+          "date": "2026-02-10",
+          "close": 47.69,
+          "volume": 40362194,
+          "daily_return_pct": -1.04,
+          "cumulative_return_pct": -17.58
+        },
+        {
+          "date": "2026-02-11",
+          "close": 47.38,
+          "volume": 57124692,
+          "daily_return_pct": -0.65,
+          "cumulative_return_pct": -18.11
+        },
+        {
+          "date": "2026-02-12",
+          "close": 46.81,
+          "volume": 38946281,
+          "daily_return_pct": -1.2,
+          "cumulative_return_pct": -19.1
+        },
+        {
+          "date": "2026-02-13",
+          "close": 45.67,
+          "volume": 52618195,
+          "daily_return_pct": -2.44,
+          "cumulative_return_pct": -21.07
+        },
+        {
+          "date": "2026-02-16",
+          "close": 46.21,
+          "volume": 39325966,
+          "daily_return_pct": 1.18,
+          "cumulative_return_pct": -20.13
+        },
+        {
+          "date": "2026-02-17",
+          "close": 45.94,
+          "volume": 39827932,
+          "daily_return_pct": -0.58,
+          "cumulative_return_pct": -20.6
+        },
+        {
+          "date": "2026-02-18",
+          "close": 46.09,
+          "volume": 22066437,
+          "daily_return_pct": 0.33,
+          "cumulative_return_pct": -20.34
+        },
+        {
+          "date": "2026-02-19",
+          "close": 45.25,
+          "volume": 36681650,
+          "daily_return_pct": -1.82,
+          "cumulative_return_pct": -21.79
+        },
+        {
+          "date": "2026-02-20",
+          "close": 44.46,
+          "volume": 61647383,
+          "daily_return_pct": -1.75,
+          "cumulative_return_pct": -23.16
+        },
+        {
+          "date": "2026-02-23",
+          "close": 44.25,
+          "volume": 49442100,
+          "daily_return_pct": -0.47,
+          "cumulative_return_pct": -23.52
+        },
+        {
+          "date": "2026-02-24",
+          "close": 44.13,
+          "volume": 56568697,
+          "daily_return_pct": -0.27,
+          "cumulative_return_pct": -23.73
+        },
+        {
+          "date": "2026-02-25",
+          "close": 43.18,
+          "volume": 75839738,
+          "daily_return_pct": -2.15,
+          "cumulative_return_pct": -25.37
+        },
+        {
+          "date": "2026-02-26",
+          "close": 43.27,
+          "volume": 49800911,
+          "daily_return_pct": 0.21,
+          "cumulative_return_pct": -25.22
+        },
+        {
+          "date": "2026-02-27",
+          "close": 42.67,
+          "volume": 85724851,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": -26.25
+        },
+        {
+          "date": "2026-03-02",
+          "close": 40.95,
+          "volume": 116013965,
+          "daily_return_pct": -4.03,
+          "cumulative_return_pct": -29.23
+        },
+        {
+          "date": "2026-03-04",
+          "close": 39.93,
+          "volume": 71113339,
+          "daily_return_pct": -2.49,
+          "cumulative_return_pct": -30.99
+        },
+        {
+          "date": "2026-03-05",
+          "close": 40.25,
+          "volume": 89173308,
+          "daily_return_pct": 0.8,
+          "cumulative_return_pct": -30.44
+        },
+        {
+          "date": "2026-03-06",
+          "close": 39.99,
+          "volume": 63058597,
+          "daily_return_pct": -0.65,
+          "cumulative_return_pct": -30.88
+        },
+        {
+          "date": "2026-03-09",
+          "close": 39.62,
+          "volume": 71721599,
+          "daily_return_pct": -0.93,
+          "cumulative_return_pct": -31.52
+        },
+        {
+          "date": "2026-03-10",
+          "close": 41.45,
+          "volume": 70866917,
+          "daily_return_pct": 4.62,
+          "cumulative_return_pct": -28.36
+        },
+        {
+          "date": "2026-03-11",
+          "close": 41.62,
+          "volume": 64189593,
+          "daily_return_pct": 0.41,
+          "cumulative_return_pct": -28.07
+        },
+        {
+          "date": "2026-03-12",
+          "close": 42.43,
+          "volume": 108432510,
+          "daily_return_pct": 1.95,
+          "cumulative_return_pct": -26.67
+        },
+        {
+          "date": "2026-03-13",
+          "close": 41.41,
+          "volume": 79497665,
+          "daily_return_pct": -2.4,
+          "cumulative_return_pct": -28.43
+        },
+        {
+          "date": "2026-03-16",
+          "close": 41.01,
+          "volume": 81266796,
+          "daily_return_pct": -0.97,
+          "cumulative_return_pct": -29.12
+        },
+        {
+          "date": "2026-03-17",
+          "close": 41.27,
+          "volume": 70423021,
+          "daily_return_pct": 0.63,
+          "cumulative_return_pct": -28.67
+        },
+        {
+          "date": "2026-03-18",
+          "close": 42.06,
+          "volume": 58427254,
+          "daily_return_pct": 1.91,
+          "cumulative_return_pct": -27.31
+        },
+        {
+          "date": "2026-03-19",
+          "close": 41.09,
+          "volume": 55593734,
+          "daily_return_pct": -2.31,
+          "cumulative_return_pct": -28.98
+        },
+        {
+          "date": "2026-03-20",
+          "close": 41.95,
+          "volume": 71960845,
+          "daily_return_pct": 2.09,
+          "cumulative_return_pct": -27.5
+        },
+        {
+          "date": "2026-03-23",
+          "close": 39.94,
+          "volume": 68192562,
+          "daily_return_pct": -4.79,
+          "cumulative_return_pct": -30.97
+        },
+        {
+          "date": "2026-03-24",
+          "close": 41.04,
+          "volume": 65440981,
+          "daily_return_pct": 2.75,
+          "cumulative_return_pct": -29.07
+        },
+        {
+          "date": "2026-03-25",
+          "close": 42.27,
+          "volume": 76079784,
+          "daily_return_pct": 3.0,
+          "cumulative_return_pct": -26.94
+        },
+        {
+          "date": "2026-03-27",
+          "close": 40.82,
+          "volume": 73603173,
+          "daily_return_pct": -3.43,
+          "cumulative_return_pct": -29.45
+        },
+        {
+          "date": "2026-03-30",
+          "close": 39.56,
+          "volume": 126591848,
+          "daily_return_pct": -3.09,
+          "cumulative_return_pct": -31.63
+        },
+        {
+          "date": "2026-04-01",
+          "close": 41.12,
+          "volume": 58512083,
+          "daily_return_pct": 3.94,
+          "cumulative_return_pct": -28.93
+        },
+        {
+          "date": "2026-04-02",
+          "close": 40.78,
+          "volume": 64825364,
+          "daily_return_pct": -0.83,
+          "cumulative_return_pct": -29.52
+        },
+        {
+          "date": "2026-04-06",
+          "close": 41.59,
+          "volume": 66648727,
+          "daily_return_pct": 1.99,
+          "cumulative_return_pct": -28.12
+        },
+        {
+          "date": "2026-04-07",
+          "close": 41.55,
+          "volume": 39145918,
+          "daily_return_pct": -0.1,
+          "cumulative_return_pct": -28.19
+        },
+        {
+          "date": "2026-04-08",
+          "close": 44.23,
+          "volume": 98803804,
+          "daily_return_pct": 6.45,
+          "cumulative_return_pct": -23.56
+        },
+        {
+          "date": "2026-04-09",
+          "close": 44.23,
+          "volume": 80302508,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -23.56
+        },
+        {
+          "date": "2026-04-10",
+          "close": 45.32,
+          "volume": 67332752,
+          "daily_return_pct": 2.46,
+          "cumulative_return_pct": -21.67
+        },
+        {
+          "date": "2026-04-13",
+          "close": 45.86,
+          "volume": 132245471,
+          "daily_return_pct": 1.19,
+          "cumulative_return_pct": -20.74
+        },
+        {
+          "date": "2026-04-15",
+          "close": 49.13,
+          "volume": 215457241,
+          "daily_return_pct": 7.13,
+          "cumulative_return_pct": -15.09
+        },
+        {
+          "date": "2026-04-16",
+          "close": 50.25,
+          "volume": 161130833,
+          "daily_return_pct": 2.28,
+          "cumulative_return_pct": -13.15
+        },
+        {
+          "date": "2026-04-17",
+          "close": 52.93,
+          "volume": 337159969,
+          "daily_return_pct": 5.33,
+          "cumulative_return_pct": -8.52
+        },
+        {
+          "date": "2026-04-20",
+          "close": 52.5,
+          "volume": 153681261,
+          "daily_return_pct": -0.81,
+          "cumulative_return_pct": -9.26
+        },
+        {
+          "date": "2026-04-21",
+          "close": 53.1,
+          "volume": 114713319,
+          "daily_return_pct": 1.14,
+          "cumulative_return_pct": -8.23
+        },
+        {
+          "date": "2026-04-22",
+          "close": 54.57,
+          "volume": 147736421,
+          "daily_return_pct": 2.77,
+          "cumulative_return_pct": -5.69
+        },
+        {
+          "date": "2026-04-23",
+          "close": 53.73,
+          "volume": 114711783,
+          "daily_return_pct": -1.54,
+          "cumulative_return_pct": -7.14
+        },
+        {
+          "date": "2026-04-24",
+          "close": 53.91,
+          "volume": 103128445,
+          "daily_return_pct": 0.34,
+          "cumulative_return_pct": -6.83
+        },
+        {
+          "date": "2026-04-27",
+          "close": 56.93,
+          "volume": 215958603,
+          "daily_return_pct": 5.6,
+          "cumulative_return_pct": -1.61
+        },
+        {
+          "date": "2026-04-28",
+          "close": 57.32,
+          "volume": 138320111,
+          "daily_return_pct": 0.69,
+          "cumulative_return_pct": -0.93
+        },
+        {
+          "date": "2026-04-29",
+          "close": 56.81,
+          "volume": 127240966,
+          "daily_return_pct": -0.89,
+          "cumulative_return_pct": -1.81
+        },
+        {
+          "date": "2026-04-30",
+          "close": 55.58,
+          "volume": 102354018,
+          "daily_return_pct": -2.17,
+          "cumulative_return_pct": -3.94
+        },
+        {
+          "date": "2026-05-01",
+          "close": 55.58,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -3.94
+        },
+        {
+          "date": "2026-05-04",
+          "close": 54.96,
+          "volume": 103192022,
+          "daily_return_pct": -1.12,
+          "cumulative_return_pct": -5.01
+        },
+        {
+          "date": "2026-05-05",
+          "close": 54.85,
+          "volume": 71812106,
+          "daily_return_pct": -0.2,
+          "cumulative_return_pct": -5.2
+        },
+        {
+          "date": "2026-05-06",
+          "close": 54.32,
+          "volume": 90584507,
+          "daily_return_pct": -0.97,
+          "cumulative_return_pct": -6.12
+        },
+        {
+          "date": "2026-05-07",
+          "close": 55.65,
+          "volume": 98244179,
+          "daily_return_pct": 2.45,
+          "cumulative_return_pct": -3.82
+        },
+        {
+          "date": "2026-05-08",
+          "close": 54.97,
+          "volume": 56797248,
+          "daily_return_pct": -1.22,
+          "cumulative_return_pct": -4.99
+        },
+        {
+          "date": "2026-05-11",
+          "close": 53.3,
+          "volume": 70005148,
+          "daily_return_pct": -3.04,
+          "cumulative_return_pct": -7.88
+        },
+        {
+          "date": "2026-05-12",
+          "close": 51.52,
+          "volume": 99265010,
+          "daily_return_pct": -3.34,
+          "cumulative_return_pct": -10.96
+        },
+        {
+          "date": "2026-05-13",
+          "close": 53.1,
+          "volume": 93140759,
+          "daily_return_pct": 3.07,
+          "cumulative_return_pct": -8.23
+        },
+        {
+          "date": "2026-05-14",
+          "close": 53.47,
+          "volume": 70978290,
+          "daily_return_pct": 0.7,
+          "cumulative_return_pct": -7.59
+        },
+        {
+          "date": "2026-05-15",
+          "close": 53.84,
+          "volume": 82878733,
+          "daily_return_pct": 0.69,
+          "cumulative_return_pct": -6.95
+        },
+        {
+          "date": "2026-05-18",
+          "close": 53.25,
+          "volume": 77363520,
+          "daily_return_pct": -1.1,
+          "cumulative_return_pct": -7.97
+        },
+        {
+          "date": "2026-05-19",
+          "close": 52.91,
+          "volume": 54643439,
+          "daily_return_pct": -0.64,
+          "cumulative_return_pct": -8.56
+        },
+        {
+          "date": "2026-05-20",
+          "close": 52.57,
+          "volume": 46459868,
+          "daily_return_pct": -0.64,
+          "cumulative_return_pct": -9.14
+        },
+        {
+          "date": "2026-05-21",
+          "close": 52.87,
+          "volume": 55852452,
+          "daily_return_pct": 0.57,
+          "cumulative_return_pct": -8.62
+        },
+        {
+          "date": "2026-05-22",
+          "close": 53.75,
+          "volume": 60760806,
+          "daily_return_pct": 1.66,
+          "cumulative_return_pct": -7.1
+        }
+      ],
+      "assessment": {
+        "verdict": "UNDERPERFORMING",
+        "total_return_pct": -7.1,
+        "annualized_return_pct": -9.9,
+        "drawdown_from_peak_pct": -11.01,
+        "trading_days": 180,
+        "base_price": 57.86,
+        "current_price": 53.75
+      }
+    },
+    {
+      "symbol": "IRFC",
+      "name": "Indian Railway Finance Corporation Limited",
+      "classification": "penny",
+      "conviction_level": "REJECTED",
+      "pulse_score": 37.0,
+      "da_score": 12.0,
+      "timeseries": [
+        {
+          "date": "2025-09-01",
+          "close": 118.27,
+          "volume": 7840427,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 0.0
+        },
+        {
+          "date": "2025-09-02",
+          "close": 120.68,
+          "volume": 21014216,
+          "daily_return_pct": 2.04,
+          "cumulative_return_pct": 2.04
+        },
+        {
+          "date": "2025-09-03",
+          "close": 121.26,
+          "volume": 7336041,
+          "daily_return_pct": 0.48,
+          "cumulative_return_pct": 2.53
+        },
+        {
+          "date": "2025-09-04",
+          "close": 119.34,
+          "volume": 7730498,
+          "daily_return_pct": -1.58,
+          "cumulative_return_pct": 0.9
+        },
+        {
+          "date": "2025-09-05",
+          "close": 121.14,
+          "volume": 6947411,
+          "daily_return_pct": 1.51,
+          "cumulative_return_pct": 2.43
+        },
+        {
+          "date": "2025-09-08",
+          "close": 122.23,
+          "volume": 7882195,
+          "daily_return_pct": 0.9,
+          "cumulative_return_pct": 3.35
+        },
+        {
+          "date": "2025-09-09",
+          "close": 122.47,
+          "volume": 7614264,
+          "daily_return_pct": 0.2,
+          "cumulative_return_pct": 3.55
+        },
+        {
+          "date": "2025-09-10",
+          "close": 123.81,
+          "volume": 8948090,
+          "daily_return_pct": 1.09,
+          "cumulative_return_pct": 4.68
+        },
+        {
+          "date": "2025-09-11",
+          "close": 123.17,
+          "volume": 4767008,
+          "daily_return_pct": -0.52,
+          "cumulative_return_pct": 4.14
+        },
+        {
+          "date": "2025-09-12",
+          "close": 123.86,
+          "volume": 5840841,
+          "daily_return_pct": 0.56,
+          "cumulative_return_pct": 4.73
+        },
+        {
+          "date": "2025-09-15",
+          "close": 125.77,
+          "volume": 22257294,
+          "daily_return_pct": 1.54,
+          "cumulative_return_pct": 6.34
+        },
+        {
+          "date": "2025-09-16",
+          "close": 126.53,
+          "volume": 6998422,
+          "daily_return_pct": 0.6,
+          "cumulative_return_pct": 6.98
+        },
+        {
+          "date": "2025-09-17",
+          "close": 126.9,
+          "volume": 9413241,
+          "daily_return_pct": 0.29,
+          "cumulative_return_pct": 7.3
+        },
+        {
+          "date": "2025-09-18",
+          "close": 126.86,
+          "volume": 7532604,
+          "daily_return_pct": -0.03,
+          "cumulative_return_pct": 7.26
+        },
+        {
+          "date": "2025-09-19",
+          "close": 127.25,
+          "volume": 8686534,
+          "daily_return_pct": 0.31,
+          "cumulative_return_pct": 7.59
+        },
+        {
+          "date": "2025-09-22",
+          "close": 126.12,
+          "volume": 6577881,
+          "daily_return_pct": -0.89,
+          "cumulative_return_pct": 6.64
+        },
+        {
+          "date": "2025-09-23",
+          "close": 124.9,
+          "volume": 5860471,
+          "daily_return_pct": -0.97,
+          "cumulative_return_pct": 5.61
+        },
+        {
+          "date": "2025-09-24",
+          "close": 123.23,
+          "volume": 4543381,
+          "daily_return_pct": -1.34,
+          "cumulative_return_pct": 4.19
+        },
+        {
+          "date": "2025-09-25",
+          "close": 121.75,
+          "volume": 6416171,
+          "daily_return_pct": -1.2,
+          "cumulative_return_pct": 2.94
+        },
+        {
+          "date": "2025-09-26",
+          "close": 119.62,
+          "volume": 5997139,
+          "daily_return_pct": -1.75,
+          "cumulative_return_pct": 1.14
+        },
+        {
+          "date": "2025-09-29",
+          "close": 121.92,
+          "volume": 10555581,
+          "daily_return_pct": 1.92,
+          "cumulative_return_pct": 3.09
+        },
+        {
+          "date": "2025-09-30",
+          "close": 121.19,
+          "volume": 10100674,
+          "daily_return_pct": -0.6,
+          "cumulative_return_pct": 2.47
+        },
+        {
+          "date": "2025-10-01",
+          "close": 123.18,
+          "volume": 8723744,
+          "daily_return_pct": 1.64,
+          "cumulative_return_pct": 4.15
+        },
+        {
+          "date": "2025-10-03",
+          "close": 123.48,
+          "volume": 6051511,
+          "daily_return_pct": 0.24,
+          "cumulative_return_pct": 4.41
+        },
+        {
+          "date": "2025-10-06",
+          "close": 122.88,
+          "volume": 5113099,
+          "daily_return_pct": -0.49,
+          "cumulative_return_pct": 3.9
+        },
+        {
+          "date": "2025-10-07",
+          "close": 124.69,
+          "volume": 9672645,
+          "daily_return_pct": 1.47,
+          "cumulative_return_pct": 5.43
+        },
+        {
+          "date": "2025-10-08",
+          "close": 121.96,
+          "volume": 12875915,
+          "daily_return_pct": -2.19,
+          "cumulative_return_pct": 3.12
+        },
+        {
+          "date": "2025-10-09",
+          "close": 122.72,
+          "volume": 5774638,
+          "daily_return_pct": 0.62,
+          "cumulative_return_pct": 3.76
+        },
+        {
+          "date": "2025-10-10",
+          "close": 124.12,
+          "volume": 7690307,
+          "daily_return_pct": 1.14,
+          "cumulative_return_pct": 4.95
+        },
+        {
+          "date": "2025-10-13",
+          "close": 123.14,
+          "volume": 6065989,
+          "daily_return_pct": -0.79,
+          "cumulative_return_pct": 4.12
+        },
+        {
+          "date": "2025-10-14",
+          "close": 122.18,
+          "volume": 6665155,
+          "daily_return_pct": -0.78,
+          "cumulative_return_pct": 3.31
+        },
+        {
+          "date": "2025-10-15",
+          "close": 122.53,
+          "volume": 17482919,
+          "daily_return_pct": 0.29,
+          "cumulative_return_pct": 3.6
+        },
+        {
+          "date": "2025-10-16",
+          "close": 122.37,
+          "volume": 9719465,
+          "daily_return_pct": -0.13,
+          "cumulative_return_pct": 3.47
+        },
+        {
+          "date": "2025-10-17",
+          "close": 121.2,
+          "volume": 10002889,
+          "daily_return_pct": -0.96,
+          "cumulative_return_pct": 2.48
+        },
+        {
+          "date": "2025-10-20",
+          "close": 122.72,
+          "volume": 6729809,
+          "daily_return_pct": 1.25,
+          "cumulative_return_pct": 3.76
+        },
+        {
+          "date": "2025-10-21",
+          "close": 122.84,
+          "volume": 2109920,
+          "daily_return_pct": 0.1,
+          "cumulative_return_pct": 3.86
+        },
+        {
+          "date": "2025-10-23",
+          "close": 122.76,
+          "volume": 5009833,
+          "daily_return_pct": -0.07,
+          "cumulative_return_pct": 3.8
+        },
+        {
+          "date": "2025-10-24",
+          "close": 122.43,
+          "volume": 6026631,
+          "daily_return_pct": -0.27,
+          "cumulative_return_pct": 3.52
+        },
+        {
+          "date": "2025-10-27",
+          "close": 122.15,
+          "volume": 5375514,
+          "daily_return_pct": -0.23,
+          "cumulative_return_pct": 3.28
+        },
+        {
+          "date": "2025-10-28",
+          "close": 121.48,
+          "volume": 5615629,
+          "daily_return_pct": -0.55,
+          "cumulative_return_pct": 2.71
+        },
+        {
+          "date": "2025-10-29",
+          "close": 123.78,
+          "volume": 9132825,
+          "daily_return_pct": 1.89,
+          "cumulative_return_pct": 4.66
+        },
+        {
+          "date": "2025-10-30",
+          "close": 122.65,
+          "volume": 5922925,
+          "daily_return_pct": -0.91,
+          "cumulative_return_pct": 3.7
+        },
+        {
+          "date": "2025-10-31",
+          "close": 122.01,
+          "volume": 4768709,
+          "daily_return_pct": -0.52,
+          "cumulative_return_pct": 3.16
+        },
+        {
+          "date": "2025-11-03",
+          "close": 121.81,
+          "volume": 5128145,
+          "daily_return_pct": -0.16,
+          "cumulative_return_pct": 2.99
+        },
+        {
+          "date": "2025-11-04",
+          "close": 120.96,
+          "volume": 5224892,
+          "daily_return_pct": -0.7,
+          "cumulative_return_pct": 2.27
+        },
+        {
+          "date": "2025-11-06",
+          "close": 118.99,
+          "volume": 6360660,
+          "daily_return_pct": -1.63,
+          "cumulative_return_pct": 0.61
+        },
+        {
+          "date": "2025-11-07",
+          "close": 120.08,
+          "volume": 5976333,
+          "daily_return_pct": 0.92,
+          "cumulative_return_pct": 1.53
+        },
+        {
+          "date": "2025-11-10",
+          "close": 119.5,
+          "volume": 4329426,
+          "daily_return_pct": -0.48,
+          "cumulative_return_pct": 1.04
+        },
+        {
+          "date": "2025-11-11",
+          "close": 120.33,
+          "volume": 5425772,
+          "daily_return_pct": 0.69,
+          "cumulative_return_pct": 1.74
+        },
+        {
+          "date": "2025-11-12",
+          "close": 120.31,
+          "volume": 6989819,
+          "daily_return_pct": -0.02,
+          "cumulative_return_pct": 1.72
+        },
+        {
+          "date": "2025-11-13",
+          "close": 119.48,
+          "volume": 4559201,
+          "daily_return_pct": -0.69,
+          "cumulative_return_pct": 1.02
+        },
+        {
+          "date": "2025-11-14",
+          "close": 119.74,
+          "volume": 5135998,
+          "daily_return_pct": 0.22,
+          "cumulative_return_pct": 1.24
+        },
+        {
+          "date": "2025-11-17",
+          "close": 121.21,
+          "volume": 9945324,
+          "daily_return_pct": 1.23,
+          "cumulative_return_pct": 2.49
+        },
+        {
+          "date": "2025-11-18",
+          "close": 119.55,
+          "volume": 4555639,
+          "daily_return_pct": -1.37,
+          "cumulative_return_pct": 1.08
+        },
+        {
+          "date": "2025-11-19",
+          "close": 119.58,
+          "volume": 4336986,
+          "daily_return_pct": 0.03,
+          "cumulative_return_pct": 1.11
+        },
+        {
+          "date": "2025-11-20",
+          "close": 118.82,
+          "volume": 4766481,
+          "daily_return_pct": -0.64,
+          "cumulative_return_pct": 0.47
+        },
+        {
+          "date": "2025-11-21",
+          "close": 117.84,
+          "volume": 4944515,
+          "daily_return_pct": -0.82,
+          "cumulative_return_pct": -0.36
+        },
+        {
+          "date": "2025-11-24",
+          "close": 115.67,
+          "volume": 8220860,
+          "daily_return_pct": -1.84,
+          "cumulative_return_pct": -2.2
+        },
+        {
+          "date": "2025-11-25",
+          "close": 115.51,
+          "volume": 7566496,
+          "daily_return_pct": -0.14,
+          "cumulative_return_pct": -2.33
+        },
+        {
+          "date": "2025-11-26",
+          "close": 116.84,
+          "volume": 4487936,
+          "daily_return_pct": 1.15,
+          "cumulative_return_pct": -1.21
+        },
+        {
+          "date": "2025-11-27",
+          "close": 116.72,
+          "volume": 5097254,
+          "daily_return_pct": -0.1,
+          "cumulative_return_pct": -1.31
+        },
+        {
+          "date": "2025-11-28",
+          "close": 116.33,
+          "volume": 4191955,
+          "daily_return_pct": -0.33,
+          "cumulative_return_pct": -1.64
+        },
+        {
+          "date": "2025-12-01",
+          "close": 115.86,
+          "volume": 5036657,
+          "daily_return_pct": -0.4,
+          "cumulative_return_pct": -2.04
+        },
+        {
+          "date": "2025-12-02",
+          "close": 115.2,
+          "volume": 4302586,
+          "daily_return_pct": -0.57,
+          "cumulative_return_pct": -2.6
+        },
+        {
+          "date": "2025-12-03",
+          "close": 113.5,
+          "volume": 9455659,
+          "daily_return_pct": -1.48,
+          "cumulative_return_pct": -4.03
+        },
+        {
+          "date": "2025-12-04",
+          "close": 113.64,
+          "volume": 5895759,
+          "daily_return_pct": 0.12,
+          "cumulative_return_pct": -3.91
+        },
+        {
+          "date": "2025-12-05",
+          "close": 113.4,
+          "volume": 5063577,
+          "daily_return_pct": -0.21,
+          "cumulative_return_pct": -4.12
+        },
+        {
+          "date": "2025-12-08",
+          "close": 110.19,
+          "volume": 8555323,
+          "daily_return_pct": -2.83,
+          "cumulative_return_pct": -6.83
+        },
+        {
+          "date": "2025-12-09",
+          "close": 112.45,
+          "volume": 9736504,
+          "daily_return_pct": 2.05,
+          "cumulative_return_pct": -4.92
+        },
+        {
+          "date": "2025-12-10",
+          "close": 111.02,
+          "volume": 4960130,
+          "daily_return_pct": -1.27,
+          "cumulative_return_pct": -6.13
+        },
+        {
+          "date": "2025-12-11",
+          "close": 112.1,
+          "volume": 5799050,
+          "daily_return_pct": 0.97,
+          "cumulative_return_pct": -5.22
+        },
+        {
+          "date": "2025-12-12",
+          "close": 112.62,
+          "volume": 5141588,
+          "daily_return_pct": 0.46,
+          "cumulative_return_pct": -4.78
+        },
+        {
+          "date": "2025-12-15",
+          "close": 112.06,
+          "volume": 4518917,
+          "daily_return_pct": -0.5,
+          "cumulative_return_pct": -5.25
+        },
+        {
+          "date": "2025-12-16",
+          "close": 110.83,
+          "volume": 4101452,
+          "daily_return_pct": -1.1,
+          "cumulative_return_pct": -6.29
+        },
+        {
+          "date": "2025-12-17",
+          "close": 109.91,
+          "volume": 4984147,
+          "daily_return_pct": -0.83,
+          "cumulative_return_pct": -7.07
+        },
+        {
+          "date": "2025-12-18",
+          "close": 109.65,
+          "volume": 6400519,
+          "daily_return_pct": -0.24,
+          "cumulative_return_pct": -7.29
+        },
+        {
+          "date": "2025-12-19",
+          "close": 112.78,
+          "volume": 8954745,
+          "daily_return_pct": 2.85,
+          "cumulative_return_pct": -4.64
+        },
+        {
+          "date": "2025-12-22",
+          "close": 115.77,
+          "volume": 16841326,
+          "daily_return_pct": 2.65,
+          "cumulative_return_pct": -2.11
+        },
+        {
+          "date": "2025-12-23",
+          "close": 120.12,
+          "volume": 55006061,
+          "daily_return_pct": 3.76,
+          "cumulative_return_pct": 1.56
+        },
+        {
+          "date": "2025-12-24",
+          "close": 120.21,
+          "volume": 27580407,
+          "daily_return_pct": 0.07,
+          "cumulative_return_pct": 1.64
+        },
+        {
+          "date": "2025-12-26",
+          "close": 132.24,
+          "volume": 163985127,
+          "daily_return_pct": 10.01,
+          "cumulative_return_pct": 11.81
+        },
+        {
+          "date": "2025-12-29",
+          "close": 125.02,
+          "volume": 80360842,
+          "daily_return_pct": -5.46,
+          "cumulative_return_pct": 5.71
+        },
+        {
+          "date": "2025-12-30",
+          "close": 123.28,
+          "volume": 29253088,
+          "daily_return_pct": -1.39,
+          "cumulative_return_pct": 4.24
+        },
+        {
+          "date": "2025-12-31",
+          "close": 123.31,
+          "volume": 27013969,
+          "daily_return_pct": 0.02,
+          "cumulative_return_pct": 4.26
+        },
+        {
+          "date": "2026-01-01",
+          "close": 124.47,
+          "volume": 16340819,
+          "daily_return_pct": 0.94,
+          "cumulative_return_pct": 5.24
+        },
+        {
+          "date": "2026-01-02",
+          "close": 127.13,
+          "volume": 25385604,
+          "daily_return_pct": 2.14,
+          "cumulative_return_pct": 7.49
+        },
+        {
+          "date": "2026-01-05",
+          "close": 126.26,
+          "volume": 15730837,
+          "daily_return_pct": -0.68,
+          "cumulative_return_pct": 6.76
+        },
+        {
+          "date": "2026-01-06",
+          "close": 125.88,
+          "volume": 14799487,
+          "daily_return_pct": -0.3,
+          "cumulative_return_pct": 6.43
+        },
+        {
+          "date": "2026-01-07",
+          "close": 126.69,
+          "volume": 10932461,
+          "daily_return_pct": 0.64,
+          "cumulative_return_pct": 7.12
+        },
+        {
+          "date": "2026-01-08",
+          "close": 122.96,
+          "volume": 13165701,
+          "daily_return_pct": -2.94,
+          "cumulative_return_pct": 3.97
+        },
+        {
+          "date": "2026-01-09",
+          "close": 119.98,
+          "volume": 14904914,
+          "daily_return_pct": -2.42,
+          "cumulative_return_pct": 1.45
+        },
+        {
+          "date": "2026-01-12",
+          "close": 121.34,
+          "volume": 16531719,
+          "daily_return_pct": 1.13,
+          "cumulative_return_pct": 2.6
+        },
+        {
+          "date": "2026-01-13",
+          "close": 120.06,
+          "volume": 11459758,
+          "daily_return_pct": -1.05,
+          "cumulative_return_pct": 1.51
+        },
+        {
+          "date": "2026-01-14",
+          "close": 120.73,
+          "volume": 11544717,
+          "daily_return_pct": 0.56,
+          "cumulative_return_pct": 2.08
+        },
+        {
+          "date": "2026-01-15",
+          "close": 120.73,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": 2.08
+        },
+        {
+          "date": "2026-01-16",
+          "close": 120.91,
+          "volume": 11686581,
+          "daily_return_pct": 0.15,
+          "cumulative_return_pct": 2.23
+        },
+        {
+          "date": "2026-01-19",
+          "close": 119.63,
+          "volume": 19879572,
+          "daily_return_pct": -1.06,
+          "cumulative_return_pct": 1.15
+        },
+        {
+          "date": "2026-01-20",
+          "close": 114.91,
+          "volume": 33802202,
+          "daily_return_pct": -3.95,
+          "cumulative_return_pct": -2.84
+        },
+        {
+          "date": "2026-01-21",
+          "close": 113.93,
+          "volume": 23802894,
+          "daily_return_pct": -0.85,
+          "cumulative_return_pct": -3.67
+        },
+        {
+          "date": "2026-01-22",
+          "close": 115.79,
+          "volume": 17626259,
+          "daily_return_pct": 1.63,
+          "cumulative_return_pct": -2.1
+        },
+        {
+          "date": "2026-01-23",
+          "close": 112.95,
+          "volume": 15938677,
+          "daily_return_pct": -2.45,
+          "cumulative_return_pct": -4.5
+        },
+        {
+          "date": "2026-01-27",
+          "close": 113.41,
+          "volume": 18230496,
+          "daily_return_pct": 0.41,
+          "cumulative_return_pct": -4.11
+        },
+        {
+          "date": "2026-01-28",
+          "close": 118.89,
+          "volume": 23452463,
+          "daily_return_pct": 4.83,
+          "cumulative_return_pct": 0.52
+        },
+        {
+          "date": "2026-01-29",
+          "close": 118.8,
+          "volume": 19681289,
+          "daily_return_pct": -0.08,
+          "cumulative_return_pct": 0.45
+        },
+        {
+          "date": "2026-01-30",
+          "close": 118.84,
+          "volume": 19011603,
+          "daily_return_pct": 0.03,
+          "cumulative_return_pct": 0.48
+        },
+        {
+          "date": "2026-02-02",
+          "close": 113.72,
+          "volume": 26935344,
+          "daily_return_pct": -4.31,
+          "cumulative_return_pct": -3.85
+        },
+        {
+          "date": "2026-02-03",
+          "close": 113.91,
+          "volume": 17141510,
+          "daily_return_pct": 0.17,
+          "cumulative_return_pct": -3.69
+        },
+        {
+          "date": "2026-02-04",
+          "close": 114.78,
+          "volume": 14878650,
+          "daily_return_pct": 0.76,
+          "cumulative_return_pct": -2.95
+        },
+        {
+          "date": "2026-02-05",
+          "close": 113.5,
+          "volume": 10242128,
+          "daily_return_pct": -1.12,
+          "cumulative_return_pct": -4.03
+        },
+        {
+          "date": "2026-02-06",
+          "close": 113.33,
+          "volume": 13107658,
+          "daily_return_pct": -0.15,
+          "cumulative_return_pct": -4.18
+        },
+        {
+          "date": "2026-02-09",
+          "close": 113.86,
+          "volume": 9623210,
+          "daily_return_pct": 0.47,
+          "cumulative_return_pct": -3.73
+        },
+        {
+          "date": "2026-02-10",
+          "close": 114.25,
+          "volume": 12744272,
+          "daily_return_pct": 0.34,
+          "cumulative_return_pct": -3.4
+        },
+        {
+          "date": "2026-02-11",
+          "close": 113.13,
+          "volume": 10515387,
+          "daily_return_pct": -0.98,
+          "cumulative_return_pct": -4.35
+        },
+        {
+          "date": "2026-02-12",
+          "close": 112.34,
+          "volume": 10863707,
+          "daily_return_pct": -0.7,
+          "cumulative_return_pct": -5.01
+        },
+        {
+          "date": "2026-02-13",
+          "close": 110.27,
+          "volume": 13084758,
+          "daily_return_pct": -1.84,
+          "cumulative_return_pct": -6.76
+        },
+        {
+          "date": "2026-02-16",
+          "close": 111.99,
+          "volume": 13966955,
+          "daily_return_pct": 1.56,
+          "cumulative_return_pct": -5.31
+        },
+        {
+          "date": "2026-02-17",
+          "close": 111.8,
+          "volume": 8157349,
+          "daily_return_pct": -0.17,
+          "cumulative_return_pct": -5.47
+        },
+        {
+          "date": "2026-02-18",
+          "close": 112.12,
+          "volume": 8573114,
+          "daily_return_pct": 0.29,
+          "cumulative_return_pct": -5.2
+        },
+        {
+          "date": "2026-02-19",
+          "close": 110.21,
+          "volume": 9987523,
+          "daily_return_pct": -1.7,
+          "cumulative_return_pct": -6.81
+        },
+        {
+          "date": "2026-02-20",
+          "close": 110.7,
+          "volume": 11560506,
+          "daily_return_pct": 0.44,
+          "cumulative_return_pct": -6.4
+        },
+        {
+          "date": "2026-02-23",
+          "close": 110.71,
+          "volume": 9897270,
+          "daily_return_pct": 0.01,
+          "cumulative_return_pct": -6.39
+        },
+        {
+          "date": "2026-02-24",
+          "close": 108.29,
+          "volume": 13884700,
+          "daily_return_pct": -2.19,
+          "cumulative_return_pct": -8.44
+        },
+        {
+          "date": "2026-02-25",
+          "close": 103.46,
+          "volume": 56904412,
+          "daily_return_pct": -4.46,
+          "cumulative_return_pct": -12.52
+        },
+        {
+          "date": "2026-02-26",
+          "close": 102.15,
+          "volume": 22825499,
+          "daily_return_pct": -1.27,
+          "cumulative_return_pct": -13.63
+        },
+        {
+          "date": "2026-02-27",
+          "close": 102.46,
+          "volume": 19027229,
+          "daily_return_pct": 0.3,
+          "cumulative_return_pct": -13.37
+        },
+        {
+          "date": "2026-03-02",
+          "close": 98.3,
+          "volume": 27730177,
+          "daily_return_pct": -4.06,
+          "cumulative_return_pct": -16.89
+        },
+        {
+          "date": "2026-03-04",
+          "close": 96.71,
+          "volume": 32963143,
+          "daily_return_pct": -1.62,
+          "cumulative_return_pct": -18.23
+        },
+        {
+          "date": "2026-03-05",
+          "close": 97.81,
+          "volume": 16588277,
+          "daily_return_pct": 1.14,
+          "cumulative_return_pct": -17.3
+        },
+        {
+          "date": "2026-03-06",
+          "close": 98.42,
+          "volume": 35489993,
+          "daily_return_pct": 0.62,
+          "cumulative_return_pct": -16.78
+        },
+        {
+          "date": "2026-03-09",
+          "close": 96.54,
+          "volume": 16395706,
+          "daily_return_pct": -1.91,
+          "cumulative_return_pct": -18.37
+        },
+        {
+          "date": "2026-03-10",
+          "close": 99.65,
+          "volume": 14800530,
+          "daily_return_pct": 3.22,
+          "cumulative_return_pct": -15.74
+        },
+        {
+          "date": "2026-03-11",
+          "close": 98.21,
+          "volume": 12809686,
+          "daily_return_pct": -1.45,
+          "cumulative_return_pct": -16.96
+        },
+        {
+          "date": "2026-03-12",
+          "close": 98.87,
+          "volume": 14255322,
+          "daily_return_pct": 0.67,
+          "cumulative_return_pct": -16.4
+        },
+        {
+          "date": "2026-03-13",
+          "close": 97.2,
+          "volume": 11414655,
+          "daily_return_pct": -1.69,
+          "cumulative_return_pct": -17.82
+        },
+        {
+          "date": "2026-03-16",
+          "close": 96.44,
+          "volume": 16521257,
+          "daily_return_pct": -0.78,
+          "cumulative_return_pct": -18.46
+        },
+        {
+          "date": "2026-03-17",
+          "close": 96.74,
+          "volume": 9737324,
+          "daily_return_pct": 0.31,
+          "cumulative_return_pct": -18.2
+        },
+        {
+          "date": "2026-03-18",
+          "close": 98.25,
+          "volume": 10580589,
+          "daily_return_pct": 1.56,
+          "cumulative_return_pct": -16.93
+        },
+        {
+          "date": "2026-03-19",
+          "close": 95.04,
+          "volume": 11287455,
+          "daily_return_pct": -3.27,
+          "cumulative_return_pct": -19.64
+        },
+        {
+          "date": "2026-03-20",
+          "close": 94.69,
+          "volume": 14353015,
+          "daily_return_pct": -0.37,
+          "cumulative_return_pct": -19.94
+        },
+        {
+          "date": "2026-03-23",
+          "close": 89.45,
+          "volume": 17225370,
+          "daily_return_pct": -5.53,
+          "cumulative_return_pct": -24.37
+        },
+        {
+          "date": "2026-03-24",
+          "close": 92.87,
+          "volume": 22201895,
+          "daily_return_pct": 3.82,
+          "cumulative_return_pct": -21.48
+        },
+        {
+          "date": "2026-03-25",
+          "close": 95.24,
+          "volume": 17788550,
+          "daily_return_pct": 2.55,
+          "cumulative_return_pct": -19.47
+        },
+        {
+          "date": "2026-03-27",
+          "close": 92.45,
+          "volume": 20674836,
+          "daily_return_pct": -2.93,
+          "cumulative_return_pct": -21.83
+        },
+        {
+          "date": "2026-03-30",
+          "close": 87.23,
+          "volume": 25658445,
+          "daily_return_pct": -5.65,
+          "cumulative_return_pct": -26.25
+        },
+        {
+          "date": "2026-04-01",
+          "close": 91.99,
+          "volume": 20132244,
+          "daily_return_pct": 5.46,
+          "cumulative_return_pct": -22.22
+        },
+        {
+          "date": "2026-04-02",
+          "close": 91.84,
+          "volume": 19173192,
+          "daily_return_pct": -0.16,
+          "cumulative_return_pct": -22.35
+        },
+        {
+          "date": "2026-04-06",
+          "close": 92.72,
+          "volume": 17311052,
+          "daily_return_pct": 0.96,
+          "cumulative_return_pct": -21.6
+        },
+        {
+          "date": "2026-04-07",
+          "close": 92.93,
+          "volume": 16955456,
+          "daily_return_pct": 0.23,
+          "cumulative_return_pct": -21.43
+        },
+        {
+          "date": "2026-04-08",
+          "close": 98.91,
+          "volume": 22586509,
+          "daily_return_pct": 6.43,
+          "cumulative_return_pct": -16.37
+        },
+        {
+          "date": "2026-04-09",
+          "close": 98.49,
+          "volume": 16170504,
+          "daily_return_pct": -0.42,
+          "cumulative_return_pct": -16.72
+        },
+        {
+          "date": "2026-04-10",
+          "close": 100.26,
+          "volume": 20758984,
+          "daily_return_pct": 1.8,
+          "cumulative_return_pct": -15.23
+        },
+        {
+          "date": "2026-04-13",
+          "close": 98.92,
+          "volume": 16069563,
+          "daily_return_pct": -1.34,
+          "cumulative_return_pct": -16.36
+        },
+        {
+          "date": "2026-04-15",
+          "close": 101.72,
+          "volume": 18343826,
+          "daily_return_pct": 2.83,
+          "cumulative_return_pct": -13.99
+        },
+        {
+          "date": "2026-04-16",
+          "close": 103.24,
+          "volume": 21466219,
+          "daily_return_pct": 1.49,
+          "cumulative_return_pct": -12.71
+        },
+        {
+          "date": "2026-04-17",
+          "close": 104.84,
+          "volume": 32766513,
+          "daily_return_pct": 1.55,
+          "cumulative_return_pct": -11.36
+        },
+        {
+          "date": "2026-04-20",
+          "close": 103.02,
+          "volume": 15091460,
+          "daily_return_pct": -1.74,
+          "cumulative_return_pct": -12.89
+        },
+        {
+          "date": "2026-04-21",
+          "close": 103.61,
+          "volume": 9274364,
+          "daily_return_pct": 0.57,
+          "cumulative_return_pct": -12.4
+        },
+        {
+          "date": "2026-04-22",
+          "close": 105.82,
+          "volume": 21953698,
+          "daily_return_pct": 2.13,
+          "cumulative_return_pct": -10.53
+        },
+        {
+          "date": "2026-04-23",
+          "close": 105.06,
+          "volume": 41805252,
+          "daily_return_pct": -0.72,
+          "cumulative_return_pct": -11.17
+        },
+        {
+          "date": "2026-04-24",
+          "close": 103.92,
+          "volume": 14644667,
+          "daily_return_pct": -1.09,
+          "cumulative_return_pct": -12.13
+        },
+        {
+          "date": "2026-04-27",
+          "close": 105.57,
+          "volume": 13917554,
+          "daily_return_pct": 1.59,
+          "cumulative_return_pct": -10.74
+        },
+        {
+          "date": "2026-04-28",
+          "close": 105.14,
+          "volume": 13405170,
+          "daily_return_pct": -0.41,
+          "cumulative_return_pct": -11.1
+        },
+        {
+          "date": "2026-04-29",
+          "close": 105.08,
+          "volume": 9523095,
+          "daily_return_pct": -0.06,
+          "cumulative_return_pct": -11.15
+        },
+        {
+          "date": "2026-04-30",
+          "close": 104.21,
+          "volume": 8356443,
+          "daily_return_pct": -0.83,
+          "cumulative_return_pct": -11.89
+        },
+        {
+          "date": "2026-05-01",
+          "close": 104.21,
+          "volume": 0,
+          "daily_return_pct": 0.0,
+          "cumulative_return_pct": -11.89
+        },
+        {
+          "date": "2026-05-04",
+          "close": 104.41,
+          "volume": 10793514,
+          "daily_return_pct": 0.19,
+          "cumulative_return_pct": -11.72
+        },
+        {
+          "date": "2026-05-05",
+          "close": 105.82,
+          "volume": 20280569,
+          "daily_return_pct": 1.35,
+          "cumulative_return_pct": -10.53
+        },
+        {
+          "date": "2026-05-06",
+          "close": 106.74,
+          "volume": 12144328,
+          "daily_return_pct": 0.87,
+          "cumulative_return_pct": -9.75
+        },
+        {
+          "date": "2026-05-07",
+          "close": 106.77,
+          "volume": 11251343,
+          "daily_return_pct": 0.03,
+          "cumulative_return_pct": -9.72
+        },
+        {
+          "date": "2026-05-08",
+          "close": 106.03,
+          "volume": 6764649,
+          "daily_return_pct": -0.69,
+          "cumulative_return_pct": -10.35
+        },
+        {
+          "date": "2026-05-11",
+          "close": 103.08,
+          "volume": 8606056,
+          "daily_return_pct": -2.78,
+          "cumulative_return_pct": -12.84
+        },
+        {
+          "date": "2026-05-12",
+          "close": 99.36,
+          "volume": 10677665,
+          "daily_return_pct": -3.61,
+          "cumulative_return_pct": -15.99
+        },
+        {
+          "date": "2026-05-13",
+          "close": 101.48,
+          "volume": 11227661,
+          "daily_return_pct": 2.13,
+          "cumulative_return_pct": -14.2
+        },
+        {
+          "date": "2026-05-14",
+          "close": 100.19,
+          "volume": 18308366,
+          "daily_return_pct": -1.27,
+          "cumulative_return_pct": -15.29
+        },
+        {
+          "date": "2026-05-15",
+          "close": 98.86,
+          "volume": 13415868,
+          "daily_return_pct": -1.33,
+          "cumulative_return_pct": -16.41
+        },
+        {
+          "date": "2026-05-18",
+          "close": 97.66,
+          "volume": 13047543,
+          "daily_return_pct": -1.21,
+          "cumulative_return_pct": -17.43
+        },
+        {
+          "date": "2026-05-19",
+          "close": 97.22,
+          "volume": 8673912,
+          "daily_return_pct": -0.45,
+          "cumulative_return_pct": -17.8
+        },
+        {
+          "date": "2026-05-20",
+          "close": 97.13,
+          "volume": 6536277,
+          "daily_return_pct": -0.09,
+          "cumulative_return_pct": -17.87
+        },
+        {
+          "date": "2026-05-21",
+          "close": 98.17,
+          "volume": 8098653,
+          "daily_return_pct": 1.07,
+          "cumulative_return_pct": -17.0
+        },
+        {
+          "date": "2026-05-22",
+          "close": 98.19,
+          "volume": 6016639,
+          "daily_return_pct": 0.02,
+          "cumulative_return_pct": -16.98
+        }
+      ],
+      "assessment": {
+        "verdict": "UNDERPERFORMING",
+        "total_return_pct": -16.98,
+        "annualized_return_pct": -23.8,
+        "drawdown_from_peak_pct": -25.75,
+        "trading_days": 180,
+        "base_price": 118.27,
+        "current_price": 98.19
+      }
+    }
+  ]
+}

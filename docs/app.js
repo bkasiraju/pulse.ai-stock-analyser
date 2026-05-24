@@ -66,11 +66,30 @@ function switchTab(tab) {
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
     });
+
+    const insightsSection = document.getElementById('insights-section');
+    const tableSection = document.querySelector('.stock-table-container');
+    const filtersSection = document.querySelector('.filters');
+
+    if (tab === 'insights') {
+        insightsSection.style.display = 'block';
+        tableSection.style.display = 'none';
+        filtersSection.style.display = 'none';
+        loadInsights();
+    } else {
+        insightsSection.style.display = 'none';
+        tableSection.style.display = 'block';
+        filtersSection.style.display = 'flex';
+        applyFilters();
+    }
+}
+
+function switchTabFilters(tab) {
     applyFilters();
 }
 
 function applyFilters() {
-    if (!analysisData) return;
+    if (!analysisData || activeTab === 'insights') return;
     let stocks = analysisData.top_picks;
 
     if (activeTab !== 'all') stocks = stocks.filter(s => s.classification === activeTab);
@@ -673,7 +692,7 @@ function renderReferencesTab(el, stock, expertData) {
     linksDiv.appendChild(trendLink);
 
     const growwLink = document.createElement('a');
-    growwLink.href = 'https://groww.in/stocks/' + stock.symbol.toLowerCase();
+    growwLink.href = 'https://groww.in/search?q=' + encodeURIComponent(stock.symbol) + '&searchType=stocks';
     growwLink.target = '_blank';
     growwLink.rel = 'noopener noreferrer';
     growwLink.textContent = 'Groww (Trade)';
@@ -681,12 +700,20 @@ function renderReferencesTab(el, stock, expertData) {
     linksDiv.appendChild(growwLink);
 
     const zerodhaLink = document.createElement('a');
-    zerodhaLink.href = 'https://kite.zerodha.com/chart/web/ciq/NSE/' + stock.symbol;
+    zerodhaLink.href = 'https://www.nseindia.com/get-quotes/equity?symbol=' + encodeURIComponent(stock.symbol);
     zerodhaLink.target = '_blank';
     zerodhaLink.rel = 'noopener noreferrer';
-    zerodhaLink.textContent = 'Zerodha (Chart)';
+    zerodhaLink.textContent = 'NSE India';
     zerodhaLink.className = 'ref-link-card ref-link-trade';
     linksDiv.appendChild(zerodhaLink);
+
+    const tvLink = document.createElement('a');
+    tvLink.href = 'https://www.tradingview.com/chart/?symbol=NSE%3A' + encodeURIComponent(stock.symbol);
+    tvLink.target = '_blank';
+    tvLink.rel = 'noopener noreferrer';
+    tvLink.textContent = 'TradingView (Chart)';
+    tvLink.className = 'ref-link-card ref-link-trade';
+    linksDiv.appendChild(tvLink);
 
     el.appendChild(linksDiv);
 
@@ -772,5 +799,230 @@ function renderPerfRow(stock) {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeDetail();
 });
+
+/* ═══════════════════════════════════════════════════════════
+   PULSE.AI INSIGHTS — Performance Tracking & Validation
+   ═══════════════════════════════════════════════════════════ */
+let insightsData = null;
+let insightsChart = null;
+let insightsPeriod = 30;
+
+async function loadInsights() {
+    if (insightsData) {
+        populateInsightsDropdown();
+        return;
+    }
+    try {
+        const resp = await fetch('insights.json');
+        insightsData = await resp.json();
+        populateInsightsDropdown();
+        renderInsightsGrid();
+    } catch (e) {
+        const grid = document.getElementById('insights-grid');
+        grid.textContent = 'Insights data not yet available. Run the pipeline to generate.';
+        grid.style.color = 'var(--text-secondary)';
+        grid.style.padding = '2rem';
+        grid.style.textAlign = 'center';
+    }
+}
+
+function populateInsightsDropdown() {
+    const select = document.getElementById('insights-stock');
+    select.textContent = '';
+    const defaultOpt = document.createElement('option');
+    defaultOpt.value = '';
+    defaultOpt.textContent = 'Select stock to view chart...';
+    select.appendChild(defaultOpt);
+
+    (insightsData.stocks || []).forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.symbol;
+        opt.textContent = s.symbol + ' — ' + s.name + ' (' + s.assessment.verdict + ')';
+        select.appendChild(opt);
+    });
+
+    if (insightsData.stocks && insightsData.stocks.length) {
+        select.value = insightsData.stocks[0].symbol;
+        renderInsightsChart();
+    }
+}
+
+function setInsightsPeriod(days) {
+    insightsPeriod = days;
+    document.querySelectorAll('.period-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.period) === days);
+    });
+    renderInsightsChart();
+}
+
+function renderInsightsChart() {
+    const symbol = document.getElementById('insights-stock').value;
+    if (!symbol || !insightsData) return;
+
+    const stockData = insightsData.stocks.find(s => s.symbol === symbol);
+    if (!stockData) return;
+
+    const assessment = document.getElementById('insights-assessment');
+    assessment.textContent = '';
+
+    const a = stockData.assessment;
+    const verdictColors = {
+        STRONG_MULTIBAGGER: '#166534', ON_TRACK: '#2e844a',
+        MODERATE_GROWTH: '#854d0e', FLAT: '#706e6b', UNDERPERFORMING: '#991b1b',
+        INSUFFICIENT_DATA: '#706e6b'
+    };
+
+    const row = document.createElement('div');
+    row.className = 'insights-assessment-row';
+
+    const items = [
+        ['Verdict', a.verdict.replace(/_/g, ' '), verdictColors[a.verdict] || '#706e6b'],
+        ['Total Return', (a.total_return_pct || 0) + '%', a.total_return_pct >= 0 ? '#166534' : '#991b1b'],
+        ['Annualized', (a.annualized_return_pct || 0) + '%', a.annualized_return_pct >= 50 ? '#166534' : a.annualized_return_pct >= 0 ? '#854d0e' : '#991b1b'],
+        ['Drawdown', (a.drawdown_from_peak_pct || 0) + '%', a.drawdown_from_peak_pct > -10 ? '#166534' : '#991b1b'],
+        ['DA Score', stockData.da_score || 'N/A', ''],
+        ['Conviction', stockData.conviction_level || 'N/A', ''],
+    ];
+
+    items.forEach(([label, value, color]) => {
+        const chip = document.createElement('div');
+        chip.className = 'insights-chip';
+        const lbl = document.createElement('div');
+        lbl.className = 'insights-chip-label';
+        lbl.textContent = label;
+        const val = document.createElement('div');
+        val.className = 'insights-chip-value';
+        val.textContent = value;
+        if (color) val.style.color = color;
+        chip.appendChild(lbl);
+        chip.appendChild(val);
+        row.appendChild(chip);
+    });
+    assessment.appendChild(row);
+
+    // Chart
+    let ts = stockData.timeseries || [];
+    if (insightsPeriod < ts.length) {
+        ts = ts.slice(-insightsPeriod);
+    }
+
+    const labels = ts.map(p => p.date);
+    const prices = ts.map(p => p.close);
+    const cumReturns = ts.map(p => p.cumulative_return_pct);
+
+    const ctx = document.getElementById('insights-chart').getContext('2d');
+    if (insightsChart) insightsChart.destroy();
+
+    const isPositive = cumReturns.length && cumReturns[cumReturns.length - 1] >= 0;
+
+    insightsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Price (₹)',
+                    data: prices,
+                    borderColor: '#0176d3',
+                    backgroundColor: 'rgba(1,118,211,0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Cumulative Return (%)',
+                    data: cumReturns,
+                    borderColor: isPositive ? '#2e844a' : '#b91c1c',
+                    backgroundColor: isPositive ? 'rgba(46,132,74,0.05)' : 'rgba(185,28,28,0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    borderDash: [4, 2],
+                    yAxisID: 'y1',
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: { position: 'top', labels: { font: { size: 11 } } },
+                tooltip: {
+                    callbacks: {
+                        title: ctx => ctx[0].label,
+                        label: ctx => ctx.dataset.label + ': ' + (ctx.datasetIndex === 0 ? '₹' : '') + ctx.parsed.y.toFixed(2) + (ctx.datasetIndex === 1 ? '%' : ''),
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { maxTicksLimit: 10, font: { size: 10 } },
+                    grid: { display: false },
+                },
+                y: {
+                    position: 'left',
+                    title: { display: true, text: 'Price (₹)', font: { size: 10 } },
+                    ticks: { font: { size: 10 } },
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                },
+                y1: {
+                    position: 'right',
+                    title: { display: true, text: 'Return (%)', font: { size: 10 } },
+                    ticks: { font: { size: 10 }, callback: v => v + '%' },
+                    grid: { display: false },
+                }
+            }
+        }
+    });
+}
+
+function renderInsightsGrid() {
+    const grid = document.getElementById('insights-grid');
+    grid.textContent = '';
+
+    if (!insightsData || !insightsData.stocks.length) {
+        grid.textContent = 'No insights data available.';
+        return;
+    }
+
+    const sorted = [...insightsData.stocks].sort((a, b) => (b.assessment.total_return_pct || 0) - (a.assessment.total_return_pct || 0));
+
+    sorted.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'insights-stock-card';
+        card.addEventListener('click', () => {
+            document.getElementById('insights-stock').value = s.symbol;
+            renderInsightsChart();
+            document.getElementById('insights-chart').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const a = s.assessment;
+        const verdictClass = a.verdict === 'STRONG_MULTIBAGGER' || a.verdict === 'ON_TRACK' ? 'green' :
+            a.verdict === 'MODERATE_GROWTH' ? 'yellow' : 'red';
+
+        card.innerHTML = '';
+        const top = document.createElement('div');
+        top.className = 'insights-card-top';
+        const sym = document.createElement('strong');
+        sym.textContent = s.symbol;
+        const badge = document.createElement('span');
+        badge.className = 'badge badge-' + verdictClass;
+        badge.textContent = a.verdict.replace(/_/g, ' ');
+        top.appendChild(sym);
+        top.appendChild(badge);
+        card.appendChild(top);
+
+        const metrics = document.createElement('div');
+        metrics.className = 'insights-card-metrics';
+        metrics.textContent = 'Return: ' + (a.total_return_pct || 0) + '% | Ann: ' + (a.annualized_return_pct || 0) + '% | ' + s.conviction_level;
+        card.appendChild(metrics);
+
+        grid.appendChild(card);
+    });
+}
 
 loadAnalysis();

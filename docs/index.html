@@ -9,13 +9,15 @@
 <body>
     <!-- DISCLAIMER — top, subtle, red -->
     <div class="disclaimer-top">
+        <span class="disclaimer-icon">⚠️</span>
         <strong>DISCLAIMER:</strong> Investing involves risk, including the possible loss of principal. Returns are subject to market fluctuations and past performance is not indicative of future results. The information provided here is for general informational purposes only and does not constitute financial, investment, or professional advice. Please do your own research and due diligence before making any investment decisions. If needed, consult a qualified and registered financial advisor in your jurisdiction.
+        <span class="disclaimer-icon">📊</span>
     </div>
 
     <header>
         <div class="header-content">
             <h1>Pulse.AI Stock Analyser</h1>
-            <p class="subtitle">Small & Mid Cap | Penny Stocks | India NSE/BSE | Devil's Advocate + Critic Agent Validated</p>
+            <p class="subtitle">AI-powered multi-bagger stock discovery for Indian markets — analyse, validate, invest smarter</p>
             <div class="header-actions">
                 <span id="last-updated" class="meta-text"></span>
             </div>
@@ -52,6 +54,7 @@
             <button class="tab-btn" data-tab="penny" onclick="switchTab('penny')" title="Stocks priced below ₹100 — highest growth potential but highest risk">Penny Stocks (&lt;₹100)</button>
             <button class="tab-btn" data-tab="small_cap" onclick="switchTab('small_cap')" title="Market cap below ₹5,000Cr — emerging companies with growth runway">Small Cap</button>
             <button class="tab-btn" data-tab="mid_cap" onclick="switchTab('mid_cap')" title="Market cap ₹5,000-20,000Cr — established companies with scaling potential">Mid Cap</button>
+            <button class="tab-btn" data-tab="insights" onclick="switchTab('insights')" title="Pulse.AI Insights — daily performance tracking to validate multi-bagger recommendations over time">Pulse.AI Insights</button>
         </section>
 
         <section class="filters">
@@ -103,6 +106,31 @@
                     <tr><td colspan="12" class="empty-state">Loading analysis data...</td></tr>
                 </tbody>
             </table>
+        </section>
+
+        <!-- Insights Section -->
+        <section class="insights-section" id="insights-section" style="display:none;">
+            <div class="insights-header">
+                <h2>Pulse.AI Insights — Performance Validation</h2>
+                <p class="insights-subtitle" title="Tracks daily performance of recommended stocks to validate whether Pulse.AI's multi-bagger suggestions are actually delivering returns">Are these stocks really multi-baggers? Let the data speak.</p>
+            </div>
+            <div class="insights-controls">
+                <select id="insights-stock" onchange="renderInsightsChart()" title="Select a recommended stock to view its performance trend">
+                    <option value="">Select stock...</option>
+                </select>
+                <div class="insights-period-btns" title="Filter time period for the chart">
+                    <button class="period-btn active" data-period="30" onclick="setInsightsPeriod(30)">1M</button>
+                    <button class="period-btn" data-period="7" onclick="setInsightsPeriod(7)">1W</button>
+                    <button class="period-btn" data-period="90" onclick="setInsightsPeriod(90)">3M</button>
+                    <button class="period-btn" data-period="180" onclick="setInsightsPeriod(180)">6M</button>
+                    <button class="period-btn" data-period="365" onclick="setInsightsPeriod(365)">YTD</button>
+                </div>
+            </div>
+            <div class="insights-assessment" id="insights-assessment"></div>
+            <div class="insights-chart-container">
+                <canvas id="insights-chart"></canvas>
+            </div>
+            <div class="insights-grid" id="insights-grid"></div>
         </section>
 
         <!-- Detail Modal -->
@@ -177,6 +205,7 @@
         <p class="version-tag">v1.0.0-Beta-Live</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

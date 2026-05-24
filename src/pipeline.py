@@ -16,6 +16,7 @@ from .critic_agent import CriticAgent
 from .nse_insider import fetch_insider_trades, analyse_insider_activity
 from .nse_bulk_deals import fetch_bulk_deals, fetch_block_deals, analyse_institutional_activity
 from .google_trends import fetch_search_interest, analyse_retail_interest
+from .insights_tracker import generate_insights
 
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "config.yaml"
@@ -109,8 +110,12 @@ def run_pipeline(symbols=None):
     for stock in ranked_stocks:
         stock["breakout_signals"] = breakout_map.get(stock["symbol"], [])
 
-    # Phase 11: Assemble final output
-    print("\nPHASE 11: Generating output...")
+    # Phase 11: Pulse.AI Insights — performance tracking
+    print("\nPHASE 11: Pulse.AI Insights — performance time-series...")
+    generate_insights(ranked_stocks)
+
+    # Phase 12: Assemble final output
+    print("\nPHASE 12: Generating output...")
     output = {
         "generated_at": datetime.now().isoformat(),
         "config": {
