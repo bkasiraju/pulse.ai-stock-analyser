@@ -409,6 +409,21 @@ function getMetricColor(label, rawValue) {
 }
 
 function renderFundamentalsTab(el, stock, fund, m) {
+    const legend = document.createElement('div');
+    legend.className = 'metric-legend';
+    [
+        ['green', 'Healthy — within ideal range'],
+        ['yellow', 'Caution — borderline, monitor closely'],
+        ['red', 'Risk — outside safe thresholds'],
+        ['neutral', 'Informational — no threshold applies'],
+    ].forEach(([color, desc]) => {
+        const item = document.createElement('span');
+        item.className = 'metric-legend-item metric-legend-' + color;
+        item.textContent = desc;
+        legend.appendChild(item);
+    });
+    el.appendChild(legend);
+
     const items = [
         ['PE Ratio', fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A', fund.pe_ratio],
         ['PB Ratio', fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A', fund.pb_ratio],
