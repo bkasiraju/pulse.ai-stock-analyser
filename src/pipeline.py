@@ -13,6 +13,9 @@ from .devils_advocate import DevilsAdvocate
 from .metrics import fetch_historical_metrics, generate_multibagger_thesis, proactive_scan
 from .social_media import fetch_expert_analysis_for_stocks
 from .critic_agent import CriticAgent
+from .nse_insider import fetch_insider_trades, analyse_insider_activity
+from .nse_bulk_deals import fetch_bulk_deals, fetch_block_deals, analyse_institutional_activity
+from .google_trends import fetch_search_interest, analyse_retail_interest
 
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "config.yaml"
@@ -55,28 +58,53 @@ def run_pipeline(symbols=None):
         if metrics:
             print(f"  {stock['symbol']}: 6m return {metrics['return_6m_pct']}%, trend: {metrics['trend']}")
 
-    # Phase 4: Devil's Advocate challenges
-    print("\nPHASE 4: Devil's Advocate challenging recommendations...")
+    # Phase 4: NSE Insider Trades + Bulk/Block Deals
+    print("\nPHASE 4: Fetching NSE insider trades & bulk/block deals...")
+    bulk_deals = fetch_bulk_deals(days=30)
+    block_deals = fetch_block_deals(days=30)
+    print(f"  → Bulk deals for {len(bulk_deals)} symbols, Block deals for {len(block_deals)} symbols")
+
+    for stock in ranked_stocks:
+        sym = stock["symbol"]
+        insider_trades = fetch_insider_trades(sym, days=90)
+        stock["insider_activity"] = analyse_insider_activity(sym, insider_trades)
+        stock["institutional_activity"] = analyse_institutional_activity(sym, bulk_deals, block_deals)
+        if stock["insider_activity"]["signal"] not in ("NO_DATA", "NEUTRAL"):
+            print(f"  {sym}: Insider {stock['insider_activity']['signal']}")
+        if stock["institutional_activity"]["signal"] != "NO_DEALS":
+            print(f"  {sym}: Institutional {stock['institutional_activity']['signal']}")
+
+    # Phase 5: Google Trends — retail interest detection
+    print("\nPHASE 5: Fetching Google Trends retail interest...")
+    all_symbols = [s["symbol"] for s in ranked_stocks]
+    trends_data = fetch_search_interest(all_symbols)
+    for stock in ranked_stocks:
+        stock["retail_interest"] = analyse_retail_interest(stock["symbol"], trends_data)
+        if stock["retail_interest"]["signal"] not in ("NO_DATA", "NORMAL"):
+            print(f"  {stock['symbol']}: Retail interest {stock['retail_interest']['signal']}")
+
+    # Phase 6: Devil's Advocate challenges
+    print("\nPHASE 6: Devil's Advocate challenging recommendations...")
     advocate = DevilsAdvocate()
     challenged = advocate.challenge_all(ranked_stocks)
     report = advocate.get_challenge_report(challenged)
 
-    # Phase 5: Proactive breakout scanner
-    print("\nPHASE 5: Proactive breakout scanner (independent signals)...")
+    # Phase 7: Proactive breakout scanner
+    print("\nPHASE 7: Proactive breakout scanner (independent signals)...")
     proactive_picks = proactive_scan(config)
 
-    # Phase 6: Expert analysis from YouTube/Social Media
-    print("\nPHASE 6: Fetching expert analysis from YouTube & Social Media...")
+    # Phase 8: Expert analysis from YouTube/Social Media
+    print("\nPHASE 8: Fetching expert analysis from YouTube & Social Media...")
     expert_analysis = fetch_expert_analysis_for_stocks(ranked_stocks)
 
-    # Phase 7: Independent Critic Agent evaluation
-    print("\nPHASE 7: Independent Critic Agent — autonomous evaluation...")
+    # Phase 9: Independent Critic Agent evaluation
+    print("\nPHASE 9: Independent Critic Agent — autonomous evaluation...")
     critic = CriticAgent()
     critic_verdicts = critic.evaluate_all(ranked_stocks)
     critic_report = critic.get_report(critic_verdicts)
 
-    # Phase 8: Assemble final output
-    print("\nPHASE 8: Generating output...")
+    # Phase 10: Assemble final output
+    print("\nPHASE 10: Generating output...")
     output = {
         "generated_at": datetime.now().isoformat(),
         "config": {

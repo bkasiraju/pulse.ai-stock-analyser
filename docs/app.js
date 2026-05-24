@@ -345,7 +345,84 @@ function showDetail(symbol) {
         el.appendChild(swotGrid);
     }));
 
-    // --- Section 4: Critic Agent ---
+    // --- Section 4: Market Intelligence (Insider + Bulk Deals + Retail Interest) ---
+    const insider = stock.insider_activity || {};
+    const institutional = stock.institutional_activity || {};
+    const retail = stock.retail_interest || {};
+    const mktSummary = [
+        insider.signal && insider.signal !== 'NO_DATA' ? 'Insider: ' + insider.signal : '',
+        institutional.signal && institutional.signal !== 'NO_DEALS' ? 'Institutional: ' + institutional.signal : '',
+        retail.signal && retail.signal !== 'NO_DATA' ? 'Retail: ' + retail.signal : '',
+    ].filter(Boolean).join(' | ') || 'No market intelligence data';
+    grid.appendChild(createCollapsible('Market Intelligence (NSE + Trends)', mktSummary, el => {
+        // Insider trades
+        if (insider.signal && insider.signal !== 'NO_DATA') {
+            const h = document.createElement('p');
+            h.style.fontWeight = '600';
+            h.style.fontSize = '0.6875rem';
+            h.textContent = 'Insider Trading (SEBI PIT Disclosures):';
+            el.appendChild(h);
+            const sig = document.createElement('span');
+            sig.className = 'badge badge-' + (insider.signal === 'STRONG_BUY' || insider.signal === 'BUY' ? 'high' : insider.signal === 'SELL_WARNING' || insider.signal === 'SELL' ? 'rejected' : 'low');
+            sig.textContent = insider.signal;
+            el.appendChild(sig);
+            const sum = document.createElement('p');
+            sum.style.fontSize = '0.625rem';
+            sum.style.color = 'var(--text-secondary)';
+            sum.textContent = insider.summary || '';
+            el.appendChild(sum);
+            (insider.details || []).forEach(d => {
+                const p = document.createElement('p');
+                p.style.fontSize = '0.625rem';
+                p.textContent = d;
+                el.appendChild(p);
+            });
+        }
+        // Institutional
+        if (institutional.signal && institutional.signal !== 'NO_DEALS') {
+            const h = document.createElement('p');
+            h.style.fontWeight = '600';
+            h.style.fontSize = '0.6875rem';
+            h.style.marginTop = '0.5rem';
+            h.textContent = 'Bulk/Block Deals (NSE):';
+            el.appendChild(h);
+            const sig = document.createElement('span');
+            sig.className = 'badge badge-' + (institutional.signal === 'ACCUMULATION' || institutional.signal === 'NET_BUY' ? 'high' : institutional.signal === 'DISTRIBUTION' || institutional.signal === 'NET_SELL' ? 'rejected' : 'low');
+            sig.textContent = institutional.signal;
+            el.appendChild(sig);
+            const sum = document.createElement('p');
+            sum.style.fontSize = '0.625rem';
+            sum.style.color = 'var(--text-secondary)';
+            sum.textContent = institutional.summary || '';
+            el.appendChild(sum);
+        }
+        // Retail interest
+        if (retail.signal && retail.signal !== 'NO_DATA') {
+            const h = document.createElement('p');
+            h.style.fontWeight = '600';
+            h.style.fontSize = '0.6875rem';
+            h.style.marginTop = '0.5rem';
+            h.textContent = 'Google Trends (Retail Interest):';
+            el.appendChild(h);
+            const sum = document.createElement('p');
+            sum.style.fontSize = '0.625rem';
+            sum.style.color = 'var(--text-secondary)';
+            sum.textContent = retail.summary || '';
+            el.appendChild(sum);
+            (retail.details || []).forEach(d => {
+                const p = document.createElement('p');
+                p.style.fontSize = '0.625rem';
+                p.textContent = d;
+                el.appendChild(p);
+            });
+        }
+        if ((!insider.signal || insider.signal === 'NO_DATA') && (!institutional.signal || institutional.signal === 'NO_DEALS') && (!retail.signal || retail.signal === 'NO_DATA')) {
+            el.textContent = 'No market intelligence data available for this stock.';
+            el.style.color = 'var(--text-secondary)';
+        }
+    }));
+
+    // --- Section 5: Critic Agent ---
     const criticSummary = criticVerdict
         ? criticVerdict.verdict.replace('_', ' ') + ' (Score: ' + criticVerdict.critic_score + '/100, Confidence: ' + (criticVerdict.confidence * 100).toFixed(0) + '%)'
         : 'Not evaluated';
@@ -408,7 +485,7 @@ function showDetail(symbol) {
         }
     }));
 
-    // --- Section 5: Risks & Bear Case ---
+    // --- Section 6: Risks & Bear Case ---
     const risks = [...(stock.red_flags || []), ...(stock.bear_case || []), ...(swot.threats || [])];
     const riskSummary = risks.length ? risks.length + ' risk factors identified' : 'Low risk profile';
     grid.appendChild(createCollapsible('Risks & Bear Case', riskSummary, el => {
@@ -437,7 +514,7 @@ function showDetail(symbol) {
         }
     }));
 
-    // --- Section 6: References & Expert Views (all links) ---
+    // --- Section 7: References & Expert Views (all links) ---
     const refCount = (expertData ? expertData.insights.length : 0);
     const refSummary = refCount ? refCount + ' expert references' + (expertData.sentiment ? ' | Sentiment: ' + expertData.sentiment : '') : 'No references yet';
     grid.appendChild(createCollapsible('References & Expert Views', refSummary, el => {
