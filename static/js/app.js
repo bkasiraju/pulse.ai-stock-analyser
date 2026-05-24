@@ -3,38 +3,22 @@ let currentSort = { key: 'adjusted_score', dir: 'desc' };
 
 async function loadAnalysis() {
     try {
-        const resp = await fetch('/api/analysis');
+        const resp = await fetch('analysis.json');
         const data = await resp.json();
         if (data.error) return;
         analysisData = data;
         renderDashboard();
     } catch (e) {
         console.error('Failed to load analysis:', e);
-    }
-}
-
-async function runAnalysis(type) {
-    const overlay = document.getElementById('loading-overlay');
-    const loadingText = document.getElementById('loading-text');
-    overlay.style.display = 'flex';
-
-    const endpoint = type === 'quick' ? '/api/run-quick' : '/api/run-full';
-    loadingText.textContent = type === 'quick'
-        ? 'Running quick analysis (10 stocks)...'
-        : 'Running full analysis (50 stocks)... This may take 2-3 minutes';
-
-    try {
-        const resp = await fetch(endpoint, { method: 'POST' });
-        const result = await resp.json();
-        if (result.status === 'success') {
-            await loadAnalysis();
-        } else {
-            alert('Analysis failed: ' + (result.message || 'Unknown error'));
-        }
-    } catch (e) {
-        alert('Error running analysis: ' + e.message);
-    } finally {
-        overlay.style.display = 'none';
+        const tbody = document.getElementById('stock-tbody');
+        tbody.textContent = '';
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.colSpan = 11;
+        td.className = 'empty-state';
+        td.textContent = 'Failed to load analysis data. Please check back later.';
+        tr.appendChild(td);
+        tbody.appendChild(tr);
     }
 }
 
@@ -49,11 +33,11 @@ function renderDashboard() {
     setText('card-rejected', '.card-value', summary.rejected);
 
     const dt = new Date(analysisData.generated_at);
-    document.getElementById('last-updated').textContent = `Last run: ${dt.toLocaleString('en-IN')}`;
-    document.getElementById('footer-time').textContent = dt.toLocaleString('en-IN');
+    document.getElementById('last-updated').textContent = 'Last analysed: ' + dt.toLocaleString('en-IN');
 
     populateSectorFilter();
     renderTable(analysisData.top_picks);
+    renderProactivePicks();
     renderForumSentiment();
 }
 
@@ -131,8 +115,8 @@ function renderTable(stocks) {
             i + 1,
             s.symbol,
             s.name,
-            `₹${(s.price || 0).toFixed(2)}`,
-            `₹${(s.market_cap_cr || 0).toLocaleString('en-IN')}Cr`,
+            '₹' + (s.price || 0).toFixed(2),
+            '₹' + (s.market_cap_cr || 0).toLocaleString('en-IN') + 'Cr',
         ];
 
         cells.forEach((val, idx) => {
@@ -147,35 +131,30 @@ function renderTable(stocks) {
             tr.appendChild(td);
         });
 
-        // Category badge
         const catTd = document.createElement('td');
         const catBadge = document.createElement('span');
-        catBadge.className = `badge badge-${s.classification === 'penny' ? 'penny' : s.classification === 'small_cap' ? 'small' : 'mid'}`;
+        catBadge.className = 'badge badge-' + (s.classification === 'penny' ? 'penny' : s.classification === 'small_cap' ? 'small' : 'mid');
         catBadge.textContent = s.classification;
         catTd.appendChild(catBadge);
         tr.appendChild(catTd);
 
-        // Score
         const scoreTd = document.createElement('td');
         scoreTd.textContent = s.score;
         tr.appendChild(scoreTd);
 
-        // Adjusted Score
         const adjTd = document.createElement('td');
         const adjStrong = document.createElement('strong');
         adjStrong.textContent = s.adjusted_score;
         adjTd.appendChild(adjStrong);
         tr.appendChild(adjTd);
 
-        // Conviction badge
         const convTd = document.createElement('td');
         const convBadge = document.createElement('span');
-        convBadge.className = `badge badge-${convictionClass(s.conviction_level)}`;
+        convBadge.className = 'badge badge-' + convictionClass(s.conviction_level);
         convBadge.textContent = s.conviction_level;
         convTd.appendChild(convBadge);
         tr.appendChild(convTd);
 
-        // Red flags
         const flagTd = document.createElement('td');
         (s.red_flags || []).forEach(f => {
             const chip = document.createElement('span');
@@ -185,7 +164,6 @@ function renderTable(stocks) {
         });
         tr.appendChild(flagTd);
 
-        // Action button
         const actTd = document.createElement('td');
         const btn = document.createElement('button');
         btn.className = 'btn btn-secondary';
@@ -223,23 +201,31 @@ function showDetail(symbol) {
     panel.style.display = 'block';
 
     document.getElementById('detail-name').textContent =
-        `${stock.symbol} — ${stock.name} (₹${stock.price?.toFixed(2)} | ${stock.conviction_level})`;
+        stock.symbol + ' — ' + stock.name + ' (₹' + (stock.price || 0).toFixed(2) + ' | ' + stock.conviction_level + ')';
 
-    // Fundamentals
+    // Performance pills (period returns)
+    renderPerfRow(stock);
+
+    // 6-Month Metrics
+    renderMetrics(stock);
+
+    // Multi-Bagger Thesis
+    renderThesis(stock);
+
     const fund = stock.fundamentals;
     const fundEl = document.getElementById('detail-fundamentals');
     fundEl.textContent = '';
     const fundList = document.createElement('ul');
     const fundItems = [
-        `PE Ratio: ${fund.pe_ratio?.toFixed(1) ?? 'N/A'}`,
-        `PB Ratio: ${fund.pb_ratio?.toFixed(2) ?? 'N/A'}`,
-        `ROE: ${fund.roe ? (fund.roe * 100).toFixed(1) + '%' : 'N/A'}`,
-        `Debt/Equity: ${fund.debt_to_equity?.toFixed(0) ?? 'N/A'}`,
-        `Revenue Growth: ${fund.revenue_growth ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A'}`,
-        `Earnings Growth: ${fund.earnings_growth ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A'}`,
-        `Promoter Holding: ${fund.promoter_holding ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A'}`,
-        `EPS: ${fund.eps?.toFixed(2) ?? 'N/A'}`,
-        `Book Value: ₹${fund.book_value?.toFixed(2) ?? 'N/A'}`,
+        'PE Ratio: ' + (fund.pe_ratio != null ? fund.pe_ratio.toFixed(1) : 'N/A'),
+        'PB Ratio: ' + (fund.pb_ratio != null ? fund.pb_ratio.toFixed(2) : 'N/A'),
+        'ROE: ' + (fund.roe != null ? (fund.roe * 100).toFixed(1) + '%' : 'N/A'),
+        'Debt/Equity: ' + (fund.debt_to_equity != null ? fund.debt_to_equity.toFixed(0) : 'N/A'),
+        'Revenue Growth: ' + (fund.revenue_growth != null ? (fund.revenue_growth * 100).toFixed(1) + '%' : 'N/A'),
+        'Earnings Growth: ' + (fund.earnings_growth != null ? (fund.earnings_growth * 100).toFixed(1) + '%' : 'N/A'),
+        'Promoter Holding: ' + (fund.promoter_holding != null ? (fund.promoter_holding * 100).toFixed(1) + '%' : 'N/A'),
+        'EPS: ' + (fund.eps != null ? fund.eps.toFixed(2) : 'N/A'),
+        'Book Value: ₹' + (fund.book_value != null ? fund.book_value.toFixed(2) : 'N/A'),
     ];
     fundItems.forEach(text => {
         const li = document.createElement('li');
@@ -248,7 +234,6 @@ function showDetail(symbol) {
     });
     fundEl.appendChild(fundList);
 
-    // SWOT
     const swot = stock.swot;
     const swotEl = document.getElementById('detail-swot');
     swotEl.textContent = '';
@@ -257,23 +242,22 @@ function showDetail(symbol) {
 
     ['strengths', 'weaknesses', 'opportunities', 'threats'].forEach(key => {
         const box = document.createElement('div');
-        box.className = `swot-box swot-${key}`;
+        box.className = 'swot-box swot-' + key;
         const h4 = document.createElement('h4');
         h4.textContent = key.charAt(0).toUpperCase() + key.slice(1);
         box.appendChild(h4);
         (swot[key] || []).forEach(item => {
             const p = document.createElement('p');
-            p.textContent = `• ${item}`;
+            p.textContent = '• ' + item;
             box.appendChild(p);
         });
         swotGrid.appendChild(box);
     });
     swotEl.appendChild(swotGrid);
 
-    // Bear Case
     const bearEl = document.getElementById('detail-bear-case');
     bearEl.textContent = '';
-    if (stock.bear_case?.length) {
+    if (stock.bear_case && stock.bear_case.length) {
         const ul = document.createElement('ul');
         stock.bear_case.forEach(b => {
             const li = document.createElement('li');
@@ -289,34 +273,33 @@ function showDetail(symbol) {
         bearEl.appendChild(p);
     }
 
-    // Penalties
     const ch = stock.challenge_detail || {};
     const penEl = document.getElementById('detail-penalties');
     penEl.textContent = '';
     const penList = document.createElement('ul');
-    [`Valuation: ${ch.valuation_penalty ?? 0}`,
-     `Debt Trap: ${ch.debt_penalty ?? 0}`,
-     `Promoter: ${ch.promoter_penalty ?? 0}`,
-     `Sector: ${ch.sector_penalty ?? 0}`,
-     `Pump/Dump: ${ch.pump_dump_penalty ?? 0}`,
-     `Total Penalty: ${stock.penalty ?? 0}`
-    ].forEach(text => {
+    [
+        'Valuation: ' + (ch.valuation_penalty || 0),
+        'Debt Trap: ' + (ch.debt_penalty || 0),
+        'Promoter: ' + (ch.promoter_penalty || 0),
+        'Sector: ' + (ch.sector_penalty || 0),
+        'Pump/Dump: ' + (ch.pump_dump_penalty || 0),
+        'Total Penalty: ' + (stock.penalty || 0),
+    ].forEach((text, idx) => {
         const li = document.createElement('li');
-        li.textContent = text;
-        if (text.startsWith('Total')) {
+        if (idx === 5) {
             const strong = document.createElement('strong');
             strong.textContent = text;
-            li.textContent = '';
             li.appendChild(strong);
+        } else {
+            li.textContent = text;
         }
         penList.appendChild(li);
     });
     penEl.appendChild(penList);
 
-    // Score Reasons
     const reasonEl = document.getElementById('detail-reasons');
     reasonEl.textContent = '';
-    if (stock.score_reasons?.length) {
+    if (stock.score_reasons && stock.score_reasons.length) {
         const ul = document.createElement('ul');
         stock.score_reasons.forEach(r => {
             const li = document.createElement('li');
@@ -330,10 +313,9 @@ function showDetail(symbol) {
         reasonEl.appendChild(p);
     }
 
-    // Risks
     const riskEl = document.getElementById('detail-risks');
     riskEl.textContent = '';
-    const risks = [...(stock.red_flags || []), ...(stock.swot?.threats || [])];
+    const risks = [...(stock.red_flags || []), ...(stock.swot ? stock.swot.threats || [] : [])];
     if (risks.length) {
         const ul = document.createElement('ul');
         risks.forEach(r => {
@@ -354,6 +336,176 @@ function showDetail(symbol) {
 
 function closeDetail() {
     document.getElementById('detail-panel').style.display = 'none';
+}
+
+function renderPerfRow(stock) {
+    let perfRow = document.getElementById('detail-perf-row');
+    if (!perfRow) {
+        perfRow = document.createElement('div');
+        perfRow.id = 'detail-perf-row';
+        perfRow.className = 'detail-perf-row';
+        const grid = document.querySelector('.detail-grid');
+        grid.parentNode.insertBefore(perfRow, grid);
+    }
+    perfRow.textContent = '';
+
+    const m = stock.metrics;
+    const periods = [
+        { label: '3M Return', value: m ? m.return_3m_pct : null, suffix: '%' },
+        { label: '6M Return', value: m ? m.return_6m_pct : null, suffix: '%' },
+        { label: 'RSI (14)', value: m ? m.rsi_14 : null, suffix: '' },
+        { label: 'Volatility', value: m ? m.volatility_annual_pct : null, suffix: '%' },
+        { label: 'Max Drawdown', value: m ? m.max_drawdown_pct : null, suffix: '%' },
+        { label: 'Green Months', value: m ? m.green_months_of_6 + '/6' : null, suffix: '' },
+        { label: 'Vol Surge', value: m ? m.volume_surge_pct : null, suffix: '%' },
+        { label: 'Trend', value: m ? m.trend : 'N/A', suffix: '' },
+    ];
+
+    periods.forEach(p => {
+        const pill = document.createElement('div');
+        pill.className = 'perf-pill';
+        const val = document.createElement('div');
+        val.className = 'perf-pill-value';
+        if (p.value === null) {
+            val.textContent = 'N/A';
+        } else {
+            val.textContent = (typeof p.value === 'number' ? (p.value > 0 ? '+' : '') + p.value.toFixed(1) : p.value) + p.suffix;
+            if (typeof p.value === 'number') {
+                val.classList.add(p.value >= 0 ? 'positive' : 'negative');
+            }
+        }
+        const lbl = document.createElement('div');
+        lbl.className = 'perf-pill-label';
+        lbl.textContent = p.label;
+        pill.appendChild(val);
+        pill.appendChild(lbl);
+        perfRow.appendChild(pill);
+    });
+}
+
+function renderMetrics(stock) {
+    const el = document.getElementById('detail-metrics');
+    el.textContent = '';
+    const m = stock.metrics;
+
+    if (!m) {
+        const p = document.createElement('p');
+        p.textContent = 'Historical metrics not available for this stock.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        el.appendChild(p);
+        return;
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'metrics-grid';
+
+    const items = [
+        ['3M Return', (m.return_3m_pct > 0 ? '+' : '') + m.return_3m_pct + '%'],
+        ['6M Return', (m.return_6m_pct > 0 ? '+' : '') + m.return_6m_pct + '%'],
+        ['RSI (14-day)', m.rsi_14],
+        ['Volatility (Ann.)', m.volatility_annual_pct + '%'],
+        ['20-Day MA', '₹' + m.ma_20],
+        ['50-Day MA', '₹' + m.ma_50],
+        ['Above 20MA', m.above_20ma ? 'Yes' : 'No'],
+        ['Above 50MA', m.above_50ma ? 'Yes' : 'No'],
+        ['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%'],
+        ['Avg Vol (20d)', m.avg_volume_20d.toLocaleString('en-IN')],
+        ['Green Months', m.green_months_of_6 + ' of 6'],
+        ['Max Drawdown', m.max_drawdown_pct + '%'],
+    ];
+
+    items.forEach(([label, value]) => {
+        const item = document.createElement('div');
+        item.className = 'metric-item';
+        const lbl = document.createElement('span');
+        lbl.className = 'metric-label';
+        lbl.textContent = label;
+        const val = document.createElement('span');
+        val.className = 'metric-value';
+        val.textContent = value;
+        item.appendChild(lbl);
+        item.appendChild(val);
+        grid.appendChild(item);
+    });
+
+    el.appendChild(grid);
+}
+
+function renderThesis(stock) {
+    const el = document.getElementById('detail-thesis');
+    el.textContent = '';
+    const thesis = stock.multibagger_thesis;
+
+    if (!thesis || !thesis.thesis || !thesis.thesis.length) {
+        const p = document.createElement('p');
+        p.textContent = 'Insufficient data for multi-bagger thesis.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        el.appendChild(p);
+        return;
+    }
+
+    thesis.thesis.forEach(point => {
+        const div = document.createElement('div');
+        div.className = 'thesis-point';
+        div.textContent = point;
+        el.appendChild(div);
+    });
+
+    if (thesis.target_multiple) {
+        const target = document.createElement('span');
+        target.className = 'thesis-target';
+        target.textContent = 'Target: ' + thesis.target_multiple;
+        el.appendChild(target);
+    }
+}
+
+function renderProactivePicks() {
+    const section = document.getElementById('proactive-section');
+    const container = document.getElementById('proactive-picks');
+    const picks = analysisData.proactive_breakouts || [];
+
+    if (!picks.length) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+    container.textContent = '';
+
+    picks.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'proactive-card';
+
+        const left = document.createElement('div');
+        const sym = document.createElement('div');
+        sym.className = 'proactive-symbol';
+        sym.textContent = p.symbol;
+        const name = document.createElement('div');
+        name.className = 'proactive-name';
+        name.textContent = p.name;
+        left.appendChild(sym);
+        left.appendChild(name);
+
+        const middle = document.createElement('div');
+        middle.className = 'proactive-signals';
+        (p.signals || []).forEach(s => {
+            const chip = document.createElement('span');
+            chip.className = 'signal-chip';
+            chip.textContent = s;
+            middle.appendChild(chip);
+        });
+
+        const right = document.createElement('div');
+        right.className = 'proactive-meta';
+        right.textContent = '₹' + p.price + ' | ₹' + p.market_cap_cr + 'Cr';
+
+        card.appendChild(left);
+        card.appendChild(middle);
+        card.appendChild(right);
+        container.appendChild(card);
+    });
 }
 
 function renderForumSentiment() {
@@ -379,6 +531,7 @@ function renderForumSentiment() {
         title.className = 'title';
         title.href = m.url;
         title.target = '_blank';
+        title.rel = 'noopener noreferrer';
         title.textContent = m.title;
         title.style.color = 'var(--text)';
         title.style.textDecoration = 'none';
@@ -389,5 +542,4 @@ function renderForumSentiment() {
     });
 }
 
-// Init
 loadAnalysis();

@@ -101,7 +101,16 @@
                 <h2 id="detail-name"></h2>
                 <button class="btn btn-close" onclick="closeDetail()">✕</button>
             </div>
+            <div class="detail-perf-row" id="detail-perf-row"></div>
             <div class="detail-grid">
+                <div class="detail-section">
+                    <h3>6-Month Metrics</h3>
+                    <div id="detail-metrics"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Multi-Bagger Thesis</h3>
+                    <div id="detail-thesis"></div>
+                </div>
                 <div class="detail-section">
                     <h3>Fundamentals</h3>
                     <div id="detail-fundamentals"></div>
@@ -129,14 +138,26 @@
             </div>
         </section>
 
+        <!-- Proactive Breakouts -->
+        <section class="proactive-section" id="proactive-section" style="display:none;">
+            <h2>Proactive Breakout Signals (Independent Scanner)</h2>
+            <p class="section-subtitle">Stocks showing technical breakout patterns — discovered independently, not from forums.</p>
+            <div id="proactive-picks"></div>
+        </section>
+
         <section class="forum-section" id="forum-section" style="display:none;">
             <h2>Community Sentiment (Reddit & ValuePickr)</h2>
             <div id="forum-mentions"></div>
         </section>
     </main>
 
+    <!-- DISCLAIMER -->
+    <div class="disclaimer-banner">
+        <p><strong>DISCLAIMER:</strong> Investments in stocks based on these recommendations carry significant risk and are purely dependent on your own conscience and decision. All investments are subject to market risk. Past performance does NOT guarantee future results. This information is JUST INFORMATION — it does NOT constitute financial advice. You must analyse and decide to invest on your own. The creators of this tool accept NO responsibility for any financial losses. Consult a SEBI-registered financial advisor before making investment decisions.</p>
+    </div>
+
     <footer>
-        <p>Data from Yahoo Finance, Reddit, ValuePickr | Not financial advice — DYOR | Auto-updated daily at 8:30 AM IST</p>
+        <p>Data from Yahoo Finance, Reddit, ValuePickr | Auto-updated daily at 8:30 AM IST</p>
     </footer>
 
     <script src="app.js"></script>

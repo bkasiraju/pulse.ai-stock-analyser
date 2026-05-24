@@ -1,5 +1,5 @@
 """
-Main pipeline: orchestrates scraping → analysis → challenge → output.
+Main pipeline: orchestrates scraping → analysis → metrics → challenge → output.
 """
 
 import json
@@ -10,6 +10,7 @@ from datetime import datetime
 from .screener import build_candidate_list, fetch_nse_stock_data, SEED_STOCKS, get_trending_stocks_from_forums
 from .analyser import analyse_stocks, classify_stock, score_stock, generate_swot
 from .devils_advocate import DevilsAdvocate
+from .metrics import fetch_historical_metrics, generate_multibagger_thesis, proactive_scan
 
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "config.yaml"
@@ -42,14 +43,28 @@ def run_pipeline(symbols=None):
     ranked_stocks = analyse_stocks(config, stock_symbols)
     print(f"  → {len(ranked_stocks)} stocks scored and ranked")
 
-    # Phase 3: Devil's Advocate challenges
-    print("\nPHASE 3: Devil's Advocate challenging recommendations...")
+    # Phase 3: Fetch historical metrics (3/6 month)
+    print("\nPHASE 3: Fetching historical metrics (3/6 month trends)...")
+    for stock in ranked_stocks:
+        metrics = fetch_historical_metrics(stock["symbol"])
+        stock["metrics"] = metrics
+        thesis = generate_multibagger_thesis(stock, metrics)
+        stock["multibagger_thesis"] = thesis
+        if metrics:
+            print(f"  {stock['symbol']}: 6m return {metrics['return_6m_pct']}%, trend: {metrics['trend']}")
+
+    # Phase 4: Devil's Advocate challenges
+    print("\nPHASE 4: Devil's Advocate challenging recommendations...")
     advocate = DevilsAdvocate()
     challenged = advocate.challenge_all(ranked_stocks)
     report = advocate.get_challenge_report(challenged)
 
-    # Phase 4: Assemble final output
-    print("\nPHASE 4: Generating output...")
+    # Phase 5: Proactive breakout scanner
+    print("\nPHASE 5: Proactive breakout scanner (independent signals)...")
+    proactive_picks = proactive_scan(config)
+
+    # Phase 6: Assemble final output
+    print("\nPHASE 6: Generating output...")
     output = {
         "generated_at": datetime.now().isoformat(),
         "config": {
@@ -64,10 +79,20 @@ def run_pipeline(symbols=None):
             "moderate_conviction": len(report["moderate_conviction"]),
             "low_conviction": len(report["low_conviction"]),
             "rejected": len(report["rejected"]),
+            "proactive_breakouts": len(proactive_picks),
         },
         "top_picks": challenged[:25],
+        "proactive_breakouts": proactive_picks[:15],
         "forum_sentiment": web_candidates.get("forum_mentions", [])[:20],
         "full_challenge_report": report,
+        "disclaimer": (
+            "DISCLAIMER: Investments in stocks based on these recommendations carry significant risk. "
+            "This information is purely informational and does NOT constitute financial advice. "
+            "All investments are subject to market risk. Past performance does not guarantee future results. "
+            "You must analyse and decide to invest on your own. The creators of this tool accept "
+            "NO responsibility for any financial losses. Consult a SEBI-registered financial advisor "
+            "before making investment decisions."
+        ),
     }
 
     # Save output

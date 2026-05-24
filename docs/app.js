@@ -37,6 +37,7 @@ function renderDashboard() {
 
     populateSectorFilter();
     renderTable(analysisData.top_picks);
+    renderProactivePicks();
     renderForumSentiment();
 }
 
@@ -202,6 +203,15 @@ function showDetail(symbol) {
     document.getElementById('detail-name').textContent =
         stock.symbol + ' — ' + stock.name + ' (₹' + (stock.price || 0).toFixed(2) + ' | ' + stock.conviction_level + ')';
 
+    // Performance pills (period returns)
+    renderPerfRow(stock);
+
+    // 6-Month Metrics
+    renderMetrics(stock);
+
+    // Multi-Bagger Thesis
+    renderThesis(stock);
+
     const fund = stock.fundamentals;
     const fundEl = document.getElementById('detail-fundamentals');
     fundEl.textContent = '';
@@ -326,6 +336,176 @@ function showDetail(symbol) {
 
 function closeDetail() {
     document.getElementById('detail-panel').style.display = 'none';
+}
+
+function renderPerfRow(stock) {
+    let perfRow = document.getElementById('detail-perf-row');
+    if (!perfRow) {
+        perfRow = document.createElement('div');
+        perfRow.id = 'detail-perf-row';
+        perfRow.className = 'detail-perf-row';
+        const grid = document.querySelector('.detail-grid');
+        grid.parentNode.insertBefore(perfRow, grid);
+    }
+    perfRow.textContent = '';
+
+    const m = stock.metrics;
+    const periods = [
+        { label: '3M Return', value: m ? m.return_3m_pct : null, suffix: '%' },
+        { label: '6M Return', value: m ? m.return_6m_pct : null, suffix: '%' },
+        { label: 'RSI (14)', value: m ? m.rsi_14 : null, suffix: '' },
+        { label: 'Volatility', value: m ? m.volatility_annual_pct : null, suffix: '%' },
+        { label: 'Max Drawdown', value: m ? m.max_drawdown_pct : null, suffix: '%' },
+        { label: 'Green Months', value: m ? m.green_months_of_6 + '/6' : null, suffix: '' },
+        { label: 'Vol Surge', value: m ? m.volume_surge_pct : null, suffix: '%' },
+        { label: 'Trend', value: m ? m.trend : 'N/A', suffix: '' },
+    ];
+
+    periods.forEach(p => {
+        const pill = document.createElement('div');
+        pill.className = 'perf-pill';
+        const val = document.createElement('div');
+        val.className = 'perf-pill-value';
+        if (p.value === null) {
+            val.textContent = 'N/A';
+        } else {
+            val.textContent = (typeof p.value === 'number' ? (p.value > 0 ? '+' : '') + p.value.toFixed(1) : p.value) + p.suffix;
+            if (typeof p.value === 'number') {
+                val.classList.add(p.value >= 0 ? 'positive' : 'negative');
+            }
+        }
+        const lbl = document.createElement('div');
+        lbl.className = 'perf-pill-label';
+        lbl.textContent = p.label;
+        pill.appendChild(val);
+        pill.appendChild(lbl);
+        perfRow.appendChild(pill);
+    });
+}
+
+function renderMetrics(stock) {
+    const el = document.getElementById('detail-metrics');
+    el.textContent = '';
+    const m = stock.metrics;
+
+    if (!m) {
+        const p = document.createElement('p');
+        p.textContent = 'Historical metrics not available for this stock.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        el.appendChild(p);
+        return;
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'metrics-grid';
+
+    const items = [
+        ['3M Return', (m.return_3m_pct > 0 ? '+' : '') + m.return_3m_pct + '%'],
+        ['6M Return', (m.return_6m_pct > 0 ? '+' : '') + m.return_6m_pct + '%'],
+        ['RSI (14-day)', m.rsi_14],
+        ['Volatility (Ann.)', m.volatility_annual_pct + '%'],
+        ['20-Day MA', '₹' + m.ma_20],
+        ['50-Day MA', '₹' + m.ma_50],
+        ['Above 20MA', m.above_20ma ? 'Yes' : 'No'],
+        ['Above 50MA', m.above_50ma ? 'Yes' : 'No'],
+        ['Volume Surge', (m.volume_surge_pct > 0 ? '+' : '') + m.volume_surge_pct + '%'],
+        ['Avg Vol (20d)', m.avg_volume_20d.toLocaleString('en-IN')],
+        ['Green Months', m.green_months_of_6 + ' of 6'],
+        ['Max Drawdown', m.max_drawdown_pct + '%'],
+    ];
+
+    items.forEach(([label, value]) => {
+        const item = document.createElement('div');
+        item.className = 'metric-item';
+        const lbl = document.createElement('span');
+        lbl.className = 'metric-label';
+        lbl.textContent = label;
+        const val = document.createElement('span');
+        val.className = 'metric-value';
+        val.textContent = value;
+        item.appendChild(lbl);
+        item.appendChild(val);
+        grid.appendChild(item);
+    });
+
+    el.appendChild(grid);
+}
+
+function renderThesis(stock) {
+    const el = document.getElementById('detail-thesis');
+    el.textContent = '';
+    const thesis = stock.multibagger_thesis;
+
+    if (!thesis || !thesis.thesis || !thesis.thesis.length) {
+        const p = document.createElement('p');
+        p.textContent = 'Insufficient data for multi-bagger thesis.';
+        p.style.color = 'var(--text-secondary)';
+        p.style.fontSize = '0.75rem';
+        el.appendChild(p);
+        return;
+    }
+
+    thesis.thesis.forEach(point => {
+        const div = document.createElement('div');
+        div.className = 'thesis-point';
+        div.textContent = point;
+        el.appendChild(div);
+    });
+
+    if (thesis.target_multiple) {
+        const target = document.createElement('span');
+        target.className = 'thesis-target';
+        target.textContent = 'Target: ' + thesis.target_multiple;
+        el.appendChild(target);
+    }
+}
+
+function renderProactivePicks() {
+    const section = document.getElementById('proactive-section');
+    const container = document.getElementById('proactive-picks');
+    const picks = analysisData.proactive_breakouts || [];
+
+    if (!picks.length) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+    container.textContent = '';
+
+    picks.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'proactive-card';
+
+        const left = document.createElement('div');
+        const sym = document.createElement('div');
+        sym.className = 'proactive-symbol';
+        sym.textContent = p.symbol;
+        const name = document.createElement('div');
+        name.className = 'proactive-name';
+        name.textContent = p.name;
+        left.appendChild(sym);
+        left.appendChild(name);
+
+        const middle = document.createElement('div');
+        middle.className = 'proactive-signals';
+        (p.signals || []).forEach(s => {
+            const chip = document.createElement('span');
+            chip.className = 'signal-chip';
+            chip.textContent = s;
+            middle.appendChild(chip);
+        });
+
+        const right = document.createElement('div');
+        right.className = 'proactive-meta';
+        right.textContent = '₹' + p.price + ' | ₹' + p.market_cap_cr + 'Cr';
+
+        card.appendChild(left);
+        card.appendChild(middle);
+        card.appendChild(right);
+        container.appendChild(card);
+    });
 }
 
 function renderForumSentiment() {
